@@ -1,0 +1,31 @@
+{
+  "character_id": 19,
+  "character_name": "Traveler (Anemo)",
+  "gender": "Other",
+  "height": "Medium",
+  "rarity": 5,
+  "region": null,
+  "element": "Anemo",
+  "weapon_type": "Sword",
+  "ascension_stat": "ATK",
+  "birthday": null,
+  "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690072024/teyvatdle/character/other/traveler_anemo/traveler_anemo.png",
+  "local_specialty": "Windwheel Aster",
+  "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400529/teyvatdle/local_specialty/mondstadt/windwheel_aster.png",
+  "enhancement_material": "Samachurl Materials",
+  "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558589/teyvatdle/enemy_drop/common/samachurl_materials.png",
+  "ascension_boss_material": null,
+  "ascension_boss_material_image_url": null,
+  "talent_boss_material": "Dvalin's Sigh",
+  "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547353/teyvatdle/boss_drop/weekly/dvalins_sigh.png",
+  "talent_book": [
+    "Freedom",
+    "Ballad",
+    "Resistance"
+  ],
+  "talent_book_image_url": [
+    "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569452/teyvatdle/talent_book/freedom.png",
+    "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569632/teyvatdle/talent_book/ballad.png",
+    "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569562/teyvatdle/talent_book/resistance.png"
+  ]
+}
