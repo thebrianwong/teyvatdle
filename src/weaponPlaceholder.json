@@ -1,0 +1,15 @@
+{
+  "weapon_id": 1,
+  "weapon_name": "A Thousand Floating Dreams",
+  "rarity": 5,
+  "weapon_type": "Catalyst",
+  "sub_stat": "Elemental Mastery",
+  "weapon_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690001573/teyvatdle/weapon/catalyst/a_thousand_floating_dreams.png",
+  "weapon_domain_material": "Oasis Gardens",
+  "weapon_domain_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689658155/teyvatdle/weapon_domain_material/oasis_gardens.png",
+  "elite_enemy_material": "Primal Construct Materials",
+  "elite_enemy_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689568892/teyvatdle/enemy_drop/elite/primal_construct_materials.png",
+  "common_enemy_material": "Fungus Materials",
+  "common_enemy_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566972/teyvatdle/enemy_drop/common/fungus_materials.png",
+  "gacha": true
+}
