@@ -1,54 +1,80 @@
 import { ReactElement } from "react";
 import GuessTableCellProps from "./type";
 
-const GuessTableCell = ({ cellData, cellType }: GuessTableCellProps) => {
-  const isImageURL = new RegExp(/.png$/);
-  console.log(cellType);
+const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
+  let cellElement: ReactElement;
 
-  if (typeof cellData === "object") {
-    let element1: ReactElement;
-    let element2: HTMLElement;
-    if (!Array.isArray(cellData.attribute1)) {
-      if (cellData!.altText1 && typeof cellData.attribute1 === "string") {
-        element1 = <img src={cellData.attribute1} alt={cellData.altText1} />;
+  if (cellData.dataType === "mainImage") {
+    cellElement = (
+      <td>
+        <img src={cellData.content} alt={cellData.altText} />
+      </td>
+    );
+  } else if (cellData.dataType === "textSingle") {
+    const cellContent = cellData.content || "None";
+    cellElement = <td>{cellContent}</td>;
+  } else if (cellData.dataType === "textDouble") {
+    const cellContent1 = cellData.content1 || "None";
+    const cellContent2 = cellData.content2 || "None";
+    cellElement = (
+      <td>
+        {cellContent1}
+        <br />
+        {cellContent2}
+      </td>
+    );
+  } else if (cellData.dataType === "textImageCombo") {
+    cellElement = (
+      <td>
+        {cellData.content1}
+        <img src={cellData.content2} alt={cellData.altText2} />
+      </td>
+    );
+  } else if (cellData.dataType === "imageDouble") {
+    if (Array.isArray(cellData.content1) && Array.isArray(cellData.altText1)) {
+      cellElement = (
+        <td>
+          {cellData.content1.map((content, index) => {
+            return (
+              <img key={content} src={content} alt={cellData.altText1[index]} />
+            );
+          })}
+          <img src={cellData.content2} alt={cellData.altText2} />
+        </td>
+      );
+    } else if (
+      !Array.isArray(cellData.content1) &&
+      !Array.isArray(cellData.altText1)
+    ) {
+      if (cellData.content1 === null) {
+        cellElement = (
+          <td>
+            None
+            <img src={cellData.content2} alt={cellData.altText2} />
+          </td>
+        );
+      } else if (cellData.content2 === null) {
+        cellElement = (
+          <td>
+            <img src={cellData.content1} alt={cellData.altText1} />
+            None
+          </td>
+        );
+      } else {
+        cellElement = (
+          <td>
+            <img src={cellData.content1} alt={cellData.altText1} />
+            <img src={cellData.content2} alt={cellData.altText2} />
+          </td>
+        );
       }
     }
+  } else if (cellData.dataType === "booleanSingle") {
+    const cellContent = cellData.content ? "✅" : "❌";
+    cellElement = <td>{cellContent}</td>;
   }
 
-  if (cellData === null) {
-    // Aloy and Traveler have no region. Traveler has no boss ascension material, etc.
-    return <td>None</td>;
-  } else if (typeof cellData === "string" && isImageURL.exec(cellData)) {
-    return (
-      <td>
-        <img src={cellData} alt={``} />
-      </td>
-    );
-  } else if (
-    Array.isArray(cellData) &&
-    cellData.every((arrayItem) => isImageURL.exec(arrayItem)) // Multiple images for Traveler's talent books
-  ) {
-    return (
-      <td>
-        {cellData.map((arrayItem) => {
-          return <img key={arrayItem} src={arrayItem} />;
-        })}
-      </td>
-    );
-  } else if (
-    Array.isArray(cellData) &&
-    !cellData.every((arrayItem) => isImageURL.exec(arrayItem)) // Names of Traveler's multiple talent books
-  ) {
-    return (
-      <td>
-        {cellData.map((arrayItem) => {
-          return <p key={arrayItem}>{arrayItem}</p>;
-        })}
-      </td>
-    );
-  } else {
-    return <td>{cellData}</td>;
-  }
+  return cellElement!;
 };
 
 export default GuessTableCell;
