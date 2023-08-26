@@ -1,126 +1,136 @@
 import { useEffect, useState } from "react";
-import dummy from "../../placeholder.json";
-import dummyQiqi from "../../nonTravPlaceholder.json";
-import dummyWeapon from "../../weaponPlaceholder.json";
-import dummyFood from "../../foodPlaceholder.json";
 import GuessTableCell from "../GuessTableCell/GuessTableCell";
 import GuessTableRowProps from "./type";
+import CharacterAPIData from "../../types/data/characterAPIData.type";
+import WeaponAPIData from "../../types/data/weaponAPIData.type";
+import FoodAPIData from "../../types/data/foodAPIData.type";
 
-const GuessTableRow = ({ rowType }: GuessTableRowProps) => {
+const GuessTableRow = ({ rowType, rowDataProp }: GuessTableRowProps) => {
   const [rowData, setRowData] = useState<any>(null);
 
-  const transformData = (rawData: any) => {
+  const transformData = (
+    rawData: CharacterAPIData | WeaponAPIData | FoodAPIData
+  ) => {
     switch (rowType) {
       case "character":
+        const rawCharacterData = { ...rawData } as CharacterAPIData;
         const transformedCharacterData = {
           character_image: {
             dataType: "mainImage",
-            content: rawData.character_image_url,
-            altText: `Party select icon of ${rawData.character_name}.`,
+            content: rawCharacterData.character_image_url,
+            altText: `Party select icon of ${rawCharacterData.character_name}.`,
           },
-          name: { dataType: "textSingle", content: rawData.character_name },
+          name: {
+            dataType: "textSingle",
+            content: rawCharacterData.character_name,
+          },
           gender_height: {
             dataType: "textDouble",
-            content1: rawData.gender,
-            content2: rawData.height,
+            content1: rawCharacterData.gender,
+            content2: rawCharacterData.height,
           },
           rarity_region: {
             dataType: "textDouble",
-            content1: `${rawData.rarity} ⭐`,
-            content2: rawData.region,
+            content1: `${rawCharacterData.rarity} ⭐`,
+            content2: rawCharacterData.region,
             elementalText2: true,
           },
           ele_weapon: {
             dataType: "textDouble",
-            content1: rawData.element,
+            content1: rawCharacterData.element,
             elementalText1: true,
-            content2: rawData.weapon_type,
+            content2: rawCharacterData.weapon_type,
           },
           stat_material: {
             dataType: "textImageCombo",
-            content1: rawData.ascension_stat,
-            content2: rawData.enhancement_material_image_url,
-            altText2: rawData.enhancement_material,
+            content1: rawCharacterData.ascension_stat,
+            content2: rawCharacterData.enhancement_material_image_url,
+            altText2: rawCharacterData.enhancement_material,
           },
           local_ascension: {
             dataType: "imageDouble",
-            content1: rawData.local_specialty_image_url,
-            altText1: rawData.local_specialty,
-            content2: rawData.ascension_boss_material_image_url,
-            altText2: rawData.ascension_boss_material,
+            content1: rawCharacterData.local_specialty_image_url,
+            altText1: rawCharacterData.local_specialty,
+            content2: rawCharacterData.ascension_boss_material_image_url,
+            altText2: rawCharacterData.ascension_boss_material,
           },
           book_talent: {
             dataType: "imageDouble",
-            content1: rawData.talent_book_image_url,
-            altText1: rawData.talent_book,
-            content2: rawData.talent_boss_material_image_url,
-            altText2: rawData.talent_boss_material,
+            content1: rawCharacterData.talent_book_image_url,
+            altText1: rawCharacterData.talent_book,
+            content2: rawCharacterData.talent_boss_material_image_url,
+            altText2: rawCharacterData.talent_boss_material,
           },
-          birthday: { dataType: "textSingle", content: rawData.birthday },
+          birthday: {
+            dataType: "textSingle",
+            content: rawCharacterData.birthday,
+          },
         };
         setRowData(transformedCharacterData);
         break;
       case "weapon":
+        const rawWeaponData = { ...rawData } as WeaponAPIData;
         const transformedWeaponData = {
           weapon_image: {
             dataType: "mainImage",
-            content: rawData.weapon_image_url,
-            altText: rawData.weapon_name,
+            content: rawWeaponData.weapon_image_url,
+            altText: rawWeaponData.weapon_name,
           },
-          name: { dataType: "textSingle", content: rawData.weapon_name },
+          name: { dataType: "textSingle", content: rawWeaponData.weapon_name },
           rarity_type: {
             dataType: "textDouble",
-            content1: `${rawData.rarity} ⭐`,
-            content2: rawData.weapon_type,
+            content1: `${rawWeaponData.rarity} ⭐`,
+            content2: rawWeaponData.weapon_type,
           },
           stat_material: {
             dataType: "textImageCombo",
-            content1: rawData.sub_stat,
-            content2: rawData.weapon_domain_material_image_url,
-            altText2: rawData.weapon_domain_material,
+            content1: rawWeaponData.sub_stat,
+            content2: rawWeaponData.weapon_domain_material_image_url,
+            altText2: rawWeaponData.weapon_domain_material,
           },
           elite_common: {
             dataType: "imageDouble",
-            content1: rawData.elite_enemy_material_image_url,
-            altText1: rawData.elite_enemy_material,
-            content2: rawData.common_enemy_material_image_url,
-            altText2: rawData.common_enemy_material,
+            content1: rawWeaponData.elite_enemy_material_image_url,
+            altText1: rawWeaponData.elite_enemy_material,
+            content2: rawWeaponData.common_enemy_material_image_url,
+            altText2: rawWeaponData.common_enemy_material,
           },
           gacha: {
             dataType: "booleanSingle",
-            content: rawData.gacha,
+            content: rawWeaponData.gacha,
           },
         };
         setRowData(transformedWeaponData);
         break;
       case "food":
+        const rawFoodData = { ...rawData } as FoodAPIData;
         const transformedFoodData = {
           food_image: {
             dataType: "mainImage",
-            content: rawData.food_image_url,
-            altText: JSON.parse(rawData.food_name),
+            content: rawFoodData.food_image_url,
+            altText: JSON.parse(rawFoodData.food_name),
           },
-          name: { dataType: "textSingle", content: rawData.food_name },
+          name: { dataType: "textSingle", content: rawFoodData.food_name },
           rarity_type: {
             dataType: "textDouble",
-            content1: `${rawData.rarity} ⭐`,
-            content2: rawData.food_type,
+            content1: `${rawFoodData.rarity} ⭐`,
+            content2: rawFoodData.food_type,
           },
           special: {
             dataType: "booleanSingle",
-            content: rawData.special_dish,
+            content: rawFoodData.special_dish,
           },
           purchasable: {
             dataType: "booleanSingle",
-            content: rawData.purchasable,
+            content: rawFoodData.purchasable,
           },
           recipe: {
             dataType: "booleanSingle",
-            content: rawData.recipe,
+            content: rawFoodData.recipe,
           },
           event: {
             dataType: "booleanSingle",
-            content: rawData.event,
+            content: rawFoodData.event,
           },
         };
         setRowData(transformedFoodData);
@@ -131,10 +141,7 @@ const GuessTableRow = ({ rowType }: GuessTableRowProps) => {
   };
 
   useEffect(() => {
-    // transformData(dummy);
-    // transformData(dummyQiqi);
-    // transformData(dummyWeapon);
-    transformData(dummyFood);
+    transformData(rowDataProp);
   }, []);
 
   return (

@@ -7,7 +7,7 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
   if (cellData.dataType === "mainImage") {
     cellElement = (
       <td>
-        <img src={cellData.content} alt={cellData.altText} />
+        <img src={cellData.content} alt={cellData.altText + "."} />
       </td>
     );
   } else if (cellData.dataType === "textSingle") {
@@ -27,7 +27,7 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
     cellElement = (
       <td>
         {cellData.content1}
-        <img src={cellData.content2} alt={cellData.altText2} />
+        <img src={cellData.content2} alt={cellData.altText2 + "."} />
       </td>
     );
   } else if (cellData.dataType === "imageDouble") {
@@ -36,10 +36,14 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
         <td>
           {cellData.content1.map((content, index) => {
             return (
-              <img key={content} src={content} alt={cellData.altText1[index]} />
+              <img
+                key={content}
+                src={content}
+                alt={cellData.altText1[index] + "."}
+              />
             );
           })}
-          <img src={cellData.content2} alt={cellData.altText2} />
+          <img src={cellData.content2} alt={cellData.altText2 + "."} />
         </td>
       );
     } else if (
@@ -50,21 +54,21 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
         cellElement = (
           <td>
             None
-            <img src={cellData.content2} alt={cellData.altText2} />
+            <img src={cellData.content2} alt={cellData.altText2 + "."} />
           </td>
         );
       } else if (cellData.content2 === null) {
         cellElement = (
           <td>
-            <img src={cellData.content1} alt={cellData.altText1} />
+            <img src={cellData.content1} alt={cellData.altText1 + "."} />
             None
           </td>
         );
       } else {
         cellElement = (
           <td>
-            <img src={cellData.content1} alt={cellData.altText1} />
-            <img src={cellData.content2} alt={cellData.altText2} />
+            <img src={cellData.content1} alt={cellData.altText1 + "."} />
+            <img src={cellData.content2} alt={cellData.altText2 + "."} />
           </td>
         );
       }
