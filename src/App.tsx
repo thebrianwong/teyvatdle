@@ -2,6 +2,7 @@ import dummy from "./placeholder.json";
 import dummyQiqi from "./nonTravPlaceholder.json";
 import dummyWeapon from "./weaponPlaceholder.json";
 import dummyFood from "./foodPlaceholder.json";
+import dummyTwoStarWeapon from "./twoStarWeapon.json";
 import GuessTableRow from "./components/GuessTableRow/GuessTableRow";
 import CharacterAPIData from "./types/data/characterAPIData.type";
 import WeaponAPIData from "./types/data/weaponAPIData.type";
@@ -23,6 +24,10 @@ function App() {
           <GuessTableRow
             rowType="weapon"
             rowDataProp={dummyWeapon as WeaponAPIData}
+          />
+          <GuessTableRow
+            rowType="weapon"
+            rowDataProp={dummyTwoStarWeapon as WeaponAPIData}
           />
           <GuessTableRow
             rowType="food"

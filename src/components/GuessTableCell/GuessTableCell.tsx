@@ -24,9 +24,10 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
       </td>
     );
   } else if (cellData.dataType === "textImageCombo") {
+    const cellContent1 = cellData.content1 || "None";
     cellElement = (
       <td>
-        {cellData.content1}
+        {cellContent1}
         <img src={cellData.content2} alt={cellData.altText2 + "."} />
       </td>
     );
