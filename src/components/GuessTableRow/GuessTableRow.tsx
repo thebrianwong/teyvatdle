@@ -7,15 +7,14 @@ import FoodAPIData from "../../types/data/foodAPIData.type";
 import CharacterTransformedData from "../../types/data/characterTransformedData.type";
 import WeaponTransformedData from "../../types/data/weaponTransformedData.type";
 import FoodTransformedData from "../../types/data/foodTransformedData.type";
+import TableAPIData from "../../types/data/tableAPIData.type";
 
 const GuessTableRow = ({ rowType, rowDataProp }: GuessTableRowProps) => {
   const [rowData, setRowData] = useState<
     CharacterTransformedData | WeaponTransformedData | FoodTransformedData
   >();
 
-  const transformData = (
-    rawData: CharacterAPIData | WeaponAPIData | FoodAPIData
-  ) => {
+  const transformData = (rawData: TableAPIData) => {
     switch (rowType) {
       case "character":
         const rawCharacterData = { ...rawData } as CharacterAPIData;

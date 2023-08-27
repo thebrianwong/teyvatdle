@@ -1,10 +1,8 @@
-import CharacterAPIData from "../../types/data/characterAPIData.type";
-import FoodAPIData from "../../types/data/foodAPIData.type";
-import WeaponAPIData from "../../types/data/weaponAPIData.type";
+import TableAPIData from "../../types/data/tableAPIData.type";
 
 type GuessTableRowProps = {
   rowType: "character" | "weapon" | "food";
-  rowDataProp: CharacterAPIData | WeaponAPIData | FoodAPIData;
+  rowDataProp: TableAPIData;
 };
 
 export default GuessTableRowProps;
