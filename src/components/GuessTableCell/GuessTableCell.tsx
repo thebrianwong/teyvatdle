@@ -43,7 +43,7 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
               />
             );
           })}
-          <img src={cellData.content2} alt={cellData.altText2 + "."} />
+          <img src={cellData.content2!} alt={cellData.altText2 + "."} />
         </td>
       );
     } else if (
@@ -54,7 +54,7 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
         cellElement = (
           <td>
             None
-            <img src={cellData.content2} alt={cellData.altText2 + "."} />
+            <img src={cellData.content2!} alt={cellData.altText2 + "."} />
           </td>
         );
       } else if (cellData.content2 === null) {
