@@ -8,6 +8,7 @@ import CharacterTransformedData from "../../types/data/characterTransformedData.
 import WeaponTransformedData from "../../types/data/weaponTransformedData.type";
 import FoodTransformedData from "../../types/data/foodTransformedData.type";
 import TableAPIData from "../../types/data/tableAPIData.type";
+import formatBirthday from "../../util/formatBirthday";
 
 const GuessTableRow = ({ rowType, rowDataProp }: GuessTableRowProps) => {
   const [rowData, setRowData] = useState<
@@ -67,7 +68,7 @@ const GuessTableRow = ({ rowType, rowDataProp }: GuessTableRowProps) => {
           },
           birthday: {
             dataType: "textSingle",
-            content: rawCharacterData.birthday,
+            content: formatBirthday(rawCharacterData.birthday),
           },
         };
         setRowData(transformedCharacterData);
