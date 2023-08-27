@@ -1,0 +1,2020 @@
+[
+  {
+    "character_id": 1,
+    "character_name": "Amber",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Pyro",
+    "weapon_type": "Bow",
+    "ascension_stat": "ATK",
+    "birthday": "2020-08-10T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690005044/teyvatdle/character/mondstadt/amber/amber.png",
+    "local_specialty": "Small Lamp Grass",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400441/teyvatdle/local_specialty/mondstadt/small_lamp_grass.png",
+    "enhancement_material": "Hilichurl Shooter Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689559319/teyvatdle/enemy_drop/common/hilichurl_shooter_materials.png",
+    "ascension_boss_material": "Everflame Seed",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545910/teyvatdle/boss_drop/normal/everflame_seed.png",
+    "talent_boss_material": "Dvalin's Sigh",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547353/teyvatdle/boss_drop/weekly/dvalins_sigh.png",
+    "talent_book": [
+      "Freedom"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569452/teyvatdle/talent_book/freedom.png"
+    ]
+  },
+  {
+    "character_id": 2,
+    "character_name": "Barbara",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Hydro",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "HP",
+    "birthday": "2020-07-05T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690005122/teyvatdle/character/mondstadt/barbara/barbara.png",
+    "local_specialty": "Philanemo Mushroom",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400390/teyvatdle/local_specialty/mondstadt/philanemo_mushroom.png",
+    "enhancement_material": "Samachurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558589/teyvatdle/enemy_drop/common/samachurl_materials.png",
+    "ascension_boss_material": "Cleansing Heart",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545952/teyvatdle/boss_drop/normal/cleansing_heart.png",
+    "talent_boss_material": "Ring of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547450/teyvatdle/boss_drop/weekly/ring_of_boreas.png",
+    "talent_book": [
+      "Freedom"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569452/teyvatdle/talent_book/freedom.png"
+    ]
+  },
+  {
+    "character_id": 3,
+    "character_name": "Beidou",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 4,
+    "region": "Liyue",
+    "element": "Electro",
+    "weapon_type": "Claymore",
+    "ascension_stat": "Electro DMG Bonus",
+    "birthday": "2020-02-14T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069545/teyvatdle/character/liyue/beidou/beidou.png",
+    "local_specialty": "Noctilucous Jade",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543361/teyvatdle/local_specialty/liyue/noctilucous_jade.png",
+    "enhancement_material": "Treasure Hoarder Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566426/teyvatdle/enemy_drop/common/treasure_hoarder_materials.png",
+    "ascension_boss_material": "Lightning Prism",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545722/teyvatdle/boss_drop/normal/lightning_prism.png",
+    "talent_boss_material": "Dvalin's Sigh",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547353/teyvatdle/boss_drop/weekly/dvalins_sigh.png",
+    "talent_book": [
+      "Gold"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569922/teyvatdle/talent_book/gold.png"
+    ]
+  },
+  {
+    "character_id": 4,
+    "character_name": "Bennett",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Pyro",
+    "weapon_type": "Sword",
+    "ascension_stat": "Energy Recharge",
+    "birthday": "2020-02-29T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690005165/teyvatdle/character/mondstadt/bennett/bennett.png",
+    "local_specialty": "Windwheel Aster",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400529/teyvatdle/local_specialty/mondstadt/windwheel_aster.png",
+    "enhancement_material": "Treasure Hoarder Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566426/teyvatdle/enemy_drop/common/treasure_hoarder_materials.png",
+    "ascension_boss_material": "Everflame Seed",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545910/teyvatdle/boss_drop/normal/everflame_seed.png",
+    "talent_boss_material": "Dvalin's Plume",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547241/teyvatdle/boss_drop/weekly/dvalins_plume.png",
+    "talent_book": [
+      "Resistance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569562/teyvatdle/talent_book/resistance.png"
+    ]
+  },
+  {
+    "character_id": 5,
+    "character_name": "Chongyun",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Liyue",
+    "element": "Cryo",
+    "weapon_type": "Claymore",
+    "ascension_stat": "ATK",
+    "birthday": "2020-09-07T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069583/teyvatdle/character/liyue/chongyun/chongyun.png",
+    "local_specialty": "Cor Lapis",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543261/teyvatdle/local_specialty/liyue/cor_lapis.png",
+    "enhancement_material": "Hilichurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689556860/teyvatdle/enemy_drop/common/hilichurl_materials.png",
+    "ascension_boss_material": "Hoarfrost Core",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545854/teyvatdle/boss_drop/normal/hoarfrost_core.png",
+    "talent_boss_material": "Dvalin's Sigh",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547353/teyvatdle/boss_drop/weekly/dvalins_sigh.png",
+    "talent_book": [
+      "Diligence"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569819/teyvatdle/talent_book/diligence.png"
+    ]
+  },
+  {
+    "character_id": 6,
+    "character_name": "Diluc",
+    "gender": "Male",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Mondstadt",
+    "element": "Pyro",
+    "weapon_type": "Claymore",
+    "ascension_stat": "CRIT Rate",
+    "birthday": "2020-04-30T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690005203/teyvatdle/character/mondstadt/diluc/diluc.png",
+    "local_specialty": "Small Lamp Grass",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400441/teyvatdle/local_specialty/mondstadt/small_lamp_grass.png",
+    "enhancement_material": "Fatui Skirmisher Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566287/teyvatdle/enemy_drop/common/fatui_skirmisher_materials.png",
+    "ascension_boss_material": "Everflame Seed",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545910/teyvatdle/boss_drop/normal/everflame_seed.png",
+    "talent_boss_material": "Dvalin's Plume",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547241/teyvatdle/boss_drop/weekly/dvalins_plume.png",
+    "talent_book": [
+      "Resistance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569562/teyvatdle/talent_book/resistance.png"
+    ]
+  },
+  {
+    "character_id": 7,
+    "character_name": "Fischl",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Electro",
+    "weapon_type": "Bow",
+    "ascension_stat": "ATK",
+    "birthday": "2020-05-27T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690005324/teyvatdle/character/mondstadt/fischl/fischl.png",
+    "local_specialty": "Small Lamp Grass",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400441/teyvatdle/local_specialty/mondstadt/small_lamp_grass.png",
+    "enhancement_material": "Hilichurl Shooter Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689559319/teyvatdle/enemy_drop/common/hilichurl_shooter_materials.png",
+    "ascension_boss_material": "Lightning Prism",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545722/teyvatdle/boss_drop/normal/lightning_prism.png",
+    "talent_boss_material": "Spirit Locket of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547488/teyvatdle/boss_drop/weekly/spirit_locket_of_boreas.png",
+    "talent_book": [
+      "Ballad"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569632/teyvatdle/talent_book/ballad.png"
+    ]
+  },
+  {
+    "character_id": 8,
+    "character_name": "Jean",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Mondstadt",
+    "element": "Anemo",
+    "weapon_type": "Sword",
+    "ascension_stat": "Healing Bonus",
+    "birthday": "2020-03-14T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690005369/teyvatdle/character/mondstadt/jean/jean.png",
+    "local_specialty": "Dandelion Seed",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400252/teyvatdle/local_specialty/mondstadt/dandelion_seed.png",
+    "enhancement_material": "Hilichurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689556860/teyvatdle/enemy_drop/common/hilichurl_materials.png",
+    "ascension_boss_material": "Hurricane Seed",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545662/teyvatdle/boss_drop/normal/hurricane_seed.png",
+    "talent_boss_material": "Dvalin's Plume",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547241/teyvatdle/boss_drop/weekly/dvalins_plume.png",
+    "talent_book": [
+      "Resistance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569562/teyvatdle/talent_book/resistance.png"
+    ]
+  },
+  {
+    "character_id": 9,
+    "character_name": "Kaeya",
+    "gender": "Male",
+    "height": "Tall",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Cryo",
+    "weapon_type": "Sword",
+    "ascension_stat": "Energy Recharge",
+    "birthday": "2020-11-30T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690005404/teyvatdle/character/mondstadt/kaeya/kaeya.png",
+    "local_specialty": "Calla Lily",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400012/teyvatdle/local_specialty/mondstadt/calla_lily.png",
+    "enhancement_material": "Treasure Hoarder Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566426/teyvatdle/enemy_drop/common/treasure_hoarder_materials.png",
+    "ascension_boss_material": "Hoarfrost Core",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545854/teyvatdle/boss_drop/normal/hoarfrost_core.png",
+    "talent_boss_material": "Spirit Locket of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547488/teyvatdle/boss_drop/weekly/spirit_locket_of_boreas.png",
+    "talent_book": [
+      "Ballad"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569632/teyvatdle/talent_book/ballad.png"
+    ]
+  },
+  {
+    "character_id": 10,
+    "character_name": "Keqing",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Liyue",
+    "element": "Electro",
+    "weapon_type": "Sword",
+    "ascension_stat": "CRIT DMG",
+    "birthday": "2020-11-20T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069716/teyvatdle/character/liyue/keqing/keqing.png",
+    "local_specialty": "Cor Lapis",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543261/teyvatdle/local_specialty/liyue/cor_lapis.png",
+    "enhancement_material": "Whopperflower Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566601/teyvatdle/enemy_drop/common/whopperflower_materials.png",
+    "ascension_boss_material": "Lightning Prism",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545722/teyvatdle/boss_drop/normal/lightning_prism.png",
+    "talent_boss_material": "Ring of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547450/teyvatdle/boss_drop/weekly/ring_of_boreas.png",
+    "talent_book": [
+      "Prosperity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569716/teyvatdle/talent_book/prosperity.png"
+    ]
+  },
+  {
+    "character_id": 11,
+    "character_name": "Lisa",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Electro",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "Elemental Mastery",
+    "birthday": "2020-06-09T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690006005/teyvatdle/character/mondstadt/lisa/lisa.png",
+    "local_specialty": "Valberry",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400506/teyvatdle/local_specialty/mondstadt/valberry.png",
+    "enhancement_material": "Slime Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558171/teyvatdle/enemy_drop/common/slime_materials.png",
+    "ascension_boss_material": "Lightning Prism",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545722/teyvatdle/boss_drop/normal/lightning_prism.png",
+    "talent_boss_material": "Dvalin's Claw",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547297/teyvatdle/boss_drop/weekly/dvalins_claw.png",
+    "talent_book": [
+      "Ballad"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569632/teyvatdle/talent_book/ballad.png"
+    ]
+  },
+  {
+    "character_id": 12,
+    "character_name": "Mona",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Mondstadt",
+    "element": "Hydro",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "Energy Recharge",
+    "birthday": "2020-08-31T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690006103/teyvatdle/character/mondstadt/mona/mona.png",
+    "local_specialty": "Philanemo Mushroom",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400390/teyvatdle/local_specialty/mondstadt/philanemo_mushroom.png",
+    "enhancement_material": "Whopperflower Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566601/teyvatdle/enemy_drop/common/whopperflower_materials.png",
+    "ascension_boss_material": "Cleansing Heart",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545952/teyvatdle/boss_drop/normal/cleansing_heart.png",
+    "talent_boss_material": "Ring of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547450/teyvatdle/boss_drop/weekly/ring_of_boreas.png",
+    "talent_book": [
+      "Resistance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569562/teyvatdle/talent_book/resistance.png"
+    ]
+  },
+  {
+    "character_id": 13,
+    "character_name": "Ningguang",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 4,
+    "region": "Liyue",
+    "element": "Geo",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "Geo DMG Bonus",
+    "birthday": "2020-08-26T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069752/teyvatdle/character/liyue/ningguang/ningguang.png",
+    "local_specialty": "Glaze Lily",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543305/teyvatdle/local_specialty/liyue/glaze_lily.png",
+    "enhancement_material": "Fatui Skirmisher Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566287/teyvatdle/enemy_drop/common/fatui_skirmisher_materials.png",
+    "ascension_boss_material": "Basalt Pillar",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545786/teyvatdle/boss_drop/normal/basalt_pillar.png",
+    "talent_boss_material": "Spirit Locket of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547488/teyvatdle/boss_drop/weekly/spirit_locket_of_boreas.png",
+    "talent_book": [
+      "Prosperity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569716/teyvatdle/talent_book/prosperity.png"
+    ]
+  },
+  {
+    "character_id": 14,
+    "character_name": "Noelle",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Geo",
+    "weapon_type": "Claymore",
+    "ascension_stat": "DEF",
+    "birthday": "2020-03-21T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690006140/teyvatdle/character/mondstadt/noelle/noelle.png",
+    "local_specialty": "Valberry",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400506/teyvatdle/local_specialty/mondstadt/valberry.png",
+    "enhancement_material": "Hilichurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689556860/teyvatdle/enemy_drop/common/hilichurl_materials.png",
+    "ascension_boss_material": "Basalt Pillar",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545786/teyvatdle/boss_drop/normal/basalt_pillar.png",
+    "talent_boss_material": "Dvalin's Claw",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547297/teyvatdle/boss_drop/weekly/dvalins_claw.png",
+    "talent_book": [
+      "Resistance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569562/teyvatdle/talent_book/resistance.png"
+    ]
+  },
+  {
+    "character_id": 15,
+    "character_name": "Qiqi",
+    "gender": "Female",
+    "height": "Short",
+    "rarity": 5,
+    "region": "Liyue",
+    "element": "Cryo",
+    "weapon_type": "Sword",
+    "ascension_stat": "Healing Bonus",
+    "birthday": "2020-03-03T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069797/teyvatdle/character/liyue/qiqi/qiqi.png",
+    "local_specialty": "Violetgrass",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543458/teyvatdle/local_specialty/liyue/violetgrass.png",
+    "enhancement_material": "Samachurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558589/teyvatdle/enemy_drop/common/samachurl_materials.png",
+    "ascension_boss_material": "Hoarfrost Core",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545854/teyvatdle/boss_drop/normal/hoarfrost_core.png",
+    "talent_boss_material": "Tail of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547399/teyvatdle/boss_drop/weekly/tail_of_boreas.png",
+    "talent_book": [
+      "Prosperity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569716/teyvatdle/talent_book/prosperity.png"
+    ]
+  },
+  {
+    "character_id": 16,
+    "character_name": "Razor",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Electro",
+    "weapon_type": "Claymore",
+    "ascension_stat": "Physical DMG Bonus",
+    "birthday": "2020-09-09T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690006182/teyvatdle/character/mondstadt/razor/razor.png",
+    "local_specialty": "Wolfhook",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400559/teyvatdle/local_specialty/mondstadt/wolfhook.png",
+    "enhancement_material": "Hilichurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689556860/teyvatdle/enemy_drop/common/hilichurl_materials.png",
+    "ascension_boss_material": "Lightning Prism",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545722/teyvatdle/boss_drop/normal/lightning_prism.png",
+    "talent_boss_material": "Dvalin's Claw",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547297/teyvatdle/boss_drop/weekly/dvalins_claw.png",
+    "talent_book": [
+      "Resistance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569562/teyvatdle/talent_book/resistance.png"
+    ]
+  },
+  {
+    "character_id": 17,
+    "character_name": "Sucrose",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Anemo",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "Anemo DMG Bonus",
+    "birthday": "2020-11-26T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690006277/teyvatdle/character/mondstadt/sucrose/sucrose.png",
+    "local_specialty": "Windwheel Aster",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400529/teyvatdle/local_specialty/mondstadt/windwheel_aster.png",
+    "enhancement_material": "Whopperflower Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566601/teyvatdle/enemy_drop/common/whopperflower_materials.png",
+    "ascension_boss_material": "Hurricane Seed",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545662/teyvatdle/boss_drop/normal/hurricane_seed.png",
+    "talent_boss_material": "Spirit Locket of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547488/teyvatdle/boss_drop/weekly/spirit_locket_of_boreas.png",
+    "talent_book": [
+      "Freedom"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569452/teyvatdle/talent_book/freedom.png"
+    ]
+  },
+  {
+    "character_id": 19,
+    "character_name": "Traveler (Anemo)",
+    "gender": "Other",
+    "height": "Medium",
+    "rarity": 5,
+    "region": null,
+    "element": "Anemo",
+    "weapon_type": "Sword",
+    "ascension_stat": "ATK",
+    "birthday": null,
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690072024/teyvatdle/character/other/traveler_anemo/traveler_anemo.png",
+    "local_specialty": "Windwheel Aster",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400529/teyvatdle/local_specialty/mondstadt/windwheel_aster.png",
+    "enhancement_material": "Samachurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558589/teyvatdle/enemy_drop/common/samachurl_materials.png",
+    "ascension_boss_material": null,
+    "ascension_boss_material_image_url": null,
+    "talent_boss_material": "Dvalin's Sigh",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547353/teyvatdle/boss_drop/weekly/dvalins_sigh.png",
+    "talent_book": [
+      "Freedom",
+      "Ballad",
+      "Resistance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569452/teyvatdle/talent_book/freedom.png",
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569632/teyvatdle/talent_book/ballad.png",
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569562/teyvatdle/talent_book/resistance.png"
+    ]
+  },
+  {
+    "character_id": 20,
+    "character_name": "Traveler (Geo)",
+    "gender": "Other",
+    "height": "Medium",
+    "rarity": 5,
+    "region": null,
+    "element": "Geo",
+    "weapon_type": "Sword",
+    "ascension_stat": "ATK",
+    "birthday": null,
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690072095/teyvatdle/character/other/traveler_geo/traveler_geo.png",
+    "local_specialty": "Windwheel Aster",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400529/teyvatdle/local_specialty/mondstadt/windwheel_aster.png",
+    "enhancement_material": "Hilichurl Shooter Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689559319/teyvatdle/enemy_drop/common/hilichurl_shooter_materials.png",
+    "ascension_boss_material": null,
+    "ascension_boss_material_image_url": null,
+    "talent_boss_material": "Tail of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547399/teyvatdle/boss_drop/weekly/tail_of_boreas.png",
+    "talent_book": [
+      "Diligence",
+      "Gold",
+      "Prosperity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569819/teyvatdle/talent_book/diligence.png",
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569922/teyvatdle/talent_book/gold.png",
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569716/teyvatdle/talent_book/prosperity.png"
+    ]
+  },
+  {
+    "character_id": 21,
+    "character_name": "Traveler (Electro)",
+    "gender": "Other",
+    "height": "Medium",
+    "rarity": 5,
+    "region": null,
+    "element": "Electro",
+    "weapon_type": "Sword",
+    "ascension_stat": "ATK",
+    "birthday": null,
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690072218/teyvatdle/character/other/traveler_electro/traveler_electro.png",
+    "local_specialty": "Windwheel Aster",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400529/teyvatdle/local_specialty/mondstadt/windwheel_aster.png",
+    "enhancement_material": "Nobushi Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566704/teyvatdle/enemy_drop/common/nobushi_materials.png",
+    "ascension_boss_material": null,
+    "ascension_boss_material_image_url": null,
+    "talent_boss_material": "Dragon Lord's Crown",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547688/teyvatdle/boss_drop/weekly/dragon_lords_crown.png",
+    "talent_book": [
+      "Elegance",
+      "Transience",
+      "Light"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570114/teyvatdle/talent_book/elegance.png",
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570039/teyvatdle/talent_book/transience.png",
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570213/teyvatdle/talent_book/light.png"
+    ]
+  },
+  {
+    "character_id": 22,
+    "character_name": "Traveler (Dendro)",
+    "gender": "Other",
+    "height": "Medium",
+    "rarity": 5,
+    "region": null,
+    "element": "Dendro",
+    "weapon_type": "Sword",
+    "ascension_stat": "ATK",
+    "birthday": null,
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690072288/teyvatdle/character/other/traveler_dendro/traveler_dendro.png",
+    "local_specialty": "Windwheel Aster",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400529/teyvatdle/local_specialty/mondstadt/windwheel_aster.png",
+    "enhancement_material": "Fungus Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566972/teyvatdle/enemy_drop/common/fungus_materials.png",
+    "ascension_boss_material": null,
+    "ascension_boss_material_image_url": null,
+    "talent_boss_material": "Mudra of the Malefic General",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547924/teyvatdle/boss_drop/weekly/mudra_of_the_malefic_general.png",
+    "talent_book": [
+      "Admonition",
+      "Praxis",
+      "Ingenuity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570317/teyvatdle/talent_book/admonition.png",
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570576/teyvatdle/talent_book/praxis.png",
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570445/teyvatdle/talent_book/ingenuity.png"
+    ]
+  },
+  {
+    "character_id": 23,
+    "character_name": "Venti",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Mondstadt",
+    "element": "Anemo",
+    "weapon_type": "Bow",
+    "ascension_stat": "Energy Recharge",
+    "birthday": "2020-06-16T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690006317/teyvatdle/character/mondstadt/venti/venti.png",
+    "local_specialty": "Cecilia",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400136/teyvatdle/local_specialty/mondstadt/cecilia.png",
+    "enhancement_material": "Slime Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558171/teyvatdle/enemy_drop/common/slime_materials.png",
+    "ascension_boss_material": "Hurricane Seed",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545662/teyvatdle/boss_drop/normal/hurricane_seed.png",
+    "talent_boss_material": "Tail of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547399/teyvatdle/boss_drop/weekly/tail_of_boreas.png",
+    "talent_book": [
+      "Ballad"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569632/teyvatdle/talent_book/ballad.png"
+    ]
+  },
+  {
+    "character_id": 24,
+    "character_name": "Xiangling",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Liyue",
+    "element": "Pyro",
+    "weapon_type": "Polearm",
+    "ascension_stat": "Elemental Mastery",
+    "birthday": "2020-11-02T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069890/teyvatdle/character/liyue/xiangling/xiangling.png",
+    "local_specialty": "Jueyun Chili",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543329/teyvatdle/local_specialty/liyue/jueyun_chili.png",
+    "enhancement_material": "Slime Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558171/teyvatdle/enemy_drop/common/slime_materials.png",
+    "ascension_boss_material": "Everflame Seed",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545910/teyvatdle/boss_drop/normal/everflame_seed.png",
+    "talent_boss_material": "Dvalin's Claw",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547297/teyvatdle/boss_drop/weekly/dvalins_claw.png",
+    "talent_book": [
+      "Diligence"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569819/teyvatdle/talent_book/diligence.png"
+    ]
+  },
+  {
+    "character_id": 25,
+    "character_name": "Xingqiu",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Liyue",
+    "element": "Hydro",
+    "weapon_type": "Sword",
+    "ascension_stat": "ATK",
+    "birthday": "2020-10-09T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069966/teyvatdle/character/liyue/xingqiu/xingqiu.png",
+    "local_specialty": "Silk Flower",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543418/teyvatdle/local_specialty/liyue/silk_flower.png",
+    "enhancement_material": "Hilichurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689556860/teyvatdle/enemy_drop/common/hilichurl_materials.png",
+    "ascension_boss_material": "Cleansing Heart",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545952/teyvatdle/boss_drop/normal/cleansing_heart.png",
+    "talent_boss_material": "Tail of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547399/teyvatdle/boss_drop/weekly/tail_of_boreas.png",
+    "talent_book": [
+      "Gold"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569922/teyvatdle/talent_book/gold.png"
+    ]
+  },
+  {
+    "character_id": 26,
+    "character_name": "Klee",
+    "gender": "Female",
+    "height": "Short",
+    "rarity": 5,
+    "region": "Mondstadt",
+    "element": "Pyro",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "Pyro DMG Bonus",
+    "birthday": "2020-07-27T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690005953/teyvatdle/character/mondstadt/klee/klee.png",
+    "local_specialty": "Philanemo Mushroom",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400390/teyvatdle/local_specialty/mondstadt/philanemo_mushroom.png",
+    "enhancement_material": "Samachurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558589/teyvatdle/enemy_drop/common/samachurl_materials.png",
+    "ascension_boss_material": "Everflame Seed",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545910/teyvatdle/boss_drop/normal/everflame_seed.png",
+    "talent_boss_material": "Ring of Boreas",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547450/teyvatdle/boss_drop/weekly/ring_of_boreas.png",
+    "talent_book": [
+      "Freedom"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569452/teyvatdle/talent_book/freedom.png"
+    ]
+  },
+  {
+    "character_id": 27,
+    "character_name": "Diona",
+    "gender": "Female",
+    "height": "Short",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Cryo",
+    "weapon_type": "Bow",
+    "ascension_stat": "Cryo DMG Bonus",
+    "birthday": "2020-01-18T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690005241/teyvatdle/character/mondstadt/diona/diona.png",
+    "local_specialty": "Calla Lily",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400012/teyvatdle/local_specialty/mondstadt/calla_lily.png",
+    "enhancement_material": "Hilichurl Shooter Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689559319/teyvatdle/enemy_drop/common/hilichurl_shooter_materials.png",
+    "ascension_boss_material": "Hoarfrost Core",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545854/teyvatdle/boss_drop/normal/hoarfrost_core.png",
+    "talent_boss_material": "Shard of a Foul Legacy",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547601/teyvatdle/boss_drop/weekly/shard_of_a_foul_legacy.png",
+    "talent_book": [
+      "Freedom"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569452/teyvatdle/talent_book/freedom.png"
+    ]
+  },
+  {
+    "character_id": 28,
+    "character_name": "Childe",
+    "gender": "Male",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Snezhnaya",
+    "element": "Hydro",
+    "weapon_type": "Bow",
+    "ascension_stat": "Hydro DMG Bonus",
+    "birthday": "2020-07-20T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071556/teyvatdle/character/snezhnaya/childe/childe.png",
+    "local_specialty": "Starconch",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543441/teyvatdle/local_specialty/liyue/starconch.png",
+    "enhancement_material": "Fatui Skirmisher Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566287/teyvatdle/enemy_drop/common/fatui_skirmisher_materials.png",
+    "ascension_boss_material": "Cleansing Heart",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545952/teyvatdle/boss_drop/normal/cleansing_heart.png",
+    "talent_boss_material": "Shard of a Foul Legacy",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547601/teyvatdle/boss_drop/weekly/shard_of_a_foul_legacy.png",
+    "talent_book": [
+      "Freedom"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569452/teyvatdle/talent_book/freedom.png"
+    ]
+  },
+  {
+    "character_id": 29,
+    "character_name": "Xinyan",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Liyue",
+    "element": "Pyro",
+    "weapon_type": "Claymore",
+    "ascension_stat": "ATK",
+    "birthday": "2020-10-16T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070005/teyvatdle/character/liyue/xinyan/xinyan.png",
+    "local_specialty": "Violetgrass",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543458/teyvatdle/local_specialty/liyue/violetgrass.png",
+    "enhancement_material": "Treasure Hoarder Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566426/teyvatdle/enemy_drop/common/treasure_hoarder_materials.png",
+    "ascension_boss_material": "Everflame Seed",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545910/teyvatdle/boss_drop/normal/everflame_seed.png",
+    "talent_boss_material": "Tusk of Monoceros Caeli",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547559/teyvatdle/boss_drop/weekly/tusk_of_monoceros_caeli.png",
+    "talent_book": [
+      "Gold"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569922/teyvatdle/talent_book/gold.png"
+    ]
+  },
+  {
+    "character_id": 30,
+    "character_name": "Zhongli",
+    "gender": "Male",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Liyue",
+    "element": "Geo",
+    "weapon_type": "Polearm",
+    "ascension_stat": "Geo DMG Bonus",
+    "birthday": "2020-12-31T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070223/teyvatdle/character/liyue/zhongli/zhongli.png",
+    "local_specialty": "Cor Lapis",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543261/teyvatdle/local_specialty/liyue/cor_lapis.png",
+    "enhancement_material": "Slime Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558171/teyvatdle/enemy_drop/common/slime_materials.png",
+    "ascension_boss_material": "Basalt Pillar",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545786/teyvatdle/boss_drop/normal/basalt_pillar.png",
+    "talent_boss_material": "Tusk of Monoceros Caeli",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547559/teyvatdle/boss_drop/weekly/tusk_of_monoceros_caeli.png",
+    "talent_book": [
+      "Gold"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569922/teyvatdle/talent_book/gold.png"
+    ]
+  },
+  {
+    "character_id": 31,
+    "character_name": "Albedo",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Mondstadt",
+    "element": "Geo",
+    "weapon_type": "Sword",
+    "ascension_stat": "Geo DMG Bonus",
+    "birthday": "2020-09-13T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690004963/teyvatdle/character/mondstadt/albedo/albedo.png",
+    "local_specialty": "Cecilia",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400136/teyvatdle/local_specialty/mondstadt/cecilia.png",
+    "enhancement_material": "Samachurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558589/teyvatdle/enemy_drop/common/samachurl_materials.png",
+    "ascension_boss_material": "Basalt Pillar",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545786/teyvatdle/boss_drop/normal/basalt_pillar.png",
+    "talent_boss_material": "Tusk of Monoceros Caeli",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547559/teyvatdle/boss_drop/weekly/tusk_of_monoceros_caeli.png",
+    "talent_book": [
+      "Ballad"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569632/teyvatdle/talent_book/ballad.png"
+    ]
+  },
+  {
+    "character_id": 32,
+    "character_name": "Ganyu",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Liyue",
+    "element": "Cryo",
+    "weapon_type": "Bow",
+    "ascension_stat": "CRIT DMG",
+    "birthday": "2020-12-02T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069623/teyvatdle/character/liyue/ganyu/ganyu.png",
+    "local_specialty": "Qingxin",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543396/teyvatdle/local_specialty/liyue/qingxin.png",
+    "enhancement_material": "Whopperflower Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566601/teyvatdle/enemy_drop/common/whopperflower_materials.png",
+    "ascension_boss_material": "Hoarfrost Core",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545854/teyvatdle/boss_drop/normal/hoarfrost_core.png",
+    "talent_boss_material": "Shadow of the Warrior",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547646/teyvatdle/boss_drop/weekly/shadow_of_the_warrior.png",
+    "talent_book": [
+      "Diligence"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569819/teyvatdle/talent_book/diligence.png"
+    ]
+  },
+  {
+    "character_id": 33,
+    "character_name": "Xiao",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Liyue",
+    "element": "Anemo",
+    "weapon_type": "Polearm",
+    "ascension_stat": "CRIT Rate",
+    "birthday": "2020-04-17T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069928/teyvatdle/character/liyue/xiao/xiao.png",
+    "local_specialty": "Qingxin",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543396/teyvatdle/local_specialty/liyue/qingxin.png",
+    "enhancement_material": "Slime Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558171/teyvatdle/enemy_drop/common/slime_materials.png",
+    "ascension_boss_material": "Juvenile Jade",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546005/teyvatdle/boss_drop/normal/juvenile_jade.png",
+    "talent_boss_material": "Shadow of the Warrior",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547646/teyvatdle/boss_drop/weekly/shadow_of_the_warrior.png",
+    "talent_book": [
+      "Prosperity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569716/teyvatdle/talent_book/prosperity.png"
+    ]
+  },
+  {
+    "character_id": 34,
+    "character_name": "Hu Tao",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Liyue",
+    "element": "Pyro",
+    "weapon_type": "Polearm",
+    "ascension_stat": "CRIT DMG",
+    "birthday": "2020-07-15T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069674/teyvatdle/character/liyue/hu_tao/hu_tao.png",
+    "local_specialty": "Silk Flower",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543418/teyvatdle/local_specialty/liyue/silk_flower.png",
+    "enhancement_material": "Whopperflower Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566601/teyvatdle/enemy_drop/common/whopperflower_materials.png",
+    "ascension_boss_material": "Juvenile Jade",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546005/teyvatdle/boss_drop/normal/juvenile_jade.png",
+    "talent_boss_material": "Shard of a Foul Legacy",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547601/teyvatdle/boss_drop/weekly/shard_of_a_foul_legacy.png",
+    "talent_book": [
+      "Diligence"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569819/teyvatdle/talent_book/diligence.png"
+    ]
+  },
+  {
+    "character_id": 35,
+    "character_name": "Rosaria",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Cryo",
+    "weapon_type": "Polearm",
+    "ascension_stat": "ATK",
+    "birthday": "2020-01-24T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690006230/teyvatdle/character/mondstadt/rosaria/rosaria.png",
+    "local_specialty": "Valberry",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400506/teyvatdle/local_specialty/mondstadt/valberry.png",
+    "enhancement_material": "Fatui Skirmisher Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566287/teyvatdle/enemy_drop/common/fatui_skirmisher_materials.png",
+    "ascension_boss_material": "Hoarfrost Core",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689545854/teyvatdle/boss_drop/normal/hoarfrost_core.png",
+    "talent_boss_material": "Shadow of the Warrior",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547646/teyvatdle/boss_drop/weekly/shadow_of_the_warrior.png",
+    "talent_book": [
+      "Ballad"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569632/teyvatdle/talent_book/ballad.png"
+    ]
+  },
+  {
+    "character_id": 36,
+    "character_name": "Yanfei",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Liyue",
+    "element": "Pyro",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "Pyro DMG Bonus",
+    "birthday": "2020-07-28T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070055/teyvatdle/character/liyue/yanfei/yanfei.png",
+    "local_specialty": "Noctilucous Jade",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543361/teyvatdle/local_specialty/liyue/noctilucous_jade.png",
+    "enhancement_material": "Treasure Hoarder Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566426/teyvatdle/enemy_drop/common/treasure_hoarder_materials.png",
+    "ascension_boss_material": "Juvenile Jade",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546005/teyvatdle/boss_drop/normal/juvenile_jade.png",
+    "talent_boss_material": "Bloodjade Branch",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547729/teyvatdle/boss_drop/weekly/bloodjade_branch.png",
+    "talent_book": [
+      "Gold"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569922/teyvatdle/talent_book/gold.png"
+    ]
+  },
+  {
+    "character_id": 37,
+    "character_name": "Eula",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Mondstadt",
+    "element": "Cryo",
+    "weapon_type": "Claymore",
+    "ascension_stat": "CRIT DMG",
+    "birthday": "2020-10-25T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690005282/teyvatdle/character/mondstadt/eula/eula.png",
+    "local_specialty": "Dandelion Seed",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400252/teyvatdle/local_specialty/mondstadt/dandelion_seed.png",
+    "enhancement_material": "Hilichurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689556860/teyvatdle/enemy_drop/common/hilichurl_materials.png",
+    "ascension_boss_material": "Crystalline Bloom",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546054/teyvatdle/boss_drop/normal/crystalline_bloom.png",
+    "talent_boss_material": "Dragon Lord's Crown",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547688/teyvatdle/boss_drop/weekly/dragon_lords_crown.png",
+    "talent_book": [
+      "Resistance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569562/teyvatdle/talent_book/resistance.png"
+    ]
+  },
+  {
+    "character_id": 38,
+    "character_name": "Kaedehara Kazuha",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Inazuma",
+    "element": "Anemo",
+    "weapon_type": "Sword",
+    "ascension_stat": "Elemental Mastery",
+    "birthday": "2020-10-29T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070379/teyvatdle/character/inazuma/kaedehara_kazuha/kaedehara_kazuha.png",
+    "local_specialty": "Sea Ganoderma",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543799/teyvatdle/local_specialty/inazuma/sea_ganoderma.png",
+    "enhancement_material": "Treasure Hoarder Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566426/teyvatdle/enemy_drop/common/treasure_hoarder_materials.png",
+    "ascension_boss_material": "Marionette Core",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546100/teyvatdle/boss_drop/normal/marionette_core.png",
+    "talent_boss_material": "Gilded Scale",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547764/teyvatdle/boss_drop/weekly/gilded_scale.png",
+    "talent_book": [
+      "Diligence"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569819/teyvatdle/talent_book/diligence.png"
+    ]
+  },
+  {
+    "character_id": 39,
+    "character_name": "Kamisato Ayaka",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Inazuma",
+    "element": "Cryo",
+    "weapon_type": "Sword",
+    "ascension_stat": "CRIT DMG",
+    "birthday": "2020-09-28T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070419/teyvatdle/character/inazuma/kamisato_ayaka/kamisato_ayaka.png",
+    "local_specialty": "Sakura Bloom",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543758/teyvatdle/local_specialty/inazuma/sakura_bloom.png",
+    "enhancement_material": "Nobushi Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566704/teyvatdle/enemy_drop/common/nobushi_materials.png",
+    "ascension_boss_material": "Perpetual Heart",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546153/teyvatdle/boss_drop/normal/perpetual_heart.png",
+    "talent_boss_material": "Bloodjade Branch",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547729/teyvatdle/boss_drop/weekly/bloodjade_branch.png",
+    "talent_book": [
+      "Elegance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570114/teyvatdle/talent_book/elegance.png"
+    ]
+  },
+  {
+    "character_id": 40,
+    "character_name": "Sayu",
+    "gender": "Female",
+    "height": "Short",
+    "rarity": 4,
+    "region": "Inazuma",
+    "element": "Anemo",
+    "weapon_type": "Claymore",
+    "ascension_stat": "Elemental Mastery",
+    "birthday": "2020-10-19T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070731/teyvatdle/character/inazuma/sayu/sayu.png",
+    "local_specialty": "Crystal Marrow",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543522/teyvatdle/local_specialty/inazuma/crystal_marrow.png",
+    "enhancement_material": "Whopperflower Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566601/teyvatdle/enemy_drop/common/whopperflower_materials.png",
+    "ascension_boss_material": "Marionette Core",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546100/teyvatdle/boss_drop/normal/marionette_core.png",
+    "talent_boss_material": "Gilded Scale",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547764/teyvatdle/boss_drop/weekly/gilded_scale.png",
+    "talent_book": [
+      "Light"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570213/teyvatdle/talent_book/light.png"
+    ]
+  },
+  {
+    "character_id": 41,
+    "character_name": "Yoimiya",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Inazuma",
+    "element": "Pyro",
+    "weapon_type": "Bow",
+    "ascension_stat": "CRIT Rate",
+    "birthday": "2020-06-21T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070893/teyvatdle/character/inazuma/yoimiya/yoimiya.png",
+    "local_specialty": "Naku Weed",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543689/teyvatdle/local_specialty/inazuma/naku_weed.png",
+    "enhancement_material": "Samachurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558589/teyvatdle/enemy_drop/common/samachurl_materials.png",
+    "ascension_boss_material": "Smoldering Pearl",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546200/teyvatdle/boss_drop/normal/smoldering_pearl.png",
+    "talent_boss_material": "Dragon Lord's Crown",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547688/teyvatdle/boss_drop/weekly/dragon_lords_crown.png",
+    "talent_book": [
+      "Transience"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570039/teyvatdle/talent_book/transience.png"
+    ]
+  },
+  {
+    "character_id": 42,
+    "character_name": "Aloy",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": null,
+    "element": "Cryo",
+    "weapon_type": "Bow",
+    "ascension_stat": "Cryo DMG Bonus",
+    "birthday": "2020-04-04T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071630/teyvatdle/character/other/aloy/aloy.png",
+    "local_specialty": "Crystal Marrow",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543522/teyvatdle/local_specialty/inazuma/crystal_marrow.png",
+    "enhancement_material": "Specter Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566820/teyvatdle/enemy_drop/common/specter_materials.png",
+    "ascension_boss_material": "Crystalline Bloom",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546054/teyvatdle/boss_drop/normal/crystalline_bloom.png",
+    "talent_boss_material": "Molten Moment",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547806/teyvatdle/boss_drop/weekly/molten_moment.png",
+    "talent_book": [
+      "Freedom"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569452/teyvatdle/talent_book/freedom.png"
+    ]
+  },
+  {
+    "character_id": 43,
+    "character_name": "Kujou Sara",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 4,
+    "region": "Inazuma",
+    "element": "Electro",
+    "weapon_type": "Bow",
+    "ascension_stat": "ATK",
+    "birthday": "2020-07-14T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070554/teyvatdle/character/inazuma/kujou_sara/kujou_sara.png",
+    "local_specialty": "Dendrobium",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543643/teyvatdle/local_specialty/inazuma/dendrobium.png",
+    "enhancement_material": "Hilichurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689556860/teyvatdle/enemy_drop/common/hilichurl_materials.png",
+    "ascension_boss_material": "Storm Beads",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546755/teyvatdle/boss_drop/normal/storm_beads.png",
+    "talent_boss_material": "Ashen Heart",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547885/teyvatdle/boss_drop/weekly/ashen_heart.png",
+    "talent_book": [
+      "Elegance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570114/teyvatdle/talent_book/elegance.png"
+    ]
+  },
+  {
+    "character_id": 44,
+    "character_name": "Raiden Shogun",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Inazuma",
+    "element": "Electro",
+    "weapon_type": "Polearm",
+    "ascension_stat": "Energy Recharge",
+    "birthday": "2020-06-26T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070635/teyvatdle/character/inazuma/raiden_shogun/raiden_shogun.png",
+    "local_specialty": "Amakumo Fruit",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543503/teyvatdle/local_specialty/inazuma/amakumo_fruit.png",
+    "enhancement_material": "Nobushi Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566704/teyvatdle/enemy_drop/common/nobushi_materials.png",
+    "ascension_boss_material": "Storm Beads",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546755/teyvatdle/boss_drop/normal/storm_beads.png",
+    "talent_boss_material": "Molten Moment",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547806/teyvatdle/boss_drop/weekly/molten_moment.png",
+    "talent_book": [
+      "Light"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570213/teyvatdle/talent_book/light.png"
+    ]
+  },
+  {
+    "character_id": 45,
+    "character_name": "Sangonomiya Kokomi",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Inazuma",
+    "element": "Hydro",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "Hydro DMG Bonus",
+    "birthday": "2020-02-22T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070676/teyvatdle/character/inazuma/sangonomiya_kokomi/sangonomiya_kokomi.png",
+    "local_specialty": "Sango Pearl",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543779/teyvatdle/local_specialty/inazuma/sango_pearl.png",
+    "enhancement_material": "Specter Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566820/teyvatdle/enemy_drop/common/specter_materials.png",
+    "ascension_boss_material": "Dew of Repudiation",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546239/teyvatdle/boss_drop/normal/dew_of_repudiation.png",
+    "talent_boss_material": "Hellfire Butterfly",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547843/teyvatdle/boss_drop/weekly/hellfire_butterfly.png",
+    "talent_book": [
+      "Transience"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570039/teyvatdle/talent_book/transience.png"
+    ]
+  },
+  {
+    "character_id": 46,
+    "character_name": "Thoma",
+    "gender": "Male",
+    "height": "Tall",
+    "rarity": 4,
+    "region": "Inazuma",
+    "element": "Pyro",
+    "weapon_type": "Polearm",
+    "ascension_stat": "ATK",
+    "birthday": "2020-01-09T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070813/teyvatdle/character/inazuma/thoma/thoma.png",
+    "local_specialty": "Fluorescent Fungus",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543667/teyvatdle/local_specialty/inazuma/fluorescent_fungus.png",
+    "enhancement_material": "Treasure Hoarder Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566426/teyvatdle/enemy_drop/common/treasure_hoarder_materials.png",
+    "ascension_boss_material": "Smoldering Pearl",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546200/teyvatdle/boss_drop/normal/smoldering_pearl.png",
+    "talent_boss_material": "Hellfire Butterfly",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547843/teyvatdle/boss_drop/weekly/hellfire_butterfly.png",
+    "talent_book": [
+      "Transience"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570039/teyvatdle/talent_book/transience.png"
+    ]
+  },
+  {
+    "character_id": 47,
+    "character_name": "Arataki Itto",
+    "gender": "Male",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Inazuma",
+    "element": "Geo",
+    "weapon_type": "Claymore",
+    "ascension_stat": "CRIT Rate",
+    "birthday": "2020-06-01T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070287/teyvatdle/character/inazuma/arataki_itto/arataki_itto.png",
+    "local_specialty": "Onikabuto",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543740/teyvatdle/local_specialty/inazuma/onikabuto.png",
+    "enhancement_material": "Slime Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558171/teyvatdle/enemy_drop/common/slime_materials.png",
+    "ascension_boss_material": "Riftborn Regalia",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546791/teyvatdle/boss_drop/normal/riftborn_regalia.png",
+    "talent_boss_material": "Ashen Heart",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547885/teyvatdle/boss_drop/weekly/ashen_heart.png",
+    "talent_book": [
+      "Elegance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570114/teyvatdle/talent_book/elegance.png"
+    ]
+  },
+  {
+    "character_id": 48,
+    "character_name": "Gorou",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Inazuma",
+    "element": "Geo",
+    "weapon_type": "Bow",
+    "ascension_stat": "Geo DMG Bonus",
+    "birthday": "2020-05-18T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070336/teyvatdle/character/inazuma/gorou/gorou.png",
+    "local_specialty": "Sango Pearl",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543779/teyvatdle/local_specialty/inazuma/sango_pearl.png",
+    "enhancement_material": "Specter Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566820/teyvatdle/enemy_drop/common/specter_materials.png",
+    "ascension_boss_material": "Perpetual Heart",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546153/teyvatdle/boss_drop/normal/perpetual_heart.png",
+    "talent_boss_material": "Molten Moment",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547806/teyvatdle/boss_drop/weekly/molten_moment.png",
+    "talent_book": [
+      "Light"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570213/teyvatdle/talent_book/light.png"
+    ]
+  },
+  {
+    "character_id": 49,
+    "character_name": "Shenhe",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Liyue",
+    "element": "Cryo",
+    "weapon_type": "Polearm",
+    "ascension_stat": "ATK",
+    "birthday": "2020-03-10T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069849/teyvatdle/character/liyue/shenhe/shenhe.png",
+    "local_specialty": "Qingxin",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543396/teyvatdle/local_specialty/liyue/qingxin.png",
+    "enhancement_material": "Whopperflower Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566601/teyvatdle/enemy_drop/common/whopperflower_materials.png",
+    "ascension_boss_material": "Dragonheir's False Fin",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546830/teyvatdle/boss_drop/normal/dragonheirs_false_fin.png",
+    "talent_boss_material": "Hellfire Butterfly",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547843/teyvatdle/boss_drop/weekly/hellfire_butterfly.png",
+    "talent_book": [
+      "Prosperity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569716/teyvatdle/talent_book/prosperity.png"
+    ]
+  },
+  {
+    "character_id": 50,
+    "character_name": "Yun Jin",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Liyue",
+    "element": "Geo",
+    "weapon_type": "Polearm",
+    "ascension_stat": "Energy Recharge",
+    "birthday": "2020-05-21T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070183/teyvatdle/character/liyue/yun_jin/yun_jin.png",
+    "local_specialty": "Glaze Lily",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543305/teyvatdle/local_specialty/liyue/glaze_lily.png",
+    "enhancement_material": "Hilichurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689556860/teyvatdle/enemy_drop/common/hilichurl_materials.png",
+    "ascension_boss_material": "Riftborn Regalia",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546791/teyvatdle/boss_drop/normal/riftborn_regalia.png",
+    "talent_boss_material": "Ashen Heart",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547885/teyvatdle/boss_drop/weekly/ashen_heart.png",
+    "talent_book": [
+      "Diligence"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569819/teyvatdle/talent_book/diligence.png"
+    ]
+  },
+  {
+    "character_id": 51,
+    "character_name": "Yae Miko",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Inazuma",
+    "element": "Electro",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "CRIT Rate",
+    "birthday": "2020-06-27T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070853/teyvatdle/character/inazuma/yae_miko/yae_miko.png",
+    "local_specialty": "Sea Ganoderma",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543799/teyvatdle/local_specialty/inazuma/sea_ganoderma.png",
+    "enhancement_material": "Nobushi Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566704/teyvatdle/enemy_drop/common/nobushi_materials.png",
+    "ascension_boss_material": "Dragonheir's False Fin",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546830/teyvatdle/boss_drop/normal/dragonheirs_false_fin.png",
+    "talent_boss_material": "The Meaning of Aeons",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548026/teyvatdle/boss_drop/weekly/the_meaning_of_aeons.png",
+    "talent_book": [
+      "Light"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570213/teyvatdle/talent_book/light.png"
+    ]
+  },
+  {
+    "character_id": 53,
+    "character_name": "Kamisato Ayato",
+    "gender": "Male",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Inazuma",
+    "element": "Hydro",
+    "weapon_type": "Sword",
+    "ascension_stat": "CRIT DMG",
+    "birthday": "2020-03-26T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070466/teyvatdle/character/inazuma/kamisato_ayato/kamisato_ayato.png",
+    "local_specialty": "Sakura Bloom",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543758/teyvatdle/local_specialty/inazuma/sakura_bloom.png",
+    "enhancement_material": "Nobushi Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566704/teyvatdle/enemy_drop/common/nobushi_materials.png",
+    "ascension_boss_material": "Dew of Repudiation",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546239/teyvatdle/boss_drop/normal/dew_of_repudiation.png",
+    "talent_boss_material": "Mudra of the Malefic General",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547924/teyvatdle/boss_drop/weekly/mudra_of_the_malefic_general.png",
+    "talent_book": [
+      "Elegance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570114/teyvatdle/talent_book/elegance.png"
+    ]
+  },
+  {
+    "character_id": 54,
+    "character_name": "Yelan",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Liyue",
+    "element": "Hydro",
+    "weapon_type": "Bow",
+    "ascension_stat": "CRIT Rate",
+    "birthday": "2020-04-20T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070135/teyvatdle/character/liyue/yelan/yelan.png",
+    "local_specialty": "Starconch",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543441/teyvatdle/local_specialty/liyue/starconch.png",
+    "enhancement_material": "Fatui Skirmisher Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566287/teyvatdle/enemy_drop/common/fatui_skirmisher_materials.png",
+    "ascension_boss_material": "Runic Fang",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546884/teyvatdle/boss_drop/normal/runic_fang.png",
+    "talent_boss_material": "Gilded Scale",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547764/teyvatdle/boss_drop/weekly/gilded_scale.png",
+    "talent_book": [
+      "Prosperity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569716/teyvatdle/talent_book/prosperity.png"
+    ]
+  },
+  {
+    "character_id": 55,
+    "character_name": "Kuki Shinobu",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Inazuma",
+    "element": "Electro",
+    "weapon_type": "Sword",
+    "ascension_stat": "HP",
+    "birthday": "2020-07-27T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070597/teyvatdle/character/inazuma/kuki_shinobu/kuki_shinobu.png",
+    "local_specialty": "Naku Weed",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543689/teyvatdle/local_specialty/inazuma/naku_weed.png",
+    "enhancement_material": "Specter Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566820/teyvatdle/enemy_drop/common/specter_materials.png",
+    "ascension_boss_material": "Runic Fang",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546884/teyvatdle/boss_drop/normal/runic_fang.png",
+    "talent_boss_material": "Tears of the Calamitous God",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547979/teyvatdle/boss_drop/weekly/tears_of_the_calamitous_god.png",
+    "talent_book": [
+      "Elegance"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570114/teyvatdle/talent_book/elegance.png"
+    ]
+  },
+  {
+    "character_id": 56,
+    "character_name": "Shikanoin Heizou",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Inazuma",
+    "element": "Anemo",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "Anemo DMG Bonus",
+    "birthday": "2020-07-24T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070773/teyvatdle/character/inazuma/shikanoin_heizou/shikanoin_heizou.png",
+    "local_specialty": "Onikabuto",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543740/teyvatdle/local_specialty/inazuma/onikabuto.png",
+    "enhancement_material": "Treasure Hoarder Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566426/teyvatdle/enemy_drop/common/treasure_hoarder_materials.png",
+    "ascension_boss_material": "Runic Fang",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546884/teyvatdle/boss_drop/normal/runic_fang.png",
+    "talent_boss_material": "The Meaning of Aeons",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548026/teyvatdle/boss_drop/weekly/the_meaning_of_aeons.png",
+    "talent_book": [
+      "Transience"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570039/teyvatdle/talent_book/transience.png"
+    ]
+  },
+  {
+    "character_id": 57,
+    "character_name": "Collei",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Sumeru",
+    "element": "Dendro",
+    "weapon_type": "Bow",
+    "ascension_stat": "ATK",
+    "birthday": "2020-05-08T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071040/teyvatdle/character/sumeru/collei/collei.png",
+    "local_specialty": "Rukkhashava Mushrooms",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543954/teyvatdle/local_specialty/sumeru/rukkhashava_mushrooms.png",
+    "enhancement_material": "Hilichurl Shooter Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689559319/teyvatdle/enemy_drop/common/hilichurl_shooter_materials.png",
+    "ascension_boss_material": "Majestic Hooked Beak",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546926/teyvatdle/boss_drop/normal/majestic_hooked_beak.png",
+    "talent_boss_material": "Tears of the Calamitous God",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547979/teyvatdle/boss_drop/weekly/tears_of_the_calamitous_god.png",
+    "talent_book": [
+      "Praxis"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570576/teyvatdle/talent_book/praxis.png"
+    ]
+  },
+  {
+    "character_id": 58,
+    "character_name": "Tighnari",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Sumeru",
+    "element": "Dendro",
+    "weapon_type": "Bow",
+    "ascension_stat": "Dendro DMG Bonus",
+    "birthday": "2020-12-29T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071437/teyvatdle/character/sumeru/tighnari/tighnari.png",
+    "local_specialty": "Nilotpala Lotus",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543917/teyvatdle/local_specialty/sumeru/nilotpala_lotus.png",
+    "enhancement_material": "Fungus Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566972/teyvatdle/enemy_drop/common/fungus_materials.png",
+    "ascension_boss_material": "Majestic Hooked Beak",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546926/teyvatdle/boss_drop/normal/majestic_hooked_beak.png",
+    "talent_boss_material": "The Meaning of Aeons",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548026/teyvatdle/boss_drop/weekly/the_meaning_of_aeons.png",
+    "talent_book": [
+      "Admonition"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570317/teyvatdle/talent_book/admonition.png"
+    ]
+  },
+  {
+    "character_id": 59,
+    "character_name": "Dori",
+    "gender": "Female",
+    "height": "Short",
+    "rarity": 4,
+    "region": "Sumeru",
+    "element": "Electro",
+    "weapon_type": "Claymore",
+    "ascension_stat": "HP",
+    "birthday": "2020-12-21T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071165/teyvatdle/character/sumeru/dori/dori.png",
+    "local_specialty": "Kalpalata Lotus",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543876/teyvatdle/local_specialty/sumeru/kalpalata_lotus.png",
+    "enhancement_material": "The Eremites Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689567148/teyvatdle/enemy_drop/common/the_eremites_materials.png",
+    "ascension_boss_material": "Thunderclap Fruitcore",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546969/teyvatdle/boss_drop/normal/thunderclap_fruitcore.png",
+    "talent_boss_material": "Bloodjade Branch",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547729/teyvatdle/boss_drop/weekly/bloodjade_branch.png",
+    "talent_book": [
+      "Ingenuity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570445/teyvatdle/talent_book/ingenuity.png"
+    ]
+  },
+  {
+    "character_id": 60,
+    "character_name": "Candace",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 4,
+    "region": "Sumeru",
+    "element": "Hydro",
+    "weapon_type": "Polearm",
+    "ascension_stat": "HP",
+    "birthday": "2020-05-03T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070994/teyvatdle/character/sumeru/candace/candace.png",
+    "local_specialty": "Henna Berry",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543856/teyvatdle/local_specialty/sumeru/henna_berry.png",
+    "enhancement_material": "The Eremites Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689567148/teyvatdle/enemy_drop/common/the_eremites_materials.png",
+    "ascension_boss_material": "Light Guiding Tetrahedron",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547046/teyvatdle/boss_drop/normal/light_guiding_tetrahedron.png",
+    "talent_boss_material": "Tears of the Calamitous God",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547979/teyvatdle/boss_drop/weekly/tears_of_the_calamitous_god.png",
+    "talent_book": [
+      "Admonition"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570317/teyvatdle/talent_book/admonition.png"
+    ]
+  },
+  {
+    "character_id": 61,
+    "character_name": "Cyno",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Sumeru",
+    "element": "Electro",
+    "weapon_type": "Polearm",
+    "ascension_stat": "CRIT DMG",
+    "birthday": "2020-06-23T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071085/teyvatdle/character/sumeru/cyno/cyno.png",
+    "local_specialty": "Scarab",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543998/teyvatdle/local_specialty/sumeru/scarab.png",
+    "enhancement_material": "Samachurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558589/teyvatdle/enemy_drop/common/samachurl_materials.png",
+    "ascension_boss_material": "Thunderclap Fruitcore",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689546969/teyvatdle/boss_drop/normal/thunderclap_fruitcore.png",
+    "talent_boss_material": "Mudra of the Malefic General",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547924/teyvatdle/boss_drop/weekly/mudra_of_the_malefic_general.png",
+    "talent_book": [
+      "Admonition"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570317/teyvatdle/talent_book/admonition.png"
+    ]
+  },
+  {
+    "character_id": 62,
+    "character_name": "Nilou",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Sumeru",
+    "element": "Hydro",
+    "weapon_type": "Sword",
+    "ascension_stat": "HP",
+    "birthday": "2020-12-03T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071392/teyvatdle/character/sumeru/nilou/nilou.png",
+    "local_specialty": "Padisarah",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543940/teyvatdle/local_specialty/sumeru/padisarah.png",
+    "enhancement_material": "Fungus Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566972/teyvatdle/enemy_drop/common/fungus_materials.png",
+    "ascension_boss_material": "Perpetual Caliber",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547009/teyvatdle/boss_drop/normal/perpetual_caliber.png",
+    "talent_boss_material": "Tears of the Calamitous God",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547979/teyvatdle/boss_drop/weekly/tears_of_the_calamitous_god.png",
+    "talent_book": [
+      "Praxis"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570576/teyvatdle/talent_book/praxis.png"
+    ]
+  },
+  {
+    "character_id": 63,
+    "character_name": "Nahida",
+    "gender": "Female",
+    "height": "Short",
+    "rarity": 5,
+    "region": "Sumeru",
+    "element": "Dendro",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "Elemental Mastery",
+    "birthday": "2020-10-27T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071350/teyvatdle/character/sumeru/nahida/nahida.png",
+    "local_specialty": "Kalpalata Lotus",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543876/teyvatdle/local_specialty/sumeru/kalpalata_lotus.png",
+    "enhancement_material": "Fungus Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566972/teyvatdle/enemy_drop/common/fungus_materials.png",
+    "ascension_boss_material": "Quelled Creeper",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547101/teyvatdle/boss_drop/normal/quelled_creeper.png",
+    "talent_boss_material": "Puppet Strings",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548070/teyvatdle/boss_drop/weekly/puppet_strings.png",
+    "talent_book": [
+      "Ingenuity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570445/teyvatdle/talent_book/ingenuity.png"
+    ]
+  },
+  {
+    "character_id": 64,
+    "character_name": "Layla",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Sumeru",
+    "element": "Cryo",
+    "weapon_type": "Sword",
+    "ascension_stat": "HP",
+    "birthday": "2020-12-19T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071313/teyvatdle/character/sumeru/layla/layla.png",
+    "local_specialty": "Nilotpala Lotus",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543917/teyvatdle/local_specialty/sumeru/nilotpala_lotus.png",
+    "enhancement_material": "Samachurl Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558589/teyvatdle/enemy_drop/common/samachurl_materials.png",
+    "ascension_boss_material": "Perpetual Caliber",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547009/teyvatdle/boss_drop/normal/perpetual_caliber.png",
+    "talent_boss_material": "Mirror of Mushin",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548105/teyvatdle/boss_drop/weekly/mirror_of_mushin.png",
+    "talent_book": [
+      "Ingenuity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570445/teyvatdle/talent_book/ingenuity.png"
+    ]
+  },
+  {
+    "character_id": 65,
+    "character_name": "Faruzan",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Sumeru",
+    "element": "Anemo",
+    "weapon_type": "Bow",
+    "ascension_stat": "ATK",
+    "birthday": "2020-08-20T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071210/teyvatdle/character/sumeru/faruzan/faruzan.png",
+    "local_specialty": "Henna Berry",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543856/teyvatdle/local_specialty/sumeru/henna_berry.png",
+    "enhancement_material": "The Eremites Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689567148/teyvatdle/enemy_drop/common/the_eremites_materials.png",
+    "ascension_boss_material": "Light Guiding Tetrahedron",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547046/teyvatdle/boss_drop/normal/light_guiding_tetrahedron.png",
+    "talent_boss_material": "Puppet Strings",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548070/teyvatdle/boss_drop/weekly/puppet_strings.png",
+    "talent_book": [
+      "Admonition"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570317/teyvatdle/talent_book/admonition.png"
+    ]
+  },
+  {
+    "character_id": 66,
+    "character_name": "Wanderer",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Sumeru",
+    "element": "Anemo",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "CRIT Rate",
+    "birthday": "2020-01-03T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071480/teyvatdle/character/sumeru/wanderer/wanderer.png",
+    "local_specialty": "Rukkhashava Mushrooms",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543954/teyvatdle/local_specialty/sumeru/rukkhashava_mushrooms.png",
+    "enhancement_material": "Nobushi Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566704/teyvatdle/enemy_drop/common/nobushi_materials.png",
+    "ascension_boss_material": "Perpetual Caliber",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547009/teyvatdle/boss_drop/normal/perpetual_caliber.png",
+    "talent_boss_material": "Daka's Bell",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548146/teyvatdle/boss_drop/weekly/dakas_bell.png",
+    "talent_book": [
+      "Praxis"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570576/teyvatdle/talent_book/praxis.png"
+    ]
+  },
+  {
+    "character_id": 67,
+    "character_name": "Alhaitham",
+    "gender": "Male",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Sumeru",
+    "element": "Dendro",
+    "weapon_type": "Sword",
+    "ascension_stat": "Dendro DMG Bonus",
+    "birthday": "2020-02-11T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070956/teyvatdle/character/sumeru/alhaitham/alhaitham.png",
+    "local_specialty": "Sand Grease Pupa",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543973/teyvatdle/local_specialty/sumeru/sand_grease_pupa.png",
+    "enhancement_material": "The Eremites Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689567148/teyvatdle/enemy_drop/common/the_eremites_materials.png",
+    "ascension_boss_material": "Pseudo-Stamens",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547137/teyvatdle/boss_drop/normal/pseudo-stamens.png",
+    "talent_boss_material": "Mirror of Mushin",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548105/teyvatdle/boss_drop/weekly/mirror_of_mushin.png",
+    "talent_book": [
+      "Ingenuity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570445/teyvatdle/talent_book/ingenuity.png"
+    ]
+  },
+  {
+    "character_id": 68,
+    "character_name": "Yaoyao",
+    "gender": "Female",
+    "height": "Short",
+    "rarity": 4,
+    "region": "Liyue",
+    "element": "Dendro",
+    "weapon_type": "Polearm",
+    "ascension_stat": "HP",
+    "birthday": "2020-03-06T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070097/teyvatdle/character/liyue/yaoyao/yaoyao.png",
+    "local_specialty": "Jueyun Chili",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543329/teyvatdle/local_specialty/liyue/jueyun_chili.png",
+    "enhancement_material": "Slime Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689558171/teyvatdle/enemy_drop/common/slime_materials.png",
+    "ascension_boss_material": "Quelled Creeper",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547101/teyvatdle/boss_drop/normal/quelled_creeper.png",
+    "talent_boss_material": "Daka's Bell",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548146/teyvatdle/boss_drop/weekly/dakas_bell.png",
+    "talent_book": [
+      "Diligence"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569819/teyvatdle/talent_book/diligence.png"
+    ]
+  },
+  {
+    "character_id": 69,
+    "character_name": "Dehya",
+    "gender": "Female",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Sumeru",
+    "element": "Pyro",
+    "weapon_type": "Claymore",
+    "ascension_stat": "HP",
+    "birthday": "2020-04-07T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071127/teyvatdle/character/sumeru/dehya/dehya.png",
+    "local_specialty": "Sand Grease Pupa",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543973/teyvatdle/local_specialty/sumeru/sand_grease_pupa.png",
+    "enhancement_material": "The Eremites Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689567148/teyvatdle/enemy_drop/common/the_eremites_materials.png",
+    "ascension_boss_material": "Light Guiding Tetrahedron",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547046/teyvatdle/boss_drop/normal/light_guiding_tetrahedron.png",
+    "talent_boss_material": "Puppet Strings",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548070/teyvatdle/boss_drop/weekly/puppet_strings.png",
+    "talent_book": [
+      "Praxis"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570576/teyvatdle/talent_book/praxis.png"
+    ]
+  },
+  {
+    "character_id": 70,
+    "character_name": "Mika",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Mondstadt",
+    "element": "Cryo",
+    "weapon_type": "Polearm",
+    "ascension_stat": "HP",
+    "birthday": "2020-08-11T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690006063/teyvatdle/character/mondstadt/mika/mika.png",
+    "local_specialty": "Wolfhook",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400559/teyvatdle/local_specialty/mondstadt/wolfhook.png",
+    "enhancement_material": "Fatui Skirmisher Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566287/teyvatdle/enemy_drop/common/fatui_skirmisher_materials.png",
+    "ascension_boss_material": "Pseudo-Stamens",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547137/teyvatdle/boss_drop/normal/pseudo-stamens.png",
+    "talent_boss_material": "Mirror of Mushin",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548105/teyvatdle/boss_drop/weekly/mirror_of_mushin.png",
+    "talent_book": [
+      "Ballad"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569632/teyvatdle/talent_book/ballad.png"
+    ]
+  },
+  {
+    "character_id": 71,
+    "character_name": "Baizhu",
+    "gender": "Male",
+    "height": "Tall",
+    "rarity": 5,
+    "region": "Liyue",
+    "element": "Dendro",
+    "weapon_type": "Catalyst",
+    "ascension_stat": "HP",
+    "birthday": "2020-04-25T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690069494/teyvatdle/character/liyue/baizhu/baizhu.png",
+    "local_specialty": "Violetgrass",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543458/teyvatdle/local_specialty/liyue/violetgrass.png",
+    "enhancement_material": "Fungus Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566972/teyvatdle/enemy_drop/common/fungus_materials.png",
+    "ascension_boss_material": "Evergloom Ring",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547184/teyvatdle/boss_drop/normal/evergloom_ring.png",
+    "talent_boss_material": "Worldspan Fern",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548189/teyvatdle/boss_drop/weekly/worldspan_fern.png",
+    "talent_book": [
+      "Gold"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689569922/teyvatdle/talent_book/gold.png"
+    ]
+  },
+  {
+    "character_id": 72,
+    "character_name": "Kaveh",
+    "gender": "Male",
+    "height": "Tall",
+    "rarity": 4,
+    "region": "Sumeru",
+    "element": "Dendro",
+    "weapon_type": "Claymore",
+    "ascension_stat": "Elemental Mastery",
+    "birthday": "2020-07-09T07:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690071250/teyvatdle/character/sumeru/kaveh/kaveh.png",
+    "local_specialty": "Mourning Flower",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543893/teyvatdle/local_specialty/sumeru/mourning_flower.png",
+    "enhancement_material": "Fungus Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566972/teyvatdle/enemy_drop/common/fungus_materials.png",
+    "ascension_boss_material": "Quelled Creeper",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547101/teyvatdle/boss_drop/normal/quelled_creeper.png",
+    "talent_boss_material": "Primordial Greenbloom",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548228/teyvatdle/boss_drop/weekly/primordial_greenbloom.png",
+    "talent_book": [
+      "Ingenuity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570445/teyvatdle/talent_book/ingenuity.png"
+    ]
+  },
+  {
+    "character_id": 73,
+    "character_name": "Kirara",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Inazuma",
+    "element": "Dendro",
+    "weapon_type": "Sword",
+    "ascension_stat": "HP",
+    "birthday": "2020-01-22T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690070513/teyvatdle/character/inazuma/kirara/kirara.png",
+    "local_specialty": "Amakumo Fruit",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689543503/teyvatdle/local_specialty/inazuma/amakumo_fruit.png",
+    "enhancement_material": "Specter Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566820/teyvatdle/enemy_drop/common/specter_materials.png",
+    "ascension_boss_material": "Evergloom Ring",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689547184/teyvatdle/boss_drop/normal/evergloom_ring.png",
+    "talent_boss_material": "Everamber",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548270/teyvatdle/boss_drop/weekly/everamber.png",
+    "talent_book": [
+      "Transience"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689570039/teyvatdle/talent_book/transience.png"
+    ]
+  },
+  {
+    "character_id": 74,
+    "character_name": "Lynette",
+    "gender": "Female",
+    "height": "Medium",
+    "rarity": 4,
+    "region": "Fontaine",
+    "element": "Anemo",
+    "weapon_type": "Sword",
+    "ascension_stat": "Anemo DMG Bonus",
+    "birthday": "2020-02-02T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692768083/teyvatdle/character/fontaine/lynette/lynette.png",
+    "local_specialty": "Lumidouce Bell",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692592856/teyvatdle/local_specialty/fontaine/lumidouce_bell.png",
+    "enhancement_material": "Clockwork Meka Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692679025/teyvatdle/enemy_drop/common/clockwork_meka_materials.png",
+    "ascension_boss_material": "Artificed Spare Clockwork Component - Coppelia",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692595450/teyvatdle/boss_drop/normal/artificed_spare_clockwork_component-coppelia.png",
+    "talent_boss_material": "Everamber",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548270/teyvatdle/boss_drop/weekly/everamber.png",
+    "talent_book": [
+      "Order"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692677706/teyvatdle/talent_book/order.png"
+    ]
+  },
+  {
+    "character_id": 75,
+    "character_name": "Lyney",
+    "gender": "Male",
+    "height": "Medium",
+    "rarity": 5,
+    "region": "Fontaine",
+    "element": "Pyro",
+    "weapon_type": "Bow",
+    "ascension_stat": "CRIT Rate",
+    "birthday": "2020-02-02T08:00:00.000Z",
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692768116/teyvatdle/character/fontaine/lyney/lyney.png",
+    "local_specialty": "Rainbow Rose",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692592894/teyvatdle/local_specialty/fontaine/rainbow_rose.png",
+    "enhancement_material": "Fatui Skirmisher Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689566287/teyvatdle/enemy_drop/common/fatui_skirmisher_materials.png",
+    "ascension_boss_material": "Emperor's Resolution",
+    "ascension_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692595575/teyvatdle/boss_drop/normal/emperors_resolution.png",
+    "talent_boss_material": "Primordial Greenbloom",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548228/teyvatdle/boss_drop/weekly/primordial_greenbloom.png",
+    "talent_book": [
+      "Equity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692677444/teyvatdle/talent_book/equity.png"
+    ]
+  },
+  {
+    "character_id": 78,
+    "character_name": "Traveler (Hydro)",
+    "gender": "Other",
+    "height": "Medium",
+    "rarity": 5,
+    "region": null,
+    "element": "Hydro",
+    "weapon_type": "Sword",
+    "ascension_stat": "ATK",
+    "birthday": null,
+    "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692852555/teyvatdle/character/other/traveler_hydro/traveler_hydro.png",
+    "local_specialty": "Windwheel Aster",
+    "local_specialty_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689400529/teyvatdle/local_specialty/mondstadt/windwheel_aster.png",
+    "enhancement_material": "Fontemer Aberrant Materials",
+    "enhancement_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692678945/teyvatdle/enemy_drop/common/fontemer_aberrant_materials.png",
+    "ascension_boss_material": null,
+    "ascension_boss_material_image_url": null,
+    "talent_boss_material": "Worldspan Fern",
+    "talent_boss_material_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1689548189/teyvatdle/boss_drop/weekly/worldspan_fern.png",
+    "talent_book": [
+      "Order",
+      "Justice",
+      "Equity"
+    ],
+    "talent_book_image_url": [
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692677706/teyvatdle/talent_book/order.png",
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692677609/teyvatdle/talent_book/justice.png",
+      "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1692677444/teyvatdle/talent_book/equity.png"
+    ]
+  }
+]
