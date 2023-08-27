@@ -7,7 +7,7 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
   if (cellData.dataType === "mainImage") {
     cellElement = (
       <td>
-        <img src={cellData.content} alt={cellData.altText + "."} />
+        <img src={cellData.content} alt={cellData.altText} />
       </td>
     );
   } else if (cellData.dataType === "textSingle") {
