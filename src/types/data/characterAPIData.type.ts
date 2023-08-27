@@ -6,8 +6,8 @@ import Stat from "../stat.type";
 type CharacterAPIData = {
   character_id: number;
   character_name: string;
-  gender: string;
-  height: string;
+  gender: "Male" | "Female" | "Other";
+  height: "Short" | "Medium" | "Tall";
   rarity: number;
   region: Region | null;
   element: GenshinElement;
