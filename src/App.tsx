@@ -7,34 +7,12 @@ import GuessTableRow from "./components/GuessTableRow/GuessTableRow";
 import CharacterAPIData from "./types/data/characterAPIData.type";
 import WeaponAPIData from "./types/data/weaponAPIData.type";
 import FoodAPIData from "./types/data/foodAPIData.type";
+import GuessTable from "./components/GuessTable/GuessTable";
 
 function App() {
   return (
     <div className="App">
-      <table>
-        <tbody>
-          <GuessTableRow
-            rowType="character"
-            rowDataProp={dummyQiqi as CharacterAPIData}
-          />
-          <GuessTableRow
-            rowType="character"
-            rowDataProp={dummy as CharacterAPIData}
-          />
-          <GuessTableRow
-            rowType="weapon"
-            rowDataProp={dummyWeapon as WeaponAPIData}
-          />
-          <GuessTableRow
-            rowType="weapon"
-            rowDataProp={dummyTwoStarWeapon as WeaponAPIData}
-          />
-          <GuessTableRow
-            rowType="food"
-            rowDataProp={dummyFood as FoodAPIData}
-          />
-        </tbody>
-      </table>
+      <GuessTable tableType="food" />
     </div>
   );
 }
