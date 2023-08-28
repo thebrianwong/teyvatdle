@@ -1,9 +1,27 @@
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import SelectSearchBarProps from "./type";
 
 const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
-  ({ handleClick }, ref) => {
-    return <input type="search" id="search" ref={ref} onClick={handleClick} />;
+  ({ value, handleClick, handleInput }, ref) => {
+    const [inputValue, setInputValue] = useState<string>(value);
+
+    useEffect(() => {
+      handleInput(inputValue);
+    }, [inputValue]);
+
+    return (
+      <input
+        type="search"
+        id="search"
+        value={value}
+        ref={ref}
+        onClick={handleClick}
+        onChange={(e) => {
+          setInputValue(e.target.value);
+          handleInput(e.target.value);
+        }}
+      />
+    );
   }
 );
 

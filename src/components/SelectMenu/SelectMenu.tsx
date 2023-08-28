@@ -3,11 +3,17 @@ import SelectMenuProps from "./type";
 import SelectSearchBar from "../SelectSearchBar/SelectSearchBar";
 import SelectOptions from "../SelectOptions/SelectOptions";
 
-const SelectMenu = ({ selectType, data }: SelectMenuProps) => {
+const SelectMenu = ({
+  selectType,
+  data,
+  guesses,
+  handleGuess,
+}: SelectMenuProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const menuRef = useRef<HTMLUListElement>(null);
 
   const [showResults, setShowResults] = useState<boolean>(false);
+  const [searchValue, setSearchValue] = useState<string>("");
 
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
@@ -30,13 +36,28 @@ const SelectMenu = ({ selectType, data }: SelectMenuProps) => {
   }, [showResults]);
 
   return (
-    <search is="search">
+    <search is="search" style={{ position: "relative" }}>
       <label>Guess a {selectType}!</label>
+      <br></br>
       <SelectSearchBar
+        value={searchValue}
         handleClick={() => setShowResults(true)}
+        handleInput={(value) => setSearchValue(value)}
         ref={inputRef}
       />
-      {showResults && <SelectOptions dataList={data} ref={menuRef} />}
+      {showResults && (
+        <SelectOptions
+          dataList={data}
+          filterValue={searchValue}
+          guesses={guesses}
+          handleGuess={(guess: string) => {
+            handleGuess(guess);
+            setShowResults(false);
+            setSearchValue("");
+          }}
+          ref={menuRef}
+        />
+      )}
     </search>
   );
 };

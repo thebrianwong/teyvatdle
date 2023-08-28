@@ -11,8 +11,16 @@ import GuessTable from "./components/GuessTable/GuessTable";
 import SelectMenu from "./components/SelectMenu/SelectMenu";
 import allCharData from "./allChars.json";
 import TableAPIData from "./types/data/tableAPIData.type";
+import { useState } from "react";
 
 function App() {
+  const [guesses, setGuesses] = useState<string[]>([]);
+
+  const handleGuess = (guess: string) => {
+    const newGuesses = [guess, ...guesses];
+    setGuesses(newGuesses);
+  };
+
   const sortedTestData = allCharData.sort((a, b) => {
     if (a.character_name < b.character_name) {
       return -1;
@@ -28,7 +36,10 @@ function App() {
       <SelectMenu
         selectType="character"
         data={sortedTestData as CharacterAPIData[]}
+        guesses={guesses}
+        handleGuess={handleGuess}
       />
+      <GuessTable tableType="character" />
     </div>
   );
 }

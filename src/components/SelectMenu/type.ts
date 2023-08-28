@@ -6,6 +6,8 @@ import WeaponAPIData from "../../types/data/weaponAPIData.type";
 type SelectMenuProps = {
   selectType: "character" | "weapon" | "food";
   data: CharacterAPIData[];
+  guesses: string[];
+  handleGuess: (guess: string) => void;
 };
 
 export default SelectMenuProps;
