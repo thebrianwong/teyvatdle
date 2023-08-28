@@ -17,22 +17,24 @@ const GuessTable = ({ tableType, guessesProp }: GuessTableProps) => {
   */
 
   return (
-    <table>
-      <GuessTableHeader headerType={tableType} />
-      <tbody>
-        {guessesProp.map((guess) => {
-          return (
-            <GuessTableRow
-              key={`${tableType}-${
-                guess[`${tableType}_name` as keyof typeof guess]
-              }`}
-              rowType={tableType}
-              rowDataProp={guess}
-            />
-          );
-        })}
-      </tbody>
-    </table>
+    <div style={{ maxHeight: "50vh", maxWidth: "80vw", overflow: "auto" }}>
+      <table style={{ backgroundColor: "lightgray" }}>
+        <GuessTableHeader headerType={tableType} />
+        <tbody>
+          {guessesProp.map((guess) => {
+            return (
+              <GuessTableRow
+                key={`${tableType}-${
+                  guess[`${tableType}_name` as keyof typeof guess]
+                }`}
+                rowType={tableType}
+                rowDataProp={guess}
+              />
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

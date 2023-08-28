@@ -7,15 +7,21 @@ const GuessTableHeader = ({ headerType }: GuessTableHeaderProps) => {
   if (headerType === "character") {
     headerColumns = (
       <>
-        <th></th>
-        <th>Character Name</th>
-        <th>Gender/Height</th>
-        <th>Rarity/Region</th>
-        <th>Element/Weapon</th>
-        <th>Ascension Stat/Enhancement Material</th>
-        <th>Local Specialty/Normal Boss Material</th>
-        <th>Talent Book(s)/Weekly Boss Material</th>
-        <th>Birthday</th>
+        <th style={{ position: "sticky", top: 0 }}></th>
+        <th style={{ position: "sticky", top: 0 }}>Character Name</th>
+        <th style={{ position: "sticky", top: 0 }}>Gender/Height</th>
+        <th style={{ position: "sticky", top: 0 }}>Rarity/Region</th>
+        <th style={{ position: "sticky", top: 0 }}>Element/Weapon</th>
+        <th style={{ position: "sticky", top: 0 }}>
+          Ascension Stat/Enhancement Material
+        </th>
+        <th style={{ position: "sticky", top: 0 }}>
+          Local Specialty/Normal Boss Material
+        </th>
+        <th style={{ position: "sticky", top: 0 }}>
+          Talent Book(s)/Weekly Boss Material
+        </th>
+        <th style={{ position: "sticky", top: 0 }}>Birthday</th>
       </>
     );
   } else if (headerType === "weapon") {
