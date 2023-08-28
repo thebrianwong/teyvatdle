@@ -9,6 +9,7 @@ import WeaponTransformedData from "../../types/data/weaponTransformedData.type";
 import FoodTransformedData from "../../types/data/foodTransformedData.type";
 import TableAPIData from "../../types/data/tableAPIData.type";
 import formatBirthday from "../../util/formatBirthday";
+import checkForQuotes from "../../util/checkForQuotes";
 
 const GuessTableRow = ({ rowType, rowDataProp }: GuessTableRowProps) => {
   const [rowData, setRowData] = useState<
@@ -79,7 +80,7 @@ const GuessTableRow = ({ rowType, rowDataProp }: GuessTableRowProps) => {
           weapon_image: {
             dataType: "mainImage",
             content: rawWeaponData.weapon_image_url,
-            altText: rawWeaponData.weapon_name,
+            altText: checkForQuotes(rawWeaponData.weapon_name),
           },
           name: { dataType: "textSingle", content: rawWeaponData.weapon_name },
           rarity_type: {
@@ -109,11 +110,13 @@ const GuessTableRow = ({ rowType, rowDataProp }: GuessTableRowProps) => {
         break;
       case "food":
         const rawFoodData = { ...rawData } as FoodAPIData;
+        console.log(rawFoodData.food_name);
+        // const checkForQuotes
         const transformedFoodData: FoodTransformedData = {
           food_image: {
             dataType: "mainImage",
             content: rawFoodData.food_image_url,
-            altText: JSON.parse(rawFoodData.food_name),
+            altText: checkForQuotes(rawFoodData.food_name),
           },
           name: { dataType: "textSingle", content: rawFoodData.food_name },
           rarity_type: {
