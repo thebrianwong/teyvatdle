@@ -155,7 +155,7 @@ const GuessTableRow = ({ rowType, rowDataProp }: GuessTableRowProps) => {
         Object.keys(rowData).map((key) => {
           return (
             <GuessTableCell
-              key={`${rowData.name}-${key}`}
+              key={`${rowData.name.content}-${key}`}
               cellData={rowData[key as keyof typeof rowData]}
             />
           );

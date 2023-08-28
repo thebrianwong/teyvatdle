@@ -29,7 +29,14 @@ const GuessTable = ({ tableType }: GuessTableProps) => {
       <GuessTableHeader headerType={tableType} />
       <tbody>
         {guesses.map((guess) => {
-          return <GuessTableRow rowType={tableType} rowDataProp={guess} />;
+          const guessName = Object.keys(guess)[1];
+          return (
+            <GuessTableRow
+              key={`${tableType}-${guess[guessName as keyof typeof guess]}`}
+              rowType={tableType}
+              rowDataProp={guess}
+            />
+          );
         })}
       </tbody>
     </table>
