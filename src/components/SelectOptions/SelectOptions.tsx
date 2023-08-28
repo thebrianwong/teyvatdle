@@ -2,16 +2,23 @@ import { forwardRef } from "react";
 import SelectOptionsProps from "./type";
 
 const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
-  ({ dataList, filterValue, guesses, handleGuess }, ref) => {
+  ({ dataList, dataType, filterValue, guesses, handleGuess }, ref) => {
+    const guessesNames = guesses.map((guess) => {
+      return guess[`${dataType}_name` as keyof typeof guess].toString();
+    });
+
     const filteredData = () => {
       const dataFilteredByGuesses = dataList.filter((item) => {
-        return !guesses.includes(item.character_name);
+        return !guessesNames.includes(
+          item[`${dataType}_name` as keyof typeof item].toString()
+        );
       });
       if (filterValue.trim() === "") {
         return dataFilteredByGuesses;
       } else {
         const dataFilteredBySearch = dataFilteredByGuesses.filter((item) => {
-          return item.character_name
+          return item[`${dataType}_name` as keyof typeof item]
+            .toString()
             .toLowerCase()
             .includes(filterValue.trim().toLowerCase());
         });
@@ -34,16 +41,18 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
         {filteredData().map((item) => {
           return (
             <li
-              key={item.character_name}
+              key={item[`${dataType}_name` as keyof typeof item].toString()}
               style={{ display: "flex", maxHeight: "100px" }}
-              onClick={() => handleGuess(item.character_name)}
+              onClick={() => handleGuess(item)}
             >
               <img
-                src={item.character_image_url}
+                src={item[
+                  `${dataType}_image_url` as keyof typeof item
+                ].toString()}
                 alt=""
                 style={{ height: "100px", width: "auto" }}
               />
-              <p>{item.character_name}</p>
+              <p>{item[`${dataType}_name` as keyof typeof item].toString()}</p>
             </li>
           );
         })}

@@ -14,9 +14,9 @@ import TableAPIData from "./types/data/tableAPIData.type";
 import { useState } from "react";
 
 function App() {
-  const [guesses, setGuesses] = useState<string[]>([]);
+  const [guesses, setGuesses] = useState<TableAPIData[]>([]);
 
-  const handleGuess = (guess: string) => {
+  const handleGuess = (guess: TableAPIData) => {
     const newGuesses = [guess, ...guesses];
     setGuesses(newGuesses);
   };
@@ -39,7 +39,7 @@ function App() {
         guesses={guesses}
         handleGuess={handleGuess}
       />
-      <GuessTable tableType="character" />
+      <GuessTable tableType="character" guessesProp={guesses} />
     </div>
   );
 }
