@@ -7,6 +7,7 @@ const GuessTableHeader = ({ headerType }: GuessTableHeaderProps) => {
   if (headerType === "character") {
     headerColumns = (
       <>
+        {/* all th need class with background color styling to remove transparent background */}
         <th style={{ position: "sticky", top: 0 }}></th>
         <th style={{ position: "sticky", top: 0 }}>Character Name</th>
         <th style={{ position: "sticky", top: 0 }}>Gender/Height</th>
