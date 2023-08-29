@@ -7,6 +7,7 @@ type SelectMenuProps = {
   selectType: "character" | "weapon" | "food";
   data: TableAPIData[];
   guesses: TableAPIData[];
+  gameCompleted: boolean;
   handleGuess: (guess: TableAPIData) => void;
 };
 

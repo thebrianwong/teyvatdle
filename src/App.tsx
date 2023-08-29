@@ -13,23 +13,37 @@ import allCharData from "./allChars.json";
 import allWeapData from "./allWeapons.json";
 import allFoodData from "./allFoods.json";
 import TableAPIData from "./types/data/tableAPIData.type";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [guesses, setGuesses] = useState<TableAPIData[]>([]);
+  const [gameCompleted, setGameCompleted] = useState<boolean>(false);
 
-  const handleGuess = (guess: TableAPIData) => {
-    const newGuesses = [guess, ...guesses];
-    setGuesses(newGuesses);
-  };
+  const [dailyEntity, setDailyEntity] = useState<TableAPIData>();
 
-  // const type = "character";
-  const type = "weapon";
+  useEffect(() => {
+    // maybe get data from Redux, use dummy for now
+    setDailyEntity(dummyQiqi as CharacterAPIData);
+  }, []);
+
+  const type = "character";
+  // const type = "weapon";
   // const type = "food";
 
   const chars = allCharData as CharacterAPIData[];
   const weaps = allWeapData as WeaponAPIData[];
   const foods = allFoodData as FoodAPIData[];
+
+  const handleGuess = (guess: TableAPIData) => {
+    const newGuesses = [guess, ...guesses];
+    setGuesses(newGuesses);
+    if (
+      guess[`${type}_name` as keyof typeof guess] ===
+      dailyEntity![`${type}_name` as keyof typeof dailyEntity]
+    ) {
+      setGameCompleted(true);
+    }
+  };
 
   const sortedData = (data: TableAPIData[]) => {
     return data.sort((a, b) => {
@@ -53,18 +67,19 @@ function App() {
     <div className="App">
       {/* <GuessTable tableType="character" /> */}
       <SelectMenu
-        // selectType="character"
-        selectType="weapon"
+        selectType="character"
+        // selectType="weapon"
         // selectType="food"
-        // data={sortedData(chars)}
-        data={sortedData(weaps)}
+        data={sortedData(chars)}
+        // data={sortedData(weaps)}
         // data={sortedData(foods)}
         guesses={guesses}
+        gameCompleted={gameCompleted}
         handleGuess={handleGuess}
       />
       <GuessTable
-        // tableType="character"
-        tableType="weapon"
+        tableType="character"
+        // tableType="weapon"
         // tableType="food"
         guessesProp={guesses}
       />

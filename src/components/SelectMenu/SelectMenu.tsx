@@ -8,6 +8,7 @@ const SelectMenu = ({
   selectType,
   data,
   guesses,
+  gameCompleted,
   handleGuess,
 }: SelectMenuProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -42,6 +43,7 @@ const SelectMenu = ({
       <br></br>
       <SelectSearchBar
         value={searchValue}
+        gameCompleted={gameCompleted}
         handleClick={() => setShowResults(true)}
         handleInput={(value) => setSearchValue(value)}
         ref={inputRef}

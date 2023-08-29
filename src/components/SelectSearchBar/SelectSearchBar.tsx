@@ -2,7 +2,7 @@ import { forwardRef, useEffect, useState } from "react";
 import SelectSearchBarProps from "./type";
 
 const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
-  ({ value, handleClick, handleInput }, ref) => {
+  ({ value, gameCompleted, handleClick, handleInput }, ref) => {
     const [inputValue, setInputValue] = useState<string>(value);
 
     useEffect(() => {
@@ -13,6 +13,7 @@ const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
       <input
         type="search"
         id="search"
+        disabled={gameCompleted}
         value={value}
         ref={ref}
         onClick={handleClick}
