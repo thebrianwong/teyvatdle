@@ -2,7 +2,7 @@ import GuessTableRow from "../GuessTableRow/GuessTableRow";
 import GuessTableProps from "./type";
 import GuessTableHeader from "../GuessTableHeader/GuessTableHeader";
 
-const GuessTable = ({ tableType, guessesProp }: GuessTableProps) => {
+const GuessTable = ({ tableType, guessesProp, answer }: GuessTableProps) => {
   /*
   const [guesses, setGuesses] = useState<TableAPIData[]>([
     dummy as CharacterAPIData,
@@ -29,6 +29,7 @@ const GuessTable = ({ tableType, guessesProp }: GuessTableProps) => {
                 }`}
                 rowType={tableType}
                 rowDataProp={guess}
+                answer={answer}
               />
             );
           })}

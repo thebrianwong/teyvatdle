@@ -82,6 +82,7 @@ function App() {
         // tableType="weapon"
         // tableType="food"
         guessesProp={guesses}
+        answer={dailyEntity!}
       />
     </div>
   );
