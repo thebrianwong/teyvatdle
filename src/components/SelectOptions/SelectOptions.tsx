@@ -35,6 +35,7 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
           position: "absolute",
           backgroundColor: "white",
           border: "solid 1px darkgray",
+          zIndex: 1,
         }}
         ref={ref}
       >
