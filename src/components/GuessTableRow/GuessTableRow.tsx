@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import GuessTableCell from "../GuessTableCell/GuessTableCell";
 import GuessTableRowProps from "./type";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
@@ -12,14 +12,11 @@ import formatBirthday from "../../util/formatBirthday";
 import checkForQuotes from "../../util/checkForQuotes";
 import compareArrays from "../../util/compareArrays";
 
-const GuessTableRow = ({
-  rowType,
-  rowDataProp,
-  answer,
-}: GuessTableRowProps) => {
-  const [rowData, setRowData] = useState<
-    CharacterTransformedData | WeaponTransformedData | FoodTransformedData
-  >();
+const GuessTableRow = memo(
+  ({ rowType, rowDataProp, answer }: GuessTableRowProps) => {
+    const [rowData, setRowData] = useState<
+      CharacterTransformedData | WeaponTransformedData | FoodTransformedData
+    >();
 
   const determineCorrectness = (guessData: TableAPIData) => {
     switch (rowType) {
