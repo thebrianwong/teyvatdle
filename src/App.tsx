@@ -23,12 +23,14 @@ function App() {
 
   useEffect(() => {
     // maybe get data from Redux, use dummy for now
-    setDailyEntity(dummyQiqi as CharacterAPIData);
+    // setDailyEntity(dummyQiqi as CharacterAPIData);
+    // setDailyEntity(dummyTwoStarWeapon as WeaponAPIData);
+    setDailyEntity(dummyFood as FoodAPIData);
   }, []);
 
-  const type = "character";
+  // const type = "character";
   // const type = "weapon";
-  // const type = "food";
+  const type = "food";
 
   const chars = allCharData as CharacterAPIData[];
   const weaps = allWeapData as WeaponAPIData[];
@@ -67,20 +69,20 @@ function App() {
     <div className="App">
       {/* <GuessTable tableType="character" /> */}
       <SelectMenu
-        selectType="character"
+        // selectType="character"
         // selectType="weapon"
-        // selectType="food"
-        data={sortedData(chars)}
+        selectType="food"
+        // data={sortedData(chars)}
         // data={sortedData(weaps)}
-        // data={sortedData(foods)}
+        data={sortedData(foods)}
         guesses={guesses}
         gameCompleted={gameCompleted}
         handleGuess={handleGuess}
       />
       <GuessTable
-        tableType="character"
+        // tableType="character"
         // tableType="weapon"
-        // tableType="food"
+        tableType="food"
         guessesProp={guesses}
         answer={dailyEntity!}
       />

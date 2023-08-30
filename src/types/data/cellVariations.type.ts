@@ -1,15 +1,21 @@
-type MainImage = {
+import AnswerOptions from "./answerOptions.type";
+
+type BaseCell = {
+  answerAccuracy: AnswerOptions;
+};
+
+type MainImage = BaseCell & {
   dataType: "mainImage";
   content: string;
   altText: string;
 };
 
-type TextSingle = {
+type TextSingle = BaseCell & {
   dataType: "textSingle";
   content: string | null;
 };
 
-type TextDouble = {
+type TextDouble = BaseCell & {
   dataType: "textDouble";
   content1: string;
   elementalText1?: boolean;
@@ -17,14 +23,14 @@ type TextDouble = {
   elementalText2?: boolean;
 };
 
-type TextImageCombo = {
+type TextImageCombo = BaseCell & {
   dataType: "textImageCombo";
   content1: string | null;
   content2: string;
   altText2: string;
 };
 
-type ImageDouble = {
+type ImageDouble = BaseCell & {
   dataType: "imageDouble";
   content1: string | string[];
   altText1: string | string[];
@@ -32,7 +38,7 @@ type ImageDouble = {
   altText2: string | null;
 };
 
-type BooleanSingle = {
+type BooleanSingle = BaseCell & {
   dataType: "booleanSingle";
   content: boolean;
 };
