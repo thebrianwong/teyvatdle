@@ -1,8 +1,15 @@
 import GuessTableRow from "../GuessTableRow/GuessTableRow";
 import GuessTableProps from "./type";
 import GuessTableHeader from "../GuessTableHeader/GuessTableHeader";
+import { useEffect, useRef } from "react";
 
 const GuessTable = ({ tableType, guessesProp, answer }: GuessTableProps) => {
+  const ref = useRef<HTMLTableElement>(null);
+
+  useEffect(() => {
+    ref.current!.scrollIntoView({ behavior: "smooth", inline: "start" });
+  }, [guessesProp]);
+
   /*
   const [guesses, setGuesses] = useState<TableAPIData[]>([
     dummy as CharacterAPIData,
@@ -18,7 +25,7 @@ const GuessTable = ({ tableType, guessesProp, answer }: GuessTableProps) => {
 
   return (
     <div style={{ maxHeight: "50vh", maxWidth: "80vw", overflow: "auto" }}>
-      <table style={{ backgroundColor: "lightgray" }}>
+      <table ref={ref} style={{ backgroundColor: "lightgray" }}>
         <GuessTableHeader headerType={tableType} />
         <tbody>
           {guessesProp.map((guess) => {
