@@ -40,7 +40,7 @@ const SelectMenu = ({
   return (
     <search is="search" style={{ position: "relative" }}>
       <label>Guess a {selectType}!</label>
-      <br></br>
+      <br />
       <SelectSearchBar
         value={searchValue}
         gameCompleted={gameCompleted}

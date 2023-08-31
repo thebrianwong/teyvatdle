@@ -8,19 +8,38 @@ const GuessTableHeader = ({ headerType }: GuessTableHeaderProps) => {
     headerColumns = (
       <>
         {/* all th need class with background color styling to remove transparent background */}
-        <th style={{ position: "sticky", top: 0 }}></th>
-        <th style={{ position: "sticky", top: 0 }}>Character Name</th>
-        <th style={{ position: "sticky", top: 0 }}>Gender/Height</th>
-        <th style={{ position: "sticky", top: 0 }}>Rarity/Region</th>
-        <th style={{ position: "sticky", top: 0 }}>Element/Weapon</th>
-        <th style={{ position: "sticky", top: 0 }}>
-          Ascension Stat/Enhancement Material
+        <th colSpan={2} style={{ position: "sticky", top: 0 }}>
+          Character
         </th>
         <th style={{ position: "sticky", top: 0 }}>
-          Local Specialty/Normal Boss Material
+          Gender
+          <br />
+          Height
         </th>
         <th style={{ position: "sticky", top: 0 }}>
-          Talent Book(s)/Weekly Boss Material
+          Rarity
+          <br />
+          Region
+        </th>
+        <th style={{ position: "sticky", top: 0 }}>
+          Element
+          <br />
+          Weapon
+        </th>
+        <th style={{ position: "sticky", top: 0 }}>
+          Ascension Stat
+          <br />
+          Enhancement Material
+        </th>
+        <th style={{ position: "sticky", top: 0 }}>
+          Local Specialty
+          <br />
+          Normal Boss Material
+        </th>
+        <th style={{ position: "sticky", top: 0 }}>
+          Talent Book(s)
+          <br />
+          Weekly Boss Material
         </th>
         <th style={{ position: "sticky", top: 0 }}>Birthday</th>
       </>
@@ -28,20 +47,34 @@ const GuessTableHeader = ({ headerType }: GuessTableHeaderProps) => {
   } else if (headerType === "weapon") {
     headerColumns = (
       <>
-        <th></th>
-        <th>Weapon Name</th>
-        <th>Rarity/Weapon Type</th>
-        <th>Sub Stat/Weapon Ascension Material</th>
-        <th>Elite/Common Enhancement Material</th>
+        <th colSpan={2}>Weapon</th>
+        <th>
+          Rarity
+          <br />
+          Weapon Type
+        </th>
+        <th>
+          Sub Stat
+          <br />
+          Weapon Ascension Material
+        </th>
+        <th>
+          Elite Enhancement Material
+          <br />
+          Common Enhancement Material
+        </th>
         <th>Gacha Weapon</th>
       </>
     );
   } else if (headerType === "food") {
     headerColumns = (
       <>
-        <th></th>
-        <th>Food Name</th>
-        <th>Rarity/Food Type</th>
+        <th colSpan={2}>Food</th>
+        <th>
+          Rarity
+          <br />
+          Food Type
+        </th>
         <th>Special Dish</th>
         <th>Purchasable from Vendor</th>
         <th>Has Recipe</th>
