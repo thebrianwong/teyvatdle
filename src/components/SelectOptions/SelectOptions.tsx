@@ -47,6 +47,7 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
               onClick={() => handleGuess(item)}
             >
               <img
+                loading="lazy"
                 src={item[
                   `${dataType}_image_url` as keyof typeof item
                 ].toString()}
