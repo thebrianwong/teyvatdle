@@ -160,6 +160,8 @@ const GuessTableRow = memo(
             } else {
               charResults.birthdayAccuracy = "partial";
             }
+          } else if (!charGuessData.birthday && !charAnswerData.birthday) {
+            charResults.birthdayAccuracy = "correct";
           } else {
             charResults.birthdayAccuracy = "wrong";
           }
