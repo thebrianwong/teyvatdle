@@ -1,8 +1,8 @@
 {
-  "constellation_id": 1,
-  "constellation_name": "One Arrow to Rule Them All",
+  "constellation_id": 337,
+  "constellation_name": "Deepwood Patrol",
   "constellation_level": 1,
-  "constellation_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690347571/teyvatdle/character/mondstadt/amber/constellation/one_arrow_to_rule_them_all.png",
-  "character_name": "Amber",
-  "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/q_auto/q_auto/v1690005044/teyvatdle/character/mondstadt/amber/amber.png"
+  "constellation_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/v1690607462/teyvatdle/character/sumeru/collei/constellation/deepwood_patrol.png",
+  "character_name": "Collei",
+  "character_image_url": "https://res.cloudinary.com/ddwpyixfg/image/upload/q_auto/q_auto/v1690071040/teyvatdle/character/sumeru/collei/collei.png"
 }
