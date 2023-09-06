@@ -16,35 +16,26 @@ import { useEffect, useState } from "react";
 import GameArea from "./components/GameArea/GameArea";
 import TalentAPIData from "./types/data/talentAPIData.type";
 import ConstellationAPIData from "./types/data/constellationAPIData.type";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import WeaponPage from "./pages/WeaponPage/WeaponPage";
+import FoodPage from "./pages/FoodPage/FoodPage";
+import TalentPage from "./pages/TalentPage/TalentPage";
+import ConstellationPage from "./pages/ConstellationPage/ConstellationPage";
 
 function App() {
-  const chars = allCharData as CharacterAPIData[];
-  const weaps = allWeapData as WeaponAPIData[];
-  const foods = allFoodData as FoodAPIData[];
-
-  const charDaily = dummy as CharacterAPIData;
-  const weapDaily = dummyTwoStarWeapon as WeaponAPIData;
-  const foodDaily = dummyFood as FoodAPIData;
-  const talentDaily = dummyTalent as TalentAPIData;
-  const constellationDaily = dummyConstellation as ConstellationAPIData;
-
   return (
     <div className="App">
-      {/* <GameArea gameType="character" selectType="character" data={chars} dailyEntity={charDaily} /> */}
-      {/* <GameAreaTable gameType="weapon" selectType="weapon" data={weaps} dailyEntity={weapDaily} /> */}
-      {/* <GameAreaTable gameType="food" selectType="food" data={foods} dailyEntity={foodDaily} /> */}
-      {/* <GameArea
-        gameType="talent"
-        selectType="character"
-        data={chars}
-        dailyEntity={talentDaily}
-      /> */}
-      <GameArea
-        gameType="constellation"
-        selectType="character"
-        data={chars}
-        dailyEntity={constellationDaily}
-      />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/character" element={<Navigate to={"/"} />} />
+          <Route path="/weapon" element={<WeaponPage />} />
+          <Route path="/food" element={<FoodPage />} />
+          <Route path="/talent" element={<TalentPage />} />
+          <Route path="/constellation" element={<ConstellationPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
