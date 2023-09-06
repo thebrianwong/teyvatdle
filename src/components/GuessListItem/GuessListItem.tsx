@@ -1,6 +1,7 @@
+import { memo } from "react";
 import GuessListItemProps from "./type";
 
-const GuessListItem = ({ itemData, answer }: GuessListItemProps) => {
+const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
   const chooseAppropriateClassName = () => {
     if (itemData.character_name === answer.character_name) {
       return "correct";
@@ -16,13 +17,13 @@ const GuessListItem = ({ itemData, answer }: GuessListItemProps) => {
       return itemData.character_wrong_image_url;
     }
   };
-
+  console.log("woo");
   return (
     <li className={`${chooseAppropriateClassName()}`}>
       <img src={chooseAppropriateImageURL()} alt="" />
       <p>{itemData.character_name}</p>
     </li>
   );
-};
+});
 
 export default GuessListItem;
