@@ -17,7 +17,7 @@ const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
       return itemData.character_wrong_image_url;
     }
   };
-  console.log("woo");
+
   return (
     <li className={`${chooseAppropriateClassName()}`}>
       <img src={chooseAppropriateImageURL()} alt="" />
