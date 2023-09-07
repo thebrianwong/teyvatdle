@@ -9,12 +9,15 @@ const HomePage = () => {
   const charDaily = dummy as CharacterAPIData;
 
   return (
-    <GameArea
-      gameType="character"
-      selectType="character"
-      data={chars}
-      dailyEntity={charDaily}
-    />
+    <>
+      <h1>Daily Character</h1>
+      <GameArea
+        gameType="character"
+        selectType="character"
+        data={chars}
+        dailyEntity={charDaily}
+      />
+    </>
   );
 };
 

@@ -9,12 +9,15 @@ const WeaponPage = () => {
   const weapDaily = dummyTwoStarWeapon as WeaponAPIData;
 
   return (
-    <GameArea
-      gameType="weapon"
-      selectType="weapon"
-      data={weaps}
-      dailyEntity={weapDaily}
-    />
+    <>
+      <h1>Daily Weapon</h1>
+      <GameArea
+        gameType="weapon"
+        selectType="weapon"
+        data={weaps}
+        dailyEntity={weapDaily}
+      />
+    </>
   );
 };
 

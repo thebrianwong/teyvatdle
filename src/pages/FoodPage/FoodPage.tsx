@@ -9,12 +9,15 @@ const FoodPage = () => {
   const foodDaily = dummyFood as FoodAPIData;
 
   return (
-    <GameArea
-      gameType="food"
-      selectType="food"
-      data={foods}
-      dailyEntity={foodDaily}
-    />
+    <>
+      <h1>Daily Food</h1>
+      <GameArea
+        gameType="food"
+        selectType="food"
+        data={foods}
+        dailyEntity={foodDaily}
+      />
+    </>
   );
 };
 

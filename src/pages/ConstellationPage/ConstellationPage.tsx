@@ -10,12 +10,15 @@ const ConstellationPage = () => {
   const constellationDaily = dummyConstellation as ConstellationAPIData;
 
   return (
-    <GameArea
-      gameType="constellation"
-      selectType="character"
-      data={chars}
-      dailyEntity={constellationDaily}
-    />
+    <>
+      <h1>Daily Constellation</h1>
+      <GameArea
+        gameType="constellation"
+        selectType="character"
+        data={chars}
+        dailyEntity={constellationDaily}
+      />
+    </>
   );
 };
 

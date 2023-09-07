@@ -10,12 +10,15 @@ const TalentPage = () => {
   const talentDaily = dummyTalent as TalentAPIData;
 
   return (
-    <GameArea
-      gameType="talent"
-      selectType="character"
-      data={chars}
-      dailyEntity={talentDaily}
-    />
+    <>
+      <h1>Daily Talent</h1>
+      <GameArea
+        gameType="talent"
+        selectType="character"
+        data={chars}
+        dailyEntity={talentDaily}
+      />
+    </>
   );
 };
 
