@@ -22,11 +22,13 @@ import WeaponPage from "./pages/WeaponPage/WeaponPage";
 import FoodPage from "./pages/FoodPage/FoodPage";
 import TalentPage from "./pages/TalentPage/TalentPage";
 import ConstellationPage from "./pages/ConstellationPage/ConstellationPage";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/character" element={<Navigate to={"/"} />} />
