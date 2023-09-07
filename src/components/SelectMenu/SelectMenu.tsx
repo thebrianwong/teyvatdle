@@ -44,6 +44,7 @@ const SelectMenu = ({
       <SelectSearchBar
         value={searchValue}
         gameCompleted={gameCompleted}
+        placeholderType={selectType}
         handleClick={() => setShowResults(true)}
         handleInput={(value) => setSearchValue(value)}
         ref={inputRef}
