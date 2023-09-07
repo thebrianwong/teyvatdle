@@ -10,6 +10,7 @@ import GuessList from "../GuessList/GuessList";
 import ListAPIData from "../../types/data/listAPIData.type";
 import TalentAPIData from "../../types/data/talentAPIData.type";
 import ConstellationAPIData from "../../types/data/constellationAPIData.type";
+import TalentConstellationImage from "../TalentConstellationImage/TalentConstellationImage";
 
 const GameArea = ({
   gameType,
@@ -58,24 +59,17 @@ const GameArea = ({
         gameCompleted={gameCompleted}
         handleGuess={handleGuess}
       />
-      {gameType === "talent" ? (
-        <img
-          src={(dailyEntity as TalentAPIData).talent_image_url}
-          alt="Daily talent."
-        />
-      ) : gameType === "constellation" ? (
-        <img
-          src={(dailyEntity as ConstellationAPIData).constellation_image_url}
-          alt="Daily constellation."
-        />
-      ) : (
-        <></>
-      )}
       {gameType === "talent" || gameType === "constellation" ? (
-        <GuessList
-          guesses={guesses as CharacterAPIData[]}
-          answer={dailyEntity as ListAPIData}
-        />
+        <>
+          <TalentConstellationImage
+            type={gameType}
+            data={dailyEntity as ListAPIData}
+          />
+          <GuessList
+            guesses={guesses as CharacterAPIData[]}
+            answer={dailyEntity as ListAPIData}
+          />
+        </>
       ) : (
         <GuessTable
           tableType={selectType}
