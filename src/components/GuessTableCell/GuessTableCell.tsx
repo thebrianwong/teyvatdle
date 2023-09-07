@@ -4,12 +4,15 @@ import "./styles.scss";
 
 const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
   let cellElement: ReactElement;
+  let cellClass = "table-cell-";
 
   if (cellData.dataType === "mainImage") {
     cellElement = <img src={cellData.content} alt={cellData.altText} />;
+    cellClass = cellClass.concat("main-image");
   } else if (cellData.dataType === "textSingle") {
     const cellContent = cellData.content || "None";
     cellElement = <>{cellContent}</>;
+    cellClass = cellClass.concat("text-single");
   } else if (cellData.dataType === "textDouble") {
     const cellContent1 = cellData.content1 || "None";
     const cellContent2 = cellData.content2 || "None";
@@ -20,6 +23,7 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
         {cellContent2}
       </>
     );
+    cellClass = cellClass.concat("text-double");
   } else if (cellData.dataType === "textImageCombo") {
     const cellContent1 = cellData.content1 || "None";
     cellElement = (
@@ -28,6 +32,7 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
         <img src={cellData.content2} alt={cellData.altText2 + "."} />
       </>
     );
+    cellClass = cellClass.concat("text-image-combo");
   } else if (cellData.dataType === "imageDouble") {
     if (Array.isArray(cellData.content1) && Array.isArray(cellData.altText1)) {
       cellElement = (
@@ -71,12 +76,18 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
         );
       }
     }
+    cellClass = cellClass.concat("image-double");
   } else if (cellData.dataType === "booleanSingle") {
-    const cellContent = cellData.content ? "✅" : "❌";
+    const cellContent = cellData.content ? "✔️" : "✗";
     cellElement = <>{cellContent}</>;
+    cellClass = cellClass.concat("boolean-single");
   }
 
-  return <td className={`${cellData.answerAccuracy}`}>{cellElement!}</td>;
+  return (
+    <td className={`table-cell ${cellData.answerAccuracy} ${cellClass}`}>
+      {cellElement!}
+    </td>
+  );
 };
 
 export default GuessTableCell;
