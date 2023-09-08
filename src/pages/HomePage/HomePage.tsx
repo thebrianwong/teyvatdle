@@ -2,6 +2,7 @@ import allCharData from "../../allChars.json";
 import dummy from "../../placeholder.json";
 import GameArea from "../../components/GameArea/GameArea";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
+import paimonImage from "../../assets/title/paimonThinking.png";
 
 const HomePage = () => {
   // will later get from redux
@@ -10,7 +11,10 @@ const HomePage = () => {
 
   return (
     <>
-      <h1>Daily Character</h1>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <img src={paimonImage} alt="" />
+        <h1>Which Character is Paimon Thinking of...?</h1>
+      </div>
       <GameArea
         gameType="character"
         selectType="character"
