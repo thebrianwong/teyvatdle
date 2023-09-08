@@ -4,7 +4,7 @@ import FoodAPIData from "../../types/data/foodAPIData.type";
 import GuessTable from "../GuessTable/GuessTable";
 import SelectMenu from "../SelectMenu/SelectMenu";
 import TableAPIData from "../../types/data/tableAPIData.type";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GameAreaProps from "./type";
 import GuessList from "../GuessList/GuessList";
 import ListAPIData from "../../types/data/listAPIData.type";
@@ -20,6 +20,12 @@ const GameArea = ({
 }: GameAreaProps) => {
   const [guesses, setGuesses] = useState<TableAPIData[]>([]);
   const [gameCompleted, setGameCompleted] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (gameCompleted) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [gameCompleted]);
 
   const handleGuess = (guess: TableAPIData) => {
     const newGuesses = [guess, ...guesses];
