@@ -23,6 +23,7 @@ import FoodPage from "./pages/FoodPage/FoodPage";
 import TalentPage from "./pages/TalentPage/TalentPage";
 import ConstellationPage from "./pages/ConstellationPage/ConstellationPage";
 import NavBar from "./components/NavBar/NavBar";
+import { useAppSelector, useAppDispatch } from "./redux/hooks";
 
 function App() {
   return (
