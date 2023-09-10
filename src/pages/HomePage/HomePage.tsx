@@ -3,10 +3,14 @@ import dummy from "../../placeholder.json";
 import GameArea from "../../components/GameArea/GameArea";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
+import { useAppSelector } from "../../redux/hooks";
+import { loadCharacters } from "../../redux/apiDataSlice";
+import { store } from "../../redux/store";
+import { useEffect } from "react";
 
 const HomePage = () => {
   // will later get from redux
-  const chars = allCharData as CharacterAPIData[];
+  const chars = useAppSelector(loadCharacters);
   const charDaily = dummy as CharacterAPIData;
 
   return (

@@ -24,8 +24,38 @@ import TalentPage from "./pages/TalentPage/TalentPage";
 import ConstellationPage from "./pages/ConstellationPage/ConstellationPage";
 import NavBar from "./components/NavBar/NavBar";
 import { useAppSelector, useAppDispatch } from "./redux/hooks";
+import getData from "./services/GameDataService";
+import {
+  insertCharacterAPIData,
+  insertConstellationAPIData,
+  insertFoodAPIData,
+  insertTalentAPIData,
+  insertWeaponAPIData,
+} from "./redux/apiDataSlice";
 
 function App() {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    const getAllGameData = async () => {
+      const [charData, weapData, foodData, talentData, constData] =
+        await Promise.all([
+          getData("character"),
+          getData("weapon"),
+          getData("food"),
+          getData("talent"),
+          getData("constellation"),
+        ]);
+
+      dispatch(insertCharacterAPIData(charData as CharacterAPIData[]));
+      dispatch(insertWeaponAPIData(weapData as WeaponAPIData[]));
+      dispatch(insertFoodAPIData(foodData as FoodAPIData[]));
+      dispatch(insertTalentAPIData(talentData as TalentAPIData[]));
+      dispatch(insertConstellationAPIData(constData as ConstellationAPIData[]));
+    };
+
+    getAllGameData();
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
