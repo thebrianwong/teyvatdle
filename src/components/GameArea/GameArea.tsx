@@ -38,29 +38,11 @@ const GameArea = ({
     }
   };
 
-  const sortedData = (data: TableAPIData[]) => {
-    return data.sort((a, b) => {
-      if (
-        a[`${selectType}_name` as keyof typeof a] <
-        b[`${selectType}_name` as keyof typeof b]
-      ) {
-        return -1;
-      } else if (
-        a[`${selectType}_name` as keyof typeof a] >
-        b[`${selectType}_name` as keyof typeof b]
-      ) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-  };
-
   return (
     <>
       <SelectMenu
         selectType={selectType}
-        data={sortedData(data)}
+        data={data}
         guesses={guesses}
         gameCompleted={gameCompleted}
         handleGuess={handleGuess}
