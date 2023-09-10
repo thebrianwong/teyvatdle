@@ -28,58 +28,61 @@ export const apiDataSlice = createSlice({
   name: "apiData",
   initialState,
   reducers: {
-    insertGameDataFromAPI: (
+    insertCharacterAPIData: (
       state,
-      action: PayloadAction<TableAPIData[] | ListAPIData[]>
+      action: PayloadAction<CharacterAPIData[]>
     ) => {
-      switch (action.type) {
-        case "character":
-          state.characters = action.payload as CharacterAPIData[];
-          break;
-        case "weapon":
-          state.weapons = action.payload as WeaponAPIData[];
-          break;
-        case "food":
-          state.foods = action.payload as FoodAPIData[];
-          break;
-        case "talent":
-          state.talents = action.payload as TalentAPIData[];
-          break;
-        case "constellation":
-          state.constellations = action.payload as ConstellationAPIData[];
-          break;
-        default:
-          break;
-      }
+      state.characters = action.payload as CharacterAPIData[];
+    },
+    insertWeaponAPIData: (state, action: PayloadAction<WeaponAPIData[]>) => {
+      state.weapons = action.payload as WeaponAPIData[];
+    },
+    insertFoodAPIData: (state, action: PayloadAction<FoodAPIData[]>) => {
+      state.foods = action.payload as FoodAPIData[];
+    },
+    insertTalentAPIData: (state, action: PayloadAction<TalentAPIData[]>) => {
+      state.talents = action.payload as TalentAPIData[];
+    },
+    insertConstellationAPIData: (
+      state,
+      action: PayloadAction<ConstellationAPIData[]>
+    ) => {
+      state.constellations = action.payload as ConstellationAPIData[];
     },
   },
 });
 
-export const { insertGameDataFromAPI } = apiDataSlice.actions;
+export const {
+  insertCharacterAPIData,
+  insertWeaponAPIData,
+  insertFoodAPIData,
+  insertTalentAPIData,
+  insertConstellationAPIData,
+} = apiDataSlice.actions;
 
-export const selectCharacters = (state: RootState) => state.apiData.characters;
-export const selectDailyCharacterData = (state: RootState, id: number) => {
+export const loadCharacters = (state: RootState) => state.apiData.characters;
+export const loadDailyCharacter = (state: RootState, id: number) => {
   return state.apiData.characters.find(
     (charData) => charData.character_id === id
   );
 };
-export const selectWeapons = (state: RootState) => state.apiData.weapons;
-export const selectDailyWeaponData = (state: RootState, id: number) => {
+export const loadWeapons = (state: RootState) => state.apiData.weapons;
+export const loadDailyWeapon = (state: RootState, id: number) => {
   return state.apiData.weapons.find((weapData) => weapData.weapon_id === id);
 };
-export const selectFoods = (state: RootState) => state.apiData.foods;
-export const selectDailyFoodData = (state: RootState, id: number) => {
+export const loadFoods = (state: RootState) => state.apiData.foods;
+export const loadDailyFood = (state: RootState, id: number) => {
   return state.apiData.foods.find((foodData) => foodData.food_id === id);
 };
-export const selectTalents = (state: RootState) => state.apiData.talents;
-export const selectDailyTalentData = (state: RootState, id: number) => {
+export const loadTalents = (state: RootState) => state.apiData.talents;
+export const loadDailyTalent = (state: RootState, id: number) => {
   return state.apiData.talents.find(
     (talentData) => talentData.talent_id === id
   );
 };
-export const selectConstellations = (state: RootState) =>
+export const loadConstellations = (state: RootState) =>
   state.apiData.constellations;
-export const selectDailyConstellationData = (state: RootState, id: number) => {
+export const loadDailyConstellation = (state: RootState, id: number) => {
   return state.apiData.constellations.find(
     (constData) => constData.constellation_id === id
   );

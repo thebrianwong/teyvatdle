@@ -26,32 +26,32 @@ export const dailyRecordSlice = createSlice({
     ) => {
       state = action.payload;
     },
-    updateSolvedValue: (state, action: PayloadAction<number>) => {
-      switch (action.type) {
-        case "character":
-          state.character_solved = action.payload;
-          break;
-        case "weapon":
-          state.weapon_solved = action.payload;
-          break;
-        case "food":
-          state.food_solved = action.payload;
-          break;
-        case "talent":
-          state.talent_solved = action.payload;
-          break;
-        case "constellation":
-          state.constellation_solved = action.payload;
-          break;
-        default:
-          break;
-      }
+    updateCharacterSolvedValue: (state, action: PayloadAction<number>) => {
+      state.character_solved = action.payload;
+    },
+    updateWeaponSolvedValue: (state, action: PayloadAction<number>) => {
+      state.weapon_solved = action.payload;
+    },
+    updateFoodSolvedValue: (state, action: PayloadAction<number>) => {
+      state.food_solved = action.payload;
+    },
+    updateTalentSolvedValue: (state, action: PayloadAction<number>) => {
+      state.talent_solved = action.payload;
+    },
+    updateConstellationSolvedValue: (state, action: PayloadAction<number>) => {
+      state.constellation_solved = action.payload;
     },
   },
 });
 
-export const { insertDailyRecordFromAPI, updateSolvedValue } =
-  dailyRecordSlice.actions;
+export const {
+  insertDailyRecordFromAPI,
+  updateCharacterSolvedValue,
+  updateWeaponSolvedValue,
+  updateFoodSolvedValue,
+  updateTalentSolvedValue,
+  updateConstellationSolvedValue,
+} = dailyRecordSlice.actions;
 
 export const selectDailyCharacterID = (state: RootState) =>
   state.dailyRecord.character_id;
