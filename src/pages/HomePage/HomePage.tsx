@@ -10,7 +10,7 @@ import { selectDailyCharacterID } from "../../redux/dailyRecordSlice";
 const HomePage = () => {
   const characterData = useAppSelector(loadCharacters);
   const dailyCharacterID = useAppSelector(selectDailyCharacterID);
-  const dailyCharacter = useAppSelector((state) =>
+  const dailyCharacterData = useAppSelector((state) =>
     loadDailyCharacter(state, dailyCharacterID)
   );
 
@@ -20,12 +20,14 @@ const HomePage = () => {
         <img src={paimonImage} alt="" />
         <h1>Which Character is Paimon Thinking of...?</h1>
       </div>
-      <GameArea
-        gameType="character"
-        selectType="character"
-        data={characterData}
-        dailyEntity={dailyCharacter!}
-      />
+      {dailyCharacterData && (
+        <GameArea
+          gameType="character"
+          selectType="character"
+          data={characterData}
+          dailyEntity={dailyCharacterData!}
+        />
+      )}
     </>
   );
 };
