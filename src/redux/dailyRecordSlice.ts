@@ -24,7 +24,7 @@ export const dailyRecordSlice = createSlice({
       state,
       action: PayloadAction<DailyRecordAPIData>
     ) => {
-      state = action.payload;
+      return action.payload;
     },
     updateCharacterSolvedValue: (state, action: PayloadAction<number>) => {
       state.character_solved = action.payload;
