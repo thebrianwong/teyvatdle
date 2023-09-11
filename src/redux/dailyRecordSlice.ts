@@ -57,10 +57,12 @@ export const selectDailyCharacterID = (state: RootState) =>
   state.dailyRecord.character_id;
 export const selectDailyCharacterSolved = (state: RootState) =>
   state.dailyRecord.character_solved;
-export const selectWeaponID = (state: RootState) => state.dailyRecord.weapon_id;
+export const selectDailyWeaponID = (state: RootState) =>
+  state.dailyRecord.weapon_id;
 export const selectDailyWeaponSolved = (state: RootState) =>
   state.dailyRecord.weapon_solved;
-export const selectFoodID = (state: RootState) => state.dailyRecord.food_id;
+export const selectDailyFoodID = (state: RootState) =>
+  state.dailyRecord.food_id;
 export const selectDailyFoodSolved = (state: RootState) =>
   state.dailyRecord.food_solved;
 export const selectDailyTalentID = (state: RootState) =>
