@@ -4,11 +4,19 @@ import GameArea from "../../components/GameArea/GameArea";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
 import ConstellationAPIData from "../../types/data/constellationAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
+import { useAppSelector } from "../../redux/hooks";
+import {
+  loadCharacters,
+  loadDailyConstellation,
+} from "../../redux/apiDataSlice";
+import { selectDailyConstellationID } from "../../redux/dailyRecordSlice";
 
 const ConstellationPage = () => {
-  // will later get from redux
-  const chars = allCharData as CharacterAPIData[];
-  const constellationDaily = dummyConstellation as ConstellationAPIData;
+  const characterData = useAppSelector(loadCharacters);
+  const dailyConstellationID = useAppSelector(selectDailyConstellationID);
+  const dailyConstellationData = useAppSelector((state) =>
+    loadDailyConstellation(state, dailyConstellationID)
+  );
 
   return (
     <>
@@ -16,12 +24,14 @@ const ConstellationPage = () => {
         <img src={paimonImage} alt="" />
         <h1>Which Constellation is Paimon Thinking of...?</h1>
       </div>
-      <GameArea
-        gameType="constellation"
-        selectType="character"
-        data={chars}
-        dailyEntity={constellationDaily}
-      />
+      {dailyConstellationData && (
+        <GameArea
+          gameType="constellation"
+          selectType="character"
+          data={characterData}
+          dailyEntity={dailyConstellationData!}
+        />
+      )}
     </>
   );
 };

@@ -3,11 +3,16 @@ import dummyTwoStarWeapon from "../../twoStarWeapon.json";
 import GameArea from "../../components/GameArea/GameArea";
 import WeaponAPIData from "../../types/data/weaponAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
+import { useAppSelector } from "../../redux/hooks";
+import { loadDailyWeapon, loadWeapons } from "../../redux/apiDataSlice";
+import { selectDailyWeaponID } from "../../redux/dailyRecordSlice";
 
 const WeaponPage = () => {
-  // will later get from redux
-  const weaps = allWeapData as WeaponAPIData[];
-  const weapDaily = dummyTwoStarWeapon as WeaponAPIData;
+  const weaponData = useAppSelector(loadWeapons);
+  const dailyWeaponID = useAppSelector(selectDailyWeaponID);
+  const dailyWeaponData = useAppSelector((state) =>
+    loadDailyWeapon(state, dailyWeaponID)
+  );
 
   return (
     <>
@@ -15,12 +20,14 @@ const WeaponPage = () => {
         <img src={paimonImage} alt="" />
         <h1>Which Weapon is Paimon Thinking of...?</h1>
       </div>
-      <GameArea
-        gameType="weapon"
-        selectType="weapon"
-        data={weaps}
-        dailyEntity={weapDaily}
-      />
+      {dailyWeaponData && (
+        <GameArea
+          gameType="weapon"
+          selectType="weapon"
+          data={weaponData}
+          dailyEntity={dailyWeaponData!}
+        />
+      )}
     </>
   );
 };
