@@ -5,7 +5,10 @@ import WeaponAPIData from "../../types/data/weaponAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import { loadDailyWeapon, loadWeapons } from "../../redux/apiDataSlice";
-import { selectDailyWeaponID } from "../../redux/dailyRecordSlice";
+import {
+  selectDailyWeaponID,
+  selectDailyWeaponSolved,
+} from "../../redux/dailyRecordSlice";
 
 const WeaponPage = () => {
   const weaponData = useAppSelector(loadWeapons);
@@ -13,12 +16,18 @@ const WeaponPage = () => {
   const dailyWeaponData = useAppSelector((state) =>
     loadDailyWeapon(state, dailyWeaponID)
   );
+  const dailyWeaponSolved = useAppSelector(selectDailyWeaponSolved);
 
   return (
     <>
       <div style={{ display: "flex", alignItems: "center" }}>
         <img src={paimonImage} alt="" />
-        <h1>Which Weapon is Paimon Thinking of...?</h1>
+        <div>
+          <h1>Which Weapon is Paimon Thinking of...?</h1>
+          <p
+            style={{ fontStyle: "italic" }}
+          >{`${dailyWeaponSolved} Travelers have guessed Paimon's weapon today!`}</p>
+        </div>
       </div>
       {dailyWeaponData && (
         <GameArea

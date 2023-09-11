@@ -6,7 +6,10 @@ import TalentAPIData from "../../types/data/talentAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import { loadCharacters, loadDailyTalent } from "../../redux/apiDataSlice";
-import { selectDailyTalentID } from "../../redux/dailyRecordSlice";
+import {
+  selectDailyTalentID,
+  selectDailyTalentSolved,
+} from "../../redux/dailyRecordSlice";
 
 const TalentPage = () => {
   const characterData = useAppSelector(loadCharacters);
@@ -14,12 +17,18 @@ const TalentPage = () => {
   const dailyTalentData = useAppSelector((state) =>
     loadDailyTalent(state, dailyTalentID)
   );
+  const dailyTalentSolved = useAppSelector(selectDailyTalentSolved);
 
   return (
     <>
       <div style={{ display: "flex", alignItems: "center" }}>
         <img src={paimonImage} alt="" />
-        <h1>Which Talent is Paimon Thinking of...?</h1>
+        <div>
+          <h1>Which Talent is Paimon Thinking of...?</h1>
+          <p
+            style={{ fontStyle: "italic" }}
+          >{`${dailyTalentSolved} Travelers have guessed Paimon's talent today!`}</p>
+        </div>
       </div>
       {dailyTalentData && (
         <GameArea

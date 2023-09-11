@@ -5,7 +5,10 @@ import CharacterAPIData from "../../types/data/characterAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import { loadCharacters, loadDailyCharacter } from "../../redux/apiDataSlice";
-import { selectDailyCharacterID } from "../../redux/dailyRecordSlice";
+import {
+  selectDailyCharacterID,
+  selectDailyCharacterSolved,
+} from "../../redux/dailyRecordSlice";
 
 const HomePage = () => {
   const characterData = useAppSelector(loadCharacters);
@@ -13,12 +16,18 @@ const HomePage = () => {
   const dailyCharacterData = useAppSelector((state) =>
     loadDailyCharacter(state, dailyCharacterID)
   );
+  const dailyCharacterSolved = useAppSelector(selectDailyCharacterSolved);
 
   return (
     <>
       <div style={{ display: "flex", alignItems: "center" }}>
         <img src={paimonImage} alt="" />
-        <h1>Which Character is Paimon Thinking of...?</h1>
+        <div>
+          <h1>Which Character is Paimon Thinking of...?</h1>
+          <p
+            style={{ fontStyle: "italic" }}
+          >{`${dailyCharacterSolved} Travelers have guessed Paimon's character today!`}</p>
+        </div>
       </div>
       {dailyCharacterData && (
         <GameArea

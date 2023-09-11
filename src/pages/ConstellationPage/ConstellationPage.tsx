@@ -9,7 +9,10 @@ import {
   loadCharacters,
   loadDailyConstellation,
 } from "../../redux/apiDataSlice";
-import { selectDailyConstellationID } from "../../redux/dailyRecordSlice";
+import {
+  selectDailyConstellationID,
+  selectDailyConstellationSolved,
+} from "../../redux/dailyRecordSlice";
 
 const ConstellationPage = () => {
   const characterData = useAppSelector(loadCharacters);
@@ -17,12 +20,20 @@ const ConstellationPage = () => {
   const dailyConstellationData = useAppSelector((state) =>
     loadDailyConstellation(state, dailyConstellationID)
   );
+  const dailyConstellationSolved = useAppSelector(
+    selectDailyConstellationSolved
+  );
 
   return (
     <>
       <div style={{ display: "flex", alignItems: "center" }}>
         <img src={paimonImage} alt="" />
-        <h1>Which Constellation is Paimon Thinking of...?</h1>
+        <div>
+          <h1>Which Constellation is Paimon Thinking of...?</h1>
+          <p
+            style={{ fontStyle: "italic" }}
+          >{`${dailyConstellationSolved} Travelers have guessed Paimon's constellation today!`}</p>
+        </div>
       </div>
       {dailyConstellationData && (
         <GameArea

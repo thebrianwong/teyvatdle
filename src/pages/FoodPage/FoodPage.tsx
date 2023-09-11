@@ -5,7 +5,10 @@ import FoodAPIData from "../../types/data/foodAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import { loadDailyFood, loadFoods } from "../../redux/apiDataSlice";
-import { selectDailyFoodID } from "../../redux/dailyRecordSlice";
+import {
+  selectDailyFoodID,
+  selectDailyFoodSolved,
+} from "../../redux/dailyRecordSlice";
 
 const FoodPage = () => {
   const foodData = useAppSelector(loadFoods);
@@ -13,12 +16,18 @@ const FoodPage = () => {
   const dailyFoodData = useAppSelector((state) =>
     loadDailyFood(state, dailyFoodID)
   );
+  const dailyFoodSolved = useAppSelector(selectDailyFoodSolved);
 
   return (
     <>
       <div style={{ display: "flex", alignItems: "center" }}>
         <img src={paimonImage} alt="" />
-        <h1>Which Food is Paimon Thinking of...?</h1>
+        <div>
+          <h1>Which Food is Paimon Thinking of...?</h1>
+          <p
+            style={{ fontStyle: "italic" }}
+          >{`${dailyFoodSolved} Travelers have guessed Paimon's food today!`}</p>
+        </div>
       </div>
       {dailyFoodData && (
         <GameArea
