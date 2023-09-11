@@ -4,14 +4,15 @@ import GameArea from "../../components/GameArea/GameArea";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
-import { loadCharacters } from "../../redux/apiDataSlice";
-import { store } from "../../redux/store";
-import { useEffect } from "react";
+import { loadCharacters, loadDailyCharacter } from "../../redux/apiDataSlice";
+import { selectDailyCharacterID } from "../../redux/dailyRecordSlice";
 
 const HomePage = () => {
-  // will later get from redux
-  const chars = useAppSelector(loadCharacters);
-  const charDaily = dummy as CharacterAPIData;
+  const characterData = useAppSelector(loadCharacters);
+  const dailyCharacterID = useAppSelector(selectDailyCharacterID);
+  const dailyCharacter = useAppSelector((state) =>
+    loadDailyCharacter(state, dailyCharacterID)
+  );
 
   return (
     <>
@@ -22,8 +23,8 @@ const HomePage = () => {
       <GameArea
         gameType="character"
         selectType="character"
-        data={chars}
-        dailyEntity={charDaily}
+        data={characterData}
+        dailyEntity={dailyCharacter!}
       />
     </>
   );

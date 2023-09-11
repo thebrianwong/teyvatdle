@@ -32,6 +32,9 @@ import {
   insertTalentAPIData,
   insertWeaponAPIData,
 } from "./redux/apiDataSlice";
+import { insertDailyRecordFromAPI } from "./redux/dailyRecordSlice";
+import DailyRecordAPIData from "./types/data/dailyRecordAPIData.type";
+import getDailyRecord from "./services/DailyRecordService";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -52,8 +55,13 @@ function App() {
       dispatch(insertTalentAPIData(talentData as TalentAPIData[]));
       dispatch(insertConstellationAPIData(constData as ConstellationAPIData[]));
     };
+    const getDailyRecordData = async () => {
+      const dailyRecordData = await getDailyRecord();
+      dispatch(insertDailyRecordFromAPI(dailyRecordData!));
+    };
 
     getAllGameData();
+    getDailyRecordData();
   }, []);
 
   return (
