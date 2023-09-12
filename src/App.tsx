@@ -37,6 +37,7 @@ import {
   selectDailyRecordID,
 } from "./redux/dailyRecordSlice";
 import { getDailyRecord } from "./services/DailyRecordService";
+import "./styles/normalize.css";
 
 function App() {
   const dispatch = useAppDispatch();
