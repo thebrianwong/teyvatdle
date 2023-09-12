@@ -1,7 +1,9 @@
+import GameModes from "../../types/gameModes.type";
+
 type SelectSearchBarProps = {
   value: string;
   gameCompleted: boolean;
-  placeholderType: "character" | "weapon" | "food" | "talent" | "constellation";
+  placeholderType: GameModes;
   handleClick: () => void;
   handleInput: (value: string) => void;
 };

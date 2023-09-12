@@ -1,8 +1,9 @@
 import ListAPIData from "../../types/data/listAPIData.type";
 import TableAPIData from "../../types/data/tableAPIData.type";
+import GameModes from "../../types/gameModes.type";
 
 type GameAreaProps = {
-  gameType: "character" | "weapon" | "food" | "talent" | "constellation";
+  gameType: GameModes;
   selectType: "character" | "weapon" | "food";
   data: TableAPIData[];
   dailyEntity: TableAPIData | ListAPIData;
