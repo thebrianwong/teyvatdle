@@ -28,6 +28,7 @@ const GuessTableRow = memo(
           const charAnswerData = { ...answer } as CharacterAPIData;
           if (charGuessData.character_name === charAnswerData.character_name) {
             const charAllCorrect: CharacterAnswerAccuracy = {
+              charNameAccuracy: "correct",
               genderHeightAccuracy: "correct",
               rarityRegionAccuracy: "correct",
               eleWeaponAccuracy: "correct",
@@ -39,6 +40,8 @@ const GuessTableRow = memo(
             return charAllCorrect;
           }
           const charResults: CharacterAnswerAccuracy = {
+            // name comparison already performed so charNameAccuracy will always be wrong
+            charNameAccuracy: "wrong",
             genderHeightAccuracy: "default",
             rarityRegionAccuracy: "default",
             eleWeaponAccuracy: "default",
@@ -171,6 +174,7 @@ const GuessTableRow = memo(
           const weapAnswerData = { ...answer } as WeaponAPIData;
           if (weapGuessData.weapon_name === weapAnswerData.weapon_name) {
             const weapAllCorrect: WeaponAnswerAccuracy = {
+              weapNameAccuracy: "correct",
               rarityWeapTypeAccuracy: "correct",
               subStatMaterialAccuracy: "correct",
               eliteCommonAccuracy: "correct",
@@ -179,6 +183,7 @@ const GuessTableRow = memo(
             return weapAllCorrect;
           }
           const weapResults: WeaponAnswerAccuracy = {
+            weapNameAccuracy: "wrong",
             rarityWeapTypeAccuracy: "default",
             subStatMaterialAccuracy: "default",
             eliteCommonAccuracy: "default",
@@ -244,6 +249,7 @@ const GuessTableRow = memo(
           const foodAnswerData = { ...answer } as FoodAPIData;
           if (foodGuessData.food_name === foodAnswerData.food_name) {
             const foodAllCorrect: FoodAnswerAccuracy = {
+              foodNameAccuracy: "correct",
               rarityFoodTypeAccuracy: "correct",
               specialAccuracy: "correct",
               purchasableAccuracy: "correct",
@@ -253,6 +259,7 @@ const GuessTableRow = memo(
             return foodAllCorrect;
           }
           const foodResults: FoodAnswerAccuracy = {
+            foodNameAccuracy: "wrong",
             rarityFoodTypeAccuracy: "default",
             specialAccuracy: "default",
             purchasableAccuracy: "default",
@@ -308,6 +315,7 @@ const GuessTableRow = memo(
         case "character":
           const rawCharacterData = { ...rawData } as CharacterAPIData;
           const {
+            charNameAccuracy,
             genderHeightAccuracy,
             rarityRegionAccuracy,
             eleWeaponAccuracy,
@@ -328,7 +336,7 @@ const GuessTableRow = memo(
             name: {
               dataType: "textSingle",
               content: rawCharacterData.character_name,
-              answerAccuracy: "default",
+              answerAccuracy: charNameAccuracy,
             },
             gender_height: {
               dataType: "textDouble",
@@ -384,6 +392,7 @@ const GuessTableRow = memo(
         case "weapon":
           const rawWeaponData = { ...rawData } as WeaponAPIData;
           const {
+            weapNameAccuracy,
             rarityWeapTypeAccuracy,
             subStatMaterialAccuracy,
             eliteCommonAccuracy,
@@ -399,7 +408,7 @@ const GuessTableRow = memo(
             name: {
               dataType: "textSingle",
               content: rawWeaponData.weapon_name,
-              answerAccuracy: "default",
+              answerAccuracy: weapNameAccuracy,
             },
             rarity_type: {
               dataType: "textDouble",
@@ -433,6 +442,7 @@ const GuessTableRow = memo(
         case "food":
           const rawFoodData = { ...rawData } as FoodAPIData;
           const {
+            foodNameAccuracy,
             rarityFoodTypeAccuracy,
             specialAccuracy,
             purchasableAccuracy,
@@ -449,7 +459,7 @@ const GuessTableRow = memo(
             name: {
               dataType: "textSingle",
               content: rawFoodData.food_name,
-              answerAccuracy: "default",
+              answerAccuracy: foodNameAccuracy,
             },
             rarity_type: {
               dataType: "textDouble",
