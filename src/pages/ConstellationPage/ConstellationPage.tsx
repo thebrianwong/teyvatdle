@@ -13,8 +13,9 @@ import {
   selectDailyConstellationID,
   selectDailyConstellationSolved,
 } from "../../redux/dailyRecordSlice";
+import ConstellationPageProps from "./type";
 
-const ConstellationPage = () => {
+const ConstellationPage = ({ dailyRecordID }: ConstellationPageProps) => {
   const characterData = useAppSelector(loadCharacters);
   const dailyConstellationID = useAppSelector(selectDailyConstellationID);
   const dailyConstellationData = useAppSelector((state) =>
@@ -41,6 +42,7 @@ const ConstellationPage = () => {
           selectType="character"
           data={characterData}
           dailyEntity={dailyConstellationData!}
+          dailyRecordID={dailyRecordID}
         />
       )}
     </>

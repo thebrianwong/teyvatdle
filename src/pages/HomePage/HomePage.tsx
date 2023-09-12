@@ -9,8 +9,9 @@ import {
   selectDailyCharacterID,
   selectDailyCharacterSolved,
 } from "../../redux/dailyRecordSlice";
+import HomePageProps from "./type";
 
-const HomePage = () => {
+const HomePage = ({ dailyRecordID }: HomePageProps) => {
   const characterData = useAppSelector(loadCharacters);
   const dailyCharacterID = useAppSelector(selectDailyCharacterID);
   const dailyCharacterData = useAppSelector((state) =>
@@ -35,6 +36,7 @@ const HomePage = () => {
           selectType="character"
           data={characterData}
           dailyEntity={dailyCharacterData!}
+          dailyRecordID={dailyRecordID}
         />
       )}
     </>

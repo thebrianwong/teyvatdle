@@ -9,8 +9,9 @@ import {
   selectDailyFoodID,
   selectDailyFoodSolved,
 } from "../../redux/dailyRecordSlice";
+import FoodPageProps from "./type";
 
-const FoodPage = () => {
+const FoodPage = ({ dailyRecordID }: FoodPageProps) => {
   const foodData = useAppSelector(loadFoods);
   const dailyFoodID = useAppSelector(selectDailyFoodID);
   const dailyFoodData = useAppSelector((state) =>
@@ -35,6 +36,7 @@ const FoodPage = () => {
           selectType="food"
           data={foodData}
           dailyEntity={dailyFoodData!}
+          dailyRecordID={dailyRecordID}
         />
       )}
     </>

@@ -9,8 +9,9 @@ import {
   selectDailyWeaponID,
   selectDailyWeaponSolved,
 } from "../../redux/dailyRecordSlice";
+import WeaponPageProps from "./type";
 
-const WeaponPage = () => {
+const WeaponPage = ({ dailyRecordID }: WeaponPageProps) => {
   const weaponData = useAppSelector(loadWeapons);
   const dailyWeaponID = useAppSelector(selectDailyWeaponID);
   const dailyWeaponData = useAppSelector((state) =>
@@ -35,6 +36,7 @@ const WeaponPage = () => {
           selectType="weapon"
           data={weaponData}
           dailyEntity={dailyWeaponData!}
+          dailyRecordID={dailyRecordID}
         />
       )}
     </>

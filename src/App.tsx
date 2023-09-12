@@ -32,12 +32,16 @@ import {
   insertTalentAPIData,
   insertWeaponAPIData,
 } from "./redux/apiDataSlice";
-import { insertDailyRecordFromAPI } from "./redux/dailyRecordSlice";
-import DailyRecordAPIData from "./types/data/dailyRecordAPIData.type";
-import getDailyRecord from "./services/DailyRecordService";
+import {
+  insertDailyRecordFromAPI,
+  selectDailyRecordID,
+} from "./redux/dailyRecordSlice";
+import { getDailyRecord } from "./services/DailyRecordService";
 
 function App() {
   const dispatch = useAppDispatch();
+  const dailyRecordID = useAppSelector(selectDailyRecordID);
+
   useEffect(() => {
     const getAllGameData = async () => {
       const [charData, weapData, foodData, talentData, constData] =
@@ -69,12 +73,27 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/"
+            element={<HomePage dailyRecordID={dailyRecordID} />}
+          />
           <Route path="/character" element={<Navigate to={"/"} />} />
-          <Route path="/weapon" element={<WeaponPage />} />
-          <Route path="/food" element={<FoodPage />} />
-          <Route path="/talent" element={<TalentPage />} />
-          <Route path="/constellation" element={<ConstellationPage />} />
+          <Route
+            path="/weapon"
+            element={<WeaponPage dailyRecordID={dailyRecordID} />}
+          />
+          <Route
+            path="/food"
+            element={<FoodPage dailyRecordID={dailyRecordID} />}
+          />
+          <Route
+            path="/talent"
+            element={<TalentPage dailyRecordID={dailyRecordID} />}
+          />
+          <Route
+            path="/constellation"
+            element={<ConstellationPage dailyRecordID={dailyRecordID} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

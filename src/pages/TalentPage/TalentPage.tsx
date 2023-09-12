@@ -10,8 +10,9 @@ import {
   selectDailyTalentID,
   selectDailyTalentSolved,
 } from "../../redux/dailyRecordSlice";
+import TalentPageProps from "./type";
 
-const TalentPage = () => {
+const TalentPage = ({ dailyRecordID }: TalentPageProps) => {
   const characterData = useAppSelector(loadCharacters);
   const dailyTalentID = useAppSelector(selectDailyTalentID);
   const dailyTalentData = useAppSelector((state) =>
@@ -36,6 +37,7 @@ const TalentPage = () => {
           selectType="character"
           data={characterData}
           dailyEntity={dailyTalentData!}
+          dailyRecordID={dailyRecordID}
         />
       )}
     </>
