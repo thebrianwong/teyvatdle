@@ -11,12 +11,14 @@ import ListAPIData from "../../types/data/listAPIData.type";
 import TalentAPIData from "../../types/data/talentAPIData.type";
 import ConstellationAPIData from "../../types/data/constellationAPIData.type";
 import TalentConstellationImage from "../TalentConstellationImage/TalentConstellationImage";
+import { updateDailyRecordSolved } from "../../services/DailyRecordService";
 
 const GameArea = ({
   gameType,
   selectType,
   data,
   dailyEntity,
+  dailyRecordID,
 }: GameAreaProps) => {
   const [guesses, setGuesses] = useState<TableAPIData[]>([]);
   const [gameCompleted, setGameCompleted] = useState<boolean>(false);
@@ -28,6 +30,11 @@ const GameArea = ({
     }
   }, [gameCompleted]);
 
+  const handleGameCompletion = async () => {
+    const results = await updateDailyRecordSolved(dailyRecordID, gameType);
+    console.log(results);
+  };
+
   const handleGuess = (guess: TableAPIData) => {
     const newGuesses = [guess, ...guesses];
     setGuesses(newGuesses);
@@ -37,6 +44,7 @@ const GameArea = ({
       dailyEntity![`${selectType}_name` as keyof typeof dailyEntity]
     ) {
       setGameCompleted(true);
+      handleGameCompletion();
     }
   };
 
