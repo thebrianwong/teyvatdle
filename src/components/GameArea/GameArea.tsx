@@ -20,6 +20,7 @@ const GameArea = ({
 }: GameAreaProps) => {
   const [guesses, setGuesses] = useState<TableAPIData[]>([]);
   const [gameCompleted, setGameCompleted] = useState<boolean>(false);
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     if (gameCompleted) {
@@ -30,6 +31,7 @@ const GameArea = ({
   const handleGuess = (guess: TableAPIData) => {
     const newGuesses = [guess, ...guesses];
     setGuesses(newGuesses);
+    setCounter((prev) => prev + 1);
     if (
       guess[`${selectType}_name` as keyof typeof guess] ===
       dailyEntity![`${selectType}_name` as keyof typeof dailyEntity]
@@ -47,6 +49,7 @@ const GameArea = ({
         gameCompleted={gameCompleted}
         handleGuess={handleGuess}
       />
+      <p>Total Guesses: {counter}</p>
       {gameType === "talent" || gameType === "constellation" ? (
         <>
           <TalentConstellationImage
