@@ -53,6 +53,8 @@ export const {
   updateConstellationSolvedValue,
 } = dailyRecordSlice.actions;
 
+export const selectDailyRecordID = (state: RootState) =>
+  state.dailyRecord.daily_record_id;
 export const selectDailyCharacterID = (state: RootState) =>
   state.dailyRecord.character_id;
 export const selectDailyCharacterSolved = (state: RootState) =>
