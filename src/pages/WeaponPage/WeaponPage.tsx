@@ -35,7 +35,7 @@ const WeaponPage = ({ dailyRecordID }: WeaponPageProps) => {
           )}
         </div>
       </div>
-      {dailyWeaponData && (
+      {dailyWeaponData ? (
         <GameArea
           gameType="weapon"
           selectType="weapon"
@@ -43,6 +43,8 @@ const WeaponPage = ({ dailyRecordID }: WeaponPageProps) => {
           dailyEntity={dailyWeaponData!}
           dailyRecordID={dailyRecordID}
         />
+      ) : (
+        <LoadingSkeleton quantity={5} width="100%" />
       )}
     </>
   );

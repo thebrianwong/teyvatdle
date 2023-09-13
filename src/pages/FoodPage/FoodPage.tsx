@@ -35,7 +35,7 @@ const FoodPage = ({ dailyRecordID }: FoodPageProps) => {
           )}
         </div>
       </div>
-      {dailyFoodData && (
+      {dailyFoodData ? (
         <GameArea
           gameType="food"
           selectType="food"
@@ -43,6 +43,8 @@ const FoodPage = ({ dailyRecordID }: FoodPageProps) => {
           dailyEntity={dailyFoodData!}
           dailyRecordID={dailyRecordID}
         />
+      ) : (
+        <LoadingSkeleton quantity={5} width="100%" />
       )}
     </>
   );

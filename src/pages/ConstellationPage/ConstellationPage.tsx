@@ -41,7 +41,7 @@ const ConstellationPage = ({ dailyRecordID }: ConstellationPageProps) => {
           )}
         </div>
       </div>
-      {dailyConstellationData && (
+      {dailyConstellationData ? (
         <GameArea
           gameType="constellation"
           selectType="character"
@@ -49,6 +49,8 @@ const ConstellationPage = ({ dailyRecordID }: ConstellationPageProps) => {
           dailyEntity={dailyConstellationData!}
           dailyRecordID={dailyRecordID}
         />
+      ) : (
+        <LoadingSkeleton quantity={5} width="100%" />
       )}
     </>
   );

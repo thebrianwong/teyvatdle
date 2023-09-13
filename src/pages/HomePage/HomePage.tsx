@@ -35,7 +35,7 @@ const HomePage = ({ dailyRecordID }: HomePageProps) => {
           )}
         </div>
       </div>
-      {dailyCharacterData && (
+      {dailyCharacterData ? (
         <GameArea
           gameType="character"
           selectType="character"
@@ -43,6 +43,8 @@ const HomePage = ({ dailyRecordID }: HomePageProps) => {
           dailyEntity={dailyCharacterData!}
           dailyRecordID={dailyRecordID}
         />
+      ) : (
+        <LoadingSkeleton quantity={5} width="100%" />
       )}
     </>
   );

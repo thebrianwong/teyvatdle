@@ -36,7 +36,7 @@ const TalentPage = ({ dailyRecordID }: TalentPageProps) => {
           )}
         </div>
       </div>
-      {dailyTalentData && (
+      {dailyTalentData ? (
         <GameArea
           gameType="talent"
           selectType="character"
@@ -44,6 +44,8 @@ const TalentPage = ({ dailyRecordID }: TalentPageProps) => {
           dailyEntity={dailyTalentData!}
           dailyRecordID={dailyRecordID}
         />
+      ) : (
+        <LoadingSkeleton quantity={5} width="100%" />
       )}
     </>
   );
