@@ -35,13 +35,48 @@ import {
 import {
   insertDailyRecordFromAPI,
   selectDailyRecordID,
+  updateCharacterSolvedValue,
+  updateConstellationSolvedValue,
+  updateFoodSolvedValue,
+  updateTalentSolvedValue,
+  updateWeaponSolvedValue,
 } from "./redux/dailyRecordSlice";
 import { getDailyRecord } from "./services/DailyRecordService";
 import "./styles/normalize.css";
+import {
+  WebSocketData,
+  WebSocketDataKeys,
+} from "./types/data/webSocketData.type";
 
 function App() {
+  const [webSocketConnection, setWebSocketConnection] = useState<WebSocket>();
+
   const dispatch = useAppDispatch();
   const dailyRecordID = useAppSelector(selectDailyRecordID);
+
+  const updateSolvedValue = (data: WebSocketData) => {
+    const dataType = Object.keys(data)[0] as WebSocketDataKeys;
+    const newValue = data[dataType];
+    switch (dataType) {
+      case "character_solved":
+        dispatch(updateCharacterSolvedValue(newValue));
+        break;
+      case "weapon_solved":
+        dispatch(updateWeaponSolvedValue(newValue));
+        break;
+      case "food_solved":
+        dispatch(updateFoodSolvedValue(newValue));
+        break;
+      case "talent_solved":
+        dispatch(updateTalentSolvedValue(newValue));
+        break;
+      case "constellation_solved":
+        dispatch(updateConstellationSolvedValue(newValue));
+        break;
+      default:
+        break;
+    }
+  };
 
   useEffect(() => {
     const getAllGameData = async () => {
@@ -64,9 +99,26 @@ function App() {
       const dailyRecordData = await getDailyRecord();
       dispatch(insertDailyRecordFromAPI(dailyRecordData!));
     };
+    const getWebSocketConnection = async () => {
+      try {
+        const ws = new WebSocket(
+          `ws://${process.env.REACT_APP_BACKEND_DOMAIN}/`
+        );
+        setWebSocketConnection(ws);
+        ws.addEventListener("message", async (data) => {
+          const parsedData: WebSocketData = await JSON.parse(data.data);
+          updateSolvedValue(parsedData);
+        });
+      } catch (err) {
+        console.error(
+          "There was an error connecting to the servers. Refresh the page or try again later!"
+        );
+      }
+    };
 
     getAllGameData();
     getDailyRecordData();
+    getWebSocketConnection();
   }, []);
 
   return (
