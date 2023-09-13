@@ -10,6 +10,7 @@ import {
   selectDailyCharacterSolved,
 } from "../../redux/dailyRecordSlice";
 import HomePageProps from "./type";
+import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 
 const HomePage = ({ dailyRecordID }: HomePageProps) => {
   const characterData = useAppSelector(loadCharacters);
@@ -25,9 +26,13 @@ const HomePage = ({ dailyRecordID }: HomePageProps) => {
         <img src={paimonImage} alt="" />
         <div>
           <h1>Which Character is Paimon Thinking of...?</h1>
-          <p
-            style={{ fontStyle: "italic" }}
-          >{`${dailyCharacterSolved} Travelers have guessed Paimon's character today!`}</p>
+          {dailyCharacterData ? (
+            <p
+              style={{ fontStyle: "italic" }}
+            >{`${dailyCharacterSolved} Travelers have guessed Paimon's character today!`}</p>
+          ) : (
+            <LoadingSkeleton />
+          )}
         </div>
       </div>
       {dailyCharacterData && (

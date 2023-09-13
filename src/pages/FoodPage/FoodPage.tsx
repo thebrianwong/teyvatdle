@@ -10,6 +10,7 @@ import {
   selectDailyFoodSolved,
 } from "../../redux/dailyRecordSlice";
 import FoodPageProps from "./type";
+import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 
 const FoodPage = ({ dailyRecordID }: FoodPageProps) => {
   const foodData = useAppSelector(loadFoods);
@@ -25,9 +26,13 @@ const FoodPage = ({ dailyRecordID }: FoodPageProps) => {
         <img src={paimonImage} alt="" />
         <div>
           <h1>Which Food is Paimon Thinking of...?</h1>
-          <p
-            style={{ fontStyle: "italic" }}
-          >{`${dailyFoodSolved} Travelers have guessed Paimon's food today!`}</p>
+          {dailyFoodData ? (
+            <p
+              style={{ fontStyle: "italic" }}
+            >{`${dailyFoodSolved} Travelers have guessed Paimon's food today!`}</p>
+          ) : (
+            <LoadingSkeleton />
+          )}
         </div>
       </div>
       {dailyFoodData && (

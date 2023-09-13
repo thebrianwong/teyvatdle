@@ -11,6 +11,7 @@ import {
   selectDailyTalentSolved,
 } from "../../redux/dailyRecordSlice";
 import TalentPageProps from "./type";
+import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 
 const TalentPage = ({ dailyRecordID }: TalentPageProps) => {
   const characterData = useAppSelector(loadCharacters);
@@ -26,9 +27,13 @@ const TalentPage = ({ dailyRecordID }: TalentPageProps) => {
         <img src={paimonImage} alt="" />
         <div>
           <h1>Which Talent is Paimon Thinking of...?</h1>
-          <p
-            style={{ fontStyle: "italic" }}
-          >{`${dailyTalentSolved} Travelers have guessed Paimon's talent today!`}</p>
+          {dailyTalentData ? (
+            <p
+              style={{ fontStyle: "italic" }}
+            >{`${dailyTalentSolved} Travelers have guessed Paimon's talent today!`}</p>
+          ) : (
+            <LoadingSkeleton />
+          )}
         </div>
       </div>
       {dailyTalentData && (

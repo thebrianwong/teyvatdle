@@ -14,6 +14,7 @@ import {
   selectDailyConstellationSolved,
 } from "../../redux/dailyRecordSlice";
 import ConstellationPageProps from "./type";
+import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 
 const ConstellationPage = ({ dailyRecordID }: ConstellationPageProps) => {
   const characterData = useAppSelector(loadCharacters);
@@ -31,9 +32,13 @@ const ConstellationPage = ({ dailyRecordID }: ConstellationPageProps) => {
         <img src={paimonImage} alt="" />
         <div>
           <h1>Which Constellation is Paimon Thinking of...?</h1>
-          <p
-            style={{ fontStyle: "italic" }}
-          >{`${dailyConstellationSolved} Travelers have guessed Paimon's constellation today!`}</p>
+          {dailyConstellationData ? (
+            <p
+              style={{ fontStyle: "italic" }}
+            >{`${dailyConstellationSolved} Travelers have guessed Paimon's constellation today!`}</p>
+          ) : (
+            <LoadingSkeleton />
+          )}
         </div>
       </div>
       {dailyConstellationData && (

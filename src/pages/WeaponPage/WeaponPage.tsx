@@ -10,6 +10,7 @@ import {
   selectDailyWeaponSolved,
 } from "../../redux/dailyRecordSlice";
 import WeaponPageProps from "./type";
+import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 
 const WeaponPage = ({ dailyRecordID }: WeaponPageProps) => {
   const weaponData = useAppSelector(loadWeapons);
@@ -25,9 +26,13 @@ const WeaponPage = ({ dailyRecordID }: WeaponPageProps) => {
         <img src={paimonImage} alt="" />
         <div>
           <h1>Which Weapon is Paimon Thinking of...?</h1>
-          <p
-            style={{ fontStyle: "italic" }}
-          >{`${dailyWeaponSolved} Travelers have guessed Paimon's weapon today!`}</p>
+          {dailyWeaponData ? (
+            <p
+              style={{ fontStyle: "italic" }}
+            >{`${dailyWeaponSolved} Travelers have guessed Paimon's weapon today!`}</p>
+          ) : (
+            <LoadingSkeleton />
+          )}
         </div>
       </div>
       {dailyWeaponData && (
