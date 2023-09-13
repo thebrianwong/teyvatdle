@@ -32,7 +32,7 @@ const TalentPage = ({ dailyRecordID }: TalentPageProps) => {
               style={{ fontStyle: "italic" }}
             >{`${dailyTalentSolved} Travelers have guessed Paimon's talent today!`}</p>
           ) : (
-            <LoadingSkeleton />
+            <LoadingSkeleton quantity={1} width={"50%"} />
           )}
         </div>
       </div>

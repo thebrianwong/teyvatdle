@@ -31,7 +31,7 @@ const FoodPage = ({ dailyRecordID }: FoodPageProps) => {
               style={{ fontStyle: "italic" }}
             >{`${dailyFoodSolved} Travelers have guessed Paimon's food today!`}</p>
           ) : (
-            <LoadingSkeleton />
+            <LoadingSkeleton quantity={1} width={"50%"} />
           )}
         </div>
       </div>

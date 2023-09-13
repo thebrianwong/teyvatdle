@@ -31,7 +31,7 @@ const WeaponPage = ({ dailyRecordID }: WeaponPageProps) => {
               style={{ fontStyle: "italic" }}
             >{`${dailyWeaponSolved} Travelers have guessed Paimon's weapon today!`}</p>
           ) : (
-            <LoadingSkeleton />
+            <LoadingSkeleton quantity={1} width={"50%"} />
           )}
         </div>
       </div>

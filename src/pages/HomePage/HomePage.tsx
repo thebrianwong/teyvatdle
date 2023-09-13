@@ -31,7 +31,7 @@ const HomePage = ({ dailyRecordID }: HomePageProps) => {
               style={{ fontStyle: "italic" }}
             >{`${dailyCharacterSolved} Travelers have guessed Paimon's character today!`}</p>
           ) : (
-            <LoadingSkeleton />
+            <LoadingSkeleton quantity={1} width={"50%"} />
           )}
         </div>
       </div>

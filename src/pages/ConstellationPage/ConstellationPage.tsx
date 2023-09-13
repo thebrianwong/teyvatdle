@@ -37,7 +37,7 @@ const ConstellationPage = ({ dailyRecordID }: ConstellationPageProps) => {
               style={{ fontStyle: "italic" }}
             >{`${dailyConstellationSolved} Travelers have guessed Paimon's constellation today!`}</p>
           ) : (
-            <LoadingSkeleton />
+            <LoadingSkeleton quantity={1} width={"50%"} />
           )}
         </div>
       </div>
