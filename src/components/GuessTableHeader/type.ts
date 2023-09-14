@@ -1,5 +1,5 @@
 type GuessTableHeaderProps = {
-  headerType: "character" | "weapon" | "food";
+  selectType: "character" | "weapon" | "food";
 };
 
 export default GuessTableHeaderProps;

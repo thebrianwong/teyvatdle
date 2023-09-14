@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
 import GuessTableHeaderProps from "./type";
 
-const GuessTableHeader = ({ headerType }: GuessTableHeaderProps) => {
+const GuessTableHeader = ({ selectType }: GuessTableHeaderProps) => {
   let headerColumns: ReactElement;
 
-  if (headerType === "character") {
+  if (selectType === "character") {
     headerColumns = (
       <>
         {/* all th need class with background color styling to remove transparent background */}
@@ -44,7 +44,7 @@ const GuessTableHeader = ({ headerType }: GuessTableHeaderProps) => {
         <th style={{ position: "sticky", top: 0 }}>Birthday</th>
       </>
     );
-  } else if (headerType === "weapon") {
+  } else if (selectType === "weapon") {
     headerColumns = (
       <>
         <th colSpan={2}>Weapon</th>
@@ -66,7 +66,7 @@ const GuessTableHeader = ({ headerType }: GuessTableHeaderProps) => {
         <th>Gacha Weapon</th>
       </>
     );
-  } else if (headerType === "food") {
+  } else if (selectType === "food") {
     headerColumns = (
       <>
         <th colSpan={2}>Food</th>

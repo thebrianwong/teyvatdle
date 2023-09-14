@@ -26,7 +26,7 @@ const GuessTable = ({ tableType, guessesProp, answer }: GuessTableProps) => {
   return (
     <div style={{ maxHeight: "50vh", maxWidth: "80vw", overflow: "auto" }}>
       <table ref={ref} style={{ backgroundColor: "lightgray" }}>
-        <GuessTableHeader headerType={tableType} />
+        <GuessTableHeader selectType={tableType} />
         <tbody>
           {guessesProp.map((guess) => {
             return (
