@@ -1,10 +1,11 @@
 import ListAPIData from "../../types/data/listAPIData.type";
 import TableAPIData from "../../types/data/tableAPIData.type";
 import GameMode from "../../types/gameMode.type";
+import SelectType from "../../types/selectType.type";
 
 type GameAreaProps = {
   gameType: GameMode;
-  selectType: "character" | "weapon" | "food";
+  selectType: SelectType;
   data: TableAPIData[];
   dailyEntity: TableAPIData | ListAPIData;
   dailyRecordID: number;

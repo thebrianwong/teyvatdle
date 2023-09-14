@@ -1,7 +1,8 @@
 import TableAPIData from "../../types/data/tableAPIData.type";
+import SelectType from "../../types/selectType.type";
 
 type GuessTableProps = {
-  tableType: "character" | "weapon" | "food";
+  tableType: SelectType;
   guessesProp: TableAPIData[];
   answer: TableAPIData;
 };

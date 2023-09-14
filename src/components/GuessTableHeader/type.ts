@@ -1,5 +1,7 @@
+import SelectType from "../../types/selectType.type";
+
 type GuessTableHeaderProps = {
-  selectType: "character" | "weapon" | "food";
+  selectType: SelectType;
 };
 
 export default GuessTableHeaderProps;
