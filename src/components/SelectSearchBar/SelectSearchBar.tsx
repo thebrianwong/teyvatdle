@@ -10,7 +10,7 @@ const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
 
     const determinePlaceholderValue = () => {
       switch (placeholderType) {
-        case "character" || "talent" || "constellation":
+        case "character":
           return "Paimon...?";
         case "weapon":
           return "Debate Club...?";
