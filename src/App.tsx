@@ -43,10 +43,7 @@ import {
 } from "./redux/dailyRecordSlice";
 import { getDailyRecord } from "./services/DailyRecordService";
 import "./styles/normalize.css";
-import {
-  WebSocketData,
-  WebSocketDataKeys,
-} from "./types/data/webSocketData.type";
+import WebSocketData from "./types/data/webSocketData.type";
 
 function App() {
   const [webSocketConnection, setWebSocketConnection] = useState<WebSocket>();
@@ -55,22 +52,21 @@ function App() {
   const dailyRecordID = useAppSelector(selectDailyRecordID);
 
   const updateSolvedValue = (data: WebSocketData) => {
-    const dataType = Object.keys(data)[0] as WebSocketDataKeys;
-    const newValue = data[dataType];
-    switch (dataType) {
-      case "character_solved":
+    const newValue = data.newSolvedValue;
+    switch (data.type) {
+      case "character":
         dispatch(updateCharacterSolvedValue(newValue));
         break;
-      case "weapon_solved":
+      case "weapon":
         dispatch(updateWeaponSolvedValue(newValue));
         break;
-      case "food_solved":
+      case "food":
         dispatch(updateFoodSolvedValue(newValue));
         break;
-      case "talent_solved":
+      case "talent":
         dispatch(updateTalentSolvedValue(newValue));
         break;
-      case "constellation_solved":
+      case "constellation":
         dispatch(updateConstellationSolvedValue(newValue));
         break;
       default:

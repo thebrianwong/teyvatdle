@@ -1,12 +1,8 @@
-type WebSocketDataKeys =
-  | "character_solved"
-  | "weapon_solved"
-  | "food_solved"
-  | "talent_solved"
-  | "constellation_solved";
+import GameModes from "../gameModes.type";
 
 type WebSocketData = {
-  [key in WebSocketDataKeys]: number;
+  type: GameModes;
+  newSolvedValue: number;
 };
 
-export type { WebSocketData, WebSocketDataKeys };
+export default WebSocketData;
