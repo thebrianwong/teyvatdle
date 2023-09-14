@@ -2,14 +2,11 @@ import { forwardRef, useEffect, useState } from "react";
 import SelectSearchBarProps from "./type";
 
 const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
-  (
-    { value, gameCompleted, placeholderType, handleClick, handleInput },
-    ref
-  ) => {
+  ({ value, gameCompleted, selectType, handleClick, handleInput }, ref) => {
     const [inputValue, setInputValue] = useState<string>(value);
 
     const determinePlaceholderValue = () => {
-      switch (placeholderType) {
+      switch (selectType) {
         case "character":
           return "Paimon...?";
         case "weapon":
@@ -26,19 +23,23 @@ const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
     }, [inputValue]);
 
     return (
-      <input
-        type="search"
-        id="search"
-        disabled={gameCompleted}
-        placeholder={determinePlaceholderValue()}
-        value={value}
-        ref={ref}
-        onClick={handleClick}
-        onChange={(e) => {
-          setInputValue(e.target.value);
-          handleInput(e.target.value);
-        }}
-      />
+      <>
+        <label htmlFor="search">Guess a {selectType}!</label>
+        <br />
+        <input
+          type="search"
+          id="search"
+          disabled={gameCompleted}
+          placeholder={determinePlaceholderValue()}
+          value={value}
+          ref={ref}
+          onClick={handleClick}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+            handleInput(e.target.value);
+          }}
+        />
+      </>
     );
   }
 );
