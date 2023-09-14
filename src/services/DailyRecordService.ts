@@ -1,5 +1,5 @@
 import DailyRecordAPIData from "../types/data/dailyRecordAPIData.type";
-import GameModes from "../types/gameModes.type";
+import GameMode from "../types/gameMode.type";
 
 const getDailyRecord = async () => {
   try {
@@ -21,7 +21,7 @@ const getDailyRecord = async () => {
   }
 };
 
-const updateDailyRecordSolved = async (id: number, resource: GameModes) => {
+const updateDailyRecordSolved = async (id: number, resource: GameMode) => {
   try {
     const results = await fetch(
       `http://${process.env.REACT_APP_BACKEND_DOMAIN}/api/teyvatdle/daily_record/${id}/${resource}`,

@@ -1,7 +1,7 @@
-import GameModes from "../gameModes.type";
+import GameMode from "../gameMode.type";
 
 type WebSocketData = {
-  type: GameModes;
+  type: GameMode;
   newSolvedValue: number;
 };
 
