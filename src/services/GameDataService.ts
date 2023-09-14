@@ -1,9 +1,8 @@
 import ListAPIData from "../types/data/listAPIData.type";
 import TableAPIData from "../types/data/tableAPIData.type";
+import GameModes from "../types/gameModes.type";
 
-const getData = async (
-  type: "character" | "weapon" | "food" | "talent" | "constellation"
-) => {
+const getData = async (type: GameModes) => {
   try {
     const rawData = await fetch(
       `http://${process.env.REACT_APP_BACKEND_DOMAIN}/api/${type}`
