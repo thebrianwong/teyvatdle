@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import SelectOptionsProps from "./type";
+import emptyListImage from "../../assets/misc/bongoHead.png";
 
 const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
   ({ dataList, dataType, filterValue, guesses, handleGuess }, ref) => {
@@ -39,25 +40,38 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
         }}
         ref={ref}
       >
-        {filteredData().map((item) => {
-          return (
-            <li
-              key={item[`${dataType}_name` as keyof typeof item].toString()}
-              style={{ display: "flex", maxHeight: "100px" }}
-              onClick={() => handleGuess(item)}
-            >
-              <img
-                loading="lazy"
-                src={item[
-                  `${dataType}_image_url` as keyof typeof item
-                ].toString()}
-                alt=""
-                style={{ height: "100px", width: "auto" }}
-              />
-              <p>{item[`${dataType}_name` as keyof typeof item].toString()}</p>
-            </li>
-          );
-        })}
+        {filteredData().length > 0 ? (
+          filteredData().map((item) => {
+            return (
+              <li
+                key={item[`${dataType}_name` as keyof typeof item].toString()}
+                style={{ display: "flex", maxHeight: "100px" }}
+                onClick={() => handleGuess(item)}
+              >
+                <img
+                  loading="lazy"
+                  src={item[
+                    `${dataType}_image_url` as keyof typeof item
+                  ].toString()}
+                  alt=""
+                  style={{ height: "100px", width: "auto" }}
+                />
+                <p>
+                  {item[`${dataType}_name` as keyof typeof item].toString()}
+                </p>
+              </li>
+            );
+          })
+        ) : (
+          <li style={{ display: "flex", maxHeight: "100px" }}>
+            <img
+              src={emptyListImage}
+              alt=""
+              style={{ height: "100px", width: "auto" }}
+            />
+            <p>Paimon doesn't remember that one...</p>
+          </li>
+        )}
       </ul>
     );
   }
