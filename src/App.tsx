@@ -44,6 +44,7 @@ import {
 import { getDailyRecord } from "./services/DailyRecordService";
 import "./styles/normalize.css";
 import WebSocketData from "./types/data/webSocketData.type";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
   const [webSocketConnection, setWebSocketConnection] = useState<WebSocket>();
@@ -143,6 +144,7 @@ function App() {
             path="/constellation"
             element={<ConstellationPage dailyRecordID={dailyRecordID} />}
           />
+          <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </div>
