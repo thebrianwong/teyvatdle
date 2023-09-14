@@ -1,7 +1,4 @@
-import allFoodData from "../../allFoods.json";
-import dummyFood from "../../foodPlaceholder.json";
 import GameArea from "../../components/GameArea/GameArea";
-import FoodAPIData from "../../types/data/foodAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import { loadDailyFood, loadFoods } from "../../redux/apiDataSlice";

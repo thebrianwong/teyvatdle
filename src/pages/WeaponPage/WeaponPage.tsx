@@ -1,7 +1,4 @@
-import allWeapData from "../../allWeapons.json";
-import dummyTwoStarWeapon from "../../twoStarWeapon.json";
 import GameArea from "../../components/GameArea/GameArea";
-import WeaponAPIData from "../../types/data/weaponAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import { loadDailyWeapon, loadWeapons } from "../../redux/apiDataSlice";

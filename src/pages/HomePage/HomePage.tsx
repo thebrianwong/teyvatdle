@@ -1,7 +1,4 @@
-import allCharData from "../../allChars.json";
-import dummy from "../../placeholder.json";
 import GameArea from "../../components/GameArea/GameArea";
-import CharacterAPIData from "../../types/data/characterAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import { loadCharacters, loadDailyCharacter } from "../../redux/apiDataSlice";

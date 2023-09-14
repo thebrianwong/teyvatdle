@@ -1,6 +1,4 @@
 import CharacterAPIData from "../../types/data/characterAPIData.type";
-import WeaponAPIData from "../../types/data/weaponAPIData.type";
-import FoodAPIData from "../../types/data/foodAPIData.type";
 import GuessTable from "../GuessTable/GuessTable";
 import SelectMenu from "../SelectMenu/SelectMenu";
 import TableAPIData from "../../types/data/tableAPIData.type";
@@ -8,8 +6,6 @@ import { useEffect, useState } from "react";
 import GameAreaProps from "./type";
 import GuessList from "../GuessList/GuessList";
 import ListAPIData from "../../types/data/listAPIData.type";
-import TalentAPIData from "../../types/data/talentAPIData.type";
-import ConstellationAPIData from "../../types/data/constellationAPIData.type";
 import TalentConstellationImage from "../TalentConstellationImage/TalentConstellationImage";
 import { updateDailyRecordSolved } from "../../services/DailyRecordService";
 

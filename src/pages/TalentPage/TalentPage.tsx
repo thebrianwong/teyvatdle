@@ -1,8 +1,4 @@
-import allCharData from "../../allChars.json";
-import dummyTalent from "../../talentPlaceholder.json";
 import GameArea from "../../components/GameArea/GameArea";
-import CharacterAPIData from "../../types/data/characterAPIData.type";
-import TalentAPIData from "../../types/data/talentAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import { loadCharacters, loadDailyTalent } from "../../redux/apiDataSlice";

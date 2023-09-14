@@ -1,8 +1,4 @@
-import allCharData from "../../allChars.json";
-import dummyConstellation from "../../constellationPlaceholder.json";
 import GameArea from "../../components/GameArea/GameArea";
-import CharacterAPIData from "../../types/data/characterAPIData.type";
-import ConstellationAPIData from "../../types/data/constellationAPIData.type";
 import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import {

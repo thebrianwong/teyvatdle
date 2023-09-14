@@ -5,8 +5,6 @@ import WeaponAPIData from "../types/data/weaponAPIData.type";
 import FoodAPIData from "../types/data/foodAPIData.type";
 import TalentAPIData from "../types/data/talentAPIData.type";
 import ConstellationAPIData from "../types/data/constellationAPIData.type";
-import TableAPIData from "../types/data/tableAPIData.type";
-import ListAPIData from "../types/data/listAPIData.type";
 
 type APIData = {
   characters: CharacterAPIData[];
