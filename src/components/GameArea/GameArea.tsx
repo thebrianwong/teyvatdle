@@ -2,12 +2,13 @@ import CharacterAPIData from "../../types/data/characterAPIData.type";
 import GuessTable from "../GuessTable/GuessTable";
 import SelectMenu from "../SelectMenu/SelectMenu";
 import TableAPIData from "../../types/data/tableAPIData.type";
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import GameAreaProps from "./type";
 import GuessList from "../GuessList/GuessList";
 import ListAPIData from "../../types/data/listAPIData.type";
 import TalentConstellationImage from "../TalentConstellationImage/TalentConstellationImage";
 import { updateDailyRecordSolved } from "../../services/DailyRecordService";
+import GameComplete from "../GameComplete/GameComplete";
 
 const GameArea = ({
   gameType,
@@ -19,16 +20,17 @@ const GameArea = ({
   const [guesses, setGuesses] = useState<TableAPIData[]>([]);
   const [gameCompleted, setGameCompleted] = useState<boolean>(false);
   const [counter, setCounter] = useState(0);
-
-  useEffect(() => {
-    if (gameCompleted) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [gameCompleted]);
+  const completeRef = useRef<HTMLDivElement>(null);
 
   const handleGameCompletion = async () => {
     const results = await updateDailyRecordSolved(dailyRecordID, gameType);
     console.log(results);
+    setTimeout(() => {
+      completeRef.current!.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+      });
+    }, 200);
   };
 
   const handleGuess = (guess: TableAPIData) => {
@@ -64,13 +66,21 @@ const GameArea = ({
             guesses={guesses as CharacterAPIData[]}
             answer={dailyEntity as ListAPIData}
           />
+          {gameCompleted && (
+            <GameComplete gameType={gameType} ref={completeRef} />
+          )}
         </>
       ) : (
-        <GuessTable
-          tableType={selectType}
-          guessesProp={guesses}
-          answer={dailyEntity as TableAPIData}
-        />
+        <>
+          <GuessTable
+            tableType={selectType}
+            guessesProp={guesses}
+            answer={dailyEntity as TableAPIData}
+          />
+          {gameCompleted && (
+            <GameComplete gameType={gameType} ref={completeRef} />
+          )}
+        </>
       )}
     </>
   );
