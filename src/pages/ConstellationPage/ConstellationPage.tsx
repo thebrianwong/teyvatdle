@@ -12,7 +12,13 @@ import {
 import ConstellationPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 
-const ConstellationPage = ({ dailyRecordID }: ConstellationPageProps) => {
+const ConstellationPage = ({
+  dailyRecordID,
+  guessesCounter,
+  complete,
+  setGuessCounter,
+  setCompletedState,
+}: ConstellationPageProps) => {
   const characterData = useAppSelector(loadCharacters);
   const dailyConstellationID = useAppSelector(selectDailyConstellationID);
   const dailyConstellationData = useAppSelector((state) =>
@@ -44,6 +50,10 @@ const ConstellationPage = ({ dailyRecordID }: ConstellationPageProps) => {
           data={characterData}
           dailyEntity={dailyConstellationData!}
           dailyRecordID={dailyRecordID}
+          guessesCounter={guessesCounter}
+          complete={complete}
+          setGuessCounter={setGuessCounter}
+          setCompletedState={setCompletedState}
         />
       ) : (
         <LoadingSkeleton quantity={5} width="100%" />

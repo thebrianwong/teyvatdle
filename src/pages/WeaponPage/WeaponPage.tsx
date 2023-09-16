@@ -9,7 +9,13 @@ import {
 import WeaponPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 
-const WeaponPage = ({ dailyRecordID }: WeaponPageProps) => {
+const WeaponPage = ({
+  dailyRecordID,
+  guessesCounter,
+  complete,
+  setGuessCounter,
+  setCompletedState,
+}: WeaponPageProps) => {
   const weaponData = useAppSelector(loadWeapons);
   const dailyWeaponID = useAppSelector(selectDailyWeaponID);
   const dailyWeaponData = useAppSelector((state) =>
@@ -39,6 +45,10 @@ const WeaponPage = ({ dailyRecordID }: WeaponPageProps) => {
           data={weaponData}
           dailyEntity={dailyWeaponData!}
           dailyRecordID={dailyRecordID}
+          guessesCounter={guessesCounter}
+          complete={complete}
+          setGuessCounter={setGuessCounter}
+          setCompletedState={setCompletedState}
         />
       ) : (
         <LoadingSkeleton quantity={5} width="100%" />

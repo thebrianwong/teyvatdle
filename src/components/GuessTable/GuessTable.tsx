@@ -7,7 +7,9 @@ const GuessTable = ({ tableType, guessesProp, answer }: GuessTableProps) => {
   const ref = useRef<HTMLTableElement>(null);
 
   useEffect(() => {
-    ref.current!.scrollIntoView({ behavior: "smooth", inline: "start" });
+    if (guessesProp.length > 0) {
+      ref.current!.scrollIntoView({ behavior: "smooth", inline: "start" });
+    }
   }, [guessesProp]);
 
   /*

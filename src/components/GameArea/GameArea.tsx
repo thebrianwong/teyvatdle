@@ -2,7 +2,7 @@ import CharacterAPIData from "../../types/data/characterAPIData.type";
 import GuessTable from "../GuessTable/GuessTable";
 import SelectMenu from "../SelectMenu/SelectMenu";
 import TableAPIData from "../../types/data/tableAPIData.type";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import GameAreaProps from "./type";
 import GuessList from "../GuessList/GuessList";
 import ListAPIData from "../../types/data/listAPIData.type";
@@ -16,13 +16,27 @@ const GameArea = ({
   data,
   dailyEntity,
   dailyRecordID,
+  guessesCounter,
+  complete,
+  setGuessCounter,
+  setCompletedState,
 }: GameAreaProps) => {
   const [guesses, setGuesses] = useState<TableAPIData[]>([]);
-  const [gameCompleted, setGameCompleted] = useState<boolean>(false);
-  const [counter, setCounter] = useState(0);
   const completeRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (!complete) {
+      setGuessCounter(gameType, 0);
+    } else {
+      completeRef.current!.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+      });
+    }
+  }, []);
+
   const handleGameCompletion = async () => {
+    setCompletedState(gameType);
     const results = await updateDailyRecordSolved(dailyRecordID, gameType);
     console.log(results);
     setTimeout(() => {
@@ -36,12 +50,11 @@ const GameArea = ({
   const handleGuess = (guess: TableAPIData) => {
     const newGuesses = [guess, ...guesses];
     setGuesses(newGuesses);
-    setCounter((prev) => prev + 1);
+    setGuessCounter(gameType, guessesCounter + 1);
     if (
       guess[`${selectType}_name` as keyof typeof guess] ===
       dailyEntity![`${selectType}_name` as keyof typeof dailyEntity]
     ) {
-      setGameCompleted(true);
       handleGameCompletion();
     }
   };
@@ -52,10 +65,10 @@ const GameArea = ({
         selectType={selectType}
         data={data}
         guesses={guesses}
-        gameCompleted={gameCompleted}
+        gameCompleted={complete}
         handleGuess={handleGuess}
       />
-      <p>Total Guesses: {counter}</p>
+      <p>Total Guesses: {guessesCounter}</p>
       {gameType === "talent" || gameType === "constellation" ? (
         <>
           <TalentConstellationImage
@@ -66,9 +79,7 @@ const GameArea = ({
             guesses={guesses as CharacterAPIData[]}
             answer={dailyEntity as ListAPIData}
           />
-          {gameCompleted && (
-            <GameComplete gameType={gameType} ref={completeRef} />
-          )}
+          {complete && <GameComplete gameType={gameType} ref={completeRef} />}
         </>
       ) : (
         <>
@@ -77,9 +88,7 @@ const GameArea = ({
             guessesProp={guesses}
             answer={dailyEntity as TableAPIData}
           />
-          {gameCompleted && (
-            <GameComplete gameType={gameType} ref={completeRef} />
-          )}
+          {complete && <GameComplete gameType={gameType} ref={completeRef} />}
         </>
       )}
     </>

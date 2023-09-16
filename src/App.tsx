@@ -33,9 +33,62 @@ import { getDailyRecord } from "./services/DailyRecordService";
 import "./styles/normalize.css";
 import WebSocketData from "./types/data/webSocketData.type";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import GameMode from "./types/gameMode.type";
 
 function App() {
   const [webSocketConnection, setWebSocketConnection] = useState<WebSocket>();
+  const [totalGameState, setTotalGameState] = useState({
+    character: {
+      complete: false,
+      numOfGuesses: 0,
+    },
+    weapon: {
+      complete: false,
+      numOfGuesses: 0,
+    },
+    food: {
+      complete: false,
+      numOfGuesses: 0,
+    },
+    talent: {
+      complete: false,
+      numOfGuesses: 0,
+    },
+    constellation: {
+      complete: false,
+      numOfGuesses: 0,
+    },
+  });
+  const [numOfGuesses, setNumOfGuess] = useState({
+    character: 0,
+    weapon: 0,
+    food: 0,
+    talent: 0,
+    constellation: 0,
+  });
+  const [complete, setComplete] = useState({
+    character: false,
+    weapon: false,
+    food: false,
+    talent: false,
+    constellation: false,
+  });
+
+  const setGuessCounter = (type: GameMode, newValue: number) => {
+    // setTotalGameState({
+    //   ...totalGameState,
+    //   [type]: { ...totalGameState[type], numOfGuesses: newValue },
+    // });
+    setNumOfGuess({ ...numOfGuesses, [type]: newValue });
+  };
+
+  const setCompletedState = (type: GameMode) => {
+    // setTotalGameState({
+    //   ...totalGameState,
+    //   [type]: { numOfGuesses: newValue, complete: true },
+    // });
+    setComplete({ ...complete, [type]: true });
+  };
 
   const dispatch = useAppDispatch();
   const dailyRecordID = useAppSelector(selectDailyRecordID);
@@ -113,24 +166,64 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<HomePage dailyRecordID={dailyRecordID} />}
+            element={
+              <HomePage
+                dailyRecordID={dailyRecordID}
+                guessesCounter={numOfGuesses.character}
+                complete={complete.character}
+                setGuessCounter={setGuessCounter}
+                setCompletedState={setCompletedState}
+              />
+            }
           />
           <Route path="/character" element={<Navigate to={"/"} />} />
           <Route
             path="/weapon"
-            element={<WeaponPage dailyRecordID={dailyRecordID} />}
+            element={
+              <WeaponPage
+                dailyRecordID={dailyRecordID}
+                guessesCounter={numOfGuesses.weapon}
+                complete={complete.weapon}
+                setGuessCounter={setGuessCounter}
+                setCompletedState={setCompletedState}
+              />
+            }
           />
           <Route
             path="/food"
-            element={<FoodPage dailyRecordID={dailyRecordID} />}
+            element={
+              <FoodPage
+                dailyRecordID={dailyRecordID}
+                guessesCounter={numOfGuesses.food}
+                complete={complete.food}
+                setGuessCounter={setGuessCounter}
+                setCompletedState={setCompletedState}
+              />
+            }
           />
           <Route
             path="/talent"
-            element={<TalentPage dailyRecordID={dailyRecordID} />}
+            element={
+              <TalentPage
+                dailyRecordID={dailyRecordID}
+                guessesCounter={numOfGuesses.talent}
+                complete={complete.talent}
+                setGuessCounter={setGuessCounter}
+                setCompletedState={setCompletedState}
+              />
+            }
           />
           <Route
             path="/constellation"
-            element={<ConstellationPage dailyRecordID={dailyRecordID} />}
+            element={
+              <ConstellationPage
+                dailyRecordID={dailyRecordID}
+                guessesCounter={numOfGuesses.constellation}
+                complete={complete.constellation}
+                setGuessCounter={setGuessCounter}
+                setCompletedState={setCompletedState}
+              />
+            }
           />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>

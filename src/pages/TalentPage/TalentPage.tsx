@@ -9,7 +9,13 @@ import {
 import TalentPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 
-const TalentPage = ({ dailyRecordID }: TalentPageProps) => {
+const TalentPage = ({
+  dailyRecordID,
+  guessesCounter,
+  complete,
+  setGuessCounter,
+  setCompletedState,
+}: TalentPageProps) => {
   const characterData = useAppSelector(loadCharacters);
   const dailyTalentID = useAppSelector(selectDailyTalentID);
   const dailyTalentData = useAppSelector((state) =>
@@ -39,6 +45,10 @@ const TalentPage = ({ dailyRecordID }: TalentPageProps) => {
           data={characterData}
           dailyEntity={dailyTalentData!}
           dailyRecordID={dailyRecordID}
+          guessesCounter={guessesCounter}
+          complete={complete}
+          setGuessCounter={setGuessCounter}
+          setCompletedState={setCompletedState}
         />
       ) : (
         <LoadingSkeleton quantity={5} width="100%" />

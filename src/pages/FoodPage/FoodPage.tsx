@@ -9,7 +9,13 @@ import {
 import FoodPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 
-const FoodPage = ({ dailyRecordID }: FoodPageProps) => {
+const FoodPage = ({
+  dailyRecordID,
+  guessesCounter,
+  complete,
+  setGuessCounter,
+  setCompletedState,
+}: FoodPageProps) => {
   const foodData = useAppSelector(loadFoods);
   const dailyFoodID = useAppSelector(selectDailyFoodID);
   const dailyFoodData = useAppSelector((state) =>
@@ -39,6 +45,10 @@ const FoodPage = ({ dailyRecordID }: FoodPageProps) => {
           data={foodData}
           dailyEntity={dailyFoodData!}
           dailyRecordID={dailyRecordID}
+          guessesCounter={guessesCounter}
+          complete={complete}
+          setGuessCounter={setGuessCounter}
+          setCompletedState={setCompletedState}
         />
       ) : (
         <LoadingSkeleton quantity={5} width="100%" />
