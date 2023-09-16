@@ -37,28 +37,6 @@ import GameMode from "./types/gameMode.type";
 
 function App() {
   const [webSocketConnection, setWebSocketConnection] = useState<WebSocket>();
-  const [totalGameState, setTotalGameState] = useState({
-    character: {
-      complete: false,
-      numOfGuesses: 0,
-    },
-    weapon: {
-      complete: false,
-      numOfGuesses: 0,
-    },
-    food: {
-      complete: false,
-      numOfGuesses: 0,
-    },
-    talent: {
-      complete: false,
-      numOfGuesses: 0,
-    },
-    constellation: {
-      complete: false,
-      numOfGuesses: 0,
-    },
-  });
   const [numOfGuesses, setNumOfGuess] = useState({
     character: 0,
     weapon: 0,
@@ -75,18 +53,10 @@ function App() {
   });
 
   const setGuessCounter = (type: GameMode, newValue: number) => {
-    // setTotalGameState({
-    //   ...totalGameState,
-    //   [type]: { ...totalGameState[type], numOfGuesses: newValue },
-    // });
     setNumOfGuess({ ...numOfGuesses, [type]: newValue });
   };
 
   const setCompletedState = (type: GameMode) => {
-    // setTotalGameState({
-    //   ...totalGameState,
-    //   [type]: { numOfGuesses: newValue, complete: true },
-    // });
     setComplete({ ...complete, [type]: true });
   };
 
