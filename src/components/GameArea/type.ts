@@ -11,8 +11,10 @@ type GameAreaProps = {
   dailyRecordID: number;
   guessesCounter: number;
   complete: boolean;
+  guesses: TableAPIData[];
   setGuessCounter: (type: GameMode, newValue: number) => void;
   setCompletedState: (type: GameMode) => void;
+  updateGuesses: (newGuesses: TableAPIData[], gameType: GameMode) => void;
 };
 
 export default GameAreaProps;

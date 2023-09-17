@@ -16,8 +16,10 @@ const ConstellationPage = ({
   dailyRecordID,
   guessesCounter,
   complete,
+  guesses,
   setGuessCounter,
   setCompletedState,
+  updateGuesses,
 }: ConstellationPageProps) => {
   const characterData = useAppSelector(loadCharacters);
   const dailyConstellationID = useAppSelector(selectDailyConstellationID);
@@ -52,8 +54,10 @@ const ConstellationPage = ({
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}
           complete={complete}
+          guesses={guesses}
           setGuessCounter={setGuessCounter}
           setCompletedState={setCompletedState}
+          updateGuesses={updateGuesses}
         />
       ) : (
         <LoadingSkeleton quantity={5} width="100%" />

@@ -13,8 +13,10 @@ const HomePage = ({
   dailyRecordID,
   guessesCounter,
   complete,
+  guesses,
   setGuessCounter,
   setCompletedState,
+  updateGuesses,
 }: HomePageProps) => {
   const characterData = useAppSelector(loadCharacters);
   const dailyCharacterID = useAppSelector(selectDailyCharacterID);
@@ -47,8 +49,10 @@ const HomePage = ({
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}
           complete={complete}
+          guesses={guesses}
           setGuessCounter={setGuessCounter}
           setCompletedState={setCompletedState}
+          updateGuesses={updateGuesses}
         />
       ) : (
         <LoadingSkeleton quantity={5} width="100%" />

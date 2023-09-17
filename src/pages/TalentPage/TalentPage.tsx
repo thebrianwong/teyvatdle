@@ -13,8 +13,10 @@ const TalentPage = ({
   dailyRecordID,
   guessesCounter,
   complete,
+  guesses,
   setGuessCounter,
   setCompletedState,
+  updateGuesses,
 }: TalentPageProps) => {
   const characterData = useAppSelector(loadCharacters);
   const dailyTalentID = useAppSelector(selectDailyTalentID);
@@ -47,8 +49,10 @@ const TalentPage = ({
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}
           complete={complete}
+          guesses={guesses}
           setGuessCounter={setGuessCounter}
           setCompletedState={setCompletedState}
+          updateGuesses={updateGuesses}
         />
       ) : (
         <LoadingSkeleton quantity={5} width="100%" />

@@ -13,8 +13,10 @@ const WeaponPage = ({
   dailyRecordID,
   guessesCounter,
   complete,
+  guesses,
   setGuessCounter,
   setCompletedState,
+  updateGuesses,
 }: WeaponPageProps) => {
   const weaponData = useAppSelector(loadWeapons);
   const dailyWeaponID = useAppSelector(selectDailyWeaponID);
@@ -47,8 +49,10 @@ const WeaponPage = ({
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}
           complete={complete}
+          guesses={guesses}
           setGuessCounter={setGuessCounter}
           setCompletedState={setCompletedState}
+          updateGuesses={updateGuesses}
         />
       ) : (
         <LoadingSkeleton quantity={5} width="100%" />

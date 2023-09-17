@@ -13,8 +13,10 @@ const FoodPage = ({
   dailyRecordID,
   guessesCounter,
   complete,
+  guesses,
   setGuessCounter,
   setCompletedState,
+  updateGuesses,
 }: FoodPageProps) => {
   const foodData = useAppSelector(loadFoods);
   const dailyFoodID = useAppSelector(selectDailyFoodID);
@@ -47,8 +49,10 @@ const FoodPage = ({
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}
           complete={complete}
+          guesses={guesses}
           setGuessCounter={setGuessCounter}
           setCompletedState={setCompletedState}
+          updateGuesses={updateGuesses}
         />
       ) : (
         <LoadingSkeleton quantity={5} width="100%" />

@@ -18,10 +18,11 @@ const GameArea = ({
   dailyRecordID,
   guessesCounter,
   complete,
+  guesses,
   setGuessCounter,
   setCompletedState,
+  updateGuesses,
 }: GameAreaProps) => {
-  const [guesses, setGuesses] = useState<TableAPIData[]>([]);
   const completeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,7 +50,7 @@ const GameArea = ({
 
   const handleGuess = (guess: TableAPIData) => {
     const newGuesses = [guess, ...guesses];
-    setGuesses(newGuesses);
+    updateGuesses(newGuesses, gameType);
     setGuessCounter(gameType, guessesCounter + 1);
     if (
       guess[`${selectType}_name` as keyof typeof guess] ===
