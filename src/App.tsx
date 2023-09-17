@@ -99,6 +99,13 @@ function App() {
         talent: false,
         constellation: false,
       },
+      guesses: {
+        character: [],
+        weapon: [],
+        food: [],
+        talent: [],
+        constellation: [],
+      },
     };
     const savedGameState = localStorage.getItem("teyvatdle");
     if (savedGameState) {
@@ -106,10 +113,12 @@ function App() {
       if (parsedState.date === getNormalizeDate()) {
         gameState.numOfGuesses = parsedState.numOfGuesses;
         gameState.complete = parsedState.complete;
+        gameState.guesses = parsedState.guesses;
       }
     }
     setNumOfGuess(gameState.numOfGuesses);
     setComplete(gameState.complete);
+    setGuesses(gameState.guesses);
   };
 
   const saveStateToLocalStorage = () => {
@@ -118,6 +127,7 @@ function App() {
       date,
       numOfGuesses,
       complete,
+      guesses,
     };
     const stateJSON = JSON.stringify(state);
     localStorage.setItem(`teyvatdle`, stateJSON);
