@@ -34,6 +34,7 @@ import "./styles/normalize.css";
 import WebSocketData from "./types/data/webSocketData.type";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import GameMode from "./types/gameMode.type";
+import getNormalizeDate from "./util/normalizeDates";
 
 function App() {
   const [webSocketConnection, setWebSocketConnection] = useState<WebSocket>();
@@ -51,6 +52,58 @@ function App() {
     talent: false,
     constellation: false,
   });
+  const [isSaving, setIsSaving] = useState(false);
+
+  useEffect(() => {
+    getStateFromLocalStorage();
+  }, []);
+
+  useEffect(() => {
+    if (isSaving) {
+      saveStateToLocalStorage();
+      setIsSaving(false);
+    }
+  }, [isSaving]);
+
+  const getStateFromLocalStorage = () => {
+    let gameState = {
+      numOfGuesses: {
+        character: 0,
+        weapon: 0,
+        food: 0,
+        talent: 0,
+        constellation: 0,
+      },
+      complete: {
+        character: false,
+        weapon: false,
+        food: false,
+        talent: false,
+        constellation: false,
+      },
+    };
+    const savedGameState = localStorage.getItem("teyvatdle");
+    if (savedGameState) {
+      const parsedState = JSON.parse(savedGameState);
+      if (parsedState.date === getNormalizeDate()) {
+        gameState.numOfGuesses = parsedState.numOfGuesses;
+        gameState.complete = parsedState.complete;
+      }
+    }
+    setNumOfGuess(gameState.numOfGuesses);
+    setComplete(gameState.complete);
+  };
+
+  const saveStateToLocalStorage = () => {
+    const date = getNormalizeDate();
+    const state = {
+      date,
+      numOfGuesses,
+      complete,
+    };
+    const stateJSON = JSON.stringify(state);
+    localStorage.setItem(`teyvatdle`, stateJSON);
+  };
 
   const setGuessCounter = (type: GameMode, newValue: number) => {
     setNumOfGuess({ ...numOfGuesses, [type]: newValue });
@@ -58,6 +111,7 @@ function App() {
 
   const setCompletedState = (type: GameMode) => {
     setComplete({ ...complete, [type]: true });
+    setIsSaving(true);
   };
 
   const dispatch = useAppDispatch();
