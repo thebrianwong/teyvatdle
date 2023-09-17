@@ -2,7 +2,7 @@ import CharacterAPIData from "../../types/data/characterAPIData.type";
 import GuessTable from "../GuessTable/GuessTable";
 import SelectMenu from "../SelectMenu/SelectMenu";
 import TableAPIData from "../../types/data/tableAPIData.type";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import GameAreaProps from "./type";
 import GuessList from "../GuessList/GuessList";
 import ListAPIData from "../../types/data/listAPIData.type";
@@ -26,13 +26,13 @@ const GameArea = ({
   const completeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!complete) {
-      setGuessCounter(gameType, 0);
-    } else {
-      completeRef.current!.scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-      });
+    if (complete) {
+      setTimeout(() => {
+        completeRef.current!.scrollIntoView({
+          behavior: "smooth",
+          inline: "start",
+        });
+      }, 0);
     }
   }, []);
 
