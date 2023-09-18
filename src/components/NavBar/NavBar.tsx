@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/nav/logo.png";
 import characterIcon from "../../assets/nav/navCharacter.png";
 import weaponIcon from "../../assets/nav/navWeapon.png";
 import foodIcon from "../../assets/nav/navFood.png";
@@ -9,7 +10,7 @@ const NavBar = () => {
   return (
     <nav>
       <Link to="/">
-        <img src="placeholder" alt="Teyvatdle Logo." />
+        <img style={{ width: "250px" }} src={logo} alt="Teyvatdle Logo." />
       </Link>
       <Link to="/">
         Characters
