@@ -32,7 +32,7 @@ const ConstellationPage = ({
 
   return (
     <>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <header>
         <img
           src={paimonImage}
           alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
@@ -40,14 +40,12 @@ const ConstellationPage = ({
         <div>
           <h1>Which Constellation is Paimon Thinking of...?</h1>
           {dailyConstellationData ? (
-            <p
-              style={{ fontStyle: "italic" }}
-            >{`${dailyConstellationSolved} Travelers have guessed Paimon's constellation today!`}</p>
+            <p>{`${dailyConstellationSolved} Travelers have guessed Paimon's constellation today!`}</p>
           ) : (
             <LoadingSkeleton quantity={1} width={"50%"} />
           )}
         </div>
-      </div>
+      </header>
       {dailyConstellationData ? (
         <GameArea
           gameType="constellation"

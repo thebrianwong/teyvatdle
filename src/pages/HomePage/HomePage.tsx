@@ -27,7 +27,7 @@ const HomePage = ({
 
   return (
     <>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <header>
         <img
           src={paimonImage}
           alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
@@ -35,14 +35,12 @@ const HomePage = ({
         <div>
           <h1>Which Character is Paimon Thinking of...?</h1>
           {dailyCharacterData ? (
-            <p
-              style={{ fontStyle: "italic" }}
-            >{`${dailyCharacterSolved} Travelers have guessed Paimon's character today!`}</p>
+            <p>{`${dailyCharacterSolved} Travelers have guessed Paimon's character today!`}</p>
           ) : (
             <LoadingSkeleton quantity={1} width={"50%"} />
           )}
         </div>
-      </div>
+      </header>
       {dailyCharacterData ? (
         <GameArea
           gameType="character"

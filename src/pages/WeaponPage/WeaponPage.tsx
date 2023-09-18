@@ -27,7 +27,7 @@ const WeaponPage = ({
 
   return (
     <>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <header>
         <img
           src={paimonImage}
           alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
@@ -35,14 +35,12 @@ const WeaponPage = ({
         <div>
           <h1>Which Weapon is Paimon Thinking of...?</h1>
           {dailyWeaponData ? (
-            <p
-              style={{ fontStyle: "italic" }}
-            >{`${dailyWeaponSolved} Travelers have guessed Paimon's weapon today!`}</p>
+            <p>{`${dailyWeaponSolved} Travelers have guessed Paimon's weapon today!`}</p>
           ) : (
             <LoadingSkeleton quantity={1} width={"50%"} />
           )}
         </div>
-      </div>
+      </header>
       {dailyWeaponData ? (
         <GameArea
           gameType="weapon"

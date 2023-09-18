@@ -27,7 +27,7 @@ const FoodPage = ({
 
   return (
     <>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <header>
         <img
           src={paimonImage}
           alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
@@ -35,14 +35,12 @@ const FoodPage = ({
         <div>
           <h1>Which Food is Paimon Thinking of...?</h1>
           {dailyFoodData ? (
-            <p
-              style={{ fontStyle: "italic" }}
-            >{`${dailyFoodSolved} Travelers have guessed Paimon's food today!`}</p>
+            <p>{`${dailyFoodSolved} Travelers have guessed Paimon's food today!`}</p>
           ) : (
             <LoadingSkeleton quantity={1} width={"50%"} />
           )}
         </div>
-      </div>
+      </header>
       {dailyFoodData ? (
         <GameArea
           gameType="food"

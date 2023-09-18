@@ -30,12 +30,12 @@ import {
   updateWeaponSolvedValue,
 } from "./redux/dailyRecordSlice";
 import { getDailyRecord } from "./services/DailyRecordService";
-import "./styles/normalize.css";
 import WebSocketData from "./types/data/webSocketData.type";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import GameMode from "./types/gameMode.type";
 import getNormalizeDate from "./util/normalizeDates";
 import TableAPIData from "./types/data/tableAPIData.type";
+import "./styles/styles.scss";
 
 function App() {
   const [webSocketConnection, setWebSocketConnection] = useState<WebSocket>();
@@ -215,80 +215,82 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavBar />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <HomePage
-                dailyRecordID={dailyRecordID}
-                guessesCounter={numOfGuesses.character}
-                complete={complete.character}
-                guesses={guesses.character}
-                setGuessCounter={setGuessCounter}
-                setCompletedState={setCompletedState}
-                updateGuesses={updateGuesses}
-              />
-            }
-          />
-          <Route path="/character" element={<Navigate to={"/"} />} />
-          <Route
-            path="/weapon"
-            element={
-              <WeaponPage
-                dailyRecordID={dailyRecordID}
-                guessesCounter={numOfGuesses.weapon}
-                complete={complete.weapon}
-                guesses={guesses.weapon}
-                setGuessCounter={setGuessCounter}
-                setCompletedState={setCompletedState}
-                updateGuesses={updateGuesses}
-              />
-            }
-          />
-          <Route
-            path="/food"
-            element={
-              <FoodPage
-                dailyRecordID={dailyRecordID}
-                guessesCounter={numOfGuesses.food}
-                complete={complete.food}
-                guesses={guesses.food}
-                setGuessCounter={setGuessCounter}
-                setCompletedState={setCompletedState}
-                updateGuesses={updateGuesses}
-              />
-            }
-          />
-          <Route
-            path="/talent"
-            element={
-              <TalentPage
-                dailyRecordID={dailyRecordID}
-                guessesCounter={numOfGuesses.talent}
-                complete={complete.talent}
-                guesses={guesses.talent}
-                setGuessCounter={setGuessCounter}
-                setCompletedState={setCompletedState}
-                updateGuesses={updateGuesses}
-              />
-            }
-          />
-          <Route
-            path="/constellation"
-            element={
-              <ConstellationPage
-                dailyRecordID={dailyRecordID}
-                guessesCounter={numOfGuesses.constellation}
-                complete={complete.constellation}
-                guesses={guesses.constellation}
-                setGuessCounter={setGuessCounter}
-                setCompletedState={setCompletedState}
-                updateGuesses={updateGuesses}
-              />
-            }
-          />
-          <Route path="/*" element={<NotFoundPage />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage
+                  dailyRecordID={dailyRecordID}
+                  guessesCounter={numOfGuesses.character}
+                  complete={complete.character}
+                  guesses={guesses.character}
+                  setGuessCounter={setGuessCounter}
+                  setCompletedState={setCompletedState}
+                  updateGuesses={updateGuesses}
+                />
+              }
+            />
+            <Route path="/character" element={<Navigate to={"/"} />} />
+            <Route
+              path="/weapon"
+              element={
+                <WeaponPage
+                  dailyRecordID={dailyRecordID}
+                  guessesCounter={numOfGuesses.weapon}
+                  complete={complete.weapon}
+                  guesses={guesses.weapon}
+                  setGuessCounter={setGuessCounter}
+                  setCompletedState={setCompletedState}
+                  updateGuesses={updateGuesses}
+                />
+              }
+            />
+            <Route
+              path="/food"
+              element={
+                <FoodPage
+                  dailyRecordID={dailyRecordID}
+                  guessesCounter={numOfGuesses.food}
+                  complete={complete.food}
+                  guesses={guesses.food}
+                  setGuessCounter={setGuessCounter}
+                  setCompletedState={setCompletedState}
+                  updateGuesses={updateGuesses}
+                />
+              }
+            />
+            <Route
+              path="/talent"
+              element={
+                <TalentPage
+                  dailyRecordID={dailyRecordID}
+                  guessesCounter={numOfGuesses.talent}
+                  complete={complete.talent}
+                  guesses={guesses.talent}
+                  setGuessCounter={setGuessCounter}
+                  setCompletedState={setCompletedState}
+                  updateGuesses={updateGuesses}
+                />
+              }
+            />
+            <Route
+              path="/constellation"
+              element={
+                <ConstellationPage
+                  dailyRecordID={dailyRecordID}
+                  guessesCounter={numOfGuesses.constellation}
+                  complete={complete.constellation}
+                  guesses={guesses.constellation}
+                  setGuessCounter={setGuessCounter}
+                  setCompletedState={setCompletedState}
+                  updateGuesses={updateGuesses}
+                />
+              }
+            />
+            <Route path="/*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
       </BrowserRouter>
     </div>
   );

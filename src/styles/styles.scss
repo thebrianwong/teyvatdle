@@ -1,0 +1,28 @@
+@use "./normalize.css";
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 30px 40px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  width: 80vw;
+
+  h1 {
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  p {
+    text-align: right;
+    font-style: italic;
+  }
+
+  div {
+    flex: 1;
+  }
+}

@@ -27,7 +27,7 @@ const TalentPage = ({
 
   return (
     <>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <header>
         <img
           src={paimonImage}
           alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
@@ -35,14 +35,12 @@ const TalentPage = ({
         <div>
           <h1>Which Talent is Paimon Thinking of...?</h1>
           {dailyTalentData ? (
-            <p
-              style={{ fontStyle: "italic" }}
-            >{`${dailyTalentSolved} Travelers have guessed Paimon's talent today!`}</p>
+            <p>{`${dailyTalentSolved} Travelers have guessed Paimon's talent today!`}</p>
           ) : (
             <LoadingSkeleton quantity={1} width={"50%"} />
           )}
         </div>
-      </div>
+      </header>
       {dailyTalentData ? (
         <GameArea
           gameType="talent"
