@@ -1,0 +1,29 @@
+.nav-bar {
+  background-color: #faf9f6;
+  display: flex;
+  padding: 15px 25px;
+  align-items: center;
+  border: solid 2px #e0d4b0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: darkgray 0px 4px 20px 0px;
+  position: sticky;
+  top: 0;
+
+  img {
+    width: 50px;
+  }
+
+  a {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  a:nth-child(2) {
+    margin-left: auto;
+  }
+
+  .logo {
+    width: 250px;
+  }
+}

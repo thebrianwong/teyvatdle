@@ -5,12 +5,13 @@ import weaponIcon from "../../assets/nav/navWeapon.png";
 import foodIcon from "../../assets/nav/navFood.png";
 import talentIcon from "../../assets/nav/navTalent.png";
 import constellationIcon from "../../assets/nav/navConstellation.png";
+import "./styles.scss";
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className="nav-bar">
       <Link to="/">
-        <img style={{ width: "250px" }} src={logo} alt="Teyvatdle Logo." />
+        <img className="logo" src={logo} alt="Teyvatdle Logo." />
       </Link>
       <Link to="/">
         Characters
