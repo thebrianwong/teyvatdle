@@ -348,7 +348,6 @@ const GuessTableRow = memo(
               dataType: "textDouble",
               content1: `${rawCharacterData.rarity} ⭐`,
               content2: rawCharacterData.region,
-              elementalText2: true,
               answerAccuracy: rarityRegionAccuracy,
             },
             ele_weapon: {

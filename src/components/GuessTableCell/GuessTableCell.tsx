@@ -16,7 +16,15 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
   } else if (cellData.dataType === "textDouble") {
     const cellContent1 = cellData.content1 || "None";
     const cellContent2 = cellData.content2 || "None";
-    cellElement = (
+    cellElement = cellData.elementalText1 ? (
+      <>
+        <span className={`${cellData.content1.toLowerCase()}-text`}>
+          {cellContent1}
+        </span>
+        <br />
+        {cellContent2}
+      </>
+    ) : (
       <>
         {cellContent1}
         <br />
