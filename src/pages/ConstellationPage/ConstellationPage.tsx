@@ -33,7 +33,10 @@ const ConstellationPage = ({
   return (
     <>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <img src={paimonImage} alt="" />
+        <img
+          src={paimonImage}
+          alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
+        />
         <div>
           <h1>Which Constellation is Paimon Thinking of...?</h1>
           {dailyConstellationData ? (

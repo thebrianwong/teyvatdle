@@ -18,9 +18,20 @@ const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
     }
   };
 
+  const chooseAppropriateAltText = () => {
+    if (itemData.character_name === answer.character_name) {
+      return "One of Paimon's Paintings indicating the correct answer.";
+    } else {
+      return "One of Paimon's Paintings indicating a wrong answer.";
+    }
+  };
+
   return (
     <li className={`${chooseAppropriateClassName()}`}>
-      <img src={chooseAppropriateImageURL()} alt="" />
+      <img
+        src={chooseAppropriateImageURL()}
+        alt={`${chooseAppropriateAltText()}`}
+      />
       <p>{itemData.character_name}</p>
     </li>
   );
