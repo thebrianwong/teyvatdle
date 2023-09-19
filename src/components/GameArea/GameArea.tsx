@@ -9,6 +9,7 @@ import ListAPIData from "../../types/data/listAPIData.type";
 import TalentConstellationImage from "../TalentConstellationImage/TalentConstellationImage";
 import { updateDailyRecordSolved } from "../../services/DailyRecordService";
 import GameComplete from "../GameComplete/GameComplete";
+import "./styles.scss";
 
 const GameArea = ({
   gameType,
@@ -62,14 +63,16 @@ const GameArea = ({
 
   return (
     <>
-      <SelectMenu
-        selectType={selectType}
-        data={data}
-        guesses={guesses}
-        gameCompleted={complete}
-        handleGuess={handleGuess}
-      />
-      <p>Total Guesses: {guessesCounter}</p>
+      <div className="game-area-top-container">
+        <SelectMenu
+          selectType={selectType}
+          data={data}
+          guesses={guesses}
+          gameCompleted={complete}
+          handleGuess={handleGuess}
+        />
+        <p>Total Guesses: {guessesCounter}</p>
+      </div>
       {gameType === "talent" || gameType === "constellation" ? (
         <>
           <TalentConstellationImage

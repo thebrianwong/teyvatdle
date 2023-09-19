@@ -4,7 +4,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 30px 40px;
+  padding: 30px 20vw 40px;
 }
 
 header {
@@ -12,7 +12,7 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: clamp(300px, 60vw, 900px);
+  min-width: 300px;
   background-color: #faf9f6;
   border-radius: 20px;
   border: solid 2px #e0d4b0;

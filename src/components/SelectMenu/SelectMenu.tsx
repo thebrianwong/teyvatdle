@@ -38,7 +38,10 @@ const SelectMenu = ({
   }, [showResults]);
 
   return (
-    <search is="search" style={{ position: "relative" }}>
+    <search
+      is="search"
+      style={{ position: "relative", width: "40vw", minWidth: "200px" }}
+    >
       <SelectSearchBar
         value={searchValue}
         gameCompleted={gameCompleted}
