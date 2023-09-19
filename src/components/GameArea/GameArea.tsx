@@ -62,7 +62,7 @@ const GameArea = ({
   };
 
   return (
-    <>
+    <div className="game-area-container">
       <div className="game-area-top-container">
         <SelectMenu
           selectType={selectType}
@@ -95,7 +95,7 @@ const GameArea = ({
           {complete && <GameComplete gameType={gameType} ref={completeRef} />}
         </>
       )}
-    </>
+    </div>
   );
 };
 
