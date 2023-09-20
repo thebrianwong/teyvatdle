@@ -29,7 +29,7 @@ const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
         <input
           type="search"
           id="search"
-          style={{ width: "100%" }}
+          style={{ width: "calc(100% + 2px)" }}
           disabled={gameCompleted}
           placeholder={determinePlaceholderValue()}
           value={value}
