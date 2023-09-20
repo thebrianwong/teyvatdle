@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import SelectOptionsProps from "./type";
 import emptyListImage from "../../assets/misc/bongoHead.png";
+import "./styles.scss";
 
 const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
   ({ dataList, dataType, filterValue, guesses, handleGuess }, ref) => {
@@ -29,8 +30,13 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
 
     return (
       <ul
+        className="select-options-container"
         style={{
-          maxHeight: "500px",
+          maxHeight: "425px",
+          width: "30vw",
+          minWidth: "170px",
+          padding: "0",
+          margin: "0",
           overflowY: "auto",
           listStyle: "none",
           position: "absolute",
@@ -45,7 +51,12 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
             return (
               <li
                 key={item[`${dataType}_name` as keyof typeof item].toString()}
-                style={{ display: "flex", maxHeight: "100px" }}
+                style={{
+                  display: "flex",
+                  maxHeight: "100px",
+                  alignItems: "center",
+                  padding: "5px",
+                }}
                 onClick={() => handleGuess(item)}
               >
                 <img
@@ -54,22 +65,47 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
                     `${dataType}_image_url` as keyof typeof item
                   ].toString()}
                   alt=""
-                  style={{ height: "100px", width: "auto" }}
+                  style={{ height: "75px", width: "auto" }}
                 />
-                <p>
+                <p
+                  style={{
+                    flex: "1",
+                    textAlign: "center",
+                    fontSize: "x-large",
+                    wordBreak: "break-word",
+                    margin: "0",
+                  }}
+                >
                   {item[`${dataType}_name` as keyof typeof item].toString()}
                 </p>
               </li>
             );
           })
         ) : (
-          <li style={{ display: "flex", maxHeight: "100px" }}>
+          <li
+            style={{
+              display: "flex",
+              maxHeight: "100px",
+              alignItems: "center",
+              padding: "5px",
+            }}
+          >
             <img
               src={emptyListImage}
               alt=""
-              style={{ height: "100px", width: "auto" }}
+              style={{ height: "75px", width: "auto" }}
             />
-            <p>Paimon doesn't remember that one...</p>
+            <p
+              style={{
+                flex: "1",
+                textAlign: "center",
+                fontSize: "smaller",
+                wordBreak: "break-word",
+                margin: "0",
+              }}
+            >
+              Paimon doesn't remember that one...
+            </p>
           </li>
         )}
       </ul>
