@@ -2,6 +2,7 @@ import GuessTableRow from "../GuessTableRow/GuessTableRow";
 import GuessTableProps from "./type";
 import GuessTableHeader from "../GuessTableHeader/GuessTableHeader";
 import { useEffect, useRef } from "react";
+import "./styles.scss";
 
 const GuessTable = ({ tableType, guessesProp, answer }: GuessTableProps) => {
   const ref = useRef<HTMLTableElement>(null);
@@ -27,7 +28,14 @@ const GuessTable = ({ tableType, guessesProp, answer }: GuessTableProps) => {
 
   return (
     <div style={{ maxHeight: "50vh", maxWidth: "80vw", overflow: "auto" }}>
-      <table ref={ref} style={{ backgroundColor: "lightgray" }}>
+      <table
+        ref={ref}
+        style={{
+          backgroundColor: "lightgray",
+          borderCollapse: "separate",
+          borderSpacing: "0",
+        }}
+      >
         <GuessTableHeader selectType={tableType} />
         <tbody>
           {guessesProp.map((guess) => {

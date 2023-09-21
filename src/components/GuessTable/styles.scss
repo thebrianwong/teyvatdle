@@ -1,0 +1,10 @@
+table {
+  th,
+  td {
+    border: solid 1px #222d5a;
+  }
+
+  tr:nth-child(1) td {
+    border-top: none;
+  }
+}

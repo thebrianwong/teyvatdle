@@ -8,40 +8,38 @@ const GuessTableHeader = ({ selectType }: GuessTableHeaderProps) => {
     headerColumns = (
       <>
         {/* all th need class with background color styling to remove transparent background */}
-        <th colSpan={2} style={{ position: "sticky", top: 0 }}>
-          Character
-        </th>
-        <th style={{ position: "sticky", top: 0 }}>
+        <th colSpan={2}>Character</th>
+        <th>
           Gender
           <br />
           Height
         </th>
-        <th style={{ position: "sticky", top: 0 }}>
+        <th>
           Rarity
           <br />
           Region
         </th>
-        <th style={{ position: "sticky", top: 0 }}>
+        <th>
           Element
           <br />
           Weapon
         </th>
-        <th style={{ position: "sticky", top: 0 }}>
+        <th>
           Ascension Stat
           <br />
           Enhancement Material
         </th>
-        <th style={{ position: "sticky", top: 0 }}>
+        <th>
           Local Specialty
           <br />
           Normal Boss Material
         </th>
-        <th style={{ position: "sticky", top: 0 }}>
+        <th>
           Talent Book(s)
           <br />
           Weekly Boss Material
         </th>
-        <th style={{ position: "sticky", top: 0 }}>Birthday</th>
+        <th>Birthday</th>
       </>
     );
   } else if (selectType === "weapon") {
@@ -84,8 +82,16 @@ const GuessTableHeader = ({ selectType }: GuessTableHeaderProps) => {
   }
 
   return (
-    <thead>
-      <tr>{headerColumns!}</tr>
+    <thead /* style={{ position: "relative" }} */>
+      <tr
+        style={{
+          position: "sticky",
+          top: 0,
+          backgroundColor: "darkgray",
+        }}
+      >
+        {headerColumns!}
+      </tr>
     </thead>
   );
 };
