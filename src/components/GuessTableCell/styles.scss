@@ -9,3 +9,21 @@
 .wrong {
   background-color: red;
 }
+
+* {
+  border: solid 1px red;
+}
+
+.table-cell-boolean-single {
+  font-size: 3rem;
+}
+
+td {
+  text-align: center;
+  font-size: larger;
+
+  img {
+    width: auto;
+    height: 75px;
+  }
+}
