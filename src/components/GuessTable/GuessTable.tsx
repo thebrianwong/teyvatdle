@@ -34,6 +34,7 @@ const GuessTable = ({ tableType, guessesProp, answer }: GuessTableProps) => {
           backgroundColor: "lightgray",
           borderCollapse: "separate",
           borderSpacing: "0",
+          width: "100%",
         }}
       >
         <GuessTableHeader selectType={tableType} />
