@@ -1,4 +1,12 @@
 th {
   padding: 4px 16px;
   min-width: 100px;
+
+  p {
+    margin: 0;
+
+    &:nth-child(1) {
+      margin-bottom: 6px;
+    }
+  }
 }

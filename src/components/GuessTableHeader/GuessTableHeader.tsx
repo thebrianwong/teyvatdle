@@ -11,34 +11,28 @@ const GuessTableHeader = ({ selectType }: GuessTableHeaderProps) => {
         {/* all th need class with background color styling to remove transparent background */}
         <th colSpan={2}>Character</th>
         <th>
-          Gender
-          <br />
-          Height
+          <p>Gender</p>
+          <p>Height</p>
         </th>
         <th>
-          Rarity
-          <br />
-          Region
+          <p>Rarity</p>
+          <p>Region</p>
         </th>
         <th>
-          Element
-          <br />
-          Weapon
+          <p>Element</p>
+          <p>Weapon</p>
         </th>
         <th>
-          Ascension Stat
-          <br />
-          Enhancement Material
+          <p>Ascension Stat</p>
+          <p>Enhancement Material</p>
         </th>
         <th>
-          Local Specialty
-          <br />
-          Normal Boss Material
+          <p>Local Specialty</p>
+          <p>Normal Boss Material</p>
         </th>
         <th>
-          Talent Book(s)
-          <br />
-          Weekly Boss Material
+          <p>Talent Book(s)</p>
+          <p>Weekly Boss Material</p>
         </th>
         <th>Birthday</th>
       </>
@@ -48,19 +42,16 @@ const GuessTableHeader = ({ selectType }: GuessTableHeaderProps) => {
       <>
         <th colSpan={2}>Weapon</th>
         <th>
-          Rarity
-          <br />
-          Weapon Type
+          <p>Rarity</p>
+          <p>Weapon Type</p>
         </th>
         <th>
-          Sub Stat
-          <br />
-          Weapon Ascension Material
+          <p>Sub Stat</p>
+          <p>Weapon Ascension Material</p>
         </th>
         <th>
-          Elite Enhancement Material
-          <br />
-          Common Enhancement Material
+          <p>Elite Enhancement Material</p>
+          <p>Common Enhancement Material</p>
         </th>
         <th>Gacha Weapon</th>
       </>
@@ -70,9 +61,8 @@ const GuessTableHeader = ({ selectType }: GuessTableHeaderProps) => {
       <>
         <th colSpan={2}>Food</th>
         <th>
-          Rarity
-          <br />
-          Food Type
+          <p>Rarity</p>
+          <p>Food Type</p>
         </th>
         <th>Special Dish</th>
         <th>Purchasable from Vendor</th>
