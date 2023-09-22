@@ -40,7 +40,7 @@ const SelectMenu = ({
   return (
     <search
       is="search"
-      style={{ position: "relative", width: "30vw", minWidth: "170px" }}
+      style={{ position: "relative", width: "clamp(170px, 30vw, 350px)" }}
     >
       <SelectSearchBar
         value={searchValue}
