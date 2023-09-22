@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import GuessTableHeaderProps from "./type";
+import "./styles.scss";
 
 const GuessTableHeader = ({ selectType }: GuessTableHeaderProps) => {
   let headerColumns: ReactElement;

@@ -1,13 +1,13 @@
 .correct {
-  background-color: green;
+  background-color: #00a86b;
 }
 
 .partial {
-  background-color: yellow;
+  background-color: #fdee00;
 }
 
 .wrong {
-  background-color: red;
+  background-color: #e03c31;
 }
 
 * {
@@ -21,6 +21,7 @@
 td {
   text-align: center;
   font-size: larger;
+  padding: 0 8px;
 
   img {
     width: auto;
