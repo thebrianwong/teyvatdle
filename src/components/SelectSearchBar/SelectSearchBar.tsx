@@ -1,5 +1,6 @@
 import { forwardRef, useEffect, useState } from "react";
 import SelectSearchBarProps from "./type";
+import "./styles.scss";
 
 const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
   ({ value, gameCompleted, selectType, handleClick, handleInput }, ref) => {
