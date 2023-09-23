@@ -1,9 +1,10 @@
 import GuessListItem from "../GuessListItem/GuessListItem";
 import GuessListProps from "./type";
+import "./styles.scss";
 
 const GuessList = ({ guesses, answer }: GuessListProps) => {
   return (
-    <ul>
+    <ul className="guess-list" style={{ listStyle: "none", padding: "0" }}>
       {guesses.map((guess) => {
         return (
           <GuessListItem

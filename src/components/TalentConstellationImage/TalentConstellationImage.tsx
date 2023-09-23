@@ -29,6 +29,7 @@ const TalentConstellationImage = ({
         ref={ref}
         src={(data as TalentAPIData).talent_image_url}
         alt="Daily talent."
+        style={{ alignSelf: "center", padding: "16px 0" }}
       />
     );
   } else {
@@ -37,6 +38,7 @@ const TalentConstellationImage = ({
         ref={ref}
         src={(data as ConstellationAPIData).constellation_image_url}
         alt="Daily constellation."
+        style={{ alignSelf: "center", padding: "16px 0" }}
       />
     );
   }
