@@ -37,7 +37,7 @@ const FoodPage = ({
           {dailyFoodData ? (
             <p>{`${dailyFoodSolved} Travelers have guessed Paimon's food today!`}</p>
           ) : (
-            <LoadingSkeleton quantity={1} width={"50%"} />
+            <LoadingSkeleton quantity={1} width={"50%"} hasContainer={false} />
           )}
         </div>
       </header>
@@ -56,7 +56,7 @@ const FoodPage = ({
           updateGuesses={updateGuesses}
         />
       ) : (
-        <LoadingSkeleton quantity={5} width="100%" />
+        <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
     </>
   );
