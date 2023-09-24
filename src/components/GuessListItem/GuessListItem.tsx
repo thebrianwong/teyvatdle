@@ -36,7 +36,6 @@ const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
         justifyContent: "center",
         alignItems: "center",
         padding: "8px",
-        minWidth: "200px",
         maxWidth: "500px",
         margin: "16px auto",
       }}
