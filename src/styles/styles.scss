@@ -1,5 +1,16 @@
 @use "./normalize.css";
 
+@font-face {
+  font-family: "Genshin Impact";
+  src: local("gi-webfont"),
+    url("../assets/fonts/gi-webfont.woff") format("woff"),
+    url("../assets/fonts/gi-webfont2.woff2") format("woff2");
+}
+
+:root {
+  font-family: "Genshin Impact";
+}
+
 main {
   display: flex;
   flex-direction: column;
