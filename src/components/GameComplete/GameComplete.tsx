@@ -1,17 +1,22 @@
 import { forwardRef } from "react";
 import paimonCheer from "../../assets/gameArea/paimonCheer.png";
 import GameCompleteProps from "./type";
+import "./styles.scss";
 
 const GameComplete = forwardRef<HTMLDivElement, GameCompleteProps>(
   ({ gameType }, ref) => {
     return (
-      <div ref={ref}>
+      <div ref={ref} className="game-complete-container">
         <h1>Nice Job, Traveler!</h1>
         <p>
           Come back tomorrow and Paimon will have a new {gameType} for you to
           guess!
         </p>
-        <img src={paimonCheer} alt="A cheering and excited Paimon." />
+        <img
+          src={paimonCheer}
+          alt="A cheering and excited Paimon."
+          className="game-complete-paimon"
+        />
       </div>
     );
   }

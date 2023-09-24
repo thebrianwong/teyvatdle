@@ -1,0 +1,11 @@
+.game-complete-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .game-complete-paimon {
+    width: 100%;
+    max-width: 400px;
+  }
+}
