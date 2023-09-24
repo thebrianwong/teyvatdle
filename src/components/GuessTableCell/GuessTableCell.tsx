@@ -18,7 +18,9 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
     const cellContent2 = cellData.content2 || "None";
     cellElement = cellData.elementalText1 ? (
       <>
-        <span className={`${cellData.content1.toLowerCase()}-text`}>
+        <span
+          className={`elemental-text ${cellData.content1.toLowerCase()}-text`}
+        >
           {cellContent1}
         </span>
         <br />

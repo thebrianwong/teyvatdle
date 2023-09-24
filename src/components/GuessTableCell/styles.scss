@@ -1,3 +1,5 @@
+@use "../../styles/variables" as *;
+
 .correct {
   background-color: #00a86b;
 }
@@ -32,4 +34,36 @@ td {
 .table-cell-main-image img {
   height: 130px;
   width: auto;
+}
+
+.elemental-text {
+  text-shadow: 0 1px black, 0 -1px black, 1px 0 black, -1px 0 black;
+}
+
+.pyro-text {
+  color: $pyro;
+}
+
+.hydro-text {
+  color: $hydro;
+}
+
+.anemo-text {
+  color: $anemo;
+}
+
+.electro-text {
+  color: $electro;
+}
+
+.dendro-text {
+  color: $dendro;
+}
+
+.cryo-text {
+  color: $cryo;
+}
+
+.geo-text {
+  color: $geo;
 }
