@@ -24,6 +24,10 @@
       color: red;
     }
 
+    &:not(:nth-child(1)):hover {
+      transform: scale(1.05);
+    }
+
     &:nth-child(2) {
       margin-left: auto;
     }
