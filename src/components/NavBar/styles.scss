@@ -16,6 +16,12 @@
   a {
     display: flex;
     align-items: flex-end;
+    text-decoration: none;
+    color: black;
+
+    &:active {
+      color: red;
+    }
   }
 
   a:nth-child(2) {
