@@ -168,6 +168,24 @@ function App() {
     }
   };
 
+  const setTimeOfDayBackground = () => {
+    const date = new Date();
+    const currentHour = date.getHours();
+    if (currentHour >= 5 && currentHour < 8) {
+      document.body.classList.add("dawn-background");
+    } else if (currentHour >= 8 && currentHour < 17) {
+      document.body.classList.add("day-background");
+    } else if (currentHour >= 17 && currentHour < 19) {
+      document.body.classList.add("dusk-background");
+    } else {
+      document.body.classList.add("night-background");
+    }
+  };
+
+  useEffect(() => {
+    setTimeOfDayBackground();
+  }, []);
+
   useEffect(() => {
     const getAllGameData = async () => {
       const [charData, weapData, foodData, talentData, constData] =

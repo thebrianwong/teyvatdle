@@ -47,8 +47,23 @@ header {
 }
 
 body {
-  background-image: url(../assets/background/day.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+}
+
+.dawn-background {
+  background-image: url(../assets/background/dawn.jpg);
+}
+
+.day-background {
+  background-image: url(../assets/background/day.jpg);
+}
+
+.dusk-background {
+  background-image: url(../assets/background/dusk.jpg);
+}
+
+.night-background {
+  background-image: url(../assets/background/night.jpg);
 }
