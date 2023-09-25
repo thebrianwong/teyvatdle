@@ -36,12 +36,35 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
     cellClass = cellClass.concat("text-double");
   } else if (cellData.dataType === "textImageCombo") {
     const cellContent1 = cellData.content1 || "None";
-    cellElement = (
-      <>
-        {cellContent1}
-        <img src={cellData.content2} alt={cellData.altText2 + "."} />
-      </>
-    );
+    const elements = [
+      "pyro",
+      "hydro",
+      "anemo",
+      "electro",
+      "dendro",
+      "cryo",
+      "geo",
+    ];
+    const cellContent1FirstWord = cellContent1.split(" ")[0];
+    if (elements.includes(cellContent1FirstWord.toLowerCase())) {
+      cellElement = (
+        <>
+          <span
+            className={`elemental-text ${cellContent1FirstWord.toLowerCase()}-text`}
+          >
+            {cellContent1}
+          </span>
+          <img src={cellData.content2} alt={cellData.altText2 + "."} />
+        </>
+      );
+    } else {
+      cellElement = (
+        <>
+          {cellContent1}
+          <img src={cellData.content2} alt={cellData.altText2 + "."} />
+        </>
+      );
+    }
     cellClass = cellClass.concat("text-image-combo");
   } else if (cellData.dataType === "imageDouble") {
     if (Array.isArray(cellData.content1) && Array.isArray(cellData.altText1)) {
