@@ -1,5 +1,4 @@
 import GameArea from "../../components/GameArea/GameArea";
-import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import { loadDailyWeapon, loadWeapons } from "../../redux/apiDataSlice";
 import {
@@ -8,6 +7,7 @@ import {
 } from "../../redux/dailyRecordSlice";
 import WeaponPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 const WeaponPage = ({
   dailyRecordID,
@@ -27,20 +27,11 @@ const WeaponPage = ({
 
   return (
     <>
-      <header>
-        <img
-          src={paimonImage}
-          alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
-        />
-        <div>
-          <h1>Which Weapon is Paimon Thinking of...?</h1>
-          {dailyWeaponData ? (
-            <p>{`${dailyWeaponSolved} Travelers have guessed Paimon's weapon today!`}</p>
-          ) : (
-            <LoadingSkeleton quantity={1} width={"50%"} hasContainer={false} />
-          )}
-        </div>
-      </header>
+      <PageHeader
+        title="weapon"
+        dataLoaded={dailyWeaponData ? true : false}
+        solvedValue={dailyWeaponSolved}
+      />
       {dailyWeaponData ? (
         <GameArea
           gameType="weapon"

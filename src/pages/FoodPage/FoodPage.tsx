@@ -8,6 +8,7 @@ import {
 } from "../../redux/dailyRecordSlice";
 import FoodPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 const FoodPage = ({
   dailyRecordID,
@@ -27,20 +28,11 @@ const FoodPage = ({
 
   return (
     <>
-      <header>
-        <img
-          src={paimonImage}
-          alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
-        />
-        <div>
-          <h1>Which Food is Paimon Thinking of...?</h1>
-          {dailyFoodData ? (
-            <p>{`${dailyFoodSolved} Travelers have guessed Paimon's food today!`}</p>
-          ) : (
-            <LoadingSkeleton quantity={1} width={"50%"} hasContainer={false} />
-          )}
-        </div>
-      </header>
+      <PageHeader
+        title="food"
+        dataLoaded={dailyFoodData ? true : false}
+        solvedValue={dailyFoodSolved}
+      />
       {dailyFoodData ? (
         <GameArea
           gameType="food"

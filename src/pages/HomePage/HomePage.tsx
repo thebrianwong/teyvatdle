@@ -8,6 +8,7 @@ import {
 } from "../../redux/dailyRecordSlice";
 import HomePageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 const HomePage = ({
   dailyRecordID,
@@ -27,20 +28,11 @@ const HomePage = ({
 
   return (
     <>
-      <header>
-        <img
-          src={paimonImage}
-          alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
-        />
-        <div>
-          <h1>Which Character is Paimon Thinking of...?</h1>
-          {dailyCharacterData ? (
-            <p>{`${dailyCharacterSolved} Travelers have guessed Paimon's character today!`}</p>
-          ) : (
-            <LoadingSkeleton quantity={1} width={"50%"} hasContainer={false} />
-          )}
-        </div>
-      </header>
+      <PageHeader
+        title="character"
+        dataLoaded={dailyCharacterData ? true : false}
+        solvedValue={dailyCharacterSolved}
+      />
       {dailyCharacterData ? (
         <GameArea
           gameType="character"

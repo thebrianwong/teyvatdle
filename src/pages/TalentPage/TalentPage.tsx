@@ -1,5 +1,4 @@
 import GameArea from "../../components/GameArea/GameArea";
-import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import { loadCharacters, loadDailyTalent } from "../../redux/apiDataSlice";
 import {
@@ -8,6 +7,7 @@ import {
 } from "../../redux/dailyRecordSlice";
 import TalentPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 const TalentPage = ({
   dailyRecordID,
@@ -27,20 +27,11 @@ const TalentPage = ({
 
   return (
     <>
-      <header>
-        <img
-          src={paimonImage}
-          alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
-        />
-        <div>
-          <h1>Which Talent is Paimon Thinking of...?</h1>
-          {dailyTalentData ? (
-            <p>{`${dailyTalentSolved} Travelers have guessed Paimon's talent today!`}</p>
-          ) : (
-            <LoadingSkeleton quantity={1} width={"50%"} hasContainer={false} />
-          )}
-        </div>
-      </header>
+      <PageHeader
+        title="talent"
+        dataLoaded={dailyTalentData ? true : false}
+        solvedValue={dailyTalentSolved}
+      />
       {dailyTalentData ? (
         <GameArea
           gameType="talent"

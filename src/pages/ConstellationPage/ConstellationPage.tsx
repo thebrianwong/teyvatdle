@@ -11,6 +11,7 @@ import {
 } from "../../redux/dailyRecordSlice";
 import ConstellationPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 const ConstellationPage = ({
   dailyRecordID,
@@ -32,20 +33,11 @@ const ConstellationPage = ({
 
   return (
     <>
-      <header>
-        <img
-          src={paimonImage}
-          alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
-        />
-        <div>
-          <h1>Which Constellation is Paimon Thinking of...?</h1>
-          {dailyConstellationData ? (
-            <p>{`${dailyConstellationSolved} Travelers have guessed Paimon's constellation today!`}</p>
-          ) : (
-            <LoadingSkeleton quantity={1} width={"50%"} hasContainer={false} />
-          )}
-        </div>
-      </header>
+      <PageHeader
+        title="constellation"
+        dataLoaded={dailyConstellationData ? true : false}
+        solvedValue={dailyConstellationSolved}
+      />
       {dailyConstellationData ? (
         <GameArea
           gameType="constellation"
