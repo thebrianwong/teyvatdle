@@ -1,0 +1,41 @@
+.tooltip-button {
+  cursor: pointer;
+  opacity: 0.6;
+
+  &:hover,
+  &:active {
+    opacity: 1;
+  }
+}
+
+.arrow-box {
+  position: relative;
+  background-color: darkgray;
+  border: 4px solid #deb76c;
+  border-radius: 8px;
+  padding: 0 8px;
+}
+.arrow-box:after,
+.arrow-box:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.arrow-box:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: darkgray;
+  border-width: 16px;
+  margin-left: 90.5px;
+}
+.arrow-box:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-top-color: #deb76c;
+  border-width: 20px;
+  margin-left: 86.5px;
+}

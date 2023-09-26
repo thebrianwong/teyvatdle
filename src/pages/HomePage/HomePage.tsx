@@ -9,6 +9,7 @@ import {
 import HomePageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import Tooltip from "../../components/Tooltip/Tooltip";
 
 const HomePage = ({
   dailyRecordID,
@@ -50,6 +51,7 @@ const HomePage = ({
       ) : (
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
+      <Tooltip />
     </>
   );
 };
