@@ -51,7 +51,7 @@ const HomePage = ({
       ) : (
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
-      <Tooltip />
+      <Tooltip type={"character"} />
     </>
   );
 };

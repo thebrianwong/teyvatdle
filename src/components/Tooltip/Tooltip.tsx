@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./styles.scss";
+import TooltipProps from "./type";
 
-const Tooltip = () => {
+const Tooltip = ({ type }: TooltipProps) => {
   const [isDisplaying, setIsDisplaying] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -44,16 +45,20 @@ const Tooltip = () => {
             <span style={{ color: "#e03c31" }}>Red</span>: Both answers are
             wrong.
           </p>
-          <p style={{ marginLeft: "16px" }}>
-            Birthday: Month and day are wrong.
-          </p>
+          {type === "character" && (
+            <p style={{ marginLeft: "16px" }}>
+              Birthday: Month and day are wrong.
+            </p>
+          )}
           <p>
             <span style={{ color: "#fdee00" }}>Yellow</span>: One answer is
             correct.
           </p>
-          <p style={{ marginLeft: "16px" }}>
-            Birthday: Either month or day are correct.
-          </p>
+          {type === "character" && (
+            <p style={{ marginLeft: "16px" }}>
+              Birthday: Either month or day are correct.
+            </p>
+          )}
           <p>
             <span style={{ color: "#00a86b" }}>Green</span>: Both answers are
             correct.
