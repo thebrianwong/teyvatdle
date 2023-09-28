@@ -68,11 +68,13 @@ const Tooltip = ({ type }: TooltipProps) => {
       <button
         className="tooltip-button"
         style={{
-          borderRadius: "20px",
+          borderRadius: "30px",
           position: "relative",
           border: "4px solid darkgray",
           right: "19.5px",
           alignSelf: "end",
+          width: "50px",
+          height: "50px",
         }}
         onClick={() => setIsDisplaying(!isDisplaying)}
         ref={buttonRef}
