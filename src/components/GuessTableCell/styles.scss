@@ -1,15 +1,15 @@
 @use "../../styles/variables" as *;
 
 .correct {
-  background-color: #00a86b;
+  background-color: $correct;
 }
 
 .partial {
-  background-color: #fdee00;
+  background-color: $partial;
 }
 
 .wrong {
-  background-color: #e03c31;
+  background-color: $wrong;
 }
 
 * {
