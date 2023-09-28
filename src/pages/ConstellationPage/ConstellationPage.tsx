@@ -12,6 +12,7 @@ import {
 import ConstellationPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import Tooltip from "../../components/Tooltip/Tooltip";
 
 const ConstellationPage = ({
   dailyRecordID,
@@ -55,6 +56,7 @@ const ConstellationPage = ({
       ) : (
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
+      <Tooltip type="constellation" />
     </>
   );
 };

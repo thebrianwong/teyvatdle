@@ -1,7 +1,7 @@
-import SelectType from "../../types/selectType.type";
+import GameMode from "../../types/gameMode.type";
 
 type TooltipProps = {
-  type: SelectType;
+  type: GameMode;
 };
 
 export default TooltipProps;

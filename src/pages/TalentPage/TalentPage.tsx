@@ -8,6 +8,7 @@ import {
 import TalentPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import Tooltip from "../../components/Tooltip/Tooltip";
 
 const TalentPage = ({
   dailyRecordID,
@@ -49,6 +50,7 @@ const TalentPage = ({
       ) : (
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
+      <Tooltip type="talent" />
     </>
   );
 };

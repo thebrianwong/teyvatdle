@@ -32,25 +32,32 @@ const Tooltip = ({ type }: TooltipProps) => {
       {isDisplaying && (
         <div className="arrow-box" ref={boxRef}>
           <p>
-            <span className="tooltip-wrong">Red</span>: Both answers are wrong.
+            <span className="tooltip-wrong">Red</span>:{" "}
+            {type === "talent" || type === "constellation"
+              ? "Wrong character."
+              : "Both answers are wrong."}
           </p>
           {type === "character" && (
             <p className="tooltip-birthday">
               Birthday: Month and day are wrong.
             </p>
           )}
-          <p>
-            <span className="tooltip-partial">Yellow</span>: One answer is
-            correct.
-          </p>
+          {type !== "talent" && type !== "constellation" && (
+            <p>
+              <span className="tooltip-partial">Yellow</span>: One answer is
+              correct.
+            </p>
+          )}
           {type === "character" && (
             <p className="tooltip-birthday">
               Birthday: Either month or day are correct.
             </p>
           )}
           <p>
-            <span className="tooltip-correct">Green</span>: Both answers are
-            correct.
+            <span className="tooltip-correct">Green</span>:{" "}
+            {type === "talent" || type === "constellation"
+              ? "Correct character."
+              : "Both answers are correct."}
           </p>
         </div>
       )}
