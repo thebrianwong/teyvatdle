@@ -15,9 +15,9 @@ const PageHeader = ({ title, dataLoaded, solvedValue }: PageHeaderProps) => {
         <h1>Which {capitalizedTitle} is Paimon Thinking of...?</h1>
         {dataLoaded ? (
           solvedValue === 1 ? (
-            <p>{"1 Traveler has guessed Paimon's weapon today!"}</p>
+            <p>{`1 Traveler has guessed Paimon's ${title} today!`}</p>
           ) : (
-            <p>{`${solvedValue} Travelers have guessed Paimon's weapon today!`}</p>
+            <p>{`${solvedValue} Travelers have guessed Paimon's ${title} today!`}</p>
           )
         ) : (
           <LoadingSkeleton quantity={1} width={"50%"} hasContainer={false} />
