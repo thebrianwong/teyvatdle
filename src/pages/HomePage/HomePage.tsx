@@ -1,5 +1,4 @@
 import GameArea from "../../components/GameArea/GameArea";
-import paimonImage from "../../assets/title/paimonThinking.png";
 import { useAppSelector } from "../../redux/hooks";
 import { loadCharacters, loadDailyCharacter } from "../../redux/apiDataSlice";
 import {
