@@ -33,7 +33,7 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
         className="select-options-container"
         style={{
           maxHeight: "425px",
-          width: "clamp(170px, 30vw, 350px)",
+          width: "clamp(190px, 30vw, 350px)",
           padding: "0",
           margin: "0",
           overflowY: "auto",
@@ -70,7 +70,7 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
                   style={{
                     flex: "1",
                     textAlign: "center",
-                    fontSize: "x-large",
+                    fontSize: "large",
                     wordBreak: "break-word",
                     margin: "0",
                   }}
