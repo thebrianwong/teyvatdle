@@ -1,0 +1,35 @@
+.credits-container {
+  position: fixed;
+  bottom: 30px;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 290px;
+}
+
+.credits-button {
+  cursor: pointer;
+  background-color: lightgray;
+  border-radius: 50px;
+  position: relative;
+  border: 4px solid darkgray;
+  left: 19.5px;
+  width: 90px;
+  height: 90px;
+
+  &:active {
+    background-color: #cbcbcb;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+  }
+}
+
+.credits-modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(211, 211, 211, 0.309);
+  z-index: 200;
+}
