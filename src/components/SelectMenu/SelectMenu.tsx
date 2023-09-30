@@ -41,7 +41,6 @@ const SelectMenu = ({
     <search
       is="search"
       style={{
-        position: "relative",
         width: "clamp(190px, 30vw, 350px)",
       }}
     >
