@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 290px;
 }
 
 .tooltip-button {
@@ -50,6 +49,7 @@
   border: 8px solid #deb76c;
   border-radius: 8px;
   padding: 0 8px;
+  width: 250px;
 }
 .arrow-box:after,
 .arrow-box:before {
@@ -67,11 +67,11 @@
   border-color: rgba(136, 183, 213, 0);
   border-top-color: darkgray;
   border-width: 18px;
-  margin-left: 83px;
+  margin-left: 78.5px;
 }
 .arrow-box:before {
   border-color: rgba(194, 225, 245, 0);
   border-top-color: #deb76c;
   border-width: 30px;
-  margin-left: 71.5px;
+  margin-left: 66.5px;
 }
