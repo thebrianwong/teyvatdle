@@ -9,6 +9,7 @@ import TalentPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Tooltip from "../../components/Tooltip/Tooltip";
+import Credits from "../../components/Credits/Credits";
 
 const TalentPage = ({
   dailyRecordID,
@@ -50,6 +51,7 @@ const TalentPage = ({
       ) : (
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
+      <Credits />
       <Tooltip type="talent" />
     </>
   );

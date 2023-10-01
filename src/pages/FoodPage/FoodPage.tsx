@@ -10,6 +10,7 @@ import FoodPageProps from "./type";
 import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Tooltip from "../../components/Tooltip/Tooltip";
+import Credits from "../../components/Credits/Credits";
 
 const FoodPage = ({
   dailyRecordID,
@@ -51,6 +52,7 @@ const FoodPage = ({
       ) : (
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
+      <Credits />
       <Tooltip type={"food"} />
     </>
   );
