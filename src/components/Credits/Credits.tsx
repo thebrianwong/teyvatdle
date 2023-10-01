@@ -13,35 +13,17 @@ const Credits = () => {
         <div className="credits-modal-background">
           <div className="credits-modal">
             <h1>Credits</h1>
+            <p>Genshin Impact assets by HoYoverse.</p>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Reprehenderit animi repellendus consequuntur eaque commodi quaerat
-              quae impedit expedita quisquam provident autem perspiciatis magni
-              sed nesciunt, nulla distinctio laudantium! Ipsa, odio.
+              Genshin Impact drip marketing font from this{" "}
+              <a href="https://ko-fi.com/s/003e0b6b50">Ko-fi page</a>.
             </p>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Reprehenderit animi repellendus consequuntur eaque commodi quaerat
-              quae impedit expedita quisquam provident autem perspiciatis magni
-              sed nesciunt, nulla distinctio laudantium! Ipsa, odio.
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Reprehenderit animi repellendus consequuntur eaque commodi quaerat
-              quae impedit expedita quisquam provident autem perspiciatis magni
-              sed nesciunt, nulla distinctio laudantium! Ipsa, odio.
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Reprehenderit animi repellendus consequuntur eaque commodi quaerat
-              quae impedit expedita quisquam provident autem perspiciatis magni
-              sed nesciunt, nulla distinctio laudantium! Ipsa, odio.
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Reprehenderit animi repellendus consequuntur eaque commodi quaerat
-              quae impedit expedita quisquam provident autem perspiciatis magni
-              sed nesciunt, nulla distinctio laudantium! Ipsa, odio.
+              Kokomi of Greed from this{" "}
+              <a href="https://www.reddit.com/r/Genshin_Impact/comments/zem5st/i_summon_kokomi_the_grand_strategist_which_allows/">
+                Reddit post
+              </a>
+              .
             </p>
           </div>
         </div>
