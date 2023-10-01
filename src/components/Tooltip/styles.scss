@@ -6,7 +6,7 @@
   right: 15px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 48px;
 }
 
 .tooltip-button {
@@ -54,7 +54,7 @@
 .arrow-box:after,
 .arrow-box:before {
   top: 100%;
-  left: 50%;
+  left: 45%;
   border: solid transparent;
   content: "";
   height: 0;
@@ -66,12 +66,12 @@
 .arrow-box:after {
   border-color: rgba(136, 183, 213, 0);
   border-top-color: darkgray;
-  border-width: 18px;
-  margin-left: 78.5px;
+  border-width: 30px;
+  margin-left: 79.5px;
 }
 .arrow-box:before {
   border-color: rgba(194, 225, 245, 0);
   border-top-color: #deb76c;
-  border-width: 30px;
-  margin-left: 66.5px;
+  border-width: 44px;
+  margin-left: 65.5px;
 }
