@@ -10,8 +10,17 @@ const Credits = () => {
         Credits
       </button>
       {isDisplaying && (
-        <div className="credits-modal-background">
-          <div className="credits-modal">
+        <div
+          className="credits-modal-background"
+          onClick={() => setIsDisplaying(false)}
+        >
+          <div className="credits-modal" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="close-credits-button"
+              onClick={() => setIsDisplaying(false)}
+            >
+              X
+            </button>
             <h1>Credits</h1>
             <p>Genshin Impact assets by HoYoverse.</p>
             <p>
