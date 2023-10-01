@@ -33,3 +33,20 @@
   background-color: rgba(211, 211, 211, 0.309);
   z-index: 200;
 }
+
+.credits-modal {
+  position: relative;
+  top: 250px;
+  background-color: white;
+  border: solid 2px black;
+  border-radius: 20px;
+  width: clamp(200px, 45vw, 400px);
+  margin: auto;
+  max-height: 650px;
+  overflow: auto;
+  padding: 16px 32px;
+
+  h1 {
+    text-align: center;
+  }
+}
