@@ -45,6 +45,11 @@
     background-color: transparent;
     border: none;
 
+    &:active,
+    &:focus {
+      outline: solid 1px black;
+    }
+
     .menu-button-image {
       width: 50px;
     }
