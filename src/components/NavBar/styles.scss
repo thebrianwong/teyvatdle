@@ -1,6 +1,7 @@
 .nav-bar {
   background-color: #faf9f6;
   display: flex;
+  flex-wrap: wrap;
   padding: 15px 25px;
   align-items: center;
   border-bottom-left-radius: 20px;
@@ -8,6 +9,8 @@
   box-shadow: darkgray 0px 4px 20px 0px;
   position: sticky;
   top: 0;
+  row-gap: 8px;
+  z-index: 1;
 
   img {
     width: 50px;
@@ -34,5 +37,22 @@
 
   .logo {
     width: 250px;
+  }
+
+  .menu-button {
+    margin-left: auto;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+
+    .menu-button-image {
+      width: 50px;
+    }
+  }
+
+  .responsive-menu-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
   }
 }
