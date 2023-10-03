@@ -11,6 +11,22 @@ const NavBar = () => {
     window.innerWidth <= 570 ? true : false
   );
   const [displayMenu, setDisplayMenu] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false);
+  const [hideAnimation, setHideAnimation] = useState(false);
+
+  const handleMenuClose = () => {
+    setShowAnimation(false);
+    setHideAnimation(true);
+    setTimeout(() => {
+      setDisplayMenu(false);
+      setHideAnimation(false);
+    }, 500);
+  };
+
+  const handleMenuOpen = () => {
+    setDisplayMenu(true);
+    setShowAnimation(true);
+  };
 
   useEffect(() => {
     const listenForResize = () => {
@@ -29,7 +45,7 @@ const NavBar = () => {
   }, [width]);
 
   useEffect(() => {
-    setDisplayMenu(false);
+    handleMenuClose();
   }, [location]);
 
   return (
@@ -41,7 +57,13 @@ const NavBar = () => {
         <>
           <button
             className="menu-button"
-            onClick={() => setDisplayMenu(!displayMenu)}
+            onClick={() => {
+              if (displayMenu) {
+                handleMenuClose();
+              } else {
+                handleMenuOpen();
+              }
+            }}
           >
             <svg
               className="menu-button-image"
@@ -56,7 +78,10 @@ const NavBar = () => {
             style={{
               display: displayMenu ? "flex" : "none",
             }}
-            className="responsive-menu-container"
+            className={`responsive-menu-container 
+            ${showAnimation ? "show-animation" : ""}
+            ${hideAnimation ? "hide-animation" : ""}
+            `}
           >
             <NavBarLinks />
           </div>

@@ -1,3 +1,44 @@
+@keyframes slide-container {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 1000px;
+  }
+}
+
+@keyframes slide-container-reverse {
+  from {
+    max-height: 1000px;
+  }
+  to {
+    max-height: 0;
+    margin: 0;
+  }
+}
+
+@keyframes slide-items {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 50px;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-items-reverse {
+  from {
+    max-height: 50px;
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
 .nav-bar {
   background-color: #faf9f6;
   display: flex;
@@ -9,7 +50,7 @@
   box-shadow: darkgray 0px 4px 20px 0px;
   position: sticky;
   top: 0;
-  row-gap: 8px;
+  // row-gap: 8px;
   z-index: 1;
 
   img {
@@ -40,7 +81,7 @@
   }
 
   .menu-button {
-    margin-left: auto;
+    padding: 0;
     height: 50px;
     background-color: transparent;
     border: none;
@@ -59,5 +100,40 @@
     flex-direction: column;
     width: 100%;
     align-items: flex-end;
+    margin-top: 8px;
+  }
+
+  .show-animation {
+    animation-name: slide-container;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+    a {
+      animation-name: slide-items;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .hide-animation {
+    animation-name: slide-container-reverse;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+    a {
+      animation-name: slide-items-reverse;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  .nav-bar {
+    justify-content: space-between;
+
+    .logo {
+      width: 200px;
+    }
   }
 }
