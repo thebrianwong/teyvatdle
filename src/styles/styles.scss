@@ -14,8 +14,8 @@
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 30px 20vw 40px;
+  align-items: stretch;
+  padding: 30px 10% 40px;
   gap: 32px;
 }
 
@@ -24,12 +24,13 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 60vw;
+  // width: 60vw;
   border-radius: 20px;
   background-color: hsla(0, 0%, 96%, 0.75);
   border: 8px solid #deb76c;
   box-shadow: 0 0 20px 1px #f5f5f5;
   padding: 5px 20px;
+  // min-width: 300px;
 
   h1 {
     margin-bottom: 0;
@@ -43,6 +44,11 @@ header {
 
   div {
     flex: 1;
+  }
+
+  img {
+    width: auto;
+    max-width: 216px;
   }
 }
 
