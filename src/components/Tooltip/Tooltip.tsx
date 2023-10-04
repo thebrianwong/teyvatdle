@@ -31,34 +31,47 @@ const Tooltip = ({ type }: TooltipProps) => {
     <div className="tooltip-container">
       {isDisplaying && (
         <div className="arrow-box" ref={boxRef}>
-          <p>
-            <span className="tooltip-wrong">Red</span>:{" "}
-            {type === "talent" || type === "constellation"
-              ? "Wrong character."
-              : "Both answers are wrong."}
-          </p>
-          {type === "character" && (
-            <p className="tooltip-birthday">
-              Birthday: Month and day are wrong.
-            </p>
+          {type !== "troll" && (
+            <>
+              <p>
+                <span className="tooltip-wrong">Red</span>:{" "}
+                {type === "talent" || type === "constellation"
+                  ? "Wrong character."
+                  : "Both answers are wrong."}
+              </p>
+              {type === "character" && (
+                <p className="tooltip-birthday">
+                  Birthday: Month and day are wrong.
+                </p>
+              )}
+              {type !== "talent" && type !== "constellation" && (
+                <p>
+                  <span className="tooltip-partial">Yellow</span>: One answer is
+                  correct.
+                </p>
+              )}
+              {type === "character" && (
+                <p className="tooltip-birthday">
+                  Birthday: Either month or day are correct.
+                </p>
+              )}
+              <p>
+                <span className="tooltip-correct">Green</span>:{" "}
+                {type === "talent" || type === "constellation"
+                  ? "Correct character."
+                  : "Both answers are correct."}
+              </p>
+            </>
           )}
-          {type !== "talent" && type !== "constellation" && (
-            <p>
-              <span className="tooltip-partial">Yellow</span>: One answer is
-              correct.
-            </p>
+          {type === "troll" && (
+            <>
+              <p>I ACTIVATE THE SPELL CARD KOKOMI OF GREED.</p>
+              <p>
+                KOKOMI OF GREED ALLOWS ME TO DRAW 2 CARDS FROM MY DECK AND ADD
+                THEM TO MY HAND.
+              </p>
+            </>
           )}
-          {type === "character" && (
-            <p className="tooltip-birthday">
-              Birthday: Either month or day are correct.
-            </p>
-          )}
-          <p>
-            <span className="tooltip-correct">Green</span>:{" "}
-            {type === "talent" || type === "constellation"
-              ? "Correct character."
-              : "Both answers are correct."}
-          </p>
         </div>
       )}
       <button

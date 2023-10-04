@@ -1,4 +1,6 @@
 import kokomiOfGreed from "../../assets/misc/kokomiOfGreed.png";
+import Credits from "../../components/Credits/Credits";
+import Tooltip from "../../components/Tooltip/Tooltip";
 
 const NotFoundPage = () => {
   return (
@@ -20,6 +22,8 @@ const NotFoundPage = () => {
         src={kokomiOfGreed}
         alt="A rendition of the Yu-Gi-Oh! card Pot of Greed styled after Kokomi."
       />
+      <Credits />
+      <Tooltip type="troll" />
     </>
   );
 };
