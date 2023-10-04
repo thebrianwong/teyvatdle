@@ -11,6 +11,7 @@ import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import Credits from "../../components/Credits/Credits";
+import { useEffect } from "react";
 
 const FoodPage = ({
   dailyRecordID,
@@ -27,6 +28,12 @@ const FoodPage = ({
     loadDailyFood(state, dailyFoodID)
   );
   const dailyFoodSolved = useAppSelector(selectDailyFoodSolved);
+
+  useEffect(() => {
+    if (!complete) {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  }, []);
 
   return (
     <>

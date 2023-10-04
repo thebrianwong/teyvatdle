@@ -33,7 +33,7 @@ const GameArea = ({
           behavior: "smooth",
           inline: "start",
         });
-      }, 0);
+      }, 100);
     }
   }, []);
 
