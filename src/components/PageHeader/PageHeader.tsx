@@ -18,12 +18,12 @@ const PageHeader = ({ title, dataLoaded, solvedValue }: PageHeaderProps) => {
         {dataLoaded ? (
           solvedValue === 1 ? (
             <p>
-              <AnimatedValue value={solvedValue} />
+              <AnimatedValue value={solvedValue} direction="up" />
               {` Traveler has guessed Paimon's ${title} today!`}
             </p>
           ) : (
             <p>
-              <AnimatedValue value={solvedValue} />
+              <AnimatedValue value={solvedValue} direction="up" />
               {`
               Travelers have guessed Paimon's ${title} today!`}
             </p>

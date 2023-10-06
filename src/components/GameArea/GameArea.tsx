@@ -73,7 +73,7 @@ const GameArea = ({
           handleGuess={handleGuess}
         />
         <p>
-          Total Guesses: <AnimatedValue value={guessesCounter} />
+          Total Guesses: <AnimatedValue value={guessesCounter} direction="up" />
         </p>
       </div>
       {gameType === "talent" || gameType === "constellation" ? (
