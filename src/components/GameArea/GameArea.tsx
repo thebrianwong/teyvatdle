@@ -10,6 +10,7 @@ import TalentConstellationImage from "../TalentConstellationImage/TalentConstell
 import { updateDailyRecordSolved } from "../../services/DailyRecordService";
 import GameComplete from "../GameComplete/GameComplete";
 import "./styles.scss";
+import AnimatedValue from "../AnimatedValue/AnimatedValue";
 
 const GameArea = ({
   gameType,
@@ -71,7 +72,9 @@ const GameArea = ({
           gameCompleted={complete}
           handleGuess={handleGuess}
         />
-        <p>Total Guesses: {guessesCounter}</p>
+        <p>
+          Total Guesses: <AnimatedValue value={guessesCounter} />
+        </p>
       </div>
       {gameType === "talent" || gameType === "constellation" ? (
         <>
