@@ -3,35 +3,3 @@
     word-break: break-word;
   }
 }
-
-.solved-value {
-  display: inline-block;
-
-  &.old-transition {
-    transition: transform 1s, opacity 0.2s;
-  }
-
-  &.new-transition {
-    transition: transform 0.15s, opacity 0.5s;
-  }
-
-  &.old-start {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  &.old-end {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-
-  &.new-start {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-
-  &.new-end {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
