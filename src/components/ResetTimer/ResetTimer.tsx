@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import AnimatedValue from "../AnimatedValue/AnimatedValue";
 
 const ResetTimer = () => {
-  const [hoursTens, setHoursTens] = useState<string>("");
-  const [hoursOnes, setHoursOnes] = useState<string>("");
-  const [minutesTens, setMinutesTens] = useState<string>("");
-  const [minutesOnes, setMinutesOnes] = useState<string>("");
-  const [secondsTens, setSecondsTens] = useState<string>("");
-  const [secondsOnes, setSecondsOnes] = useState<string>("");
+  const [hoursTens, setHoursTens] = useState<string>("X");
+  const [hoursOnes, setHoursOnes] = useState<string>("X");
+  const [minutesTens, setMinutesTens] = useState<string>("X");
+  const [minutesOnes, setMinutesOnes] = useState<string>("X");
+  const [secondsTens, setSecondsTens] = useState<string>("X");
+  const [secondsOnes, setSecondsOnes] = useState<string>("X");
 
   useEffect(() => {
     const pacificMidnight = new Date(
