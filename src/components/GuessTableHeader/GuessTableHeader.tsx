@@ -73,15 +73,7 @@ const GuessTableHeader = memo(({ selectType }: GuessTableHeaderProps) => {
 
   return (
     <thead>
-      <tr
-        style={{
-          position: "sticky",
-          top: 0,
-          backgroundColor: "darkgray",
-        }}
-      >
-        {headerColumns!}
-      </tr>
+      <tr>{headerColumns!}</tr>
     </thead>
   );
 });

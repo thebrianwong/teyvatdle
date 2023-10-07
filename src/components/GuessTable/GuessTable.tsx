@@ -14,16 +14,8 @@ const GuessTable = ({ tableType, guessesProp, answer }: GuessTableProps) => {
   }, [guessesProp]);
 
   return (
-    <div style={{ maxHeight: "50vh", maxWidth: "80vw", overflow: "auto" }}>
-      <table
-        ref={ref}
-        style={{
-          backgroundColor: "lightgray",
-          borderCollapse: "separate",
-          borderSpacing: "0",
-          width: "100%",
-        }}
-      >
+    <div className="guess-table-container">
+      <table ref={ref}>
         <GuessTableHeader selectType={tableType} />
         <tbody>
           {guessesProp.map((guess) => {

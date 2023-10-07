@@ -1,10 +1,21 @@
-table {
-  th,
-  td {
-    border: solid 1px #222d5a;
-  }
+.guess-table-container {
+  max-height: 50vh;
+  max-width: 80vw;
+  overflow: auto;
 
-  tr:nth-child(1) td {
-    border-top: none;
+  table {
+    background-color: lightgray;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+
+    th,
+    td {
+      border: solid 1px #222d5a;
+    }
+
+    tr:nth-child(1) td {
+      border-top: none;
+    }
   }
 }

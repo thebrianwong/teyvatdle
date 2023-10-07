@@ -1,4 +1,10 @@
-.guess-list img {
-  width: max-content;
-  max-height: 125px;
+.guess-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  img {
+    width: max-content;
+    max-height: 125px;
+  }
 }

@@ -1,11 +1,45 @@
 .select-options-container {
   border: 0;
+  max-height: 425px;
+  width: clamp(190px, 30vw, 350px);
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  list-style: none;
+  position: absolute;
+  background-color: white;
+  border: solid 1px darkgray;
+  z-index: 2;
 
-  li:nth-child(2n + 1) {
-    background-color: #e2e1e1;
-  }
+  li {
+    display: flex;
+    max-height: 100px;
+    align-items: center;
+    padding: 5px;
 
-  li:nth-child(2n) {
-    background-color: whitesmoke;
+    img {
+      height: 75px;
+      width: auto;
+    }
+
+    p {
+      flex: 1;
+      text-align: center;
+      font-size: large;
+      word-break: break-word;
+      margin: 0;
+    }
+
+    .empty-result {
+      font-size: smaller;
+    }
+
+    &:nth-child(2n + 1) {
+      background-color: #e2e1e1;
+    }
+
+    &:nth-child(2n) {
+      background-color: whitesmoke;
+    }
   }
 }

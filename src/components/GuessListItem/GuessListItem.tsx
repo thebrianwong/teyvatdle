@@ -30,23 +30,12 @@ const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
   return (
     <li
       className={`${chooseAppropriateClassName()} guess-list-item guess-list-item-${chooseAppropriateClassName()}`}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "8px",
-        maxWidth: "500px",
-        margin: "16px auto",
-      }}
     >
       <img
         src={chooseAppropriateImageURL()}
         alt={`${chooseAppropriateAltText()}`}
       />
-      <p style={{ fontSize: "x-large", margin: "0" }}>
-        {itemData.character_name}
-      </p>
+      <p>{itemData.character_name}</p>
     </li>
   );
 });

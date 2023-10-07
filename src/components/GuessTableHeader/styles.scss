@@ -1,12 +1,18 @@
-th {
-  padding: 4px 16px;
-  min-width: 12.5%;
+thead tr {
+  position: sticky;
+  top: 0;
+  background-color: darkgray;
 
-  p {
-    margin: 0;
+  th {
+    padding: 4px 16px;
+    min-width: 12.5%;
 
-    &:nth-child(1) {
-      margin-bottom: 6px;
+    p {
+      margin: 0;
+
+      &:nth-child(1) {
+        margin-bottom: 6px;
+      }
     }
   }
 }

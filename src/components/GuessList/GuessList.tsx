@@ -4,10 +4,7 @@ import "./styles.scss";
 
 const GuessList = ({ guesses, answer }: GuessListProps) => {
   return (
-    <ul
-      className="guess-list"
-      style={{ listStyle: "none", padding: "0", margin: "0" }}
-    >
+    <ul className="guess-list">
       {guesses.map((guess) => {
         return (
           <GuessListItem

@@ -2,6 +2,18 @@
 
 .guess-list-item {
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  max-width: 500px;
+  margin: 16px auto;
+
+  p {
+    font-size: x-large;
+    margin: 0;
+  }
 }
 
 .guess-list-item-correct {
