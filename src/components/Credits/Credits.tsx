@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import "./styles.scss";
 
-const Credits = () => {
+const Credits = memo(() => {
   const [isDisplaying, setIsDisplaying] = useState(false);
 
   return (
@@ -39,6 +39,6 @@ const Credits = () => {
       )}
     </div>
   );
-};
+});
 
 export default Credits;

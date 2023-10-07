@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import "./styles.scss";
 import TooltipProps from "./type";
 
-const Tooltip = ({ type }: TooltipProps) => {
+const Tooltip = memo(({ type }: TooltipProps) => {
   const [isDisplaying, setIsDisplaying] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -83,6 +83,6 @@ const Tooltip = ({ type }: TooltipProps) => {
       </button>
     </div>
   );
-};
+});
 
 export default Tooltip;
