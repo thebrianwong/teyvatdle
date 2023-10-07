@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import paimonCheer from "../../assets/gameArea/paimonCheer.png";
 import GameCompleteProps from "./type";
 import "./styles.scss";
+import ResetTimer from "../ResetTimer/ResetTimer";
 
 const GameComplete = forwardRef<HTMLDivElement, GameCompleteProps>(
   ({ gameType }, ref) => {
@@ -12,6 +13,7 @@ const GameComplete = forwardRef<HTMLDivElement, GameCompleteProps>(
           Come back tomorrow and Paimon will have a new {gameType} for you to
           guess!
         </p>
+        <ResetTimer />
         <img
           src={paimonCheer}
           alt="A cheering and excited Paimon."

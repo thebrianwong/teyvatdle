@@ -1,5 +1,5 @@
 type AnimatedValueProps = {
-  value: number;
+  value: number | string;
   direction: "up" | "down";
 };
 
