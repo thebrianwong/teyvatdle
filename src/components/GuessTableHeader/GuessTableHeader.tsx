@@ -8,7 +8,6 @@ const GuessTableHeader = memo(({ selectType }: GuessTableHeaderProps) => {
   if (selectType === "character") {
     headerColumns = (
       <>
-        {/* all th need class with background color styling to remove transparent background */}
         <th colSpan={2}>Character</th>
         <th>
           <p>Gender</p>
@@ -73,7 +72,7 @@ const GuessTableHeader = memo(({ selectType }: GuessTableHeaderProps) => {
   }
 
   return (
-    <thead /* style={{ position: "relative" }} */>
+    <thead>
       <tr
         style={{
           position: "sticky",
