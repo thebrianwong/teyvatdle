@@ -1,11 +1,13 @@
+@use "../../styles/variables" as *;
+
 .guess-list-item {
   border-radius: 20px;
 }
 
 .guess-list-item-correct {
-  border: solid 8px #1c8e64;
+  border: solid 8px $correct;
 }
 
 .guess-list-item-wrong {
-  border: solid 8px #c75b54;
+  border: solid 8px $wrong;
 }
