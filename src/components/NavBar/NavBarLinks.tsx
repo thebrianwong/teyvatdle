@@ -4,10 +4,10 @@ import weaponIcon from "../../assets/nav/navWeapon.png";
 import foodIcon from "../../assets/nav/navFood.png";
 import talentIcon from "../../assets/nav/navTalent.png";
 import constellationIcon from "../../assets/nav/navConstellation.png";
+import { memo } from "react";
 
-const NavBarLinks = () => {
+const NavBarLinks = memo(() => {
   const location = useLocation();
-  console.log(location);
 
   return (
     <>
@@ -54,6 +54,6 @@ const NavBarLinks = () => {
       </Link>
     </>
   );
-};
+});
 
 export default NavBarLinks;
