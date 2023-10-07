@@ -1,8 +1,8 @@
-import { ReactElement } from "react";
+import { ReactElement, memo } from "react";
 import GuessTableHeaderProps from "./type";
 import "./styles.scss";
 
-const GuessTableHeader = ({ selectType }: GuessTableHeaderProps) => {
+const GuessTableHeader = memo(({ selectType }: GuessTableHeaderProps) => {
   let headerColumns: ReactElement;
 
   if (selectType === "character") {
@@ -85,6 +85,6 @@ const GuessTableHeader = ({ selectType }: GuessTableHeaderProps) => {
       </tr>
     </thead>
   );
-};
+});
 
 export default GuessTableHeader;
