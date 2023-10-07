@@ -8,7 +8,7 @@ const NavBar = () => {
   const location = useLocation();
   const [width, setWidth] = useState(window.innerWidth);
   const [isButtonMenu, setIsButtonMenu] = useState(
-    window.innerWidth <= 570 ? true : false
+    window.innerWidth <= 580 ? true : false
   );
   const [displayMenu, setDisplayMenu] = useState(false);
   const [showAnimation, setShowAnimation] = useState(false);
@@ -40,7 +40,7 @@ const NavBar = () => {
   }, []);
 
   useEffect(() => {
-    window.innerWidth <= 570 ? setIsButtonMenu(true) : setIsButtonMenu(false);
+    window.innerWidth <= 580 ? setIsButtonMenu(true) : setIsButtonMenu(false);
     setDisplayMenu(false);
   }, [width]);
 
