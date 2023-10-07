@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import AnimatedValueProps from "./type";
 import "./styles.scss";
 
-const AnimatedValue = ({ value, direction }: AnimatedValueProps) => {
+const AnimatedValue = memo(({ value, direction }: AnimatedValueProps) => {
   const [initialLoad, setInitialLoad] = useState(true);
   const [displayedValue, setDisplayedValue] = useState(value);
   const valueRef = useRef<HTMLSpanElement | null>(null);
@@ -78,6 +78,6 @@ const AnimatedValue = ({ value, direction }: AnimatedValueProps) => {
       {displayedValue}
     </span>
   );
-};
+});
 
 export default AnimatedValue;
