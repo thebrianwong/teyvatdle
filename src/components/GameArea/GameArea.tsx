@@ -11,6 +11,8 @@ import { updateDailyRecordSolved } from "../../services/DailyRecordService";
 import GameComplete from "../GameComplete/GameComplete";
 import "./styles.scss";
 import AnimatedValue from "../AnimatedValue/AnimatedValue";
+import TalentAPIData from "../../types/data/talentAPIData.type";
+import ConstellationAPIData from "../../types/data/constellationAPIData.type";
 
 const GameArea = ({
   gameType,
@@ -61,6 +63,7 @@ const GameArea = ({
       handleGameCompletion();
     }
   };
+  console.log(dailyEntity);
 
   return (
     <div className="game-area-container">
@@ -78,6 +81,22 @@ const GameArea = ({
       </div>
       {gameType === "talent" || gameType === "constellation" ? (
         <>
+          {complete && gameType === "talent" && (
+            <h1 className="talent-constellation-answer">{`${
+              (dailyEntity as TalentAPIData).character_name
+            }'s ${(dailyEntity as TalentAPIData).talent_type} Talent: ${
+              (dailyEntity as TalentAPIData).talent_name
+            }`}</h1>
+          )}
+          {complete && gameType === "constellation" && (
+            <h1 className="talent-constellation-answer">{`${
+              (dailyEntity as ConstellationAPIData).character_name
+            }'s Level ${
+              (dailyEntity as ConstellationAPIData).constellation_level
+            } Constellation: ${
+              (dailyEntity as ConstellationAPIData).constellation_name
+            }`}</h1>
+          )}
           <TalentConstellationImage
             type={gameType}
             data={dailyEntity as ListAPIData}
