@@ -1,3 +1,7 @@
-input::placeholder {
-  font-style: italic;
+.guess-search-bar {
+  width: calc(100% + 2px);
+
+  &::placeholder {
+    font-style: italic;
+  }
 }

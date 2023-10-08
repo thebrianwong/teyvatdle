@@ -30,7 +30,7 @@ const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
         <input
           type="search"
           id="search"
-          style={{ width: "calc(100% + 2px)" }}
+          className="guess-search-bar"
           disabled={gameCompleted}
           placeholder={determinePlaceholderValue()}
           value={value}
