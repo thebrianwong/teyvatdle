@@ -63,7 +63,6 @@ const GameArea = ({
       handleGameCompletion();
     }
   };
-  console.log(dailyEntity);
 
   return (
     <div className="game-area-container">
