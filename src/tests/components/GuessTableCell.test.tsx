@@ -1,0 +1,96 @@
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import GuessTableCell from "../../components/GuessTableCell/GuessTableCell";
+import {
+  BooleanSingle,
+  ImageDouble,
+  MainImage,
+  TextDouble,
+  TextImageCombo,
+  TextSingle,
+} from "../../types/data/cellVariations.type";
+import { toBeInTheDocument } from "@testing-library/jest-dom/matchers";
+
+const mainImageData: MainImage = {
+  answerAccuracy: "correct",
+  dataType: "mainImage",
+  content: "main image",
+  altText: "main image alt text",
+};
+
+const textSingleData: TextSingle = {
+  answerAccuracy: "correct",
+  dataType: "textSingle",
+  content: "text single",
+};
+
+const textDouble: TextDouble = {
+  answerAccuracy: "correct",
+  dataType: "textDouble",
+  content1: "text double content 1",
+  content2: "text double content 2",
+};
+
+const textImageCombo: TextImageCombo = {
+  answerAccuracy: "correct",
+  dataType: "textImageCombo",
+  content1: "text image content 1",
+  content2: "text image content 2",
+  altText2: "content 2 alt text",
+};
+
+const imageDoubleString: ImageDouble = {
+  answerAccuracy: "correct",
+  dataType: "imageDouble",
+  content1: "image double content 1 string",
+  altText1: "content 1 alt text",
+  content2: "image double content 2 string",
+  altText2: "content 2 alt text",
+};
+
+const imageDoubleArray: ImageDouble = {
+  answerAccuracy: "correct",
+  dataType: "imageDouble",
+  content1: ["item 1", "item 2"],
+  altText1: ["alt text 1", "alt text 2"],
+  content2: "image double content 2 string",
+  altText2: "content 2 alt text",
+};
+
+const booleanSingleTrue: BooleanSingle = {
+  answerAccuracy: "correct",
+  dataType: "booleanSingle",
+  content: true,
+};
+
+const booleanSingleFalse: BooleanSingle = {
+  answerAccuracy: "correct",
+  dataType: "booleanSingle",
+  content: false,
+};
+
+test("GuessTableCell renders", () => {
+  render(<GuessTableCell cellData={mainImageData} />);
+  const cellData = screen.getByRole("cell");
+  expect(cellData).toBeInTheDocument();
+});
+
+describe("GuessTableCell contents depend on data", () => {
+  test("mainImage", () => {
+    render(<GuessTableCell cellData={mainImageData} />);
+    const mainImg = screen.getByAltText("main image alt text");
+    expect(mainImg).toBeInTheDocument();
+  });
+  test("textSingle", () => {
+    render(<GuessTableCell cellData={textSingleData} />);
+    const singleText = screen.getByText("text single");
+    expect(singleText).toBeInTheDocument();
+  });
+  test("textDouble", () => {
+    render(<GuessTableCell cellData={textDouble} />);
+    const firstText = screen.getByText(/text double content 1/);
+    const secondText = screen.getByText(/text double content 2/);
+    expect(firstText).toBeInTheDocument();
+    expect(secondText).toBeInTheDocument();
+  });
+});
