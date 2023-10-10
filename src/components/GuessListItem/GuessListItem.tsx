@@ -31,10 +31,7 @@ const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
     <li
       className={`${chooseAppropriateClassName()} guess-list-item guess-list-item-${chooseAppropriateClassName()}`}
     >
-      <img
-        src={chooseAppropriateImageURL()}
-        alt={`${chooseAppropriateAltText()}`}
-      />
+      <img src={chooseAppropriateImageURL()} alt={chooseAppropriateAltText()} />
       <p>{itemData.character_name}</p>
     </li>
   );
