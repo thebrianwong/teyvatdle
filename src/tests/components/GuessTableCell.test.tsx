@@ -110,6 +110,58 @@ describe("GuessTableCell contents depend on data", () => {
     const content2 = screen.getByText(/text double content 2/);
     expect(content1).toBeInTheDocument();
     expect(content2).toBeInTheDocument();
-  });;
+  });
+  test("textImageCombo", () => {
+    render(
+      <TableContainer
+        child={<GuessTableCell cellData={textImageComboData} />}
+      />
+    );
+    const content1 = screen.getByText("text image content 1");
+    const content2 = screen.getByAltText("content 2 alt text.");
+    expect(content1).toBeInTheDocument();
+    expect(content2).toBeInTheDocument();
+  });
+  test("imageDoubleString", () => {
+    render(
+      <TableContainer
+        child={<GuessTableCell cellData={imageDoubleStringData} />}
+      />
+    );
+    const content1 = screen.getByAltText("content 1 alt text.");
+    const content2 = screen.getByAltText("content 2 alt text.");
+    expect(content1).toBeInTheDocument();
+    expect(content2).toBeInTheDocument();
+  });
+  test("imageDoubleArray", () => {
+    render(
+      <TableContainer
+        child={<GuessTableCell cellData={imageDoubleArrayData} />}
+      />
+    );
+    const content1Item1 = screen.getByAltText("alt text 1.");
+    const content1Item2 = screen.getByAltText("alt text 2.");
+    const content2 = screen.getByAltText("content 2 alt text.");
+    expect(content1Item1).toBeInTheDocument();
+    expect(content1Item2).toBeInTheDocument();
+    expect(content2).toBeInTheDocument();
+  });
+  test("booleanSingleTrue", () => {
+    render(
+      <TableContainer
+        child={<GuessTableCell cellData={booleanSingleTrueData} />}
+      />
+    );
+    const checkmark = screen.getByText("✔️");
+    expect(checkmark).toBeInTheDocument();
+  });
+  test("booleanSingleFalse", () => {
+    render(
+      <TableContainer
+        child={<GuessTableCell cellData={booleanSingleFalseData} />}
+      />
+    );
+    const xMark = screen.getByText("✗");
+    expect(xMark).toBeInTheDocument();
   });
 });
