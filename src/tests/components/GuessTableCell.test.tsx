@@ -24,14 +24,14 @@ const textSingleData: TextSingle = {
   content: "text single",
 };
 
-const textDouble: TextDouble = {
+const textDoubleData: TextDouble = {
   answerAccuracy: "correct",
   dataType: "textDouble",
   content1: "text double content 1",
   content2: "text double content 2",
 };
 
-const textImageCombo: TextImageCombo = {
+const textImageComboData: TextImageCombo = {
   answerAccuracy: "correct",
   dataType: "textImageCombo",
   content1: "text image content 1",
@@ -39,7 +39,7 @@ const textImageCombo: TextImageCombo = {
   altText2: "content 2 alt text",
 };
 
-const imageDoubleString: ImageDouble = {
+const imageDoubleStringData: ImageDouble = {
   answerAccuracy: "correct",
   dataType: "imageDouble",
   content1: "image double content 1 string",
@@ -48,7 +48,7 @@ const imageDoubleString: ImageDouble = {
   altText2: "content 2 alt text",
 };
 
-const imageDoubleArray: ImageDouble = {
+const imageDoubleArrayData: ImageDouble = {
   answerAccuracy: "correct",
   dataType: "imageDouble",
   content1: ["item 1", "item 2"],
@@ -57,13 +57,13 @@ const imageDoubleArray: ImageDouble = {
   altText2: "content 2 alt text",
 };
 
-const booleanSingleTrue: BooleanSingle = {
+const booleanSingleTrueData: BooleanSingle = {
   answerAccuracy: "correct",
   dataType: "booleanSingle",
   content: true,
 };
 
-const booleanSingleFalse: BooleanSingle = {
+const booleanSingleFalseData: BooleanSingle = {
   answerAccuracy: "correct",
   dataType: "booleanSingle",
   content: false,
@@ -103,7 +103,9 @@ describe("GuessTableCell contents depend on data", () => {
     expect(singleText).toBeInTheDocument();
   });
   test("textDouble", () => {
-    render(<TableContainer child={<GuessTableCell cellData={textDouble} />} />);
+    render(
+      <TableContainer child={<GuessTableCell cellData={textDoubleData} />} />
+    );
     const firstText = screen.getByText(/text double content 1/);
     const secondText = screen.getByText(/text double content 2/);
     expect(firstText).toBeInTheDocument();
