@@ -106,9 +106,10 @@ describe("GuessTableCell contents depend on data", () => {
     render(
       <TableContainer child={<GuessTableCell cellData={textDoubleData} />} />
     );
-    const firstText = screen.getByText(/text double content 1/);
-    const secondText = screen.getByText(/text double content 2/);
-    expect(firstText).toBeInTheDocument();
-    expect(secondText).toBeInTheDocument();
+    const content1 = screen.getByText(/text double content 1/);
+    const content2 = screen.getByText(/text double content 2/);
+    expect(content1).toBeInTheDocument();
+    expect(content2).toBeInTheDocument();
+  });;
   });
 });
