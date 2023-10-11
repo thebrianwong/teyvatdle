@@ -69,25 +69,41 @@ const booleanSingleFalse: BooleanSingle = {
   content: false,
 };
 
+const TableContainer = ({ child }) => {
+  return (
+    <table>
+      <tbody>
+        <tr>{child}</tr>
+      </tbody>
+    </table>
+  );
+};
+
 test("GuessTableCell renders", () => {
-  render(<GuessTableCell cellData={mainImageData} />);
+  render(
+    <TableContainer child={<GuessTableCell cellData={mainImageData} />} />
+  );
   const cellData = screen.getByRole("cell");
   expect(cellData).toBeInTheDocument();
 });
 
 describe("GuessTableCell contents depend on data", () => {
   test("mainImage", () => {
-    render(<GuessTableCell cellData={mainImageData} />);
+    render(
+      <TableContainer child={<GuessTableCell cellData={mainImageData} />} />
+    );
     const mainImg = screen.getByAltText("main image alt text");
     expect(mainImg).toBeInTheDocument();
   });
   test("textSingle", () => {
-    render(<GuessTableCell cellData={textSingleData} />);
+    render(
+      <TableContainer child={<GuessTableCell cellData={textSingleData} />} />
+    );
     const singleText = screen.getByText("text single");
     expect(singleText).toBeInTheDocument();
   });
   test("textDouble", () => {
-    render(<GuessTableCell cellData={textDouble} />);
+    render(<TableContainer child={<GuessTableCell cellData={textDouble} />} />);
     const firstText = screen.getByText(/text double content 1/);
     const secondText = screen.getByText(/text double content 2/);
     expect(firstText).toBeInTheDocument();
