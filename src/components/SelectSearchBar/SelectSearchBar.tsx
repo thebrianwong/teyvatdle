@@ -1,11 +1,9 @@
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef } from "react";
 import SelectSearchBarProps from "./type";
 import "./styles.scss";
 
 const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
   ({ value, gameCompleted, selectType, handleClick, handleInput }, ref) => {
-    const [inputValue, setInputValue] = useState<string>(value);
-
     const determinePlaceholderValue = () => {
       switch (selectType) {
         case "character":
@@ -18,10 +16,6 @@ const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
           return "Paimon...?";
       }
     };
-
-    useEffect(() => {
-      handleInput(inputValue);
-    }, [inputValue]);
 
     return (
       <>
@@ -37,7 +31,6 @@ const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
           ref={ref}
           onClick={handleClick}
           onChange={(e) => {
-            setInputValue(e.target.value);
             handleInput(e.target.value);
           }}
         />
