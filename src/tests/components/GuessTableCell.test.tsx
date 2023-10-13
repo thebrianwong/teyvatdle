@@ -9,7 +9,6 @@ import {
   TextImageCombo,
   TextSingle,
 } from "../../types/data/cellVariations.type";
-import { toBeInTheDocument } from "@testing-library/jest-dom/matchers";
 
 const mainImageData: MainImage = {
   answerAccuracy: "correct",
@@ -94,6 +93,7 @@ describe("GuessTableCell contents depend on data", () => {
     );
     const mainImg = screen.getByAltText("main image alt text");
     expect(mainImg).toBeInTheDocument();
+    expect(mainImg).toHaveAttribute("src", "main image");
   });
   test("textSingle", () => {
     render(
@@ -121,6 +121,7 @@ describe("GuessTableCell contents depend on data", () => {
     const content2 = screen.getByAltText("content 2 alt text.");
     expect(content1).toBeInTheDocument();
     expect(content2).toBeInTheDocument();
+    expect(content2).toHaveAttribute("src", "text image content 2");
   });
   test("imageDoubleString", () => {
     render(
@@ -131,7 +132,9 @@ describe("GuessTableCell contents depend on data", () => {
     const content1 = screen.getByAltText("content 1 alt text.");
     const content2 = screen.getByAltText("content 2 alt text.");
     expect(content1).toBeInTheDocument();
+    expect(content1).toHaveAttribute("src", "image double content 1 string");
     expect(content2).toBeInTheDocument();
+    expect(content2).toHaveAttribute("src", "image double content 2 string");
   });
   test("imageDoubleArray", () => {
     render(
@@ -143,7 +146,9 @@ describe("GuessTableCell contents depend on data", () => {
     const content1Item2 = screen.getByAltText("alt text 2.");
     const content2 = screen.getByAltText("content 2 alt text.");
     expect(content1Item1).toBeInTheDocument();
+    expect(content1Item1).toHaveAttribute("src", "item 1");
     expect(content1Item2).toBeInTheDocument();
+    expect(content1Item2).toHaveAttribute("src", "item 2");
     expect(content2).toBeInTheDocument();
   });
   test("booleanSingleTrue", () => {

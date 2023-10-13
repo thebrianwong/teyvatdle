@@ -99,3 +99,19 @@ describe("The image alt text depends on the correct or a wrong answer", () => {
     expect(wrongAltText).toBeInTheDocument();
   });
 });
+
+describe("The image src depends on the correct or a wrong answer", () => {
+  test("Correct answer", () => {
+    render(
+      <GuessListItem itemData={characterData} answer={correctTalentData} />
+    );
+    const img = screen.getByRole("img");
+    expect(img).toHaveAttribute("src", "Correct!");
+  });
+
+  test("Wrong answer", () => {
+    render(<GuessListItem itemData={characterData} answer={wrongTalentData} />);
+    const img = screen.getByRole("img");
+    expect(img).toHaveAttribute("src", "Wrong...");
+  });
+});
