@@ -8,9 +8,9 @@ import CharacterTransformedData from "../../types/data/characterTransformedData.
 import WeaponTransformedData from "../../types/data/weaponTransformedData.type";
 import FoodTransformedData from "../../types/data/foodTransformedData.type";
 import TableAPIData from "../../types/data/tableAPIData.type";
-import formatBirthday from "../../util/formatBirthday";
-import checkForQuotes from "../../util/checkForQuotes";
-import compareArrays from "../../util/compareArrays";
+import formatBirthday from "../../utils/formatBirthday";
+import checkForQuotes from "../../utils/checkForQuotes";
+import compareArrays from "../../utils/compareArrays";
 import CharacterAnswerAccuracy from "../../types/data/characterAnswerAccuracy.type";
 import WeaponAnswerAccuracy from "../../types/data/weaponAnswerAccuracy.type";
 import FoodAnswerAccuracy from "../../types/data/foodAnswerAccuracy.type";

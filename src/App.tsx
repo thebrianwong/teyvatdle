@@ -33,7 +33,7 @@ import { getDailyRecord } from "./services/DailyRecordService";
 import WebSocketData from "./types/data/webSocketData.type";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import GameMode from "./types/gameMode.type";
-import getNormalizeDate from "./util/normalizeDates";
+import getNormalizeDate from "./utils/normalizeDates";
 import TableAPIData from "./types/data/tableAPIData.type";
 import "./styles/styles.scss";
 
