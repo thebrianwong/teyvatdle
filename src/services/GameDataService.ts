@@ -5,7 +5,7 @@ import GameMode from "../types/gameMode.type";
 const getData = async (type: GameMode) => {
   try {
     const rawData = await fetch(
-      `http://${process.env.REACT_APP_BACKEND_DOMAIN}/api/${type}`
+      `${process.env.REACT_APP_BACKEND_DOMAIN}/api/${type}`
     );
     const parsedData: TableAPIData[] | ListAPIData[] = await rawData.json();
     return parsedData;

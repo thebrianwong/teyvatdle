@@ -4,7 +4,7 @@ import GameMode from "../types/gameMode.type";
 const getDailyRecord = async () => {
   try {
     const rawData = await fetch(
-      `http://${process.env.REACT_APP_BACKEND_DOMAIN}/api/teyvatdle/daily_record`
+      `${process.env.REACT_APP_BACKEND_DOMAIN}/api/teyvatdle/daily_record`
     );
     const parsedData: DailyRecordAPIData = await rawData.json();
     return parsedData;
@@ -24,7 +24,7 @@ const getDailyRecord = async () => {
 const updateDailyRecordSolved = async (id: number, resource: GameMode) => {
   try {
     const results = await fetch(
-      `http://${process.env.REACT_APP_BACKEND_DOMAIN}/api/teyvatdle/daily_record/${id}/${resource}`,
+      `${process.env.REACT_APP_BACKEND_DOMAIN}/api/teyvatdle/daily_record/${id}/${resource}`,
       {
         method: "PATCH",
       }

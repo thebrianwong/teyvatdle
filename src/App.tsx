@@ -209,9 +209,7 @@ function App() {
     };
     const getWebSocketConnection = async () => {
       try {
-        const ws = new WebSocket(
-          `ws://${process.env.REACT_APP_BACKEND_DOMAIN}/`
-        );
+        const ws = new WebSocket(`${process.env.REACT_APP_BACKEND_WEBSOCKET}/`);
         setWebSocketConnection(ws);
         ws.addEventListener("message", async (data) => {
           const parsedData: WebSocketData = await JSON.parse(data.data);
