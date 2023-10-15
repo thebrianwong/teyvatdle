@@ -17,9 +17,14 @@
     align-items: center;
     padding: 5px;
 
-    img {
+    .select-options-image-container {
       height: 75px;
-      width: auto;
+      width: 75px;
+
+      img {
+        height: 75px;
+        width: auto;
+      }
     }
 
     p {
