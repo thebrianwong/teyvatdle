@@ -29,11 +29,18 @@ const SelectMenu = ({
         setShowResults(false);
       }
     };
+    const closeWithEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setShowResults(false);
+      }
+    };
 
     document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("keydown", closeWithEsc);
 
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("keydown", closeWithEsc);
     };
   }, [showResults]);
 

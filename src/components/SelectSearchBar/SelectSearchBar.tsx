@@ -30,7 +30,9 @@ const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
           value={value}
           ref={ref}
           onClick={handleClick}
+          onFocus={handleClick}
           onChange={(e) => {
+            handleClick();
             handleInput(e.target.value);
           }}
         />

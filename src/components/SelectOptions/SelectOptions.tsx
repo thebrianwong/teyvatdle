@@ -36,6 +36,12 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
               <li
                 key={item[`${dataType}_name` as keyof typeof item].toString()}
                 onClick={() => handleGuess(item)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    handleGuess(item);
+                  }
+                }}
+                tabIndex={0}
               >
                 <div className="select-options-image-container">
                   <img

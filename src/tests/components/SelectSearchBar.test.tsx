@@ -30,10 +30,11 @@ test("Clicks are handled", () => {
   );
   const inputElement = screen.getByRole("searchbox");
   act(() => {
+    inputElement.focus();
     userEvent.click(inputElement);
     userEvent.click(inputElement);
   });
-  expect(clickMock).toHaveBeenCalledTimes(2);
+  expect(clickMock).toHaveBeenCalledTimes(3);
 });
 
 test("Keyboard input is handled", () => {
