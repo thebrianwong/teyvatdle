@@ -3,7 +3,6 @@ import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import SelectMenu from "../../components/SelectMenu/SelectMenu";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
-import TableAPIData from "../../types/data/tableAPIData.type";
 
 const characterData: CharacterAPIData[] = [
   {
@@ -181,7 +180,6 @@ describe("Selecting a select option...", () => {
     act(() => {
       userEvent.click(listItem);
     });
-    screen.debug();
     expect(searchBar).toHaveAttribute("value", "");
   });
 });
