@@ -54,7 +54,9 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
           })
         ) : (
           <li>
-            <img src={emptyListImage} alt="" />
+            <div className="select-options-image-container">
+              <img src={emptyListImage} alt="" />
+            </div>
             <p className="empty-result">Paimon doesn't remember that one...</p>
           </li>
         )}
