@@ -31,7 +31,12 @@ const PageHeader = memo(
               </p>
             )
           ) : (
-            <LoadingSkeleton quantity={1} width={"50%"} hasContainer={false} />
+            <LoadingSkeleton
+              quantity={1}
+              width={"50%"}
+              alignment="right"
+              hasContainer={false}
+            />
           )}
         </div>
       </header>
