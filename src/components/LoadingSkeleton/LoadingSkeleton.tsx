@@ -9,9 +9,9 @@ const LoadingSkeleton = ({
 }: LoadingSkeletonProps) => {
   const style = { width };
   if (alignment && alignment === "right") {
-    style["margin-left" as keyof typeof style] = "auto";
+    style["marginLeft" as keyof typeof style] = "auto";
   } else if (alignment && alignment === "left") {
-    style["margin-right" as keyof typeof style] = "auto";
+    style["marginRight" as keyof typeof style] = "auto";
   }
 
   const arr = [];
