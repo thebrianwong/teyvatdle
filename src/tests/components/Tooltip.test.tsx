@@ -91,4 +91,19 @@ describe("The modal content varies by type", () => {
     expect(wrong).toHaveTextContent("Red: Wrong character.");
     expect(correct).toHaveTextContent("Green: Correct character.");
   });
+  test("troll", () => {
+    render(<Tooltip type="troll" />);
+    const button = screen.getByRole("button", { name: "?" });
+    act(() => {
+      userEvent.click(button);
+    });
+    const trollText1 = screen.getByText(
+      "I ACTIVATE THE SPELL CARD KOKOMI OF GREED."
+    );
+    const trollText2 = screen.getByText(
+      "KOKOMI OF GREED ALLOWS ME TO DRAW 2 CARDS FROM MY DECK AND ADD THEM TO MY HAND."
+    );
+    expect(trollText1).toBeInTheDocument();
+    expect(trollText2).toBeInTheDocument();
+  });
 });
