@@ -18,11 +18,15 @@ test("HomePage renders", async () => {
       updateGuesses={jest.fn()}
     />
   );
-  const header = screen.getByText(/Travelers have guessed Paimon's/);
+  const header = screen.getByRole("heading", {
+    name: "Which Character is Paimon Thinking of...?",
+  });
+  const headerSubtext = screen.getByText(/Travelers have guessed Paimon's/);
   const gameArea = screen.getByRole("table");
   const credits = screen.getByRole("button", { name: "Credits" });
   const tooltip = screen.getByRole("button", { name: "?" });
   expect(header).toBeInTheDocument();
+  expect(headerSubtext).toBeInTheDocument();
   expect(gameArea).toBeInTheDocument();
   expect(credits).toBeInTheDocument();
   expect(tooltip).toBeInTheDocument();
