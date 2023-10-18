@@ -29,7 +29,9 @@ const HomePage = ({
   const dailyCharacterSolved = useAppSelector(selectDailyCharacterSolved);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    if (!complete) {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
   }, []);
 
   return (
