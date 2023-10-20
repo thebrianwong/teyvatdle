@@ -168,6 +168,7 @@ const GuessTableRow = memo(
           } else {
             charResults.birthdayAccuracy = "wrong";
           }
+          console.log(charResults);
           return charResults;
         case "weapon":
           const weapGuessData = { ...guessData } as WeaponAPIData;
@@ -323,9 +324,7 @@ const GuessTableRow = memo(
             localAscensionAccuracy,
             bookTalentAccuracy,
             birthdayAccuracy,
-          } = determineCorrectness(
-            rawCharacterData
-          )! as CharacterAnswerAccuracy;
+          } = determineCorrectness(rawCharacterData) as CharacterAnswerAccuracy;
           const transformedCharacterData: CharacterTransformedData = {
             character_image: {
               dataType: "mainImage",
@@ -447,7 +446,7 @@ const GuessTableRow = memo(
             purchasableAccuracy,
             recipeAccuracy,
             eventAccuracy,
-          } = determineCorrectness(rawFoodData)! as FoodAnswerAccuracy;
+          } = determineCorrectness(rawFoodData) as FoodAnswerAccuracy;
           const transformedFoodData: FoodTransformedData = {
             food_image: {
               dataType: "mainImage",
