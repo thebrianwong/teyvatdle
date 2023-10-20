@@ -104,7 +104,15 @@ const GameArea = ({
             guesses={guesses as CharacterAPIData[]}
             answer={dailyEntity as ListAPIData}
           />
-          {complete && <GameComplete gameType={gameType} ref={completeRef} />}
+          {complete && (
+            <GameComplete
+              gameType={gameType}
+              selectType={selectType}
+              guesses={guesses}
+              answer={dailyEntity as TableAPIData}
+              ref={completeRef}
+            />
+          )}
         </>
       ) : (
         <>
@@ -113,7 +121,15 @@ const GameArea = ({
             guessesProp={guesses}
             answer={dailyEntity as TableAPIData}
           />
-          {complete && <GameComplete gameType={gameType} ref={completeRef} />}
+          {complete && (
+            <GameComplete
+              gameType={gameType}
+              selectType={selectType}
+              guesses={guesses}
+              answer={dailyEntity as TableAPIData}
+              ref={completeRef}
+            />
+          )}
         </>
       )}
     </div>

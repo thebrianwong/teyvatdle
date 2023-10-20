@@ -3,9 +3,23 @@ import paimonCheer from "../../assets/gameArea/paimonCheer.png";
 import GameCompleteProps from "./type";
 import "./styles.scss";
 import ResetTimer from "../ResetTimer/ResetTimer";
+import determineCorrectness from "../GuessTableRow/determineCorrectness";
 
 const GameComplete = forwardRef<HTMLDivElement, GameCompleteProps>(
-  ({ gameType }, ref) => {
+  ({ gameType, selectType, guesses, answer }, ref) => {
+    const displayEmojiGuesses = () => {
+      let string = "";
+      guesses.forEach((guess) => {
+        const acc = determineCorrectness(selectType, guess, answer);
+        Object.keys(acc!).forEach((key) => {
+          const value = acc![key as keyof typeof acc];
+          if (value === "wrong") {
+            string = string + "🟥";
+          }
+        });
+      });
+    };
+
     return (
       <div ref={ref} className="game-complete-container">
         <h1>Nice Job, Traveler!</h1>
