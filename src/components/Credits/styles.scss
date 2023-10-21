@@ -17,10 +17,15 @@
   left: 19.5px;
   width: 90px;
   height: 90px;
+  transition: transform 0.25s;
 
   &:active {
     background-color: #cbcbcb;
     box-shadow: inset 0px 0px 5px #c1c1c1;
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 }
 
