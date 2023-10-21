@@ -10,7 +10,6 @@ const Tooltip = memo(({ type }: TooltipProps) => {
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
       if (
-        isDisplaying &&
         boxRef.current &&
         !boxRef.current.contains(e.target as HTMLElement) &&
         buttonRef.current &&
@@ -19,12 +18,21 @@ const Tooltip = memo(({ type }: TooltipProps) => {
         setIsDisplaying(false);
       }
     };
-
-    document.addEventListener("mousedown", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
+    const closeWithEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsDisplaying(false);
+      }
     };
+
+    if (isDisplaying) {
+      document.addEventListener("mousedown", handleOutsideClick);
+      document.addEventListener("keydown", closeWithEsc);
+
+      return () => {
+        document.removeEventListener("mousedown", handleOutsideClick);
+        document.removeEventListener("keydown", closeWithEsc);
+      };
+    }
   }, [isDisplaying]);
 
   return (
