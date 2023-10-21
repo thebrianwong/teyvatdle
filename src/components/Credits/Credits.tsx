@@ -10,14 +10,14 @@ const Credits = memo(() => {
         setIsDisplaying(false);
       }
     };
+
     if (isDisplaying) {
       document.addEventListener("keydown", closeWithEsc);
-    }
-    return () => {
-      if (isDisplaying) {
+
+      return () => {
         document.removeEventListener("keydown", closeWithEsc);
-      }
-    };
+      };
+    }
   }, [isDisplaying]);
 
   return (
