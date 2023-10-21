@@ -46,5 +46,11 @@
     &:nth-child(2n) {
       background-color: whitesmoke;
     }
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      box-shadow: inset 0 0 10px black;
+    }
   }
 }
