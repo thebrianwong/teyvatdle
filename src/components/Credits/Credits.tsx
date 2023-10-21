@@ -1,8 +1,24 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import "./styles.scss";
 
 const Credits = memo(() => {
   const [isDisplaying, setIsDisplaying] = useState(false);
+
+  useEffect(() => {
+    const closeWithEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsDisplaying(false);
+      }
+    };
+    if (isDisplaying) {
+      document.addEventListener("keydown", closeWithEsc);
+    }
+    return () => {
+      if (isDisplaying) {
+        document.removeEventListener("keydown", closeWithEsc);
+      }
+    };
+  }, [isDisplaying]);
 
   return (
     <div className="credits-container">

@@ -34,3 +34,16 @@ test("Clicking the close button closes the Credits modal", () => {
   const modalTitle = screen.queryByRole("heading", { name: "Credits" });
   expect(modalTitle).toBeNull();
 });
+
+test("Hitting esc on the keyboard closes the Credits modal", () => {
+  render(<Credits />);
+  const button = screen.getByRole("button", { name: "Credits" });
+  act(() => {
+    userEvent.click(button);
+  });
+  act(() => {
+    userEvent.keyboard("{Escape}");
+  });
+  const modalTitle = screen.queryByRole("heading", { name: "Credits" });
+  expect(modalTitle).toBeNull();
+});
