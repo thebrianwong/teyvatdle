@@ -17,9 +17,9 @@
 }
 
 .guess-list-item-correct {
-  border: solid 8px $correct;
+  border: solid 8px $correct-border;
 }
 
 .guess-list-item-wrong {
-  border: solid 8px $wrong;
+  border: solid 8px $wrong-border;
 }
