@@ -71,7 +71,8 @@
     &:not(:nth-child(1)) {
       transition: transform 0.25s;
 
-      &:hover {
+      &:hover,
+      &:focus {
         transform: scale(1.05);
       }
     }

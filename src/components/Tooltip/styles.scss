@@ -26,7 +26,8 @@
     box-shadow: inset 0px 0px 5px #c1c1c1;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     transform: scale(1.05);
   }
 }
