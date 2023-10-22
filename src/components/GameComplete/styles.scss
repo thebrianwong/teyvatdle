@@ -8,4 +8,13 @@
     width: 100%;
     max-width: 400px;
   }
+
+  .emoji-container {
+    margin: 16px;
+
+    .results-emojis {
+      margin: 0;
+      font-size: x-large;
+    }
+  }
 }
