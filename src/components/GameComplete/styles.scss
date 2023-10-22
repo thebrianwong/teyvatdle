@@ -18,3 +18,13 @@
     }
   }
 }
+
+@media (max-width: 380px) {
+  .game-complete-container {
+    .emoji-container {
+      .results-emojis {
+        font-size: large;
+      }
+    }
+  }
+}
