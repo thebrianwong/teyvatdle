@@ -46,9 +46,28 @@ const GameComplete = forwardRef<HTMLDivElement, GameCompleteProps>(
       setEmojiGuesses(guessStrings);
     };
 
+    const calculateGuessesBreakdown = () => {
+      const wrongCorrectBreakdown: string[] = [];
+      wrongCorrectBreakdown.push(`${guesses.length - 1}x 🟥 1x 🟩`);
+      if (guesses.length > 1) {
+        wrongCorrectBreakdown.push(`${guesses.length} guesses!`);
+      } else {
+        wrongCorrectBreakdown.push("1 guess!");
+      }
+      setEmojiGuesses(wrongCorrectBreakdown);
+    };
+
     useEffect(() => {
-      chooseEmojiHeaders();
-      calculateEmojiGuesses();
+      if (
+        gameType === "character" ||
+        gameType === "weapon" ||
+        gameType === "food"
+      ) {
+        chooseEmojiHeaders();
+        calculateEmojiGuesses();
+      } else {
+        calculateGuessesBreakdown();
+      }
     }, []);
 
     return (
@@ -59,24 +78,26 @@ const GameComplete = forwardRef<HTMLDivElement, GameCompleteProps>(
           guess!
         </p>
         <ResetTimer />
-        {emojiHeaders && emojiGuesses && (
-          <div className="emoji-container">
-            {emojiHeaders.map((header) => {
+
+        <div className="emoji-container">
+          <h2>Summary</h2>
+          {emojiHeaders &&
+            emojiHeaders.map((header) => {
               return (
                 <p className="results-emojis" key={header}>
                   {header}
                 </p>
               );
             })}
-            {emojiGuesses.map((guess, index) => {
+          {emojiGuesses &&
+            emojiGuesses.map((guess, index) => {
               return (
                 <p className="results-emojis" key={`${guess}-${index}`}>
                   {guess}
                 </p>
               );
             })}
-          </div>
-        )}
+        </div>
         <img
           src={paimonCheer}
           alt="A cheering and excited Paimon."
