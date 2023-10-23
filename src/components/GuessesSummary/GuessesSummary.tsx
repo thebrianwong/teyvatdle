@@ -45,6 +45,13 @@ const GuessesSummary = ({
       });
       guessStrings.push(guessRow);
     });
+    if (guesses.length > 1) {
+      guessStrings.push(
+        `You got the correct ${gameType} in ${guesses.length} guesses!`
+      );
+    } else {
+      guessStrings.push(`You got the correct ${gameType} in 1 guess!`);
+    }
     setEmojiGuesses(guessStrings);
   };
 
@@ -52,9 +59,11 @@ const GuessesSummary = ({
     const wrongCorrectBreakdown: string[] = [];
     wrongCorrectBreakdown.push(`${guesses.length - 1}x 🟥 1x 🟩`);
     if (guesses.length > 1) {
-      wrongCorrectBreakdown.push(`${guesses.length} guesses!`);
+      wrongCorrectBreakdown.push(
+        `You got the correct ${gameType} in ${guesses.length} guesses!`
+      );
     } else {
-      wrongCorrectBreakdown.push("1 guess!");
+      wrongCorrectBreakdown.push(`You got the correct ${gameType} in 1 guess!`);
     }
     setEmojiGuesses(wrongCorrectBreakdown);
   };
