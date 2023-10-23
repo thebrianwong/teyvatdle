@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import GuessesSummaryProp from "./type";
 import determineCorrectness from "../GuessTableRow/determineCorrectness";
 import "./styles.scss";
+import formatBirthday from "../../utils/formatBirthday";
+import getNormalizeDate from "../../utils/normalizeDates";
 
 const GuessesSummary = ({
   gameType,
@@ -18,12 +20,12 @@ const GuessesSummary = ({
       headerStrings = [
         "ㅤ♂️✨🔥📊🌸😈ㅤ",
         "🧑📏🌐⚔️💪👾📖🎂",
-        "---------------",
+        "➖➖➖➖➖➖➖➖",
       ];
     } else if (selectType === "weapon") {
-      headerStrings = ["ㅤ✨📊😈ㅤ", "🗡️⚔️💪👾🎰", "---------"];
+      headerStrings = ["ㅤ✨📊😈ㅤ", "🗡️⚔️💪👾🎰", "➖➖➖➖➖"];
     } else if (selectType === "food") {
-      headerStrings = ["ㅤ✨ㅤㅤㅤㅤㅤ", "🍽️🍴🎀🏪✍️🎊", "-----------"];
+      headerStrings = ["ㅤ✨ㅤㅤㅤㅤㅤ", "🍽️🍴🎀🏪✍️🎊", "➖➖➖➖➖➖"];
     }
     setEmojiHeaders(headerStrings!);
   };
@@ -47,10 +49,10 @@ const GuessesSummary = ({
     });
     if (guesses.length > 1) {
       guessStrings.push(
-        `You got the correct ${gameType} in ${guesses.length} guesses!`
+        `You guessed today's ${gameType} in ${guesses.length} guesses!`
       );
     } else {
-      guessStrings.push(`You got the correct ${gameType} in 1 guess!`);
+      guessStrings.push(`You guessed today's ${gameType} in 1 guess!`);
     }
     setEmojiGuesses(guessStrings);
   };
@@ -60,10 +62,10 @@ const GuessesSummary = ({
     wrongCorrectBreakdown.push(`${guesses.length - 1}x 🟥 1x 🟩`);
     if (guesses.length > 1) {
       wrongCorrectBreakdown.push(
-        `You got the correct ${gameType} in ${guesses.length} guesses!`
+        `You guessed today's ${gameType} in ${guesses.length} guesses!`
       );
     } else {
-      wrongCorrectBreakdown.push(`You got the correct ${gameType} in 1 guess!`);
+      wrongCorrectBreakdown.push(`You guessed today's ${gameType} in 1 guess!`);
     }
     setEmojiGuesses(wrongCorrectBreakdown);
   };
@@ -80,6 +82,65 @@ const GuessesSummary = ({
       calculateGuessesBreakdown();
     }
   }, []);
+
+  const parseIntoTweet = () => {
+    const URL_NEW_LINE = "%0a";
+    const URL_WHITESPACE = "%20";
+    const URL_PIPE = "%7c";
+    const URL_COLON = "%3a";
+    const URL_HEADER_WHITESPACE =
+      URL_WHITESPACE +
+      URL_WHITESPACE +
+      URL_WHITESPACE +
+      URL_WHITESPACE +
+      URL_WHITESPACE +
+      URL_WHITESPACE;
+    const base = "https://twitter.com/intent/tweet?text=";
+    const date =
+      formatBirthday(getNormalizeDate()) +
+      ", " +
+      getNormalizeDate().split("-")[0];
+    const teyvatdleBegin = `Teyvatdle ${URL_PIPE} ${date}`;
+    const teyvatdleEnd = `Check out Teyvatdle, a Wordle meets Genshin Impact game, at${URL_COLON}`;
+    let headerText = "";
+    if (emojiHeaders && emojiHeaders.length > 0) {
+      emojiHeaders?.forEach((item) => {
+        headerText +=
+          item.replaceAll("ㅤ", URL_HEADER_WHITESPACE) + URL_NEW_LINE;
+      });
+    }
+    let guessText = "";
+    emojiGuesses!.forEach((item) => {
+      guessText +=
+        item.replaceAll(" ", URL_WHITESPACE).replace("You", "I") + URL_NEW_LINE;
+    });
+    let fullTweetIntent = "";
+    if (headerText !== "") {
+      fullTweetIntent =
+        base +
+        teyvatdleBegin.replaceAll(" ", URL_WHITESPACE) +
+        URL_NEW_LINE +
+        URL_NEW_LINE +
+        headerText +
+        guessText +
+        URL_NEW_LINE +
+        teyvatdleEnd.replaceAll(" ", URL_WHITESPACE);
+    } else {
+      fullTweetIntent =
+        base +
+        teyvatdleBegin.replaceAll(" ", URL_WHITESPACE) +
+        URL_NEW_LINE +
+        URL_NEW_LINE +
+        guessText +
+        URL_NEW_LINE +
+        teyvatdleEnd.replaceAll(" ", URL_WHITESPACE);
+    }
+    return fullTweetIntent;
+  };
+
+  if (emojiGuesses) {
+    console.log(parseIntoTweet());
+  }
 
   return (
     <div className="summary-container">
