@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import TweetButtonProps from "./type";
 import formatBirthday from "../../utils/formatBirthday";
 import getNormalizeDate from "../../utils/normalizeDates";
+import "./styles.scss";
 
 const TweetButton = ({ emojiHeaders, emojiGuesses }: TweetButtonProps) => {
   const [tweetUrl, setTweetUrl] = useState<string>();
@@ -85,8 +86,14 @@ const TweetButton = ({ emojiHeaders, emojiGuesses }: TweetButtonProps) => {
   }, []);
 
   return (
-    <a href={tweetUrl} target="_blank" rel="noopener noreferrer">
-      <button>Share on Twitter</button>
+    <a
+      className="tweet-button-container"
+      href={tweetUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      tabIndex={-1}
+    >
+      <button className="tweet-button">Share</button>
     </a>
   );
 };
