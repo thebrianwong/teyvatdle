@@ -137,7 +137,7 @@ const GuessesSummary = ({
         guessText +
         URL_NEW_LINE +
         encodeURIComponent(teyvatdleEnd) +
-        encodeURIComponent(process.env.REACT_APP_FRONTEND_DOMAIN!);
+        encodeURIComponent(window.location.origin);
     } else {
       fullTweetIntent =
         base +
@@ -147,7 +147,7 @@ const GuessesSummary = ({
         guessText +
         URL_NEW_LINE +
         encodeURIComponent(teyvatdleEnd) +
-        encodeURIComponent(process.env.REACT_APP_FRONTEND_DOMAIN!);
+        encodeURIComponent(window.location.origin);
     }
     return fullTweetIntent;
   };
