@@ -1,9 +1,19 @@
 .summary-container {
   margin: 16px;
+  border-top: solid 2px darkgray;
+  padding-top: 32px;
+
+  h2 {
+    margin-top: 0;
+  }
 
   .summary-emojis {
     margin: 0;
     font-size: x-large;
+
+    &:last-of-type {
+      margin: 16px;
+    }
   }
 }
 
