@@ -15,7 +15,6 @@ const GameComplete = forwardRef<HTMLDivElement, GameCompleteProps>(
           guess!
         </p>
         <ResetTimer />
-
         <GuessesSummary
           gameType={gameType}
           selectType={selectType}
