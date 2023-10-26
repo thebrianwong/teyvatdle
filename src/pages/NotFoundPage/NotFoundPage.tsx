@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import kokomiOfGreed from "../../assets/misc/kokomiOfGreed.png";
 import Credits from "../../components/Credits/Credits";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import "./styles.scss";
 
 const NotFoundPage = () => {
+  useEffect(() => {
+    document.title = "Teyvatdle | 404 😱";
+  }, []);
+
   return (
     <>
       <header className="header-404">

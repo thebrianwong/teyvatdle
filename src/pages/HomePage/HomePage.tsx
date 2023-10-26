@@ -29,6 +29,8 @@ const HomePage = ({
   const dailyCharacterSolved = useAppSelector(selectDailyCharacterSolved);
 
   useEffect(() => {
+    document.title = "Teyvatdle";
+
     if (!complete) {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }

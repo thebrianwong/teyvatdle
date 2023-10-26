@@ -29,6 +29,8 @@ const WeaponPage = ({
   const dailyWeaponSolved = useAppSelector(selectDailyWeaponSolved);
 
   useEffect(() => {
+    document.title = "Teyvatdle | Weapon";
+
     if (!complete) {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }

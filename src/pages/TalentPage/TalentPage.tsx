@@ -29,6 +29,8 @@ const TalentPage = ({
   const dailyTalentSolved = useAppSelector(selectDailyTalentSolved);
 
   useEffect(() => {
+    document.title = "Teyvatdle | Talent";
+
     if (!complete) {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }

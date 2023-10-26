@@ -29,6 +29,8 @@ const FoodPage = ({
   const dailyFoodSolved = useAppSelector(selectDailyFoodSolved);
 
   useEffect(() => {
+    document.title = "Teyvatdle | Food";
+
     if (!complete) {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
