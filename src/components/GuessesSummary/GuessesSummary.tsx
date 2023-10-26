@@ -33,11 +33,11 @@ const GuessesSummary = ({
       Object.keys(accuracyObject!).forEach((key) => {
         const value = accuracyObject![key as keyof typeof accuracyObject];
         if (value === "wrong") {
-          guessRow = guessRow + "🟥";
+          guessRow += "🟥";
         } else if (value === "partial") {
-          guessRow = guessRow + "🟨";
+          guessRow += "🟨";
         } else if (value === "correct") {
-          guessRow = guessRow + "🟩";
+          guessRow += "🟩";
         }
       });
       guessStrings.push(guessRow);
