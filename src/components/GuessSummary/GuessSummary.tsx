@@ -4,7 +4,7 @@ import determineCorrectness from "../GuessTableRow/determineCorrectness";
 import "./styles.scss";
 import TweetButton from "../TweetButton/TweetButton";
 
-const GuessesSummary = ({
+const GuessSummary = ({
   gameType,
   selectType,
   guesses,
@@ -104,4 +104,4 @@ const GuessesSummary = ({
   );
 };
 
-export default GuessesSummary;
+export default GuessSummary;

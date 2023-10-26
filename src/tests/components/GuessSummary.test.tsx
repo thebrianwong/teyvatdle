@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import GuessesSummary from "../../components/GuessesSummary/GuessesSummary";
+import GuessSummary from "../../components/GuessSummary/GuessSummary";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
 import WeaponAPIData from "../../types/data/weaponAPIData.type";
 import FoodAPIData from "../../types/data/foodAPIData.type";
@@ -143,7 +143,7 @@ const foodData: FoodAPIData[] = [
 
 test("GuessesSummary renders", () => {
   render(
-    <GuessesSummary
+    <GuessSummary
       gameType="character"
       selectType="character"
       guesses={[]}
@@ -157,7 +157,7 @@ test("GuessesSummary renders", () => {
 describe("The corresponding header emojis are rendered based on selectType", () => {
   test("character", () => {
     render(
-      <GuessesSummary
+      <GuessSummary
         gameType="character"
         selectType="character"
         guesses={[]}
@@ -171,7 +171,7 @@ describe("The corresponding header emojis are rendered based on selectType", () 
   });
   test("weapon", () => {
     render(
-      <GuessesSummary
+      <GuessSummary
         gameType="weapon"
         selectType="weapon"
         guesses={[]}
@@ -185,7 +185,7 @@ describe("The corresponding header emojis are rendered based on selectType", () 
   });
   test("food", () => {
     render(
-      <GuessesSummary
+      <GuessSummary
         gameType="food"
         selectType="food"
         guesses={[]}
@@ -202,7 +202,7 @@ describe("The corresponding header emojis are rendered based on selectType", () 
 describe("The number of squares is based on the gameType", () => {
   test("character", () => {
     render(
-      <GuessesSummary
+      <GuessSummary
         gameType="character"
         selectType="character"
         guesses={characterData}
@@ -218,7 +218,7 @@ describe("The number of squares is based on the gameType", () => {
   });
   test("weapon", () => {
     render(
-      <GuessesSummary
+      <GuessSummary
         gameType="weapon"
         selectType="weapon"
         guesses={weaponData}
@@ -232,7 +232,7 @@ describe("The number of squares is based on the gameType", () => {
   });
   test("food", () => {
     render(
-      <GuessesSummary
+      <GuessSummary
         gameType="food"
         selectType="food"
         guesses={foodData}
@@ -249,7 +249,7 @@ describe("The number of squares is based on the gameType", () => {
 describe("The summary is different for talent and constellation", () => {
   test("talent", () => {
     render(
-      <GuessesSummary
+      <GuessSummary
         gameType="talent"
         selectType="character"
         guesses={characterData}
@@ -261,7 +261,7 @@ describe("The summary is different for talent and constellation", () => {
   });
   test("constellation", () => {
     render(
-      <GuessesSummary
+      <GuessSummary
         gameType="constellation"
         selectType="character"
         guesses={characterData}
@@ -276,7 +276,7 @@ describe("The summary is different for talent and constellation", () => {
 describe("The total guesses...", () => {
   test("...is rendered correctly", () => {
     render(
-      <GuessesSummary
+      <GuessSummary
         gameType="character"
         selectType="character"
         guesses={characterData}
@@ -290,7 +290,7 @@ describe("The total guesses...", () => {
   });
   test("...is grammatically correct with just 1 guess", () => {
     render(
-      <GuessesSummary
+      <GuessSummary
         gameType="character"
         selectType="character"
         guesses={[characterData[0]]}

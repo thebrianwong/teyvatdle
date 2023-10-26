@@ -3,7 +3,7 @@ import paimonCheer from "../../assets/gameArea/paimonCheer.png";
 import GameCompleteProps from "./type";
 import "./styles.scss";
 import ResetTimer from "../ResetTimer/ResetTimer";
-import GuessesSummary from "../GuessesSummary/GuessesSummary";
+import GuessSummary from "../GuessSummary/GuessSummary";
 
 const GameComplete = forwardRef<HTMLDivElement, GameCompleteProps>(
   ({ gameType, selectType, guesses, answer }, ref) => {
@@ -15,7 +15,7 @@ const GameComplete = forwardRef<HTMLDivElement, GameCompleteProps>(
           guess!
         </p>
         <ResetTimer />
-        <GuessesSummary
+        <GuessSummary
           gameType={gameType}
           selectType={selectType}
           guesses={guesses}
