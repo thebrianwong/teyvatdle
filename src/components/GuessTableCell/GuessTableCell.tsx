@@ -7,7 +7,11 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
   let cellClass = "table-cell-";
 
   if (cellData.dataType === "mainImage") {
-    cellElement = <img src={cellData.content} alt={cellData.altText} />;
+    cellElement = (
+      <div className="main-image-container">
+        <img src={cellData.content} alt={cellData.altText} />
+      </div>
+    );
     cellClass = cellClass.concat("main-image");
   } else if (cellData.dataType === "textSingle") {
     const cellContent = cellData.content || "None";
@@ -54,14 +58,18 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
           >
             {cellContent1}
           </span>
-          <img src={cellData.content2} alt={cellData.altText2 + "."} />
+          <div className={`_${cellData.numOfImgs2}-image-container`}>
+            <img src={cellData.content2} alt={cellData.altText2 + "."} />
+          </div>
         </>
       );
     } else {
       cellElement = (
         <>
           {cellContent1}
-          <img src={cellData.content2} alt={cellData.altText2 + "."} />
+          <div className={`_${cellData.numOfImgs2}-image-container`}>
+            <img src={cellData.content2} alt={cellData.altText2 + "."} />
+          </div>
         </>
       );
     }
@@ -72,14 +80,21 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
         <>
           {cellData.content1.map((content, index) => {
             return (
-              <img
+              <div
+                className={`_${cellData.numOfImgs1}-image-container`}
                 key={content}
-                src={content}
-                alt={cellData.altText1[index] + "."}
-              />
+              >
+                <img
+                  key={content}
+                  src={content}
+                  alt={cellData.altText1[index] + "."}
+                />
+              </div>
             );
           })}
-          <img src={cellData.content2!} alt={cellData.altText2 + "."} />
+          <div className={`_${cellData.numOfImgs2}-image-container`}>
+            <img src={cellData.content2!} alt={cellData.altText2 + "."} />
+          </div>
         </>
       );
     } else if (
@@ -90,21 +105,29 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
         cellElement = (
           <>
             None
-            <img src={cellData.content2!} alt={cellData.altText2 + "."} />
+            <div className={`_${cellData.numOfImgs2}-image-container`}>
+              <img src={cellData.content2!} alt={cellData.altText2 + "."} />
+            </div>
           </>
         );
       } else if (cellData.content2 === null) {
         cellElement = (
           <>
-            <img src={cellData.content1} alt={cellData.altText1 + "."} />
+            <div className={`_${cellData.numOfImgs1}-image-container`}>
+              <img src={cellData.content1} alt={cellData.altText1 + "."} />
+            </div>
             None
           </>
         );
       } else {
         cellElement = (
           <>
-            <img src={cellData.content1} alt={cellData.altText1 + "."} />
-            <img src={cellData.content2} alt={cellData.altText2 + "."} />
+            <div className={`_${cellData.numOfImgs1}-image-container`}>
+              <img src={cellData.content1} alt={cellData.altText1 + "."} />
+            </div>
+            <div className={`_${cellData.numOfImgs2}-image-container`}>
+              <img src={cellData.content2} alt={cellData.altText2 + "."} />
+            </div>
           </>
         );
       }

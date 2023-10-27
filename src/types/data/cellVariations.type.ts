@@ -28,14 +28,17 @@ type TextImageCombo = BaseCell & {
   content1: string | null;
   content2: string;
   altText2: string;
+  numOfImgs2: number;
 };
 
 type ImageDouble = BaseCell & {
   dataType: "imageDouble";
   content1: string | string[];
   altText1: string | string[];
+  numOfImgs1: number;
   content2: string | null;
   altText2: string | null;
+  numOfImgs2: number;
 };
 
 type BooleanSingle = BaseCell & {
