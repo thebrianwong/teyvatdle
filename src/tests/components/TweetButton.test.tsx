@@ -109,3 +109,43 @@ test("The tweet is shortened if there are over 4 guesses", () => {
     encodeURIComponent(window.location.origin);
   expect(a).toHaveAttribute("href", constructedUrl);
 });
+
+test("The sentence for additional guesses is grammatically correct for 1 guess", () => {
+  render(
+    <TweetButton
+      emojiHeaders={["Numbers"]}
+      emojiGuesses={[
+        "One",
+        "Two",
+        "Three",
+        "Four",
+        "Five",
+        "You guessed today's character in 5 tries!",
+      ]}
+    />
+  );
+  const a = screen.getByRole("link");
+  const constructedUrl =
+    base +
+    encodeURIComponent(teyvatdleBegin) +
+    URL_NEW_LINE +
+    URL_NEW_LINE +
+    "Numbers" +
+    URL_NEW_LINE +
+    "One" +
+    URL_NEW_LINE +
+    "Two" +
+    URL_NEW_LINE +
+    "Three" +
+    URL_NEW_LINE +
+    "Four" +
+    URL_NEW_LINE +
+    encodeURIComponent("...and 1 more guess!") +
+    URL_NEW_LINE +
+    encodeURIComponent("I guessed today's character in 5 tries!") +
+    URL_NEW_LINE +
+    URL_NEW_LINE +
+    encodeURIComponent(teyvatdleEnd) +
+    encodeURIComponent(window.location.origin);
+  expect(a).toHaveAttribute("href", constructedUrl);
+});
