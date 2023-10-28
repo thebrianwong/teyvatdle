@@ -1,10 +1,24 @@
-import { ReactElement } from "react";
+import { ReactElement, useEffect, useRef } from "react";
 import GuessTableCellProps from "./type";
 import "./styles.scss";
 
-const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
+const GuessTableCell = ({ cellData, cellNumber }: GuessTableCellProps) => {
   let cellElement: ReactElement;
   let cellClass = "table-cell-";
+  const animateCell = cellNumber > 0 ? "table-cell-animation-start" : "";
+  const cellRef = useRef<HTMLTableCellElement>(null);
+
+  useEffect(() => {
+    if (cellNumber > 0) {
+      const ANIMATION_TIME = 750;
+      setTimeout(() => {
+        cellRef.current?.scrollIntoView({
+          behavior: "smooth",
+        });
+        cellRef.current?.classList.add("table-cell-animation-end");
+      }, 250 + (cellNumber - 1) * ANIMATION_TIME);
+    }
+  }, [cellNumber]);
 
   if (cellData.dataType === "mainImage") {
     cellElement = (
@@ -140,7 +154,11 @@ const GuessTableCell = ({ cellData }: GuessTableCellProps) => {
   }
 
   return (
-    <td className={`table-cell ${cellData.answerAccuracy} ${cellClass}`}>
+    <td
+      ref={cellRef}
+      // style={{ opacity: 1 }}
+      className={`table-cell ${cellData.answerAccuracy} ${cellClass} ${animateCell}`}
+    >
       {cellElement!}
     </td>
   );

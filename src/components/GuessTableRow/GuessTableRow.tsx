@@ -230,11 +230,12 @@ const GuessTableRow = memo(
     return (
       <tr>
         {rowData &&
-          Object.keys(rowData).map((key) => {
+          Object.keys(rowData).map((key, index) => {
             return (
               <GuessTableCell
                 key={`${rowData.name.content}-${key}`}
                 cellData={rowData[key as keyof typeof rowData]}
+                cellNumber={index}
               />
             );
           })}

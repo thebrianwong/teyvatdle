@@ -20,10 +20,20 @@
   font-size: 3rem;
 }
 
+.table-cell-animation-start {
+  transition: opacity 0.75s;
+  opacity: 0;
+}
+
+.table-cell-animation-end {
+  opacity: 1;
+}
+
 td {
   text-align: center;
   font-size: larger;
   padding: 8px;
+  scroll-margin-top: 150px;
 
   img {
     width: auto;
