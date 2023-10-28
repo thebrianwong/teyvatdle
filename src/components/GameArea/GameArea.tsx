@@ -31,12 +31,18 @@ const GameArea = ({
 
   useEffect(() => {
     if (complete) {
+      // let delay: number;
+      // if (gameType === "talent" || gameType === "constellation") {
+      //   delay = 100
+      // } else if (gameType === "character") {
+      //   delay =
+      // }
       setTimeout(() => {
         completeRef.current!.scrollIntoView({
           behavior: "smooth",
           inline: "start",
         });
-      }, 100);
+      }, 300);
     }
   }, []);
 
@@ -120,6 +126,7 @@ const GameArea = ({
             tableType={selectType}
             guessesProp={guesses}
             answer={dailyEntity as TableAPIData}
+            complete={complete}
           />
           {complete && (
             <GameComplete

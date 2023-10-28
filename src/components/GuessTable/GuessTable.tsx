@@ -4,7 +4,12 @@ import GuessTableHeader from "../GuessTableHeader/GuessTableHeader";
 import { useEffect, useRef } from "react";
 import "./styles.scss";
 
-const GuessTable = ({ tableType, guessesProp, answer }: GuessTableProps) => {
+const GuessTable = ({
+  tableType,
+  guessesProp,
+  answer,
+  complete,
+}: GuessTableProps) => {
   const ref = useRef<HTMLTableElement>(null);
 
   useEffect(() => {
@@ -27,6 +32,7 @@ const GuessTable = ({ tableType, guessesProp, answer }: GuessTableProps) => {
                 rowType={tableType}
                 rowDataProp={guess}
                 answer={answer}
+                complete={complete}
               />
             );
           })}

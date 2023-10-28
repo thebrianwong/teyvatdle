@@ -5,6 +5,7 @@ type GuessTableRowProps = {
   rowType: SelectType;
   rowDataProp: TableAPIData;
   answer: TableAPIData;
+  complete: boolean;
 };
 
 export default GuessTableRowProps;

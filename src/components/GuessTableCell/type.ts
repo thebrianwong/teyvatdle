@@ -16,6 +16,7 @@ type GuessTableCellProps = {
     | ImageDouble
     | BooleanSingle;
   cellNumber: number;
+  complete: boolean;
 };
 
 export default GuessTableCellProps;

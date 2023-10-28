@@ -5,6 +5,7 @@ type GuessTableProps = {
   tableType: SelectType;
   guessesProp: TableAPIData[];
   answer: TableAPIData;
+  complete: boolean;
 };
 
 export default GuessTableProps;

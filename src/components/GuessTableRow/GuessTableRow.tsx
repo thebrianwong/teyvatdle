@@ -16,7 +16,7 @@ import WeaponAnswerAccuracy from "../../types/data/weaponAnswerAccuracy.type";
 import FoodAnswerAccuracy from "../../types/data/foodAnswerAccuracy.type";
 
 const GuessTableRow = memo(
-  ({ rowType, rowDataProp, answer }: GuessTableRowProps) => {
+  ({ rowType, rowDataProp, answer, complete }: GuessTableRowProps) => {
     const [rowData, setRowData] = useState<
       CharacterTransformedData | WeaponTransformedData | FoodTransformedData
     >();
@@ -236,6 +236,7 @@ const GuessTableRow = memo(
                 key={`${rowData.name.content}-${key}`}
                 cellData={rowData[key as keyof typeof rowData]}
                 cellNumber={index}
+                complete={complete}
               />
             );
           })}
