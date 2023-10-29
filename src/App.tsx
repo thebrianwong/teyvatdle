@@ -135,6 +135,7 @@ function App() {
 
   const setGuessCounter = (type: GameMode, newValue: number) => {
     setNumOfGuess({ ...numOfGuesses, [type]: newValue });
+    setIsSaving(true);
   };
 
   const setCompletedState = (type: GameMode) => {
