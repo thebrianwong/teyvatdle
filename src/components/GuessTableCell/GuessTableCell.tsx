@@ -10,7 +10,7 @@ const GuessTableCell = ({
 }: GuessTableCellProps) => {
   let cellElement: ReactElement;
   let cellClass = "table-cell-";
-  const animateCell = cellNumber > 0 ? "table-cell-animation-start" : "";
+  const animateCell = cellNumber > 0 ? "guess-animation-start" : "";
   const cellRef = useRef<HTMLTableCellElement>(null);
 
   useEffect(() => {
@@ -20,10 +20,10 @@ const GuessTableCell = ({
         cellRef.current?.scrollIntoView({
           behavior: "smooth",
         });
-        cellRef.current?.classList.add("table-cell-animation-end");
+        cellRef.current?.classList.add("guess-animation-end");
       }, 250 + (cellNumber - 1) * ANIMATION_TIME);
     } else {
-      cellRef.current?.classList.add("table-cell-animation-end");
+      cellRef.current?.classList.add("guess-animation-end");
     }
   }, []);
 

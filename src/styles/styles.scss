@@ -71,3 +71,12 @@ body {
 .night-background {
   background-image: url(../assets/background/night.jpg);
 }
+
+.guess-animation-start {
+  transition: opacity 0.75s;
+  opacity: 0;
+}
+
+.guess-animation-end {
+  opacity: 1;
+}
