@@ -1,8 +1,16 @@
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
 import GuessListItemProps from "./type";
 import "./styles.scss";
 
 const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
+  const itemRef = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      itemRef.current?.classList.add("guess-animation-end");
+    }, 0);
+  }, []);
+
   const chooseAppropriateClassName = () => {
     if (itemData.character_name === answer.character_name) {
       return "correct";
@@ -29,7 +37,8 @@ const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
 
   return (
     <li
-      className={`${chooseAppropriateClassName()} guess-list-item guess-list-item-${chooseAppropriateClassName()}`}
+      ref={itemRef}
+      className={`${chooseAppropriateClassName()} guess-list-item guess-list-item-${chooseAppropriateClassName()} guess-animation-start`}
     >
       {/* wrap img in container with width height */}
       <div className="guess-list-image-container">
