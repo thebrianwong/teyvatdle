@@ -17,6 +17,7 @@ type GuessTableCellProps = {
     | BooleanSingle;
   cellNumber: number;
   complete: boolean;
+  playAnimations: boolean;
 };
 
 export default GuessTableCellProps;

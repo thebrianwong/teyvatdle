@@ -6,6 +6,7 @@ const GuessTableCell = ({
   cellData,
   cellNumber,
   complete,
+  playAnimations,
 }: GuessTableCellProps) => {
   let cellElement: ReactElement;
   let cellClass = "table-cell-";
@@ -13,7 +14,7 @@ const GuessTableCell = ({
   const cellRef = useRef<HTMLTableCellElement>(null);
 
   useEffect(() => {
-    if (cellNumber > 0 && !complete) {
+    if (cellNumber > 0 && !complete && playAnimations) {
       const ANIMATION_TIME = 750;
       setTimeout(() => {
         cellRef.current?.scrollIntoView({
@@ -24,7 +25,7 @@ const GuessTableCell = ({
     } else {
       cellRef.current?.classList.add("table-cell-animation-end");
     }
-  }, [cellNumber, complete]);
+  }, []);
 
   if (cellData.dataType === "mainImage") {
     cellElement = (

@@ -6,6 +6,7 @@ type GuessTableRowProps = {
   rowDataProp: TableAPIData;
   answer: TableAPIData;
   complete: boolean;
+  playAnimations: boolean;
 };
 
 export default GuessTableRowProps;

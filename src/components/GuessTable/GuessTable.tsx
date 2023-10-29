@@ -1,7 +1,7 @@
 import GuessTableRow from "../GuessTableRow/GuessTableRow";
 import GuessTableProps from "./type";
 import GuessTableHeader from "../GuessTableHeader/GuessTableHeader";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./styles.scss";
 
 const GuessTable = ({
@@ -11,12 +11,19 @@ const GuessTable = ({
   complete,
 }: GuessTableProps) => {
   const ref = useRef<HTMLTableElement>(null);
+  const [initialLoad, setInitialLoad] = useState(true);
 
   useEffect(() => {
     if (guessesProp.length > 0) {
       ref.current!.scrollIntoView({ inline: "start" });
     }
   }, [guessesProp]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setInitialLoad(false);
+    }, 0);
+  }, []);
 
   return (
     <div className="guess-table-container">
@@ -33,6 +40,7 @@ const GuessTable = ({
                 rowDataProp={guess}
                 answer={answer}
                 complete={complete}
+                playAnimations={!initialLoad}
               />
             );
           })}
