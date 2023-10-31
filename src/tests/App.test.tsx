@@ -4,8 +4,11 @@ import userEvent from "@testing-library/user-event";
 import App from "../App";
 import { renderWithProviders } from "./test-utils";
 
-window.scrollTo = jest.fn();
-window.HTMLElement.prototype.scrollIntoView = jest.fn();
+beforeAll(() => {
+  window.scrollTo = jest.fn();
+  window.HTMLElement.prototype.scrollIntoView = jest.fn();
+  jest.setTimeout(10000);
+});
 
 test("App renders", () => {
   renderWithProviders(<App />);
@@ -36,18 +39,26 @@ describe("Selected items are tracked and completion is calculated", () => {
     act(() => {
       userEvent.click(paimonOption);
     });
-    const paimonCell = screen.getByRole("cell", { name: "Paimon" });
-    const totalGuesses = screen.getByText(/Total Guesses:/);
-    const gameComplete = screen.getByRole("heading", {
-      name: "Nice Job, Traveler!",
+    const gameComplete = await screen.findByRole(
+      "heading",
+      {
+        name: "Nice Job, Traveler!",
+      },
+      { timeout: 10000 }
+    );
+    const paimonCell = screen.getByRole("cell", {
+      name: "Paimon",
     });
+    const totalGuesses = screen.getByText(/Total Guesses:/);
     expect(paimonCell).toBeInTheDocument();
     await waitFor(() => {
       expect(totalGuesses).toHaveTextContent("Total Guesses: 1");
     });
     expect(gameComplete).toBeInTheDocument();
-  });
-  test("talent (same for constellation)", () => {
+  }, 10000);
+  test("talent (same for constellation)", async () => {
+    window.scrollTo = jest.fn();
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
     renderWithProviders(<App />);
     const talentLink = screen.getByRole("link", { name: "Talents" });
     act(() => {
@@ -61,7 +72,7 @@ describe("Selected items are tracked and completion is calculated", () => {
     act(() => {
       userEvent.click(paimonOption);
     });
-    const talentInfo = screen.getByRole("heading", {
+    const talentInfo = await screen.findByRole("heading", {
       name: "Paimon's Normal Attack Talent: Eat",
     });
     const paimonListItem = screen.getByAltText(

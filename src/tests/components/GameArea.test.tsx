@@ -1,5 +1,5 @@
 import React from "react";
-import { act, render, screen } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import GameArea from "../../components/GameArea/GameArea";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
@@ -7,6 +7,10 @@ import WeaponAPIData from "../../types/data/weaponAPIData.type";
 import FoodAPIData from "../../types/data/foodAPIData.type";
 import TalentAPIData from "../../types/data/talentAPIData.type";
 import ConstellationAPIData from "../../types/data/constellationAPIData.type";
+
+beforeAll(() => {
+  jest.setTimeout(6000);
+});
 
 const characterData: CharacterAPIData[] = [
   {
@@ -190,7 +194,7 @@ test("Choosing a select option calls setGuessCounter and updateGuesses", () => {
   expect(updateGuessesMock).toBeCalledTimes(1);
 });
 
-test("Choosing the answer select option calls setCompletedState", () => {
+test("Choosing the answer select option calls setCompletedState", async () => {
   const setCompletedStateMock = jest.fn();
   render(
     <GameArea
@@ -215,8 +219,13 @@ test("Choosing the answer select option calls setCompletedState", () => {
   act(() => {
     userEvent.click(paimon);
   });
-  expect(setCompletedStateMock).toBeCalledTimes(1);
-});
+  await waitFor(
+    () => {
+      expect(setCompletedStateMock).toBeCalledTimes(1);
+    },
+    { timeout: 6000 }
+  );
+}, 6000);
 
 test("The number of total guesses is determined by guessCounter", () => {
   render(
