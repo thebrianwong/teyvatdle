@@ -40,7 +40,6 @@ const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
       ref={itemRef}
       className={`${chooseAppropriateClassName()} guess-list-item guess-list-item-${chooseAppropriateClassName()} guess-animation-start`}
     >
-      {/* wrap img in container with width height */}
       <div className="guess-list-image-container">
         <img
           src={chooseAppropriateImageURL()}
