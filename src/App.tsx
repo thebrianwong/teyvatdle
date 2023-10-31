@@ -222,10 +222,11 @@ function App() {
         );
       }
     };
-
-    getAllGameData();
-    getDailyRecordData();
-    getWebSocketConnection();
+    if (process.env.NODE_ENV !== "test") {
+      getAllGameData();
+      getDailyRecordData();
+      getWebSocketConnection();
+    }
   }, []);
 
   return (
