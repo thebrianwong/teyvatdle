@@ -31,12 +31,6 @@ const GameArea = ({
 
   useEffect(() => {
     if (complete) {
-      // let delay: number;
-      // if (gameType === "talent" || gameType === "constellation") {
-      //   delay = 100
-      // } else if (gameType === "character") {
-      //   delay =
-      // }
       setTimeout(() => {
         completeRef.current!.scrollIntoView({
           behavior: "smooth",
@@ -50,12 +44,12 @@ const GameArea = ({
     setCompletedState(gameType);
     const results = await updateDailyRecordSolved(dailyRecordID, gameType);
     console.log(results);
-    setTimeout(() => {
-      completeRef.current!.scrollIntoView({
+    if (completeRef.current) {
+      completeRef.current.scrollIntoView({
         behavior: "smooth",
         inline: "start",
       });
-    }, 200);
+    }
   };
 
   const handleGuess = (guess: TableAPIData) => {
@@ -66,7 +60,36 @@ const GameArea = ({
       guess[`${selectType}_name` as keyof typeof guess] ===
       dailyEntity![`${selectType}_name` as keyof typeof dailyEntity]
     ) {
-      handleGameCompletion();
+      const LEEWAY_TIME = 50;
+      const ANIMATION_TIME = 750;
+      const INITIAL_DELAY = 250;
+      const NUM_OF_CHAR_CELLS = 8;
+      const NUM_OF_WEAP_CELLS = 5;
+      const NUM_OF_FOOD_CELLS = 6;
+
+      let delay: number;
+      if (gameType === "talent" || gameType === "constellation") {
+        delay = LEEWAY_TIME + ANIMATION_TIME;
+      } else if (gameType === "character") {
+        delay =
+          LEEWAY_TIME +
+          INITIAL_DELAY +
+          (NUM_OF_CHAR_CELLS - 1) * ANIMATION_TIME;
+      } else if (gameType === "weapon") {
+        delay =
+          LEEWAY_TIME +
+          INITIAL_DELAY +
+          (NUM_OF_WEAP_CELLS - 1) * ANIMATION_TIME;
+      } else if (gameType === "food") {
+        delay =
+          LEEWAY_TIME +
+          INITIAL_DELAY +
+          (NUM_OF_FOOD_CELLS - 1) * ANIMATION_TIME;
+      }
+
+      setTimeout(() => {
+        handleGameCompletion();
+      }, delay!);
     }
   };
 
