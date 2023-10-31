@@ -25,21 +25,25 @@ const TalentConstellationImage = memo(
 
     if (type === "talent") {
       image = (
-        <img
-          ref={ref}
-          src={(data as TalentAPIData).talent_image_url}
-          alt="Daily talent."
-          className="talent-constellation-image"
-        />
+        <div className="talent-constellation-image-container">
+          <img
+            ref={ref}
+            src={(data as TalentAPIData).talent_image_url}
+            alt="Daily talent."
+            className="talent-constellation-image"
+          />
+        </div>
       );
     } else {
       image = (
-        <img
-          ref={ref}
-          src={(data as ConstellationAPIData).constellation_image_url}
-          alt="Daily constellation."
-          className="talent-constellation-image"
-        />
+        <div className="talent-constellation-image-container">
+          <img
+            ref={ref}
+            src={(data as ConstellationAPIData).constellation_image_url}
+            alt="Daily constellation."
+            className="talent-constellation-image"
+          />
+        </div>
       );
     }
 

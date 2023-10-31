@@ -1,6 +1,11 @@
-.talent-constellation-image {
+.talent-constellation-image-container {
   align-self: center;
   padding: 16px 0;
   width: 125px;
-  height: auto;
+  height: 125px;
+
+  .talent-constellation-image {
+    width: 125px;
+    height: auto;
+  }
 }
