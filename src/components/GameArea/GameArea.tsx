@@ -32,10 +32,12 @@ const GameArea = ({
   useEffect(() => {
     if (complete) {
       setTimeout(() => {
-        completeRef.current!.scrollIntoView({
-          behavior: "smooth",
-          inline: "start",
-        });
+        if (completeRef.current) {
+          completeRef.current.scrollIntoView({
+            behavior: "smooth",
+            inline: "start",
+          });
+        }
       }, 300);
     }
   }, []);

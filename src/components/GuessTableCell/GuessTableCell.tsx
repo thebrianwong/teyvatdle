@@ -17,13 +17,17 @@ const GuessTableCell = ({
     if (cellNumber > 0 && !complete && playAnimations) {
       const ANIMATION_TIME = 750;
       setTimeout(() => {
-        cellRef.current?.scrollIntoView({
-          behavior: "smooth",
-        });
-        cellRef.current?.classList.add("guess-animation-end");
+        if (cellRef.current) {
+          cellRef.current.scrollIntoView({
+            behavior: "smooth",
+          });
+          cellRef.current.classList.add("guess-animation-end");
+        }
       }, 250 + (cellNumber - 1) * ANIMATION_TIME);
     } else {
-      cellRef.current?.classList.add("guess-animation-end");
+      if (cellRef.current) {
+        cellRef.current.classList.add("guess-animation-end");
+      }
     }
   }, []);
 

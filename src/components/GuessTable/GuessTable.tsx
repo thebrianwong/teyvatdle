@@ -14,8 +14,8 @@ const GuessTable = ({
   const [initialLoad, setInitialLoad] = useState(true);
 
   useEffect(() => {
-    if (guessesProp.length > 0) {
-      ref.current!.scrollIntoView({ inline: "start" });
+    if (guessesProp.length > 0 && ref.current) {
+      ref.current.scrollIntoView({ inline: "start" });
     }
   }, [guessesProp]);
 
