@@ -9,6 +9,7 @@ test("SelectSearchBar renders", () => {
       value=""
       gameCompleted={false}
       selectType="character"
+      allowInteraction={true}
       handleClick={jest.fn()}
       handleInput={jest.fn()}
     />
@@ -24,6 +25,7 @@ test("Clicks are handled", () => {
       value=""
       gameCompleted={false}
       selectType="character"
+      allowInteraction={true}
       handleClick={clickMock}
       handleInput={jest.fn()}
     />
@@ -44,6 +46,7 @@ test("Keyboard input is handled", () => {
       value=""
       gameCompleted={false}
       selectType="character"
+      allowInteraction={true}
       handleClick={jest.fn()}
       handleInput={keyboardMock}
     />
@@ -62,6 +65,7 @@ test("The input's value is passed to it from its parent", () => {
       value="Lumine"
       gameCompleted={false}
       selectType="character"
+      allowInteraction={true}
       handleClick={jest.fn()}
       handleInput={jest.fn()}
     />
@@ -77,6 +81,7 @@ describe("Placeholder text varies based on selectType", () => {
         value=""
         gameCompleted={false}
         selectType="character"
+        allowInteraction={true}
         handleClick={jest.fn()}
         handleInput={jest.fn()}
       />
@@ -90,6 +95,7 @@ describe("Placeholder text varies based on selectType", () => {
         value=""
         gameCompleted={false}
         selectType="weapon"
+        allowInteraction={true}
         handleClick={jest.fn()}
         handleInput={jest.fn()}
       />
@@ -103,6 +109,7 @@ describe("Placeholder text varies based on selectType", () => {
         value=""
         gameCompleted={false}
         selectType="food"
+        allowInteraction={true}
         handleClick={jest.fn()}
         handleInput={jest.fn()}
       />
@@ -118,6 +125,7 @@ test("The input is disabled when the game is completed", () => {
       value=""
       gameCompleted={true}
       selectType="character"
+      allowInteraction={true}
       handleClick={jest.fn()}
       handleInput={jest.fn()}
     />
@@ -134,6 +142,7 @@ test("The input's click and keyboard handlers won't be called if the game is com
       value=""
       gameCompleted={true}
       selectType="character"
+      allowInteraction={true}
       handleClick={clickMock}
       handleInput={keyboardMock}
     />

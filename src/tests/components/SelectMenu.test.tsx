@@ -89,6 +89,7 @@ test("SelectMenu renders", () => {
       data={characterData}
       guesses={[]}
       gameCompleted={false}
+      allowInteraction={true}
       handleGuess={jest.fn()}
     />
   );
@@ -103,6 +104,7 @@ test("Clicking on the search bar shows the select options", () => {
       data={characterData}
       guesses={[]}
       gameCompleted={false}
+      allowInteraction={true}
       handleGuess={jest.fn()}
     />
   );
@@ -126,6 +128,7 @@ describe("Selecting a select option...", () => {
         data={characterData}
         guesses={[]}
         gameCompleted={false}
+        allowInteraction={true}
         handleGuess={handleGuessMock}
       />
     );
@@ -146,6 +149,7 @@ describe("Selecting a select option...", () => {
         data={characterData}
         guesses={[]}
         gameCompleted={false}
+        allowInteraction={true}
         handleGuess={handleGuessMock}
       />
     );
@@ -167,6 +171,7 @@ describe("Selecting a select option...", () => {
         data={characterData}
         guesses={[]}
         gameCompleted={false}
+        allowInteraction={true}
         handleGuess={handleGuessMock}
       />
     );
