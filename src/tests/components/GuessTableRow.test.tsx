@@ -75,6 +75,8 @@ test("GuessTableRow renders", () => {
           rowType="character"
           rowDataProp={characterData}
           answer={characterData}
+          complete={false}
+          playAnimations={false}
         />
       }
     />
@@ -92,6 +94,8 @@ describe("The number of cells in the row varies by rowType", () => {
             rowType="character"
             rowDataProp={characterData}
             answer={characterData}
+            complete={false}
+            playAnimations={false}
           />
         }
       />
@@ -108,6 +112,8 @@ describe("The number of cells in the row varies by rowType", () => {
             rowType="weapon"
             rowDataProp={weaponData}
             answer={weaponData}
+            complete={false}
+            playAnimations={false}
           />
         }
       />
@@ -124,6 +130,8 @@ describe("The number of cells in the row varies by rowType", () => {
             rowType="food"
             rowDataProp={foodData}
             answer={foodData}
+            complete={false}
+            playAnimations={false}
           />
         }
       />

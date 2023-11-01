@@ -109,7 +109,12 @@ const characterGuesses: CharacterAPIData[] = [
 
 test("GuessTable renders", () => {
   render(
-    <GuessTable tableType="character" guessesProp={[]} answer={characterData} />
+    <GuessTable
+      tableType="character"
+      guessesProp={[]}
+      answer={characterData}
+      complete={false}
+    />
   );
   const component = screen.getByRole("table");
   expect(component).toBeInTheDocument();
@@ -122,6 +127,7 @@ test("The number of rows is determined by the number of guess", () => {
       tableType="character"
       guessesProp={characterGuesses}
       answer={characterData}
+      complete={false}
     />
   );
   // 2 rowgroup's, one for table header and another for table body

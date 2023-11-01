@@ -80,7 +80,16 @@ const TableContainer = ({ child }) => {
 
 test("GuessTableCell renders", () => {
   render(
-    <TableContainer child={<GuessTableCell cellData={mainImageData} />} />
+    <TableContainer
+      child={
+        <GuessTableCell
+          cellData={mainImageData}
+          cellNumber={0}
+          complete={false}
+          playAnimations={false}
+        />
+      }
+    />
   );
   const cellData = screen.getByRole("cell");
   expect(cellData).toBeInTheDocument();
@@ -89,7 +98,16 @@ test("GuessTableCell renders", () => {
 describe("GuessTableCell contents depend on data", () => {
   test("mainImage", () => {
     render(
-      <TableContainer child={<GuessTableCell cellData={mainImageData} />} />
+      <TableContainer
+        child={
+          <GuessTableCell
+            cellData={mainImageData}
+            cellNumber={0}
+            complete={false}
+            playAnimations={false}
+          />
+        }
+      />
     );
     const mainImg = screen.getByAltText("main image alt text");
     expect(mainImg).toBeInTheDocument();
@@ -97,14 +115,32 @@ describe("GuessTableCell contents depend on data", () => {
   });
   test("textSingle", () => {
     render(
-      <TableContainer child={<GuessTableCell cellData={textSingleData} />} />
+      <TableContainer
+        child={
+          <GuessTableCell
+            cellData={textSingleData}
+            cellNumber={0}
+            complete={false}
+            playAnimations={false}
+          />
+        }
+      />
     );
     const singleText = screen.getByText("text single");
     expect(singleText).toBeInTheDocument();
   });
   test("textDouble", () => {
     render(
-      <TableContainer child={<GuessTableCell cellData={textDoubleData} />} />
+      <TableContainer
+        child={
+          <GuessTableCell
+            cellData={textDoubleData}
+            cellNumber={0}
+            complete={false}
+            playAnimations={false}
+          />
+        }
+      />
     );
     const content1 = screen.getByText(/text double content 1/);
     const content2 = screen.getByText(/text double content 2/);
@@ -114,7 +150,14 @@ describe("GuessTableCell contents depend on data", () => {
   test("textImageCombo", () => {
     render(
       <TableContainer
-        child={<GuessTableCell cellData={textImageComboData} />}
+        child={
+          <GuessTableCell
+            cellData={textImageComboData}
+            cellNumber={0}
+            complete={false}
+            playAnimations={false}
+          />
+        }
       />
     );
     const content1 = screen.getByText("text image content 1");
@@ -126,7 +169,14 @@ describe("GuessTableCell contents depend on data", () => {
   test("imageDoubleString", () => {
     render(
       <TableContainer
-        child={<GuessTableCell cellData={imageDoubleStringData} />}
+        child={
+          <GuessTableCell
+            cellData={imageDoubleStringData}
+            cellNumber={0}
+            complete={false}
+            playAnimations={false}
+          />
+        }
       />
     );
     const content1 = screen.getByAltText("content 1 alt text.");
@@ -139,7 +189,14 @@ describe("GuessTableCell contents depend on data", () => {
   test("imageDoubleArray", () => {
     render(
       <TableContainer
-        child={<GuessTableCell cellData={imageDoubleArrayData} />}
+        child={
+          <GuessTableCell
+            cellData={imageDoubleArrayData}
+            cellNumber={0}
+            complete={false}
+            playAnimations={false}
+          />
+        }
       />
     );
     const content1Item1 = screen.getByAltText("alt text 1.");
@@ -154,7 +211,14 @@ describe("GuessTableCell contents depend on data", () => {
   test("booleanSingleTrue", () => {
     render(
       <TableContainer
-        child={<GuessTableCell cellData={booleanSingleTrueData} />}
+        child={
+          <GuessTableCell
+            cellData={booleanSingleTrueData}
+            cellNumber={0}
+            complete={false}
+            playAnimations={false}
+          />
+        }
       />
     );
     const checkmark = screen.getByText("✔️");
@@ -163,7 +227,14 @@ describe("GuessTableCell contents depend on data", () => {
   test("booleanSingleFalse", () => {
     render(
       <TableContainer
-        child={<GuessTableCell cellData={booleanSingleFalseData} />}
+        child={
+          <GuessTableCell
+            cellData={booleanSingleFalseData}
+            cellNumber={0}
+            complete={false}
+            playAnimations={false}
+          />
+        }
       />
     );
     const xMark = screen.getByText("✗");
