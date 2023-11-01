@@ -3,7 +3,17 @@ import SelectSearchBarProps from "./type";
 import "./styles.scss";
 
 const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
-  ({ value, gameCompleted, selectType, handleClick, handleInput }, ref) => {
+  (
+    {
+      value,
+      gameCompleted,
+      selectType,
+      allowInteraction,
+      handleClick,
+      handleInput,
+    },
+    ref
+  ) => {
     const determinePlaceholderValue = () => {
       switch (selectType) {
         case "character":
@@ -25,15 +35,25 @@ const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
           type="search"
           id="search"
           className="guess-search-bar"
-          disabled={gameCompleted}
+          disabled={gameCompleted || !allowInteraction}
           placeholder={determinePlaceholderValue()}
           value={value}
           ref={ref}
-          onClick={handleClick}
-          onFocus={handleClick}
+          onClick={() => {
+            if (allowInteraction) {
+              handleClick();
+            }
+          }}
+          onFocus={() => {
+            if (allowInteraction) {
+              handleClick();
+            }
+          }}
           onChange={(e) => {
-            handleClick();
-            handleInput(e.target.value);
+            if (allowInteraction) {
+              handleClick();
+              handleInput(e.target.value);
+            }
           }}
         />
       </>

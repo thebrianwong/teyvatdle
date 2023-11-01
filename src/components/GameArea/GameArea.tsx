@@ -2,7 +2,7 @@ import CharacterAPIData from "../../types/data/characterAPIData.type";
 import GuessTable from "../GuessTable/GuessTable";
 import SelectMenu from "../SelectMenu/SelectMenu";
 import TableAPIData from "../../types/data/tableAPIData.type";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import GameAreaProps from "./type";
 import GuessList from "../GuessList/GuessList";
 import ListAPIData from "../../types/data/listAPIData.type";
@@ -27,6 +27,7 @@ const GameArea = ({
   setCompletedState,
   updateGuesses,
 }: GameAreaProps) => {
+  const [isMidAnimation, setIsMidAnimation] = useState(false);
   const completeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -64,39 +65,39 @@ const GameArea = ({
     const newGuesses = [guess, ...guesses];
     updateGuesses(newGuesses, gameType);
     setGuessCounter(gameType, guessesCounter + 1);
+
+    const LEEWAY_TIME = 50;
+    const ANIMATION_TIME = 750;
+    const INITIAL_DELAY = 250;
+    const NUM_OF_CHAR_CELLS = 8;
+    const NUM_OF_WEAP_CELLS = 5;
+    const NUM_OF_FOOD_CELLS = 6;
+
+    let delay: number;
+    if (gameType === "talent" || gameType === "constellation") {
+      delay = LEEWAY_TIME + ANIMATION_TIME;
+    } else if (gameType === "character") {
+      delay =
+        LEEWAY_TIME + INITIAL_DELAY + (NUM_OF_CHAR_CELLS - 1) * ANIMATION_TIME;
+    } else if (gameType === "weapon") {
+      delay =
+        LEEWAY_TIME + INITIAL_DELAY + (NUM_OF_WEAP_CELLS - 1) * ANIMATION_TIME;
+    } else if (gameType === "food") {
+      delay =
+        LEEWAY_TIME + INITIAL_DELAY + (NUM_OF_FOOD_CELLS - 1) * ANIMATION_TIME;
+    }
+
     if (
       guess[`${selectType}_name` as keyof typeof guess] ===
       dailyEntity![`${selectType}_name` as keyof typeof dailyEntity]
     ) {
-      const LEEWAY_TIME = 50;
-      const ANIMATION_TIME = 750;
-      const INITIAL_DELAY = 250;
-      const NUM_OF_CHAR_CELLS = 8;
-      const NUM_OF_WEAP_CELLS = 5;
-      const NUM_OF_FOOD_CELLS = 6;
-
-      let delay: number;
-      if (gameType === "talent" || gameType === "constellation") {
-        delay = LEEWAY_TIME + ANIMATION_TIME;
-      } else if (gameType === "character") {
-        delay =
-          LEEWAY_TIME +
-          INITIAL_DELAY +
-          (NUM_OF_CHAR_CELLS - 1) * ANIMATION_TIME;
-      } else if (gameType === "weapon") {
-        delay =
-          LEEWAY_TIME +
-          INITIAL_DELAY +
-          (NUM_OF_WEAP_CELLS - 1) * ANIMATION_TIME;
-      } else if (gameType === "food") {
-        delay =
-          LEEWAY_TIME +
-          INITIAL_DELAY +
-          (NUM_OF_FOOD_CELLS - 1) * ANIMATION_TIME;
-      }
-
       setTimeout(() => {
         handleGameCompletion();
+      }, delay!);
+    } else {
+      setIsMidAnimation(true);
+      setTimeout(() => {
+        setIsMidAnimation(false);
       }, delay!);
     }
   };
@@ -109,6 +110,7 @@ const GameArea = ({
           data={data}
           guesses={guesses}
           gameCompleted={complete}
+          allowInteraction={!isMidAnimation}
           handleGuess={handleGuess}
         />
         <p>

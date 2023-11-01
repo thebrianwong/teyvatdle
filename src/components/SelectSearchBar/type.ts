@@ -4,6 +4,7 @@ type SelectSearchBarProps = {
   value: string;
   gameCompleted: boolean;
   selectType: SelectType;
+  allowInteraction: boolean;
   handleClick: () => void;
   handleInput: (value: string) => void;
 };

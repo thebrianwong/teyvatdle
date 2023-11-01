@@ -9,6 +9,7 @@ type SelectMenuProps = {
   data: TableAPIData[];
   guesses: TableAPIData[];
   gameCompleted: boolean;
+  allowInteraction: boolean;
   handleGuess: (guess: TableAPIData) => void;
 };
 
