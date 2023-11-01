@@ -46,12 +46,18 @@ const GameArea = ({
     setCompletedState(gameType);
     const results = await updateDailyRecordSolved(dailyRecordID, gameType);
     console.log(results);
-    if (completeRef.current) {
-      completeRef.current.scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-      });
+    let delay = 0;
+    if (gameType === "talent" || gameType === "constellation") {
+      delay = 750;
     }
+    setTimeout(() => {
+      if (completeRef.current) {
+        completeRef.current.scrollIntoView({
+          behavior: "smooth",
+          inline: "start",
+        });
+      }
+    }, delay);
   };
 
   const handleGuess = (guess: TableAPIData) => {
