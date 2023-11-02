@@ -35,6 +35,7 @@ const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
           type="search"
           id="search"
           className="guess-search-bar"
+          autoComplete="off"
           disabled={gameCompleted || !allowInteraction}
           placeholder={determinePlaceholderValue()}
           value={value}
