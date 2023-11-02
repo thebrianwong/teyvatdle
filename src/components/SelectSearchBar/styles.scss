@@ -4,4 +4,8 @@
   &::placeholder {
     font-style: italic;
   }
+
+  &:disabled:hover {
+    cursor: not-allowed;
+  }
 }
