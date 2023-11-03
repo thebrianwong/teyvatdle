@@ -5,7 +5,15 @@
     font-style: italic;
   }
 
-  &:disabled:hover {
-    cursor: not-allowed;
+  &:disabled {
+    filter: invert(1);
+
+    &:hover {
+      cursor: not-allowed;
+    }
+
+    &:active {
+      outline: solid 3px #009eff;
+    }
   }
 }
