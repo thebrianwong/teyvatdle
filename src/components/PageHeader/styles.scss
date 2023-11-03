@@ -32,3 +32,14 @@
     word-break: break-word;
   }
 }
+
+@media (hover: none) {
+  .header-paimon:hover,
+  .header-paimon:active {
+    animation-name: paimon-spin;
+    animation-duration: 1.25s;
+    animation-timing-function: cubic-bezier(0.58, 1.25, 0.77, 0.84);
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+}
