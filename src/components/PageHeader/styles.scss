@@ -1,3 +1,32 @@
+@keyframes paimon-spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  75% {
+    transform: rotateZ(360deg);
+  }
+
+  85% {
+    transform: rotateZ(390deg);
+  }
+
+  95% {
+    transform: rotateZ(345deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.header-paimon:hover {
+  animation-name: paimon-spin;
+  animation-duration: 1.25s;
+  animation-timing-function: cubic-bezier(0.58, 1.25, 0.77, 0.84);
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
 @media (max-width: 380px) {
   .header-content-container {
     word-break: break-word;

@@ -14,6 +14,7 @@ const PageHeader = memo(
         <img
           src={paimonImage}
           alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
+          className="header-paimon"
         />
         <div className="header-content-container">
           <h1>Which {capitalizedTitle} is Paimon Thinking of...?</h1>
