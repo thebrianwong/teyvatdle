@@ -1,4 +1,3 @@
-import CharacterAPIData from "../../types/data/characterAPIData.type";
 import TableAPIData from "../../types/data/tableAPIData.type";
 import SelectType from "../../types/selectType.type";
 

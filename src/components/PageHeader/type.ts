@@ -1,5 +1,3 @@
-import ListAPIData from "../../types/data/listAPIData.type";
-import TableAPIData from "../../types/data/tableAPIData.type";
 import GameMode from "../../types/gameMode.type";
 
 type PageHeaderProps = {
