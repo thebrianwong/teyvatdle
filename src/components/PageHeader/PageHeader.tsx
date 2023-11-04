@@ -3,11 +3,13 @@ import LoadingSkeleton from "../LoadingSkeleton/LoadingSkeleton";
 import PageHeaderProps from "./type";
 import "./styles.scss";
 import AnimatedValue from "../AnimatedValue/AnimatedValue";
-import { memo } from "react";
+import { KeyboardEvent, memo, useRef } from "react";
 
 const PageHeader = memo(
   ({ title, dataLoaded, solvedValue }: PageHeaderProps) => {
     const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
+
+    const paimonRef = useRef<HTMLImageElement>(null);
 
     return (
       <header>
@@ -15,6 +17,22 @@ const PageHeader = memo(
           src={paimonImage}
           alt="A thinking Paimon sticker from a Genshin Impact web event on the Chinese servers."
           className="header-paimon"
+          ref={paimonRef}
+          onClick={() => {
+            if (paimonRef.current) {
+              paimonRef.current.classList.add("paimon-animation");
+            }
+          }}
+          onKeyDown={(e: KeyboardEvent) => {
+            if ((e.key === " " || e.key === "Enter") && paimonRef.current) {
+              paimonRef.current.classList.add("paimon-animation");
+            }
+          }}
+          onAnimationEnd={() => {
+            if (paimonRef.current) {
+              paimonRef.current.classList.remove("paimon-animation");
+            }
+          }}
         />
         <div className="header-content-container">
           <h1>Which {capitalizedTitle} is Paimon Thinking of...?</h1>
