@@ -1,8 +1,8 @@
-import CharacterAPIData from "../../types/data/characterAPIData.type";
+import { CharacterData } from "../../__generated__/graphql";
 import ListAPIData from "../../types/data/listAPIData.type";
 
 type GuessListProps = {
-  guesses: CharacterAPIData[];
+  guesses: CharacterData[];
   answer: ListAPIData;
 };
 

@@ -1,4 +1,3 @@
-import CharacterAPIData from "../../types/data/characterAPIData.type";
 import GuessTable from "../GuessTable/GuessTable";
 import SelectMenu from "../SelectMenu/SelectMenu";
 import TableAPIData from "../../types/data/tableAPIData.type";
@@ -13,6 +12,7 @@ import "./styles.scss";
 import AnimatedValue from "../AnimatedValue/AnimatedValue";
 import TalentAPIData from "../../types/data/talentAPIData.type";
 import ConstellationAPIData from "../../types/data/constellationAPIData.type";
+import { CharacterData } from "../../__generated__/graphql";
 
 const GameArea = ({
   gameType,
@@ -140,7 +140,7 @@ const GameArea = ({
             data={dailyEntity as ListAPIData}
           />
           <GuessList
-            guesses={guesses as CharacterAPIData[]}
+            guesses={guesses as CharacterData[]}
             answer={dailyEntity as ListAPIData}
           />
           {complete && (
