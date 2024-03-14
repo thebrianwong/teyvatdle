@@ -121,6 +121,24 @@ export const dailyRecordSlice = createSlice({
     updateConstellationSolvedValue: (state, action: PayloadAction<number>) => {
       state.constellationSolved = action.payload;
     },
+    // insertDailyCharacter: (state, action: PayloadAction<CharacterData>) => {
+    //   state.character = action.payload;
+    // },
+    // insertDailyWeapon: (state, action: PayloadAction<WeaponData>) => {
+    //   state.weapon = action.payload;
+    // },
+    // insertDailyFood: (state, action: PayloadAction<FoodData>) => {
+    //   state.food = action.payload;
+    // },
+    // insertDailyTalent: (state, action: PayloadAction<TalentData>) => {
+    //   state.talent = action.payload;
+    // },
+    // insertDailyConstellation: (
+    //   state,
+    //   action: PayloadAction<ConstellationData>
+    // ) => {
+    //   state.constellation = action.payload;
+    // },
   },
 });
 
@@ -131,6 +149,11 @@ export const {
   updateFoodSolvedValue,
   updateTalentSolvedValue,
   updateConstellationSolvedValue,
+  // insertDailyCharacter,
+  // insertDailyWeapon,
+  // insertDailyFood,
+  // insertDailyTalent,
+  // insertDailyConstellation,
 } = dailyRecordSlice.actions;
 
 export const selectDailyRecordID = (state: RootState) =>
