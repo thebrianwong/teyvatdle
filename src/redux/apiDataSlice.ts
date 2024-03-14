@@ -60,20 +60,24 @@ export const {
 
 export const loadCharacters = (state: RootState) => state.apiData.characters;
 export const loadDailyCharacter = (state: RootState, id: number) => {
+  // probably delete
   return state.apiData.characters.find(
     (charData) => charData.character_id === id
   );
 };
 export const loadWeapons = (state: RootState) => state.apiData.weapons;
 export const loadDailyWeapon = (state: RootState, id: number) => {
+  // probably delete
   return state.apiData.weapons.find((weapData) => weapData.weapon_id === id);
 };
 export const loadFoods = (state: RootState) => state.apiData.foods;
 export const loadDailyFood = (state: RootState, id: number) => {
+  // probably delete
   return state.apiData.foods.find((foodData) => foodData.food_id === id);
 };
 export const loadTalents = (state: RootState) => state.apiData.talents;
 export const loadDailyTalent = (state: RootState, id: number) => {
+  // probably delete
   return state.apiData.talents.find(
     (talentData) => talentData.talent_id === id
   );
@@ -81,6 +85,7 @@ export const loadDailyTalent = (state: RootState, id: number) => {
 export const loadConstellations = (state: RootState) =>
   state.apiData.constellations;
 export const loadDailyConstellation = (state: RootState, id: number) => {
+  // probably delete
   return state.apiData.constellations.find(
     (constData) => constData.constellation_id === id
   );
