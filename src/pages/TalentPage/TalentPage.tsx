@@ -1,8 +1,8 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
-import { loadCharacters, loadDailyTalent } from "../../redux/apiDataSlice";
+import { loadCharacters } from "../../redux/apiDataSlice";
 import {
-  selectDailyTalentID,
+  selectDailyTalent,
   selectDailyTalentSolved,
 } from "../../redux/dailyRecordSlice";
 import TalentPageProps from "./type";
@@ -22,10 +22,7 @@ const TalentPage = ({
   updateGuesses,
 }: TalentPageProps) => {
   const characterData = useAppSelector(loadCharacters);
-  const dailyTalentID = useAppSelector(selectDailyTalentID);
-  const dailyTalentData = useAppSelector((state) =>
-    loadDailyTalent(state, dailyTalentID)
-  );
+  const dailyTalentData = useAppSelector(selectDailyTalent);
   const dailyTalentSolved = useAppSelector(selectDailyTalentSolved);
 
   useEffect(() => {

@@ -1,11 +1,8 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
+import { loadCharacters } from "../../redux/apiDataSlice";
 import {
-  loadCharacters,
-  loadDailyConstellation,
-} from "../../redux/apiDataSlice";
-import {
-  selectDailyConstellationID,
+  selectDailyConstellation,
   selectDailyConstellationSolved,
 } from "../../redux/dailyRecordSlice";
 import ConstellationPageProps from "./type";
@@ -25,10 +22,7 @@ const ConstellationPage = ({
   updateGuesses,
 }: ConstellationPageProps) => {
   const characterData = useAppSelector(loadCharacters);
-  const dailyConstellationID = useAppSelector(selectDailyConstellationID);
-  const dailyConstellationData = useAppSelector((state) =>
-    loadDailyConstellation(state, dailyConstellationID)
-  );
+  const dailyConstellationData = useAppSelector(selectDailyConstellation);
   const dailyConstellationSolved = useAppSelector(
     selectDailyConstellationSolved
   );

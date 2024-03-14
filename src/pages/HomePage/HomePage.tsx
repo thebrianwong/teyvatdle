@@ -1,8 +1,8 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
-import { loadCharacters, loadDailyCharacter } from "../../redux/apiDataSlice";
+import { loadCharacters } from "../../redux/apiDataSlice";
 import {
-  selectDailyCharacterID,
+  selectDailyCharacter,
   selectDailyCharacterSolved,
 } from "../../redux/dailyRecordSlice";
 import HomePageProps from "./type";
@@ -22,10 +22,7 @@ const HomePage = ({
   updateGuesses,
 }: HomePageProps) => {
   const characterData = useAppSelector(loadCharacters);
-  const dailyCharacterID = useAppSelector(selectDailyCharacterID);
-  const dailyCharacterData = useAppSelector((state) =>
-    loadDailyCharacter(state, dailyCharacterID)
-  );
+  const dailyCharacterData = useAppSelector(selectDailyCharacter);
   const dailyCharacterSolved = useAppSelector(selectDailyCharacterSolved);
 
   useEffect(() => {
@@ -41,6 +38,7 @@ const HomePage = ({
       <PageHeader
         title="character"
         dataLoaded={dailyCharacterData ? true : false}
+        // dataLoaded={true}
         solvedValue={dailyCharacterSolved}
       />
       {dailyCharacterData ? (

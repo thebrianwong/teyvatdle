@@ -1,8 +1,8 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
-import { loadDailyWeapon, loadWeapons } from "../../redux/apiDataSlice";
+import { loadWeapons } from "../../redux/apiDataSlice";
 import {
-  selectDailyWeaponID,
+  selectDailyWeapon,
   selectDailyWeaponSolved,
 } from "../../redux/dailyRecordSlice";
 import WeaponPageProps from "./type";
@@ -22,10 +22,7 @@ const WeaponPage = ({
   updateGuesses,
 }: WeaponPageProps) => {
   const weaponData = useAppSelector(loadWeapons);
-  const dailyWeaponID = useAppSelector(selectDailyWeaponID);
-  const dailyWeaponData = useAppSelector((state) =>
-    loadDailyWeapon(state, dailyWeaponID)
-  );
+  const dailyWeaponData = useAppSelector(selectDailyWeapon);
   const dailyWeaponSolved = useAppSelector(selectDailyWeaponSolved);
 
   useEffect(() => {

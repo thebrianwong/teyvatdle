@@ -1,8 +1,8 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
-import { loadDailyFood, loadFoods } from "../../redux/apiDataSlice";
+import { loadFoods } from "../../redux/apiDataSlice";
 import {
-  selectDailyFoodID,
+  selectDailyFood,
   selectDailyFoodSolved,
 } from "../../redux/dailyRecordSlice";
 import FoodPageProps from "./type";
@@ -22,10 +22,7 @@ const FoodPage = ({
   updateGuesses,
 }: FoodPageProps) => {
   const foodData = useAppSelector(loadFoods);
-  const dailyFoodID = useAppSelector(selectDailyFoodID);
-  const dailyFoodData = useAppSelector((state) =>
-    loadDailyFood(state, dailyFoodID)
-  );
+  const dailyFoodData = useAppSelector(selectDailyFood);
   const dailyFoodSolved = useAppSelector(selectDailyFoodSolved);
 
   useEffect(() => {
