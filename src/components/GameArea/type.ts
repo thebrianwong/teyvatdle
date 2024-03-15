@@ -8,7 +8,7 @@ type GameAreaProps = {
   selectType: SelectType;
   data: TableAPIData[];
   dailyEntity: TableAPIData | ListAPIData;
-  dailyRecordID: number;
+  dailyRecordID: string;
   guessesCounter: number;
   complete: boolean;
   guesses: TableAPIData[];

@@ -3,7 +3,7 @@ import TableAPIData from "../../types/data/tableAPIData.type";
 import GameMode from "../../types/gameMode.type";
 
 type ConstellationPageProps = {
-  dailyRecordID: number;
+  dailyRecordID: string;
   guessesCounter: number;
   complete: boolean;
   guesses: CharacterAPIData[];

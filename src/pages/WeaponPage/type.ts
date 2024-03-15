@@ -3,7 +3,7 @@ import WeaponAPIData from "../../types/data/weaponAPIData.type";
 import GameMode from "../../types/gameMode.type";
 
 type WeaponPageProps = {
-  dailyRecordID: number;
+  dailyRecordID: string;
   guessesCounter: number;
   complete: boolean;
   guesses: WeaponAPIData[];

@@ -21,7 +21,7 @@ const getDailyRecord = async () => {
   }
 };
 
-const updateDailyRecordSolved = async (id: number, resource: GameMode) => {
+const updateDailyRecordSolved = async (id: string, resource: GameMode) => {
   try {
     const results = await fetch(
       `${process.env.REACT_APP_BACKEND_DOMAIN}/api/teyvatdle/daily_record/${id}/${resource}`,

@@ -3,7 +3,7 @@ import TableAPIData from "../../types/data/tableAPIData.type";
 import GameMode from "../../types/gameMode.type";
 
 type FoodPageProps = {
-  dailyRecordID: number;
+  dailyRecordID: string;
   guessesCounter: number;
   complete: boolean;
   guesses: FoodAPIData[];
