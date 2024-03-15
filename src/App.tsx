@@ -2,8 +2,6 @@ import CharacterAPIData from "./types/data/characterAPIData.type";
 import WeaponAPIData from "./types/data/weaponAPIData.type";
 import FoodAPIData from "./types/data/foodAPIData.type";
 import { useEffect, useState } from "react";
-import TalentAPIData from "./types/data/talentAPIData.type";
-import ConstellationAPIData from "./types/data/constellationAPIData.type";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import WeaponPage from "./pages/WeaponPage/WeaponPage";
@@ -12,7 +10,6 @@ import TalentPage from "./pages/TalentPage/TalentPage";
 import ConstellationPage from "./pages/ConstellationPage/ConstellationPage";
 import NavBar from "./components/NavBar/NavBar";
 import { useAppSelector, useAppDispatch } from "./redux/hooks";
-import getData from "./services/GameDataService";
 import {
   insertCharacterAPIData,
   insertConstellationAPIData,
@@ -29,13 +26,14 @@ import {
   updateTalentSolvedValue,
   updateWeaponSolvedValue,
 } from "./redux/dailyRecordSlice";
-import { getDailyRecord } from "./services/DailyRecordService";
 import WebSocketData from "./types/data/webSocketData.type";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import GameMode from "./types/gameMode.type";
 import getNormalizeDate from "./utils/normalizeDates";
 import TableAPIData from "./types/data/tableAPIData.type";
 import "./styles/styles.scss";
+import { useQuery } from "@apollo/client";
+import { GET_TEYVATDLE_API_DATA } from "./graphql/queries/getTeyvatdleApiData";
 
 function App() {
   const [webSocketConnection, setWebSocketConnection] = useState<WebSocket>();
@@ -67,6 +65,7 @@ function App() {
     constellation: [],
   });
   const [isSaving, setIsSaving] = useState(false);
+  const teyvatdleApiDataQuery = useQuery(GET_TEYVATDLE_API_DATA);
 
   useEffect(() => {
     getStateFromLocalStorage();
@@ -188,26 +187,29 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const getAllGameData = async () => {
-      const [charData, weapData, foodData, talentData, constData] =
-        await Promise.all([
-          getData("character"),
-          getData("weapon"),
-          getData("food"),
-          getData("talent"),
-          getData("constellation"),
-        ]);
+    if (
+      teyvatdleApiDataQuery.data !== undefined &&
+      process.env.NODE_ENV !== "test"
+    ) {
+      const dailyRecordData = teyvatdleApiDataQuery.data.dailyRecordData;
+      const {
+        characterData,
+        weaponData,
+        foodData,
+        talentData,
+        constellationData,
+      } = teyvatdleApiDataQuery.data;
 
-      dispatch(insertCharacterAPIData(charData as CharacterAPIData[]));
-      dispatch(insertWeaponAPIData(weapData as WeaponAPIData[]));
-      dispatch(insertFoodAPIData(foodData as FoodAPIData[]));
-      dispatch(insertTalentAPIData(talentData as TalentAPIData[]));
-      dispatch(insertConstellationAPIData(constData as ConstellationAPIData[]));
-    };
-    const getDailyRecordData = async () => {
-      const dailyRecordData = await getDailyRecord();
-      dispatch(insertDailyRecordFromAPI(dailyRecordData!));
-    };
+      dispatch(insertDailyRecordFromAPI(dailyRecordData));
+      dispatch(insertCharacterAPIData(characterData));
+      dispatch(insertWeaponAPIData(weaponData));
+      dispatch(insertFoodAPIData(foodData));
+      dispatch(insertTalentAPIData(talentData));
+      dispatch(insertConstellationAPIData(constellationData));
+    }
+  }, [teyvatdleApiDataQuery]);
+
+  useEffect(() => {
     const getWebSocketConnection = async () => {
       try {
         const ws = new WebSocket(`${process.env.REACT_APP_BACKEND_WEBSOCKET}/`);
@@ -223,8 +225,6 @@ function App() {
       }
     };
     if (process.env.NODE_ENV !== "test") {
-      getAllGameData();
-      getDailyRecordData();
       getWebSocketConnection();
     }
   }, []);
