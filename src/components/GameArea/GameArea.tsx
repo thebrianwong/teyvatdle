@@ -6,13 +6,22 @@ import GameAreaProps from "./type";
 import GuessList from "../GuessList/GuessList";
 import ListAPIData from "../../types/data/listAPIData.type";
 import TalentConstellationImage from "../TalentConstellationImage/TalentConstellationImage";
-import { updateDailyRecordSolved } from "../../services/DailyRecordService";
 import GameComplete from "../GameComplete/GameComplete";
 import "./styles.scss";
 import AnimatedValue from "../AnimatedValue/AnimatedValue";
 import TalentAPIData from "../../types/data/talentAPIData.type";
 import ConstellationAPIData from "../../types/data/constellationAPIData.type";
-import { CharacterData } from "../../__generated__/graphql";
+import { CharacterData, GameDataType } from "../../__generated__/graphql";
+import { useMutation } from "@apollo/client";
+import { UPDATE_DAILY_RECORD } from "../../graphql/mutations/updateDailyRecord";
+
+const gameTypeToGameData = {
+  character: GameDataType.Character,
+  weapon: GameDataType.Weapon,
+  food: GameDataType.Food,
+  talent: GameDataType.Talent,
+  constellation: GameDataType.Constellation,
+};
 
 const GameArea = ({
   gameType,
@@ -29,6 +38,19 @@ const GameArea = ({
 }: GameAreaProps) => {
   const [isMidAnimation, setIsMidAnimation] = useState(false);
   const completeRef = useRef<HTMLDivElement>(null);
+  const [updateDailyRecord, { error, data }] = useMutation(
+    UPDATE_DAILY_RECORD,
+    { variables: { id: dailyRecordID, type: gameTypeToGameData[gameType] } }
+  );
+
+  useEffect(() => {
+    if (data !== undefined) {
+      console.log(data?.updateDailyRecord);
+    }
+    if (error !== undefined) {
+      console.log(error);
+    }
+  }, [data, error]);
 
   useEffect(() => {
     if (complete) {
@@ -45,8 +67,7 @@ const GameArea = ({
 
   const handleGameCompletion = async () => {
     setCompletedState(gameType);
-    const results = await updateDailyRecordSolved(dailyRecordID, gameType);
-    console.log(results);
+    updateDailyRecord();
     let delay = 0;
     if (gameType === "talent" || gameType === "constellation") {
       delay = 750;
