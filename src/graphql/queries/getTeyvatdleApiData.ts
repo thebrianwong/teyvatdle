@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from "../../__generated__";
 
 export const GET_TEYVATDLE_API_DATA = gql(`
   query GetTeyvatdleAPIData {
