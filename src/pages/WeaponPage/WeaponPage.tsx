@@ -44,7 +44,7 @@ const WeaponPage = ({
         <GameArea
           gameType="weapon"
           selectType="weapon"
-          data={weaponData}
+          gameData={weaponData}
           dailyEntity={dailyWeaponData!}
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}

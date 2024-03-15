@@ -17,7 +17,7 @@ import { CharacterData } from "../../__generated__/graphql";
 const GameArea = ({
   gameType,
   selectType,
-  data,
+  gameData,
   dailyEntity,
   dailyRecordID,
   guessesCounter,
@@ -107,7 +107,7 @@ const GameArea = ({
       <div className="game-area-top-container">
         <SelectMenu
           selectType={selectType}
-          data={data}
+          data={gameData}
           guesses={guesses}
           gameCompleted={complete}
           allowInteraction={!isMidAnimation}

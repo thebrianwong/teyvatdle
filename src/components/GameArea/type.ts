@@ -6,7 +6,7 @@ import SelectType from "../../types/selectType.type";
 type GameAreaProps = {
   gameType: GameMode;
   selectType: SelectType;
-  data: TableAPIData[];
+  gameData: TableAPIData[];
   dailyEntity: TableAPIData | ListAPIData;
   dailyRecordID: string;
   guessesCounter: number;

@@ -45,7 +45,7 @@ const HomePage = ({
         <GameArea
           gameType="character"
           selectType="character"
-          data={characterData}
+          gameData={characterData}
           dailyEntity={dailyCharacterData!}
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}

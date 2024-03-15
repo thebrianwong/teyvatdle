@@ -44,7 +44,7 @@ const FoodPage = ({
         <GameArea
           gameType="food"
           selectType="food"
-          data={foodData}
+          gameData={foodData}
           dailyEntity={dailyFoodData!}
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}

@@ -44,7 +44,7 @@ const TalentPage = ({
         <GameArea
           gameType="talent"
           selectType="character"
-          data={characterData}
+          gameData={characterData}
           dailyEntity={dailyTalentData!}
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}
