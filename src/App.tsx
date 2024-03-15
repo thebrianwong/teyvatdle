@@ -66,123 +66,82 @@ function App() {
   });
   const [isSaving, setIsSaving] = useState(false);
   const teyvatdleApiDataQuery = useQuery(GET_TEYVATDLE_API_DATA);
+  const dispatch = useAppDispatch();
+  const dailyRecordID = useAppSelector(selectDailyRecordID);
 
   useEffect(() => {
+    const getStateFromLocalStorage = () => {
+      let gameState = {
+        numOfGuesses: {
+          character: 0,
+          weapon: 0,
+          food: 0,
+          talent: 0,
+          constellation: 0,
+        },
+        complete: {
+          character: false,
+          weapon: false,
+          food: false,
+          talent: false,
+          constellation: false,
+        },
+        guesses: {
+          character: [],
+          weapon: [],
+          food: [],
+          talent: [],
+          constellation: [],
+        },
+      };
+      const savedGameState = localStorage.getItem("teyvatdle");
+      if (savedGameState) {
+        const parsedState = JSON.parse(savedGameState);
+        if (parsedState.date === getNormalizeDate()) {
+          gameState.numOfGuesses = parsedState.numOfGuesses;
+          gameState.complete = parsedState.complete;
+          gameState.guesses = parsedState.guesses;
+        }
+      }
+      setNumOfGuess(gameState.numOfGuesses);
+      setComplete(gameState.complete);
+      setGuesses(gameState.guesses);
+    };
     getStateFromLocalStorage();
   }, []);
 
-  const updateGuesses = (newGuesses: TableAPIData[], gameType: GameMode) => {
-    setGuesses({ ...guesses, [gameType]: newGuesses });
-  };
-
   useEffect(() => {
+    const saveStateToLocalStorage = () => {
+      const date = getNormalizeDate();
+      const state = {
+        date,
+        numOfGuesses,
+        complete,
+        guesses,
+      };
+      const stateJSON = JSON.stringify(state);
+      localStorage.setItem(`teyvatdle`, stateJSON);
+    };
     if (isSaving) {
       saveStateToLocalStorage();
       setIsSaving(false);
     }
   }, [isSaving]);
 
-  const getStateFromLocalStorage = () => {
-    let gameState = {
-      numOfGuesses: {
-        character: 0,
-        weapon: 0,
-        food: 0,
-        talent: 0,
-        constellation: 0,
-      },
-      complete: {
-        character: false,
-        weapon: false,
-        food: false,
-        talent: false,
-        constellation: false,
-      },
-      guesses: {
-        character: [],
-        weapon: [],
-        food: [],
-        talent: [],
-        constellation: [],
-      },
-    };
-    const savedGameState = localStorage.getItem("teyvatdle");
-    if (savedGameState) {
-      const parsedState = JSON.parse(savedGameState);
-      if (parsedState.date === getNormalizeDate()) {
-        gameState.numOfGuesses = parsedState.numOfGuesses;
-        gameState.complete = parsedState.complete;
-        gameState.guesses = parsedState.guesses;
-      }
-    }
-    setNumOfGuess(gameState.numOfGuesses);
-    setComplete(gameState.complete);
-    setGuesses(gameState.guesses);
-  };
-
-  const saveStateToLocalStorage = () => {
-    const date = getNormalizeDate();
-    const state = {
-      date,
-      numOfGuesses,
-      complete,
-      guesses,
-    };
-    const stateJSON = JSON.stringify(state);
-    localStorage.setItem(`teyvatdle`, stateJSON);
-  };
-
-  const setGuessCounter = (type: GameMode, newValue: number) => {
-    setNumOfGuess({ ...numOfGuesses, [type]: newValue });
-    setIsSaving(true);
-  };
-
-  const setCompletedState = (type: GameMode) => {
-    setComplete({ ...complete, [type]: true });
-    setIsSaving(true);
-  };
-
-  const dispatch = useAppDispatch();
-  const dailyRecordID = useAppSelector(selectDailyRecordID);
-
-  const updateSolvedValue = (data: WebSocketData) => {
-    const newValue = data.newSolvedValue;
-    switch (data.type) {
-      case "character":
-        dispatch(updateCharacterSolvedValue(newValue));
-        break;
-      case "weapon":
-        dispatch(updateWeaponSolvedValue(newValue));
-        break;
-      case "food":
-        dispatch(updateFoodSolvedValue(newValue));
-        break;
-      case "talent":
-        dispatch(updateTalentSolvedValue(newValue));
-        break;
-      case "constellation":
-        dispatch(updateConstellationSolvedValue(newValue));
-        break;
-      default:
-        break;
-    }
-  };
-
-  const setTimeOfDayBackground = () => {
-    const date = new Date();
-    const currentHour = date.getHours();
-    if (currentHour >= 5 && currentHour < 8) {
-      document.body.classList.add("dawn-background");
-    } else if (currentHour >= 8 && currentHour < 17) {
-      document.body.classList.add("day-background");
-    } else if (currentHour >= 17 && currentHour < 19) {
-      document.body.classList.add("dusk-background");
-    } else {
-      document.body.classList.add("night-background");
-    }
-  };
-
   useEffect(() => {
+    const setTimeOfDayBackground = () => {
+      const date = new Date();
+      const currentHour = date.getHours();
+      if (currentHour >= 5 && currentHour < 8) {
+        document.body.classList.add("dawn-background");
+      } else if (currentHour >= 8 && currentHour < 17) {
+        document.body.classList.add("day-background");
+      } else if (currentHour >= 17 && currentHour < 19) {
+        document.body.classList.add("dusk-background");
+      } else {
+        document.body.classList.add("night-background");
+      }
+    };
     setTimeOfDayBackground();
   }, []);
 
@@ -210,6 +169,28 @@ function App() {
   }, [teyvatdleApiDataQuery]);
 
   useEffect(() => {
+    const updateSolvedValue = (data: WebSocketData) => {
+      const newValue = data.newSolvedValue;
+      switch (data.type) {
+        case "character":
+          dispatch(updateCharacterSolvedValue(newValue));
+          break;
+        case "weapon":
+          dispatch(updateWeaponSolvedValue(newValue));
+          break;
+        case "food":
+          dispatch(updateFoodSolvedValue(newValue));
+          break;
+        case "talent":
+          dispatch(updateTalentSolvedValue(newValue));
+          break;
+        case "constellation":
+          dispatch(updateConstellationSolvedValue(newValue));
+          break;
+        default:
+          break;
+      }
+    };
     const getWebSocketConnection = async () => {
       try {
         const ws = new WebSocket(`${process.env.REACT_APP_BACKEND_WEBSOCKET}/`);
@@ -228,6 +209,20 @@ function App() {
       getWebSocketConnection();
     }
   }, []);
+
+  const updateGuesses = (newGuesses: TableAPIData[], gameType: GameMode) => {
+    setGuesses({ ...guesses, [gameType]: newGuesses });
+  };
+
+  const setGuessCounter = (type: GameMode, newValue: number) => {
+    setNumOfGuess({ ...numOfGuesses, [type]: newValue });
+    setIsSaving(true);
+  };
+
+  const setCompletedState = (type: GameMode) => {
+    setComplete({ ...complete, [type]: true });
+    setIsSaving(true);
+  };
 
   return (
     <div className="App">
