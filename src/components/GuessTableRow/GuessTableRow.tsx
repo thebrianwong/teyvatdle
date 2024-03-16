@@ -17,6 +17,8 @@ import FoodAnswerAccuracy from "../../types/data/foodAnswerAccuracy.type";
 import {
   CharacterData,
   FoodData,
+  FoodType,
+  Stat,
   WeaponData,
 } from "../../__generated__/graphql";
 
@@ -31,6 +33,34 @@ const GuessTableRow = memo(
     const [rowData, setRowData] = useState<
       CharacterTransformedData | WeaponTransformedData | FoodTransformedData
     >();
+
+    const foodTypeEnumMap = {
+      [FoodType.AdventurersDishes]: "Adventurer's Dishes",
+      [FoodType.RecoveryDishes]: "Recovery Dishes",
+      [FoodType.DefBoostingDishes]: "DEF-Boosting Dishes",
+      [FoodType.AtkBoostingDishes]: "ATK-Boosting Dishes",
+      [FoodType.Potions]: "Potions",
+      [FoodType.EssentialOils]: "Essential Oils",
+    };
+
+    const statEnumMap = {
+      [Stat.Atk]: "ATK",
+      [Stat.AnemoDmgBonus]: "Anemo DMG Bonus",
+      [Stat.CritDmg]: "CRIT DMG",
+      [Stat.CritRate]: "CRIT Rate",
+      [Stat.CryoDmgBonus]: "Cryo DMG Bonus",
+      [Stat.Def]: "DEF",
+      [Stat.DendroDmgBonus]: "Dendro DMG Bonus",
+      [Stat.ElectroDmgBonus]: "Electro DMG Bonus",
+      [Stat.ElementalMastery]: "Elemental Mastery",
+      [Stat.EnergyRecharge]: "Energy Recharge",
+      [Stat.GeoDmgBonus]: "Geo DMG Bonus",
+      [Stat.Hp]: "Healing Bonus",
+      [Stat.HealingBonus]: "HP",
+      [Stat.HydroDmgBonus]: "Hydro DMG Bonus",
+      [Stat.PhysicalDmgBonus]: "Physical DMG Bonus",
+      [Stat.PyroDmgBonus]: "Pyro DMG Bonus",
+    };
 
     const transformData = (rawData: TableAPIData) => {
       switch (rowType) {
@@ -50,6 +80,7 @@ const GuessTableRow = memo(
             rawCharacterData,
             answer
           ) as CharacterAnswerAccuracy;
+          console.log(rawCharacterData);
           const transformedCharacterData: CharacterTransformedData = {
             characterImage: {
               dataType: "mainImage",
@@ -83,7 +114,7 @@ const GuessTableRow = memo(
             },
             statMaterial: {
               dataType: "textImageCombo",
-              content1: rawCharacterData.ascensionStat || null,
+              content1: statEnumMap[rawCharacterData.ascensionStat!],
               content2: rawCharacterData.enhancementMaterialImageUrl!,
               altText2: rawCharacterData.enhancementMaterial!,
               numOfImgs2: 3,
@@ -150,7 +181,9 @@ const GuessTableRow = memo(
             },
             statMaterial: {
               dataType: "textImageCombo",
-              content1: rawWeaponData.subStat || null,
+              content1: rawWeaponData.subStat
+                ? statEnumMap[rawWeaponData.subStat]
+                : null,
               content2: rawWeaponData.weaponDomainMaterialImageUrl!,
               altText2: rawWeaponData.weaponDomainMaterial!,
               numOfImgs2: 4,
@@ -203,7 +236,7 @@ const GuessTableRow = memo(
             rarityType: {
               dataType: "textDouble",
               content1: `${rawFoodData.rarity} ⭐`,
-              content2: rawFoodData.foodType!,
+              content2: foodTypeEnumMap[rawFoodData.foodType!],
               answerAccuracy: rarityFoodTypeAccuracy,
             },
             special: {

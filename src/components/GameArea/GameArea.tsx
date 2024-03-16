@@ -14,6 +14,7 @@ import {
   ConstellationData,
   GameDataType,
   TalentData,
+  TalentType,
 } from "../../__generated__/graphql";
 import { useMutation } from "@apollo/client";
 import { UPDATE_DAILY_RECORD } from "../../graphql/mutations/updateDailyRecord";
@@ -37,6 +38,17 @@ const GameArea = ({
     UPDATE_DAILY_RECORD,
     { variables: { id: dailyRecordID, type: gameType } }
   );
+
+  const talentTypeEnumMap = {
+    [TalentType.NormalAttack]: "Normal Attack",
+    [TalentType.ElementalSkill]: "Elemental Skill",
+    [TalentType.AlternateSprint]: "Alternate Sprint",
+    [TalentType.ElementalBurst]: "Elemental Burst",
+    [TalentType.FirstAscensionPassive]: "1st Ascension Passive",
+    [TalentType.FourthAscensionPassive]: "4th Ascension Passive",
+    [TalentType.UtilityPassive]: "Utility Passive",
+    [TalentType.Passive]: "Passive",
+  };
 
   useEffect(() => {
     if (data !== undefined) {
@@ -138,9 +150,9 @@ const GameArea = ({
           {complete && gameType === GameDataType.Talent && (
             <h1 className="talent-constellation-answer">{`${
               (dailyEntity as TalentData).characterName
-            }'s ${(dailyEntity as TalentData).talentType} Talent: ${
-              (dailyEntity as TalentData).talentName
-            }`}</h1>
+            }'s ${
+              talentTypeEnumMap[(dailyEntity as TalentData).talentType!]
+            } Talent: ${(dailyEntity as TalentData).talentName}`}</h1>
           )}
           {complete && gameType === GameDataType.Constellation && (
             <h1 className="talent-constellation-answer">{`${
