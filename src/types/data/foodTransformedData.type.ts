@@ -6,9 +6,9 @@ import {
 } from "./cellVariations.type";
 
 type FoodTransformedData = {
-  food_image: MainImage;
+  foodImage: MainImage;
   name: TextSingle;
-  rarity_type: TextDouble;
+  rarityType: TextDouble;
   special: BooleanSingle;
   purchasable: BooleanSingle;
   recipe: BooleanSingle;

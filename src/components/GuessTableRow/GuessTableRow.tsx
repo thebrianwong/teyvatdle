@@ -51,7 +51,7 @@ const GuessTableRow = memo(
             answer
           ) as CharacterAnswerAccuracy;
           const transformedCharacterData: CharacterTransformedData = {
-            character_image: {
+            characterImage: {
               dataType: "mainImage",
               content: rawCharacterData.characterImageUrl!,
               altText: `Party select icon of ${rawCharacterData.characterName}.`,
@@ -62,26 +62,26 @@ const GuessTableRow = memo(
               content: rawCharacterData.characterName!,
               answerAccuracy: charNameAccuracy,
             },
-            gender_height: {
+            genderHeight: {
               dataType: "textDouble",
               content1: rawCharacterData.gender!,
               content2: rawCharacterData.height!,
               answerAccuracy: genderHeightAccuracy,
             },
-            rarity_region: {
+            rarityRegion: {
               dataType: "textDouble",
               content1: `${rawCharacterData.rarity} ⭐`,
               content2: rawCharacterData.region || null,
               answerAccuracy: rarityRegionAccuracy,
             },
-            ele_weapon: {
+            eleWeapon: {
               dataType: "textDouble",
               content1: rawCharacterData.element!,
               elementalText1: true,
               content2: rawCharacterData.weaponType!,
               answerAccuracy: eleWeaponAccuracy,
             },
-            stat_material: {
+            statMaterial: {
               dataType: "textImageCombo",
               content1: rawCharacterData.ascensionStat || null,
               content2: rawCharacterData.enhancementMaterialImageUrl!,
@@ -89,7 +89,7 @@ const GuessTableRow = memo(
               numOfImgs2: 3,
               answerAccuracy: statMaterialAccuracy,
             },
-            local_ascension: {
+            localAscension: {
               dataType: "imageDouble",
               content1: rawCharacterData.localSpecialtyImageUrl!,
               altText1: rawCharacterData.localSpecialty!,
@@ -99,7 +99,7 @@ const GuessTableRow = memo(
               answerAccuracy: localAscensionAccuracy,
               numOfImgs2: 1,
             },
-            book_talent: {
+            bookTalent: {
               dataType: "imageDouble",
               content1: rawCharacterData.talentBookImageUrl!,
               altText1: rawCharacterData.talentBook!,
@@ -131,7 +131,7 @@ const GuessTableRow = memo(
             answer
           ) as WeaponAnswerAccuracy;
           const transformedWeaponData: WeaponTransformedData = {
-            weapon_image: {
+            weaponImage: {
               dataType: "mainImage",
               content: rawWeaponData.weaponImageUrl!,
               altText: checkForQuotes(rawWeaponData.weaponName!),
@@ -142,13 +142,13 @@ const GuessTableRow = memo(
               content: rawWeaponData.weaponName!,
               answerAccuracy: weapNameAccuracy,
             },
-            rarity_type: {
+            rarityType: {
               dataType: "textDouble",
               content1: `${rawWeaponData.rarity} ⭐`,
               content2: rawWeaponData.weaponType!,
               answerAccuracy: rarityWeapTypeAccuracy,
             },
-            stat_material: {
+            statMaterial: {
               dataType: "textImageCombo",
               content1: rawWeaponData.subStat || null,
               content2: rawWeaponData.weaponDomainMaterialImageUrl!,
@@ -156,7 +156,7 @@ const GuessTableRow = memo(
               numOfImgs2: 4,
               answerAccuracy: subStatMaterialAccuracy,
             },
-            elite_common: {
+            eliteCommon: {
               dataType: "imageDouble",
               content1: rawWeaponData.eliteEnemyMaterialImageUrl!,
               altText1: rawWeaponData.eliteEnemyMaterial!,
@@ -189,7 +189,7 @@ const GuessTableRow = memo(
             answer
           ) as FoodAnswerAccuracy;
           const transformedFoodData: FoodTransformedData = {
-            food_image: {
+            foodImage: {
               dataType: "mainImage",
               content: rawFoodData.foodImageUrl!,
               altText: checkForQuotes(rawFoodData.foodName!),
@@ -200,7 +200,7 @@ const GuessTableRow = memo(
               content: rawFoodData.foodName!,
               answerAccuracy: foodNameAccuracy,
             },
-            rarity_type: {
+            rarityType: {
               dataType: "textDouble",
               content1: `${rawFoodData.rarity} ⭐`,
               content2: rawFoodData.foodType!,
