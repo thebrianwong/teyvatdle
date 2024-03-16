@@ -4,6 +4,7 @@ import GameCompleteProps from "./type";
 import "./styles.scss";
 import ResetTimer from "../ResetTimer/ResetTimer";
 import GuessSummary from "../GuessSummary/GuessSummary";
+import lowerCaseFirstLetter from "../../utils/lowerCaseFirstLetter";
 
 const GameComplete = forwardRef<HTMLDivElement, GameCompleteProps>(
   ({ gameType, selectType, guesses, answer }, ref) => {
@@ -11,8 +12,8 @@ const GameComplete = forwardRef<HTMLDivElement, GameCompleteProps>(
       <div ref={ref} className="game-complete-container">
         <h1>Nice Job, Traveler!</h1>
         <p>
-          Come back tomorrow and Paimon will have a new {gameType} for you to
-          guess!
+          Come back tomorrow and Paimon will have a new{" "}
+          {lowerCaseFirstLetter(gameType)} for you to guess!
         </p>
         <ResetTimer />
         <GuessSummary
