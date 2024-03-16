@@ -11,6 +11,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import Credits from "../../components/Credits/Credits";
 import { useEffect } from "react";
+import { GameDataType } from "../../__generated__/graphql";
 
 const FoodPage = ({
   dailyRecordID,
@@ -42,7 +43,7 @@ const FoodPage = ({
       />
       {dailyFoodData ? (
         <GameArea
-          gameType="food"
+          gameType={GameDataType.Food}
           selectType="food"
           gameData={foodData}
           dailyEntity={dailyFoodData!}

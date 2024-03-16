@@ -11,6 +11,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import Credits from "../../components/Credits/Credits";
 import { useEffect } from "react";
+import { GameDataType } from "../../__generated__/graphql";
 
 const ConstellationPage = ({
   dailyRecordID,
@@ -44,7 +45,7 @@ const ConstellationPage = ({
       />
       {dailyConstellationData ? (
         <GameArea
-          gameType="constellation"
+          gameType={GameDataType.Constellation}
           selectType="character"
           gameData={characterData}
           dailyEntity={dailyConstellationData!}

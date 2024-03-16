@@ -3,6 +3,7 @@ import TalentAPIData from "../../types/data/talentAPIData.type";
 import TalentConstellationImageProps from "./type";
 import ConstellationAPIData from "../../types/data/constellationAPIData.type";
 import "./styles.scss";
+import { GameDataType } from "../../__generated__/graphql";
 
 const TalentConstellationImage = memo(
   ({ type, data }: TalentConstellationImageProps) => {
@@ -23,7 +24,7 @@ const TalentConstellationImage = memo(
         imageRef.removeEventListener("contextmenu", preventRightClick);
     }, []);
 
-    if (type === "talent") {
+    if (type === GameDataType.Talent) {
       image = (
         <div className="talent-constellation-image-container">
           <img

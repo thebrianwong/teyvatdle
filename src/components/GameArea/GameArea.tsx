@@ -15,14 +15,6 @@ import { CharacterData, GameDataType } from "../../__generated__/graphql";
 import { useMutation } from "@apollo/client";
 import { UPDATE_DAILY_RECORD } from "../../graphql/mutations/updateDailyRecord";
 
-const gameTypeToGameData = {
-  character: GameDataType.Character,
-  weapon: GameDataType.Weapon,
-  food: GameDataType.Food,
-  talent: GameDataType.Talent,
-  constellation: GameDataType.Constellation,
-};
-
 const GameArea = ({
   gameType,
   selectType,
@@ -40,7 +32,7 @@ const GameArea = ({
   const completeRef = useRef<HTMLDivElement>(null);
   const [updateDailyRecord, { error, data }] = useMutation(
     UPDATE_DAILY_RECORD,
-    { variables: { id: dailyRecordID, type: gameTypeToGameData[gameType] } }
+    { variables: { id: dailyRecordID, type: gameType } }
   );
 
   useEffect(() => {
@@ -69,7 +61,10 @@ const GameArea = ({
     setCompletedState(gameType);
     updateDailyRecord();
     let delay = 0;
-    if (gameType === "talent" || gameType === "constellation") {
+    if (
+      gameType === GameDataType.Talent ||
+      gameType === GameDataType.Constellation
+    ) {
       delay = 750;
     }
     setTimeout(() => {
@@ -95,15 +90,18 @@ const GameArea = ({
     const NUM_OF_FOOD_CELLS = 6;
 
     let delay: number;
-    if (gameType === "talent" || gameType === "constellation") {
+    if (
+      gameType === GameDataType.Talent ||
+      gameType === GameDataType.Constellation
+    ) {
       delay = LEEWAY_TIME + ANIMATION_TIME;
-    } else if (gameType === "character") {
+    } else if (gameType === GameDataType.Character) {
       delay =
         LEEWAY_TIME + INITIAL_DELAY + (NUM_OF_CHAR_CELLS - 1) * ANIMATION_TIME;
-    } else if (gameType === "weapon") {
+    } else if (gameType === GameDataType.Weapon) {
       delay =
         LEEWAY_TIME + INITIAL_DELAY + (NUM_OF_WEAP_CELLS - 1) * ANIMATION_TIME;
-    } else if (gameType === "food") {
+    } else if (gameType === GameDataType.Food) {
       delay =
         LEEWAY_TIME + INITIAL_DELAY + (NUM_OF_FOOD_CELLS - 1) * ANIMATION_TIME;
     }
@@ -138,16 +136,17 @@ const GameArea = ({
           Total Guesses: <AnimatedValue value={guessesCounter} direction="up" />
         </p>
       </div>
-      {gameType === "talent" || gameType === "constellation" ? (
+      {gameType === GameDataType.Talent ||
+      gameType === GameDataType.Constellation ? (
         <>
-          {complete && gameType === "talent" && (
+          {complete && gameType === GameDataType.Talent && (
             <h1 className="talent-constellation-answer">{`${
               (dailyEntity as TalentAPIData).character_name
             }'s ${(dailyEntity as TalentAPIData).talent_type} Talent: ${
               (dailyEntity as TalentAPIData).talent_name
             }`}</h1>
           )}
-          {complete && gameType === "constellation" && (
+          {complete && gameType === GameDataType.Constellation && (
             <h1 className="talent-constellation-answer">{`${
               (dailyEntity as ConstellationAPIData).character_name
             }'s Level ${

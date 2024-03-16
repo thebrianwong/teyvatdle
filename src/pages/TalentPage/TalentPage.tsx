@@ -11,6 +11,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import Credits from "../../components/Credits/Credits";
 import { useEffect } from "react";
+import { GameDataType } from "../../__generated__/graphql";
 
 const TalentPage = ({
   dailyRecordID,
@@ -42,7 +43,7 @@ const TalentPage = ({
       />
       {dailyTalentData ? (
         <GameArea
-          gameType="talent"
+          gameType={GameDataType.Talent}
           selectType="character"
           gameData={characterData}
           dailyEntity={dailyTalentData!}

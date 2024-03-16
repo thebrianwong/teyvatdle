@@ -1,9 +1,9 @@
+import { GameDataType } from "../../__generated__/graphql";
 import TableAPIData from "../../types/data/tableAPIData.type";
-import GameMode from "../../types/gameMode.type";
 import SelectType from "../../types/selectType.type";
 
 type GameCompleteProps = {
-  gameType: GameMode;
+  gameType: GameDataType;
   selectType: SelectType;
   guesses: TableAPIData[];
   answer: TableAPIData;

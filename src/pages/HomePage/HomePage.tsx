@@ -11,6 +11,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import Credits from "../../components/Credits/Credits";
 import { useEffect } from "react";
+import { GameDataType } from "../../__generated__/graphql";
 
 const HomePage = ({
   dailyRecordID,
@@ -43,7 +44,7 @@ const HomePage = ({
       />
       {dailyCharacterData ? (
         <GameArea
-          gameType="character"
+          gameType={GameDataType.Character}
           selectType="character"
           gameData={characterData}
           dailyEntity={dailyCharacterData!}

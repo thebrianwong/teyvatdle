@@ -3,6 +3,7 @@ import GuessesSummaryProp from "./type";
 import determineCorrectness from "../GuessTableRow/determineCorrectness";
 import "./styles.scss";
 import TweetButton from "../TweetButton/TweetButton";
+import { GameDataType } from "../../__generated__/graphql";
 
 const GuessSummary = ({
   gameType,
@@ -67,9 +68,9 @@ const GuessSummary = ({
 
   useEffect(() => {
     if (
-      gameType === "character" ||
-      gameType === "weapon" ||
-      gameType === "food"
+      gameType === GameDataType.Character ||
+      gameType === GameDataType.Weapon ||
+      gameType === GameDataType.Food
     ) {
       chooseEmojiHeaders();
       calculateEmojiGuesses();
