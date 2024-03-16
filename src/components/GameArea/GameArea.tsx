@@ -110,8 +110,8 @@ const GameArea = ({
     }
 
     if (
-      guess[`${selectType}_name` as keyof typeof guess] ===
-      dailyEntity![`${selectType}_name` as keyof typeof dailyEntity]
+      guess[`${selectType}Name` as keyof typeof guess] ===
+      dailyEntity![`${selectType}Name` as keyof typeof dailyEntity]
     ) {
       setTimeout(() => {
         handleGameCompletion();

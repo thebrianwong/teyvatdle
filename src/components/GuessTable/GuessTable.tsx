@@ -34,7 +34,7 @@ const GuessTable = ({
             return (
               <GuessTableRow
                 key={`${tableType}-${
-                  guess[`${tableType}_name` as keyof typeof guess]
+                  guess[`${tableType}Name` as keyof typeof guess]
                 }`}
                 rowType={tableType}
                 rowDataProp={guess}
