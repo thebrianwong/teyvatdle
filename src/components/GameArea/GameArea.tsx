@@ -9,9 +9,12 @@ import TalentConstellationImage from "../TalentConstellationImage/TalentConstell
 import GameComplete from "../GameComplete/GameComplete";
 import "./styles.scss";
 import AnimatedValue from "../AnimatedValue/AnimatedValue";
-import TalentAPIData from "../../types/data/talentAPIData.type";
-import ConstellationAPIData from "../../types/data/constellationAPIData.type";
-import { CharacterData, GameDataType } from "../../__generated__/graphql";
+import {
+  CharacterData,
+  ConstellationData,
+  GameDataType,
+  TalentData,
+} from "../../__generated__/graphql";
 import { useMutation } from "@apollo/client";
 import { UPDATE_DAILY_RECORD } from "../../graphql/mutations/updateDailyRecord";
 
@@ -141,18 +144,18 @@ const GameArea = ({
         <>
           {complete && gameType === GameDataType.Talent && (
             <h1 className="talent-constellation-answer">{`${
-              (dailyEntity as TalentAPIData).character_name
-            }'s ${(dailyEntity as TalentAPIData).talent_type} Talent: ${
-              (dailyEntity as TalentAPIData).talent_name
+              (dailyEntity as TalentData).characterName
+            }'s ${(dailyEntity as TalentData).talentType} Talent: ${
+              (dailyEntity as TalentData).talentName
             }`}</h1>
           )}
           {complete && gameType === GameDataType.Constellation && (
             <h1 className="talent-constellation-answer">{`${
-              (dailyEntity as ConstellationAPIData).character_name
+              (dailyEntity as ConstellationData).characterName
             }'s Level ${
-              (dailyEntity as ConstellationAPIData).constellation_level
+              (dailyEntity as ConstellationData).constellationLevel
             } Constellation: ${
-              (dailyEntity as ConstellationAPIData).constellation_name
+              (dailyEntity as ConstellationData).constellationName
             }`}</h1>
           )}
           <TalentConstellationImage

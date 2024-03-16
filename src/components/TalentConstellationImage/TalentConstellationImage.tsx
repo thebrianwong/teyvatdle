@@ -1,9 +1,11 @@
 import { ReactElement, memo, useEffect, useRef } from "react";
-import TalentAPIData from "../../types/data/talentAPIData.type";
 import TalentConstellationImageProps from "./type";
-import ConstellationAPIData from "../../types/data/constellationAPIData.type";
 import "./styles.scss";
-import { GameDataType } from "../../__generated__/graphql";
+import {
+  ConstellationData,
+  GameDataType,
+  TalentData,
+} from "../../__generated__/graphql";
 
 const TalentConstellationImage = memo(
   ({ type, data }: TalentConstellationImageProps) => {
@@ -29,7 +31,7 @@ const TalentConstellationImage = memo(
         <div className="talent-constellation-image-container">
           <img
             ref={ref}
-            src={(data as TalentAPIData).talent_image_url}
+            src={(data as TalentData).talentImageUrl!}
             alt="Daily talent."
             className="talent-constellation-image"
           />
@@ -40,7 +42,7 @@ const TalentConstellationImage = memo(
         <div className="talent-constellation-image-container">
           <img
             ref={ref}
-            src={(data as ConstellationAPIData).constellation_image_url}
+            src={(data as ConstellationData).constellationImageUrl!}
             alt="Daily constellation."
             className="talent-constellation-image"
           />
@@ -48,7 +50,7 @@ const TalentConstellationImage = memo(
       );
     }
 
-    return image;
+    return data && image;
   }
 );
 
