@@ -9,7 +9,6 @@ const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
     const imageUrlKey = `${dataType}ImageUrl`;
 
     const guessesNames = guesses.map((guess) => {
-      console.log(guess);
       return guess[nameKey as keyof typeof guess]!.toString();
     });
 
