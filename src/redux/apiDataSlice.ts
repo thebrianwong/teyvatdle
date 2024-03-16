@@ -1,17 +1,19 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "./store";
-import CharacterAPIData from "../types/data/characterAPIData.type";
-import WeaponAPIData from "../types/data/weaponAPIData.type";
-import FoodAPIData from "../types/data/foodAPIData.type";
-import TalentAPIData from "../types/data/talentAPIData.type";
-import ConstellationAPIData from "../types/data/constellationAPIData.type";
+import {
+  CharacterData,
+  ConstellationData,
+  FoodData,
+  TalentData,
+  WeaponData,
+} from "../__generated__/graphql";
 
 type APIData = {
-  characters: CharacterAPIData[];
-  weapons: WeaponAPIData[];
-  foods: FoodAPIData[];
-  talents: TalentAPIData[];
-  constellations: ConstellationAPIData[];
+  characters: CharacterData[];
+  weapons: WeaponData[];
+  foods: FoodData[];
+  talents: TalentData[];
+  constellations: ConstellationData[];
 };
 
 const initialState: APIData = {
@@ -26,26 +28,23 @@ export const apiDataSlice = createSlice({
   name: "apiData",
   initialState,
   reducers: {
-    insertCharacterAPIData: (
-      state,
-      action: PayloadAction<CharacterAPIData[]>
-    ) => {
-      state.characters = action.payload as CharacterAPIData[];
+    insertCharacterAPIData: (state, action: PayloadAction<CharacterData[]>) => {
+      state.characters = action.payload;
     },
-    insertWeaponAPIData: (state, action: PayloadAction<WeaponAPIData[]>) => {
-      state.weapons = action.payload as WeaponAPIData[];
+    insertWeaponAPIData: (state, action: PayloadAction<WeaponData[]>) => {
+      state.weapons = action.payload;
     },
-    insertFoodAPIData: (state, action: PayloadAction<FoodAPIData[]>) => {
-      state.foods = action.payload as FoodAPIData[];
+    insertFoodAPIData: (state, action: PayloadAction<FoodData[]>) => {
+      state.foods = action.payload;
     },
-    insertTalentAPIData: (state, action: PayloadAction<TalentAPIData[]>) => {
-      state.talents = action.payload as TalentAPIData[];
+    insertTalentAPIData: (state, action: PayloadAction<TalentData[]>) => {
+      state.talents = action.payload;
     },
     insertConstellationAPIData: (
       state,
-      action: PayloadAction<ConstellationAPIData[]>
+      action: PayloadAction<ConstellationData[]>
     ) => {
-      state.constellations = action.payload as ConstellationAPIData[];
+      state.constellations = action.payload;
     },
   },
 });
