@@ -63,13 +63,6 @@ const GameArea = ({
   const handleGameCompletion = async () => {
     setCompletedState(gameType);
     updateDailyRecord();
-    let delay = 0;
-    if (
-      gameType === GameDataType.Talent ||
-      gameType === GameDataType.Constellation
-    ) {
-      delay = 750;
-    }
     setTimeout(() => {
       if (completeRef.current) {
         completeRef.current.scrollIntoView({
@@ -77,7 +70,7 @@ const GameArea = ({
           inline: "start",
         });
       }
-    }, delay);
+    }, 500);
   };
 
   const handleGuess = (guess: TableAPIData) => {
