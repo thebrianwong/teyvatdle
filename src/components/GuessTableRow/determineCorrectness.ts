@@ -20,7 +20,6 @@ const determineCorrectness = (
       const charGuessData = { ...guessData } as CharacterData;
       const charAnswerData = { ...answer } as CharacterData;
       if (charGuessData.characterName === charAnswerData.characterName) {
-        console.log(charGuessData.characterName, charAnswerData.characterName);
         const charAllCorrect: CharacterAnswerAccuracy = {
           charNameAccuracy: "correct",
           genderHeightAccuracy: "correct",
