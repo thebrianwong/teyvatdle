@@ -1,9 +1,11 @@
-import CharacterAPIData from "../../types/data/characterAPIData.type";
+import {
+  CharacterData,
+  FoodData,
+  WeaponData,
+} from "../../__generated__/graphql";
 import CharacterAnswerAccuracy from "../../types/data/characterAnswerAccuracy.type";
-import FoodAPIData from "../../types/data/foodAPIData.type";
 import FoodAnswerAccuracy from "../../types/data/foodAnswerAccuracy.type";
 import TableAPIData from "../../types/data/tableAPIData.type";
-import WeaponAPIData from "../../types/data/weaponAPIData.type";
 import WeaponAnswerAccuracy from "../../types/data/weaponAnswerAccuracy.type";
 import SelectType from "../../types/selectType.type";
 import compareArrays from "../../utils/compareArrays";
@@ -15,9 +17,10 @@ const determineCorrectness = (
 ) => {
   switch (rowType) {
     case "character":
-      const charGuessData = { ...guessData } as CharacterAPIData;
-      const charAnswerData = { ...answer } as CharacterAPIData;
-      if (charGuessData.character_name === charAnswerData.character_name) {
+      const charGuessData = { ...guessData } as CharacterData;
+      const charAnswerData = { ...answer } as CharacterData;
+      if (charGuessData.characterName === charAnswerData.characterName) {
+        console.log(charGuessData.characterName, charAnswerData.characterName);
         const charAllCorrect: CharacterAnswerAccuracy = {
           charNameAccuracy: "correct",
           genderHeightAccuracy: "correct",
@@ -72,12 +75,12 @@ const determineCorrectness = (
       // element, weapon
       if (
         charGuessData.element === charAnswerData.element &&
-        charGuessData.weapon_type === charAnswerData.weapon_type
+        charGuessData.weaponType === charAnswerData.weaponType
       ) {
         charResults.eleWeaponAccuracy = "correct";
       } else if (
         charGuessData.element !== charAnswerData.element &&
-        charGuessData.weapon_type !== charAnswerData.weapon_type
+        charGuessData.weaponType !== charAnswerData.weaponType
       ) {
         charResults.eleWeaponAccuracy = "wrong";
       } else {
@@ -85,15 +88,13 @@ const determineCorrectness = (
       }
       // stat, enhancement material
       if (
-        charGuessData.ascension_stat === charAnswerData.ascension_stat &&
-        charGuessData.enhancement_material ===
-          charAnswerData.enhancement_material
+        charGuessData.ascensionStat === charAnswerData.ascensionStat &&
+        charGuessData.enhancementMaterial === charAnswerData.enhancementMaterial
       ) {
         charResults.statMaterialAccuracy = "correct";
       } else if (
-        charGuessData.ascension_stat !== charAnswerData.ascension_stat &&
-        charGuessData.enhancement_material !==
-          charAnswerData.enhancement_material
+        charGuessData.ascensionStat !== charAnswerData.ascensionStat &&
+        charGuessData.enhancementMaterial !== charAnswerData.enhancementMaterial
       ) {
         charResults.statMaterialAccuracy = "wrong";
       } else {
@@ -101,15 +102,15 @@ const determineCorrectness = (
       }
       // local specialty, ascension material
       if (
-        charGuessData.local_specialty === charAnswerData.local_specialty &&
-        charGuessData.ascension_boss_material ===
-          charAnswerData.ascension_boss_material
+        charGuessData.localSpecialty === charAnswerData.localSpecialty &&
+        charGuessData.ascensionBossMaterial ===
+          charAnswerData.ascensionBossMaterial
       ) {
         charResults.localAscensionAccuracy = "correct";
       } else if (
-        charGuessData.local_specialty !== charAnswerData.local_specialty &&
-        charGuessData.ascension_boss_material !==
-          charAnswerData.ascension_boss_material
+        charGuessData.localSpecialty !== charAnswerData.localSpecialty &&
+        charGuessData.ascensionBossMaterial !==
+          charAnswerData.ascensionBossMaterial
       ) {
         charResults.localAscensionAccuracy = "wrong";
       } else {
@@ -117,15 +118,13 @@ const determineCorrectness = (
       }
       // talent books, talent material
       if (
-        compareArrays(charGuessData.talent_book, charAnswerData.talent_book) &&
-        charGuessData.talent_boss_material ===
-          charAnswerData.talent_boss_material
+        compareArrays(charGuessData.talentBook!, charAnswerData.talentBook!) &&
+        charGuessData.talentBossMaterial === charAnswerData.talentBossMaterial
       ) {
         charResults.bookTalentAccuracy = "correct";
       } else if (
-        !compareArrays(charGuessData.talent_book, charAnswerData.talent_book) &&
-        charGuessData.talent_boss_material !==
-          charAnswerData.talent_boss_material
+        !compareArrays(charGuessData.talentBook!, charAnswerData.talentBook!) &&
+        charGuessData.talentBossMaterial !== charAnswerData.talentBossMaterial
       ) {
         charResults.bookTalentAccuracy = "wrong";
       } else {
@@ -155,9 +154,9 @@ const determineCorrectness = (
       }
       return charResults;
     case "weapon":
-      const weapGuessData = { ...guessData } as WeaponAPIData;
-      const weapAnswerData = { ...answer } as WeaponAPIData;
-      if (weapGuessData.weapon_name === weapAnswerData.weapon_name) {
+      const weapGuessData = { ...guessData } as WeaponData;
+      const weapAnswerData = { ...answer } as WeaponData;
+      if (weapGuessData.weaponName === weapAnswerData.weaponName) {
         const weapAllCorrect: WeaponAnswerAccuracy = {
           weapNameAccuracy: "correct",
           rarityWeapTypeAccuracy: "correct",
@@ -177,12 +176,12 @@ const determineCorrectness = (
       // rarity, type
       if (
         weapGuessData.rarity === weapAnswerData.rarity &&
-        weapGuessData.weapon_type === weapAnswerData.weapon_type
+        weapGuessData.weaponType === weapAnswerData.weaponType
       ) {
         weapResults.rarityWeapTypeAccuracy = "correct";
       } else if (
         weapGuessData.rarity !== weapAnswerData.rarity &&
-        weapGuessData.weapon_type !== weapAnswerData.weapon_type
+        weapGuessData.weaponType !== weapAnswerData.weaponType
       ) {
         weapResults.rarityWeapTypeAccuracy = "wrong";
       } else {
@@ -190,15 +189,15 @@ const determineCorrectness = (
       }
       // stat, material
       if (
-        weapGuessData.sub_stat === weapAnswerData.sub_stat &&
-        weapGuessData.weapon_domain_material ===
-          weapAnswerData.weapon_domain_material
+        weapGuessData.subStat === weapAnswerData.subStat &&
+        weapGuessData.weaponDomainMaterial ===
+          weapAnswerData.weaponDomainMaterial
       ) {
         weapResults.subStatMaterialAccuracy = "correct";
       } else if (
-        weapGuessData.sub_stat !== weapAnswerData.sub_stat &&
-        weapGuessData.weapon_domain_material !==
-          weapAnswerData.weapon_domain_material
+        weapGuessData.subStat !== weapAnswerData.subStat &&
+        weapGuessData.weaponDomainMaterial !==
+          weapAnswerData.weaponDomainMaterial
       ) {
         weapResults.subStatMaterialAccuracy = "wrong";
       } else {
@@ -206,17 +205,15 @@ const determineCorrectness = (
       }
       // elite, common
       if (
-        weapGuessData.elite_enemy_material ===
-          weapAnswerData.elite_enemy_material &&
-        weapGuessData.common_enemy_material ===
-          weapAnswerData.common_enemy_material
+        weapGuessData.eliteEnemyMaterial ===
+          weapAnswerData.eliteEnemyMaterial &&
+        weapGuessData.commonEnemyMaterial === weapAnswerData.commonEnemyMaterial
       ) {
         weapResults.eliteCommonAccuracy = "correct";
       } else if (
-        weapGuessData.elite_enemy_material !==
-          weapAnswerData.elite_enemy_material &&
-        weapGuessData.common_enemy_material !==
-          weapAnswerData.common_enemy_material
+        weapGuessData.eliteEnemyMaterial !==
+          weapAnswerData.eliteEnemyMaterial &&
+        weapGuessData.commonEnemyMaterial !== weapAnswerData.commonEnemyMaterial
       ) {
         weapResults.eliteCommonAccuracy = "wrong";
       } else {
@@ -230,9 +227,9 @@ const determineCorrectness = (
       }
       return weapResults;
     case "food":
-      const foodGuessData = { ...guessData } as FoodAPIData;
-      const foodAnswerData = { ...answer } as FoodAPIData;
-      if (foodGuessData.food_name === foodAnswerData.food_name) {
+      const foodGuessData = { ...guessData } as FoodData;
+      const foodAnswerData = { ...answer } as FoodData;
+      if (foodGuessData.foodName === foodAnswerData.foodName) {
         const foodAllCorrect: FoodAnswerAccuracy = {
           foodNameAccuracy: "correct",
           rarityFoodTypeAccuracy: "correct",
@@ -254,19 +251,19 @@ const determineCorrectness = (
       // rarity, type
       if (
         foodGuessData.rarity === foodAnswerData.rarity &&
-        foodGuessData.food_type === foodAnswerData.food_type
+        foodGuessData.foodType === foodAnswerData.foodType
       ) {
         foodResults.rarityFoodTypeAccuracy = "correct";
       } else if (
         foodGuessData.rarity !== foodAnswerData.rarity &&
-        foodGuessData.food_type !== foodAnswerData.food_type
+        foodGuessData.foodType !== foodAnswerData.foodType
       ) {
         foodResults.rarityFoodTypeAccuracy = "wrong";
       } else {
         foodResults.rarityFoodTypeAccuracy = "partial";
       }
       // special
-      if (foodGuessData.special_dish === foodAnswerData.special_dish) {
+      if (foodGuessData.specialDish === foodAnswerData.specialDish) {
         foodResults.specialAccuracy = "correct";
       } else {
         foodResults.specialAccuracy = "wrong";

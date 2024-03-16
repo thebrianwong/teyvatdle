@@ -14,6 +14,11 @@ import determineCorrectness from "./determineCorrectness";
 import CharacterAnswerAccuracy from "../../types/data/characterAnswerAccuracy.type";
 import WeaponAnswerAccuracy from "../../types/data/weaponAnswerAccuracy.type";
 import FoodAnswerAccuracy from "../../types/data/foodAnswerAccuracy.type";
+import {
+  CharacterData,
+  FoodData,
+  WeaponData,
+} from "../../__generated__/graphql";
 
 const GuessTableRow = memo(
   ({
@@ -30,7 +35,7 @@ const GuessTableRow = memo(
     const transformData = (rawData: TableAPIData) => {
       switch (rowType) {
         case "character":
-          const rawCharacterData = { ...rawData } as CharacterAPIData;
+          const rawCharacterData = { ...rawData } as CharacterData;
           const {
             charNameAccuracy,
             genderHeightAccuracy,
@@ -48,59 +53,59 @@ const GuessTableRow = memo(
           const transformedCharacterData: CharacterTransformedData = {
             character_image: {
               dataType: "mainImage",
-              content: rawCharacterData.character_image_url,
-              altText: `Party select icon of ${rawCharacterData.character_name}.`,
+              content: rawCharacterData.characterImageUrl!,
+              altText: `Party select icon of ${rawCharacterData.characterName}.`,
               answerAccuracy: "default",
             },
             name: {
               dataType: "textSingle",
-              content: rawCharacterData.character_name,
+              content: rawCharacterData.characterName!,
               answerAccuracy: charNameAccuracy,
             },
             gender_height: {
               dataType: "textDouble",
-              content1: rawCharacterData.gender,
-              content2: rawCharacterData.height,
+              content1: rawCharacterData.gender!,
+              content2: rawCharacterData.height!,
               answerAccuracy: genderHeightAccuracy,
             },
             rarity_region: {
               dataType: "textDouble",
               content1: `${rawCharacterData.rarity} ⭐`,
-              content2: rawCharacterData.region,
+              content2: rawCharacterData.region || null,
               answerAccuracy: rarityRegionAccuracy,
             },
             ele_weapon: {
               dataType: "textDouble",
-              content1: rawCharacterData.element,
+              content1: rawCharacterData.element!,
               elementalText1: true,
-              content2: rawCharacterData.weapon_type,
+              content2: rawCharacterData.weaponType!,
               answerAccuracy: eleWeaponAccuracy,
             },
             stat_material: {
               dataType: "textImageCombo",
-              content1: rawCharacterData.ascension_stat,
-              content2: rawCharacterData.enhancement_material_image_url,
-              altText2: rawCharacterData.enhancement_material,
+              content1: rawCharacterData.ascensionStat || null,
+              content2: rawCharacterData.enhancementMaterialImageUrl!,
+              altText2: rawCharacterData.enhancementMaterial!,
               numOfImgs2: 3,
               answerAccuracy: statMaterialAccuracy,
             },
             local_ascension: {
               dataType: "imageDouble",
-              content1: rawCharacterData.local_specialty_image_url,
-              altText1: rawCharacterData.local_specialty,
+              content1: rawCharacterData.localSpecialtyImageUrl!,
+              altText1: rawCharacterData.localSpecialty!,
               numOfImgs1: 1,
-              content2: rawCharacterData.ascension_boss_material_image_url,
-              altText2: rawCharacterData.ascension_boss_material,
+              content2: rawCharacterData.ascensionBossMaterialImageUrl || null,
+              altText2: rawCharacterData.ascensionBossMaterial || null,
               answerAccuracy: localAscensionAccuracy,
               numOfImgs2: 1,
             },
             book_talent: {
               dataType: "imageDouble",
-              content1: rawCharacterData.talent_book_image_url,
-              altText1: rawCharacterData.talent_book,
+              content1: rawCharacterData.talentBookImageUrl!,
+              altText1: rawCharacterData.talentBook!,
               numOfImgs1: 3,
-              content2: rawCharacterData.talent_boss_material_image_url,
-              altText2: rawCharacterData.talent_boss_material,
+              content2: rawCharacterData.talentBossMaterialImageUrl!,
+              altText2: rawCharacterData.talentBossMaterial!,
               answerAccuracy: bookTalentAccuracy,
               numOfImgs2: 1,
             },
@@ -113,7 +118,7 @@ const GuessTableRow = memo(
           setRowData(transformedCharacterData);
           break;
         case "weapon":
-          const rawWeaponData = { ...rawData } as WeaponAPIData;
+          const rawWeaponData = { ...rawData } as WeaponData;
           const {
             weapNameAccuracy,
             rarityWeapTypeAccuracy,
@@ -128,49 +133,49 @@ const GuessTableRow = memo(
           const transformedWeaponData: WeaponTransformedData = {
             weapon_image: {
               dataType: "mainImage",
-              content: rawWeaponData.weapon_image_url,
-              altText: checkForQuotes(rawWeaponData.weapon_name),
+              content: rawWeaponData.weaponImageUrl!,
+              altText: checkForQuotes(rawWeaponData.weaponName!),
               answerAccuracy: "default",
             },
             name: {
               dataType: "textSingle",
-              content: rawWeaponData.weapon_name,
+              content: rawWeaponData.weaponName!,
               answerAccuracy: weapNameAccuracy,
             },
             rarity_type: {
               dataType: "textDouble",
               content1: `${rawWeaponData.rarity} ⭐`,
-              content2: rawWeaponData.weapon_type,
+              content2: rawWeaponData.weaponType!,
               answerAccuracy: rarityWeapTypeAccuracy,
             },
             stat_material: {
               dataType: "textImageCombo",
-              content1: rawWeaponData.sub_stat,
-              content2: rawWeaponData.weapon_domain_material_image_url,
-              altText2: rawWeaponData.weapon_domain_material,
+              content1: rawWeaponData.subStat || null,
+              content2: rawWeaponData.weaponDomainMaterialImageUrl!,
+              altText2: rawWeaponData.weaponDomainMaterial!,
               numOfImgs2: 4,
               answerAccuracy: subStatMaterialAccuracy,
             },
             elite_common: {
               dataType: "imageDouble",
-              content1: rawWeaponData.elite_enemy_material_image_url,
-              altText1: rawWeaponData.elite_enemy_material,
+              content1: rawWeaponData.eliteEnemyMaterialImageUrl!,
+              altText1: rawWeaponData.eliteEnemyMaterial!,
               numOfImgs1: 3,
-              content2: rawWeaponData.common_enemy_material_image_url,
-              altText2: rawWeaponData.common_enemy_material,
+              content2: rawWeaponData.commonEnemyMaterialImageUrl!,
+              altText2: rawWeaponData.commonEnemyMaterial!,
               numOfImgs2: 3,
               answerAccuracy: eliteCommonAccuracy,
             },
             gacha: {
               dataType: "booleanSingle",
-              content: rawWeaponData.gacha,
+              content: rawWeaponData.gacha!,
               answerAccuracy: gachaAccuracy,
             },
           };
           setRowData(transformedWeaponData);
           break;
         case "food":
-          const rawFoodData = { ...rawData } as FoodAPIData;
+          const rawFoodData = { ...rawData } as FoodData;
           const {
             foodNameAccuracy,
             rarityFoodTypeAccuracy,
@@ -186,39 +191,39 @@ const GuessTableRow = memo(
           const transformedFoodData: FoodTransformedData = {
             food_image: {
               dataType: "mainImage",
-              content: rawFoodData.food_image_url,
-              altText: checkForQuotes(rawFoodData.food_name),
+              content: rawFoodData.foodImageUrl!,
+              altText: checkForQuotes(rawFoodData.foodName!),
               answerAccuracy: "default",
             },
             name: {
               dataType: "textSingle",
-              content: rawFoodData.food_name,
+              content: rawFoodData.foodName!,
               answerAccuracy: foodNameAccuracy,
             },
             rarity_type: {
               dataType: "textDouble",
               content1: `${rawFoodData.rarity} ⭐`,
-              content2: rawFoodData.food_type,
+              content2: rawFoodData.foodType!,
               answerAccuracy: rarityFoodTypeAccuracy,
             },
             special: {
               dataType: "booleanSingle",
-              content: rawFoodData.special_dish,
+              content: rawFoodData.specialDish!,
               answerAccuracy: specialAccuracy,
             },
             purchasable: {
               dataType: "booleanSingle",
-              content: rawFoodData.purchasable,
+              content: rawFoodData.purchasable!,
               answerAccuracy: purchasableAccuracy,
             },
             recipe: {
               dataType: "booleanSingle",
-              content: rawFoodData.recipe,
+              content: rawFoodData.recipe!,
               answerAccuracy: recipeAccuracy,
             },
             event: {
               dataType: "booleanSingle",
-              content: rawFoodData.event,
+              content: rawFoodData.event!,
               answerAccuracy: eventAccuracy,
             },
           };
