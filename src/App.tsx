@@ -34,6 +34,8 @@ import TableAPIData from "./types/data/tableAPIData.type";
 import "./styles/styles.scss";
 import { useQuery } from "@apollo/client";
 import { GET_TEYVATDLE_API_DATA } from "./graphql/queries/getTeyvatdleApiData";
+import { GameDataType } from "./__generated__/graphql";
+import lowerCaseFirstLetter from "./utils/lowerCaseFirstLetter";
 
 function App() {
   const [webSocketConnection, setWebSocketConnection] = useState<WebSocket>();
@@ -210,17 +212,20 @@ function App() {
     }
   }, []);
 
-  const updateGuesses = (newGuesses: TableAPIData[], gameType: GameMode) => {
-    setGuesses({ ...guesses, [gameType]: newGuesses });
+  const updateGuesses = (
+    newGuesses: TableAPIData[],
+    gameType: GameDataType
+  ) => {
+    setGuesses({ ...guesses, [lowerCaseFirstLetter(gameType)]: newGuesses });
   };
 
-  const setGuessCounter = (type: GameMode, newValue: number) => {
-    setNumOfGuess({ ...numOfGuesses, [type]: newValue });
+  const setGuessCounter = (type: GameDataType, newValue: number) => {
+    setNumOfGuess({ ...numOfGuesses, [lowerCaseFirstLetter(type)]: newValue });
     setIsSaving(true);
   };
 
-  const setCompletedState = (type: GameMode) => {
-    setComplete({ ...complete, [type]: true });
+  const setCompletedState = (type: GameDataType) => {
+    setComplete({ ...complete, [lowerCaseFirstLetter(type)]: true });
     setIsSaving(true);
   };
 
