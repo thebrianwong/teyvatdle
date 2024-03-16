@@ -41,7 +41,7 @@ const TalentPage = ({
         dataLoaded={dailyTalentData ? true : false}
         solvedValue={dailyTalentSolved}
       />
-      {dailyTalentData ? (
+      {Object.keys(dailyTalentData).length ? (
         <GameArea
           gameType={GameDataType.Talent}
           selectType="character"

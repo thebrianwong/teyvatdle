@@ -41,7 +41,7 @@ const FoodPage = ({
         dataLoaded={dailyFoodData ? true : false}
         solvedValue={dailyFoodSolved}
       />
-      {dailyFoodData ? (
+      {Object.keys(dailyFoodData).length ? (
         <GameArea
           gameType={GameDataType.Food}
           selectType="food"

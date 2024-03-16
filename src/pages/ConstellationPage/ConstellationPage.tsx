@@ -43,7 +43,7 @@ const ConstellationPage = ({
         dataLoaded={dailyConstellationData ? true : false}
         solvedValue={dailyConstellationSolved}
       />
-      {dailyConstellationData ? (
+      {Object.keys(dailyConstellationData).length ? (
         <GameArea
           gameType={GameDataType.Constellation}
           selectType="character"

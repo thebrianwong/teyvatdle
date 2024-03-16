@@ -42,7 +42,7 @@ const HomePage = ({
         // dataLoaded={true}
         solvedValue={dailyCharacterSolved}
       />
-      {dailyCharacterData ? (
+      {Object.keys(dailyCharacterData).length ? (
         <GameArea
           gameType={GameDataType.Character}
           selectType="character"

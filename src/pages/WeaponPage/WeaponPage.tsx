@@ -41,7 +41,7 @@ const WeaponPage = ({
         dataLoaded={dailyWeaponData ? true : false}
         solvedValue={dailyWeaponSolved}
       />
-      {dailyWeaponData ? (
+      {Object.keys(dailyWeaponData).length ? (
         <GameArea
           gameType={GameDataType.Weapon}
           selectType="weapon"
