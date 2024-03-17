@@ -37,7 +37,7 @@ const TalentPage = ({
   return (
     <>
       <PageHeader
-        title="talent"
+        title={GameDataType.Talent}
         dataLoaded={dailyTalentData ? true : false}
         solvedValue={dailyTalentSolved}
       />

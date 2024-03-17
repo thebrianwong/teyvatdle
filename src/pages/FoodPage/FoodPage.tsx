@@ -37,7 +37,7 @@ const FoodPage = ({
   return (
     <>
       <PageHeader
-        title="food"
+        title={GameDataType.Food}
         dataLoaded={dailyFoodData ? true : false}
         solvedValue={dailyFoodSolved}
       />
