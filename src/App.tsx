@@ -26,16 +26,16 @@ import {
   updateTalentSolvedValue,
   updateWeaponSolvedValue,
 } from "./redux/dailyRecordSlice";
-import WebSocketData from "./types/data/webSocketData.type";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import GameMode from "./types/gameMode.type";
 import getNormalizeDate from "./utils/normalizeDates";
 import TableAPIData from "./types/data/tableAPIData.type";
 import "./styles/styles.scss";
-import { useQuery } from "@apollo/client";
+import { useQuery, useSubscription } from "@apollo/client";
 import { GET_TEYVATDLE_API_DATA } from "./graphql/queries/getTeyvatdleApiData";
-import { GameDataType } from "./__generated__/graphql";
+import { GameDataType, UpdatedSolvedValue } from "./__generated__/graphql";
 import lowerCaseFirstLetter from "./utils/lowerCaseFirstLetter";
+import { LISTEN_FOR_DAILY_RECORD_UPDATES } from "./graphql/subscriptions/listenForDailyRecordUpdates";
 
 function App() {
   const [webSocketConnection, setWebSocketConnection] = useState<WebSocket>();
@@ -68,6 +68,9 @@ function App() {
   });
   const [isSaving, setIsSaving] = useState(false);
   const teyvatdleApiDataQuery = useQuery(GET_TEYVATDLE_API_DATA);
+  const dailyRecordSubscription = useSubscription(
+    LISTEN_FOR_DAILY_RECORD_UPDATES
+  );
   const dispatch = useAppDispatch();
   const dailyRecordID = useAppSelector(selectDailyRecordID);
 
@@ -171,46 +174,36 @@ function App() {
   }, [teyvatdleApiDataQuery]);
 
   useEffect(() => {
-    const updateSolvedValue = (data: WebSocketData) => {
-      const newValue = data.newSolvedValue;
-      switch (data.type) {
-        case "character":
+    const updateSolvedValue = (updatedSolvedValue: UpdatedSolvedValue) => {
+      const gameType = updatedSolvedValue.type;
+      const newValue = updatedSolvedValue.newSolvedValue;
+      switch (gameType) {
+        case GameDataType.Character:
           dispatch(updateCharacterSolvedValue(newValue));
           break;
-        case "weapon":
+        case GameDataType.Weapon:
           dispatch(updateWeaponSolvedValue(newValue));
           break;
-        case "food":
+        case GameDataType.Food:
           dispatch(updateFoodSolvedValue(newValue));
           break;
-        case "talent":
+        case GameDataType.Talent:
           dispatch(updateTalentSolvedValue(newValue));
           break;
-        case "constellation":
+        case GameDataType.Constellation:
           dispatch(updateConstellationSolvedValue(newValue));
           break;
         default:
+          console.error(
+            "There was an error updating the daily record's solved values!"
+          );
           break;
       }
     };
-    const getWebSocketConnection = async () => {
-      try {
-        const ws = new WebSocket(`${process.env.REACT_APP_BACKEND_WEBSOCKET}/`);
-        setWebSocketConnection(ws);
-        ws.addEventListener("message", async (data) => {
-          const parsedData: WebSocketData = await JSON.parse(data.data);
-          updateSolvedValue(parsedData);
-        });
-      } catch (err) {
-        console.error(
-          "There was an error connecting to the servers. Refresh the page or try again later!"
-        );
-      }
-    };
-    if (process.env.NODE_ENV !== "test") {
-      getWebSocketConnection();
+    if (dailyRecordSubscription.data) {
+      updateSolvedValue(dailyRecordSubscription.data.dailyRecordUpdated);
     }
-  }, []);
+  }, [dailyRecordSubscription]);
 
   const updateGuesses = (
     newGuesses: TableAPIData[],
