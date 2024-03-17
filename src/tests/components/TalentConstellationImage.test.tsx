@@ -1,42 +1,54 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import TalentConstellationImage from "../../components/TalentConstellationImage/TalentConstellationImage";
-import TalentAPIData from "../../types/data/talentAPIData.type";
 import ConstellationAPIData from "../../types/data/constellationAPIData.type";
+import {
+  ConstellationData,
+  GameDataType,
+  TalentData,
+  TalentType,
+} from "../../__generated__/graphql";
 
-const talentData: TalentAPIData = {
-  talent_id: 1,
-  talent_name: "Eat",
-  talent_type: "Normal Attack",
-  talent_image_url: "dummy talent",
-  character_name: "Paimon",
-  character_image_url: "dummy",
+const talentData: TalentData = {
+  talentId: "1",
+  talentName: "Eat",
+  talentType: TalentType.NormalAttack,
+  talentImageUrl: "dummy talent",
+  characterName: "Paimon",
+  characterImageUrl: "dummy",
 };
 
-const constellationData: ConstellationAPIData = {
-  constellation_id: 1,
-  constellation_name: "Sleep",
-  constellation_level: 1,
-  constellation_image_url: "dummy constellation",
-  character_name: "Paimon",
-  character_image_url: "dummy",
+const constellationData: ConstellationData = {
+  constellationId: "1",
+  constellationName: "Sleep",
+  constellationLevel: 1,
+  constellationImageUrl: "dummy constellation",
+  characterName: "Paimon",
+  characterImageUrl: "dummy",
 };
 
 test("TalentConstellationImage renders", () => {
-  render(<TalentConstellationImage type="talent" data={talentData} />);
+  render(
+    <TalentConstellationImage type={GameDataType.Talent} data={talentData} />
+  );
   const component = screen.getByRole("img");
   expect(component).toBeInTheDocument();
 });
 
 describe("The src is pulled from data", () => {
   test("talent", () => {
-    render(<TalentConstellationImage type="talent" data={talentData} />);
+    render(
+      <TalentConstellationImage type={GameDataType.Talent} data={talentData} />
+    );
     const img = screen.getByRole("img");
     expect(img).toHaveAttribute("src", "dummy talent");
   });
   test("constellation", () => {
     render(
-      <TalentConstellationImage type="constellation" data={constellationData} />
+      <TalentConstellationImage
+        type={GameDataType.Constellation}
+        data={constellationData}
+      />
     );
     const img = screen.getByRole("img");
     expect(img).toHaveAttribute("src", "dummy constellation");
@@ -45,13 +57,18 @@ describe("The src is pulled from data", () => {
 
 describe("The alt text varies based on type", () => {
   test("talent", () => {
-    render(<TalentConstellationImage type="talent" data={talentData} />);
+    render(
+      <TalentConstellationImage type={GameDataType.Talent} data={talentData} />
+    );
     const img = screen.getByAltText("Daily talent.");
     expect(img).toBeInTheDocument();
   });
   test("constellation", () => {
     render(
-      <TalentConstellationImage type="constellation" data={constellationData} />
+      <TalentConstellationImage
+        type={GameDataType.Constellation}
+        data={constellationData}
+      />
     );
     const img = screen.getByAltText("Daily constellation.");
     expect(img).toBeInTheDocument();
