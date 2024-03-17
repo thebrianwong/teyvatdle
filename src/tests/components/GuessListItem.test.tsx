@@ -4,58 +4,70 @@ import GuessListItem from "../../components/GuessListItem/GuessListItem";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
 import TalentAPIData from "../../types/data/talentAPIData.type";
 import ConstellationAPIData from "../../types/data/constellationAPIData.type";
+import {
+  CharacterData,
+  ConstellationData,
+  Gender,
+  GenshinElement,
+  Height,
+  Region,
+  Stat,
+  TalentData,
+  TalentType,
+  WeaponType,
+} from "../../__generated__/graphql";
 
-const characterData: CharacterAPIData = {
-  character_id: 1,
-  character_name: "Paimon",
-  gender: "Female",
-  height: "Short",
+const characterData: CharacterData = {
+  characterId: "1",
+  characterName: "Paimon",
+  gender: Gender.Female,
+  height: Height.Short,
   rarity: 5,
-  region: "Mondstadt",
-  element: "Anemo",
-  weapon_type: "Catalyst",
-  ascension_stat: "ATK",
+  region: Region.Mondstadt,
+  element: GenshinElement.Anemo,
+  weaponType: WeaponType.Catalyst,
+  ascensionStat: Stat.Atk,
   birthday: null,
-  character_image_url: "dummy",
-  character_correct_image_url: "Correct!",
-  character_wrong_image_url: "Wrong...",
-  local_specialty: "dummy",
-  local_specialty_image_url: "dummy",
-  enhancement_material: "dummy",
-  enhancement_material_image_url: "dummy",
-  ascension_boss_material: "dummy",
-  ascension_boss_material_image_url: "dummy",
-  talent_boss_material: "dummy",
-  talent_boss_material_image_url: "dummy",
-  talent_book: ["dummy"],
-  talent_book_image_url: ["dummy"],
+  characterImageUrl: "dummy",
+  characterCorrectImageUrl: "Correct!",
+  characterWrongImageUrl: "Wrong...",
+  localSpecialty: "dummy",
+  localSpecialtyImageUrl: "dummy",
+  enhancementMaterial: "dummy",
+  enhancementMaterialImageUrl: "dummy",
+  ascensionBossMaterial: "dummy",
+  ascensionBossMaterialImageUrl: "dummy",
+  talentBossMaterial: "dummy",
+  talentBossMaterialImageUrl: "dummy",
+  talentBook: ["dummy"],
+  talentBookImageUrl: ["dummy"],
 };
 
-const correctTalentData: TalentAPIData = {
-  talent_id: 1,
-  talent_name: "Eat",
-  talent_type: "Normal Attack",
-  talent_image_url: "dummy",
-  character_name: "Paimon",
-  character_image_url: "dummy",
+const correctTalentData: TalentData = {
+  talentId: "1",
+  talentName: "Eat",
+  talentType: TalentType.NormalAttack,
+  talentImageUrl: "dummy",
+  characterName: "Paimon",
+  characterImageUrl: "dummy",
 };
 
-const wrongTalentData: TalentAPIData = {
-  talent_id: 1,
-  talent_name: "Scary Cubes",
-  talent_type: "Normal Attack",
-  talent_image_url: "dummy",
-  character_name: "Unknown God",
-  character_image_url: "dummy",
+const wrongTalentData: TalentData = {
+  talentId: "1",
+  talentName: "Scary Cubes",
+  talentType: TalentType.NormalAttack,
+  talentImageUrl: "dummy",
+  characterName: "Unknown God",
+  characterImageUrl: "dummy",
 };
 
-const constellationData: ConstellationAPIData = {
-  constellation_id: 1,
-  constellation_name: "Sleep",
-  constellation_level: 1,
-  constellation_image_url: "dummy",
-  character_name: "Paimon",
-  character_image_url: "dummy",
+const constellationData: ConstellationData = {
+  constellationId: "1",
+  constellationName: "Sleep",
+  constellationLevel: 1,
+  constellationImageUrl: "dummy",
+  characterName: "Paimon",
+  characterImageUrl: "dummy",
 };
 
 describe("GuessListItem renders", () => {
