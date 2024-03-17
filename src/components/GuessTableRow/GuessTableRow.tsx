@@ -80,7 +80,6 @@ const GuessTableRow = memo(
             rawCharacterData,
             answer
           ) as CharacterAnswerAccuracy;
-          console.log(rawCharacterData);
           const transformedCharacterData: CharacterTransformedData = {
             characterImage: {
               dataType: "mainImage",
