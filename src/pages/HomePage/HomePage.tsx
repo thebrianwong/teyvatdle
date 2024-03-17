@@ -39,7 +39,6 @@ const HomePage = ({
       <PageHeader
         title={GameDataType.Character}
         dataLoaded={dailyCharacterData ? true : false}
-        // dataLoaded={true}
         solvedValue={dailyCharacterSolved}
       />
       {Object.keys(dailyCharacterData).length ? (

@@ -77,13 +77,6 @@ const GuessTableHeader = memo(({ selectType }: GuessTableHeaderProps) => {
     default:
       break;
   }
-  // if (selectType === "character") {
-
-  // } else if (selectType === "weapon") {
-
-  // } else if (selectType === "food") {
-
-  // }
 
   return (
     <thead>
