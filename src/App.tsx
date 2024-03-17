@@ -1,6 +1,3 @@
-import CharacterAPIData from "./types/data/characterAPIData.type";
-import WeaponAPIData from "./types/data/weaponAPIData.type";
-import FoodAPIData from "./types/data/foodAPIData.type";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
@@ -33,7 +30,13 @@ import TableAPIData from "./types/data/tableAPIData.type";
 import "./styles/styles.scss";
 import { useQuery, useSubscription } from "@apollo/client";
 import { GET_TEYVATDLE_API_DATA } from "./graphql/queries/getTeyvatdleApiData";
-import { GameDataType, UpdatedSolvedValue } from "./__generated__/graphql";
+import {
+  CharacterData,
+  FoodData,
+  GameDataType,
+  UpdatedSolvedValue,
+  WeaponData,
+} from "./__generated__/graphql";
 import lowerCaseFirstLetter from "./utils/lowerCaseFirstLetter";
 import { LISTEN_FOR_DAILY_RECORD_UPDATES } from "./graphql/subscriptions/listenForDailyRecordUpdates";
 
@@ -54,11 +57,11 @@ function App() {
     constellation: false,
   });
   const [guesses, setGuesses] = useState<{
-    character: CharacterAPIData[];
-    weapon: WeaponAPIData[];
-    food: FoodAPIData[];
-    talent: CharacterAPIData[];
-    constellation: CharacterAPIData[];
+    character: CharacterData[];
+    weapon: WeaponData[];
+    food: FoodData[];
+    talent: CharacterData[];
+    constellation: CharacterData[];
   }>({
     character: [],
     weapon: [],
