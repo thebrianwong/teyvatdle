@@ -50,7 +50,7 @@ const PageHeader = memo(
           ) : (
             <LoadingSkeleton
               quantity={1}
-              width={"50%"}
+              width="50%"
               alignment="right"
               hasContainer={false}
             />
