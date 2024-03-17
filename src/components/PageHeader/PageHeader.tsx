@@ -4,6 +4,7 @@ import PageHeaderProps from "./type";
 import "./styles.scss";
 import AnimatedValue from "../AnimatedValue/AnimatedValue";
 import { KeyboardEvent, memo, useRef } from "react";
+import lowerCaseFirstLetter from "../../utils/lowerCaseFirstLetter";
 
 const PageHeader = memo(
   ({ title, dataLoaded, solvedValue }: PageHeaderProps) => {
@@ -38,13 +39,17 @@ const PageHeader = memo(
             solvedValue === 1 ? (
               <p>
                 <AnimatedValue value={solvedValue} direction="up" />
-                {` Traveler has guessed Paimon's ${title} today!`}
+                {` Traveler has guessed Paimon's ${lowerCaseFirstLetter(
+                  title
+                )} today!`}
               </p>
             ) : (
               <p>
                 <AnimatedValue value={solvedValue} direction="up" />
                 {`
-              Travelers have guessed Paimon's ${title} today!`}
+              Travelers have guessed Paimon's ${lowerCaseFirstLetter(
+                title
+              )} today!`}
               </p>
             )
           ) : (
