@@ -41,7 +41,6 @@ import lowerCaseFirstLetter from "./utils/lowerCaseFirstLetter";
 import { LISTEN_FOR_DAILY_RECORD_UPDATES } from "./graphql/subscriptions/listenForDailyRecordUpdates";
 
 function App() {
-  const [webSocketConnection, setWebSocketConnection] = useState<WebSocket>();
   const [numOfGuesses, setNumOfGuess] = useState({
     character: 0,
     weapon: 0,
