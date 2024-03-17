@@ -4,6 +4,7 @@ import determineCorrectness from "../GuessTableRow/determineCorrectness";
 import "./styles.scss";
 import TweetButton from "../TweetButton/TweetButton";
 import { GameDataType } from "../../__generated__/graphql";
+import lowerCaseFirstLetter from "../../utils/lowerCaseFirstLetter";
 
 const GuessSummary = ({
   gameType,
@@ -51,10 +52,14 @@ const GuessSummary = ({
     });
     if (guesses.length > 1) {
       guessStrings.push(
-        `You guessed today's ${gameType} in ${guesses.length} tries!`
+        `You guessed today's ${lowerCaseFirstLetter(gameType)} in ${
+          guesses.length
+        } tries!`
       );
     } else {
-      guessStrings.push(`You guessed today's ${gameType} in 1 try!`);
+      guessStrings.push(
+        `You guessed today's ${lowerCaseFirstLetter(gameType)} in 1 try!`
+      );
     }
     setEmojiGuesses(guessStrings);
   };
@@ -64,10 +69,14 @@ const GuessSummary = ({
     wrongCorrectBreakdown.push(`${guesses.length - 1}x 🟥 1x 🟩`);
     if (guesses.length > 1) {
       wrongCorrectBreakdown.push(
-        `You guessed today's ${gameType} in ${guesses.length} tries!`
+        `You guessed today's ${lowerCaseFirstLetter(gameType)} in ${
+          guesses.length
+        } tries!`
       );
     } else {
-      wrongCorrectBreakdown.push(`You guessed today's ${gameType} in 1 try!`);
+      wrongCorrectBreakdown.push(
+        `You guessed today's ${lowerCaseFirstLetter(gameType)} in 1 try!`
+      );
     }
     setEmojiGuesses(wrongCorrectBreakdown);
   };
