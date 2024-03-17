@@ -44,7 +44,7 @@ const WeaponPage = ({
       {Object.keys(dailyWeaponData).length ? (
         <GameArea
           gameType={GameDataType.Weapon}
-          selectType="weapon"
+          selectType={GameDataType.Weapon}
           gameData={weaponData}
           dailyEntity={dailyWeaponData!}
           dailyRecordID={dailyRecordID}

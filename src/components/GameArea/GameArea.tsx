@@ -18,6 +18,7 @@ import {
 } from "../../__generated__/graphql";
 import { useMutation } from "@apollo/client";
 import { UPDATE_DAILY_RECORD } from "../../graphql/mutations/updateDailyRecord";
+import lowerCaseFirstLetter from "../../utils/lowerCaseFirstLetter";
 
 const GameArea = ({
   gameType,
@@ -115,8 +116,10 @@ const GameArea = ({
     }
 
     if (
-      guess[`${selectType}Name` as keyof typeof guess] ===
-      dailyEntity![`${selectType}Name` as keyof typeof dailyEntity]
+      guess[`${lowerCaseFirstLetter(selectType)}Name` as keyof typeof guess] ===
+      dailyEntity![
+        `${lowerCaseFirstLetter(selectType)}Name` as keyof typeof dailyEntity
+      ]
     ) {
       setTimeout(() => {
         handleGameCompletion();

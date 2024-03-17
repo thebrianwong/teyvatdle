@@ -18,6 +18,7 @@ import {
   CharacterData,
   FoodData,
   FoodType,
+  GameDataType,
   Stat,
   WeaponData,
 } from "../../__generated__/graphql";
@@ -64,7 +65,7 @@ const GuessTableRow = memo(
 
     const transformData = (rawData: TableAPIData) => {
       switch (rowType) {
-        case "character":
+        case GameDataType.Character:
           const rawCharacterData = { ...rawData } as CharacterData;
           const {
             charNameAccuracy,
@@ -147,7 +148,7 @@ const GuessTableRow = memo(
           };
           setRowData(transformedCharacterData);
           break;
-        case "weapon":
+        case GameDataType.Weapon:
           const rawWeaponData = { ...rawData } as WeaponData;
           const {
             weapNameAccuracy,
@@ -206,7 +207,7 @@ const GuessTableRow = memo(
           };
           setRowData(transformedWeaponData);
           break;
-        case "food":
+        case GameDataType.Food:
           const rawFoodData = { ...rawData } as FoodData;
           const {
             foodNameAccuracy,

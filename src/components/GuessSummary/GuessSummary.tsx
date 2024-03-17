@@ -16,12 +16,18 @@ const GuessSummary = ({
 
   const chooseEmojiHeaders = () => {
     let headerStrings: string[];
-    if (selectType === "character") {
-      headerStrings = ["ㅤ♂️✨🔥📊🌸😈ㅤ", "🧑📏🌐⚔️💪👾📖🎂"];
-    } else if (selectType === "weapon") {
-      headerStrings = ["ㅤ✨📊😈ㅤ", "🗡️⚔️💪👾🎰"];
-    } else if (selectType === "food") {
-      headerStrings = ["ㅤ✨ㅤㅤㅤㅤㅤ", "🍽️🍴🎀🏪✍️🎊"];
+    switch (selectType) {
+      case GameDataType.Character:
+        headerStrings = ["ㅤ♂️✨🔥📊🌸😈ㅤ", "🧑📏🌐⚔️💪👾📖🎂"];
+        break;
+      case GameDataType.Weapon:
+        headerStrings = ["ㅤ✨📊😈ㅤ", "🗡️⚔️💪👾🎰"];
+        break;
+      case GameDataType.Food:
+        headerStrings = ["ㅤ✨ㅤㅤㅤㅤㅤ", "🍽️🍴🎀🏪✍️🎊"];
+        break;
+      default:
+        break;
     }
     setEmojiHeaders(headerStrings!);
   };

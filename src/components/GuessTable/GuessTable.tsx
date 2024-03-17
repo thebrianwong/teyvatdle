@@ -3,6 +3,7 @@ import GuessTableProps from "./type";
 import GuessTableHeader from "../GuessTableHeader/GuessTableHeader";
 import { useEffect, useRef, useState } from "react";
 import "./styles.scss";
+import lowerCaseFirstLetter from "../../utils/lowerCaseFirstLetter";
 
 const GuessTable = ({
   tableType,
@@ -34,7 +35,11 @@ const GuessTable = ({
             return (
               <GuessTableRow
                 key={`${tableType}-${
-                  guess[`${tableType}Name` as keyof typeof guess]
+                  guess[
+                    `${lowerCaseFirstLetter(
+                      tableType
+                    )}Name` as keyof typeof guess
+                  ]
                 }`}
                 rowType={tableType}
                 rowDataProp={guess}

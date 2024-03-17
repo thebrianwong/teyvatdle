@@ -44,7 +44,7 @@ const FoodPage = ({
       {Object.keys(dailyFoodData).length ? (
         <GameArea
           gameType={GameDataType.Food}
-          selectType="food"
+          selectType={GameDataType.Food}
           gameData={foodData}
           dailyEntity={dailyFoodData!}
           dailyRecordID={dailyRecordID}

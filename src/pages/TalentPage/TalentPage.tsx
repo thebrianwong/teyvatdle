@@ -44,7 +44,7 @@ const TalentPage = ({
       {Object.keys(dailyTalentData).length ? (
         <GameArea
           gameType={GameDataType.Talent}
-          selectType="character"
+          selectType={GameDataType.Character}
           gameData={characterData}
           dailyEntity={dailyTalentData!}
           dailyRecordID={dailyRecordID}

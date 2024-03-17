@@ -2,11 +2,12 @@ import { forwardRef } from "react";
 import SelectOptionsProps from "./type";
 import emptyListImage from "../../assets/misc/bongoHead.png";
 import "./styles.scss";
+import lowerCaseFirstLetter from "../../utils/lowerCaseFirstLetter";
 
 const SelectOptions = forwardRef<HTMLUListElement, SelectOptionsProps>(
   ({ dataList, dataType, filterValue, guesses, handleGuess }, ref) => {
-    const nameKey = `${dataType}Name`;
-    const imageUrlKey = `${dataType}ImageUrl`;
+    const nameKey = `${lowerCaseFirstLetter(dataType)}Name`;
+    const imageUrlKey = `${lowerCaseFirstLetter(dataType)}ImageUrl`;
 
     const guessesNames = guesses.map((guess) => {
       return guess[nameKey as keyof typeof guess]!.toString();

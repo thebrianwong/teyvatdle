@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import SelectSearchBarProps from "./type";
 import "./styles.scss";
+import { GameDataType } from "../../__generated__/graphql";
 
 const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
   (
@@ -16,11 +17,11 @@ const SelectSearchBar = forwardRef<HTMLInputElement, SelectSearchBarProps>(
   ) => {
     const determinePlaceholderValue = () => {
       switch (selectType) {
-        case "character":
+        case GameDataType.Character:
           return "Paimon...?";
-        case "weapon":
+        case GameDataType.Weapon:
           return "Debate Club...?";
-        case "food":
+        case GameDataType.Food:
           return "Sweet Madame...?";
         default:
           return "Paimon...?";

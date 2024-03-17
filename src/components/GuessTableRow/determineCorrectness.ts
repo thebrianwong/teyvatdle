@@ -1,6 +1,7 @@
 import {
   CharacterData,
   FoodData,
+  GameDataType,
   WeaponData,
 } from "../../__generated__/graphql";
 import CharacterAnswerAccuracy from "../../types/data/characterAnswerAccuracy.type";
@@ -16,7 +17,7 @@ const determineCorrectness = (
   answer: TableAPIData
 ) => {
   switch (rowType) {
-    case "character":
+    case GameDataType.Character:
       const charGuessData = { ...guessData } as CharacterData;
       const charAnswerData = { ...answer } as CharacterData;
       if (charGuessData.characterName === charAnswerData.characterName) {
@@ -152,7 +153,7 @@ const determineCorrectness = (
         charResults.birthdayAccuracy = "wrong";
       }
       return charResults;
-    case "weapon":
+    case GameDataType.Weapon:
       const weapGuessData = { ...guessData } as WeaponData;
       const weapAnswerData = { ...answer } as WeaponData;
       if (weapGuessData.weaponName === weapAnswerData.weaponName) {
@@ -225,7 +226,7 @@ const determineCorrectness = (
         weapResults.gachaAccuracy = "wrong";
       }
       return weapResults;
-    case "food":
+    case GameDataType.Food:
       const foodGuessData = { ...guessData } as FoodData;
       const foodAnswerData = { ...answer } as FoodData;
       if (foodGuessData.foodName === foodAnswerData.foodName) {

@@ -45,7 +45,7 @@ const HomePage = ({
       {Object.keys(dailyCharacterData).length ? (
         <GameArea
           gameType={GameDataType.Character}
-          selectType="character"
+          selectType={GameDataType.Character}
           gameData={characterData}
           dailyEntity={dailyCharacterData!}
           dailyRecordID={dailyRecordID}

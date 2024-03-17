@@ -46,7 +46,7 @@ const ConstellationPage = ({
       {Object.keys(dailyConstellationData).length ? (
         <GameArea
           gameType={GameDataType.Constellation}
-          selectType="character"
+          selectType={GameDataType.Character}
           gameData={characterData}
           dailyEntity={dailyConstellationData!}
           dailyRecordID={dailyRecordID}
