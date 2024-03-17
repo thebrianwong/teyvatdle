@@ -61,7 +61,7 @@ const ConstellationPage = ({
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
       <Credits />
-      <Tooltip type="constellation" />
+      <Tooltip type={GameDataType.Constellation} />
     </>
   );
 };

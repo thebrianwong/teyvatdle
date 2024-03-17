@@ -1,6 +1,7 @@
 import { memo, useEffect, useRef, useState } from "react";
 import "./styles.scss";
 import TooltipProps from "./type";
+import { GameDataType } from "../../__generated__/graphql";
 
 const Tooltip = memo(({ type }: TooltipProps) => {
   const [isDisplaying, setIsDisplaying] = useState(false);
@@ -43,29 +44,32 @@ const Tooltip = memo(({ type }: TooltipProps) => {
             <>
               <p>
                 <span className="tooltip-wrong">Red</span>:{" "}
-                {type === "talent" || type === "constellation"
+                {type === GameDataType.Talent ||
+                type === GameDataType.Constellation
                   ? "Wrong character."
                   : "Both answers are wrong."}
               </p>
-              {type === "character" && (
+              {type === GameDataType.Character && (
                 <p className="tooltip-birthday">
                   Birthday: Month and day are wrong.
                 </p>
               )}
-              {type !== "talent" && type !== "constellation" && (
-                <p>
-                  <span className="tooltip-partial">Yellow</span>: One answer is
-                  correct.
-                </p>
-              )}
-              {type === "character" && (
+              {type !== GameDataType.Talent &&
+                type !== GameDataType.Constellation && (
+                  <p>
+                    <span className="tooltip-partial">Yellow</span>: One answer
+                    is correct.
+                  </p>
+                )}
+              {type === GameDataType.Character && (
                 <p className="tooltip-birthday">
                   Birthday: Either month or day are correct.
                 </p>
               )}
               <p>
                 <span className="tooltip-correct">Green</span>:{" "}
-                {type === "talent" || type === "constellation"
+                {type === GameDataType.Talent ||
+                type === GameDataType.Constellation
                   ? "Correct character."
                   : "Both answers are correct."}
               </p>

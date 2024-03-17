@@ -60,7 +60,7 @@ const HomePage = ({
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
       <Credits />
-      <Tooltip type={"character"} />
+      <Tooltip type={GameDataType.Character} />
     </>
   );
 };

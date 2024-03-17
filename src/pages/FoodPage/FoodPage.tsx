@@ -59,7 +59,7 @@ const FoodPage = ({
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
       <Credits />
-      <Tooltip type={"food"} />
+      <Tooltip type={GameDataType.Food} />
     </>
   );
 };
