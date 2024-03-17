@@ -1,9 +1,6 @@
 import { memo, useEffect, useState } from "react";
 import GuessTableCell from "../GuessTableCell/GuessTableCell";
 import GuessTableRowProps from "./type";
-import CharacterAPIData from "../../types/data/characterAPIData.type";
-import WeaponAPIData from "../../types/data/weaponAPIData.type";
-import FoodAPIData from "../../types/data/foodAPIData.type";
 import CharacterTransformedData from "../../types/data/characterTransformedData.type";
 import WeaponTransformedData from "../../types/data/weaponTransformedData.type";
 import FoodTransformedData from "../../types/data/foodTransformedData.type";
