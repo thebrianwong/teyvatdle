@@ -4,148 +4,161 @@ import GuessSummary from "../../components/GuessSummary/GuessSummary";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
 import WeaponAPIData from "../../types/data/weaponAPIData.type";
 import FoodAPIData from "../../types/data/foodAPIData.type";
+import {
+  CharacterData,
+  FoodData,
+  FoodType,
+  GameDataType,
+  Gender,
+  GenshinElement,
+  Height,
+  Region,
+  Stat,
+  WeaponData,
+  WeaponType,
+} from "../../__generated__/graphql";
 
-const characterData: CharacterAPIData[] = [
+const characterData: CharacterData[] = [
   {
-    character_id: 1,
-    character_name: "Paimon",
-    gender: "Female",
-    height: "Short",
+    characterId: "1",
+    characterName: "Paimon",
+    gender: Gender.Female,
+    height: Height.Short,
     rarity: 5,
-    region: "Mondstadt",
-    element: "Anemo",
-    weapon_type: "Catalyst",
-    ascension_stat: "ATK",
+    region: Region.Mondstadt,
+    element: GenshinElement.Anemo,
+    weaponType: WeaponType.Catalyst,
+    ascensionStat: Stat.Atk,
     birthday: null,
-    character_image_url: "dummy",
-    character_correct_image_url: "Correct!",
-    character_wrong_image_url: "Wrong...",
-    local_specialty: "dummy",
-    local_specialty_image_url: "dummy",
-    enhancement_material: "dummy",
-    enhancement_material_image_url: "dummy",
-    ascension_boss_material: "dummy",
-    ascension_boss_material_image_url: "dummy",
-    talent_boss_material: "dummy",
-    talent_boss_material_image_url: "dummy",
-    talent_book: ["dummy"],
-    talent_book_image_url: ["dummy"],
+    characterImageUrl: "dummy",
+    characterCorrectImageUrl: "Correct!",
+    characterWrongImageUrl: "Wrong...",
+    localSpecialty: "dummy",
+    localSpecialtyImageUrl: "dummy",
+    enhancementMaterial: "dummy",
+    enhancementMaterialImageUrl: "dummy",
+    ascensionBossMaterial: "dummy",
+    ascensionBossMaterialImageUrl: "dummy",
+    talentBossMaterial: "dummy",
+    talentBossMaterialImageUrl: "dummy",
+    talentBook: ["dummy"],
+    talentBookImageUrl: ["dummy"],
   },
   {
-    character_id: 2,
-    character_name: "Lumine",
-    gender: "Female",
-    height: "Medium",
+    characterId: "2",
+    characterName: "Lumine",
+    gender: Gender.Female,
+    height: Height.Medium,
     rarity: 5,
-    region: "Mondstadt",
-    element: "Anemo",
-    weapon_type: "Catalyst",
-    ascension_stat: "ATK",
+    region: Region.Mondstadt,
+    element: GenshinElement.Anemo,
+    weaponType: WeaponType.Catalyst,
+    ascensionStat: Stat.Atk,
     birthday: null,
-    character_image_url: "dummy",
-    character_correct_image_url: "Correct!",
-    character_wrong_image_url: "Wrong...",
-    local_specialty: "dummy",
-    local_specialty_image_url: "dummy",
-    enhancement_material: "dummy",
-    enhancement_material_image_url: "dummy",
-    ascension_boss_material: "dummy",
-    ascension_boss_material_image_url: "dummy",
-    talent_boss_material: "dummy",
-    talent_boss_material_image_url: "dummy",
-    talent_book: ["dummy"],
-    talent_book_image_url: ["dummy"],
+    characterImageUrl: "dummy",
+    characterCorrectImageUrl: "Correct!",
+    characterWrongImageUrl: "Wrong...",
+    localSpecialty: "dummy",
+    localSpecialtyImageUrl: "dummy",
+    enhancementMaterial: "dummy",
+    enhancementMaterialImageUrl: "dummy",
+    ascensionBossMaterial: "dummy",
+    ascensionBossMaterialImageUrl: "dummy",
+    talentBossMaterial: "dummy",
+    talentBossMaterialImageUrl: "dummy",
+    talentBook: ["dummy"],
+    talentBookImageUrl: ["dummy"],
   },
   {
-    character_id: 3,
-    character_name: "Aether",
-    gender: "Male",
-    height: "Medium",
+    characterId: "3",
+    characterName: "Aether",
+    gender: Gender.Male,
+    height: Height.Medium,
     rarity: 5,
-    region: "Mondstadt",
-    element: "Anemo",
-    weapon_type: "Catalyst",
-    ascension_stat: "ATK",
+    region: Region.Mondstadt,
+    element: GenshinElement.Anemo,
+    weaponType: WeaponType.Catalyst,
+    ascensionStat: Stat.Atk,
     birthday: null,
-    character_image_url: "dummy",
-    character_correct_image_url: "Correct!",
-    character_wrong_image_url: "Wrong...",
-    local_specialty: "dummy",
-    local_specialty_image_url: "dummy",
-    enhancement_material: "dummy",
-    enhancement_material_image_url: "dummy",
-    ascension_boss_material: "dummy",
-    ascension_boss_material_image_url: "dummy",
-    talent_boss_material: "dummy",
-    talent_boss_material_image_url: "dummy",
-    talent_book: ["dummy"],
-    talent_book_image_url: ["dummy"],
+    characterImageUrl: "dummy",
+    characterCorrectImageUrl: "Correct!",
+    characterWrongImageUrl: "Wrong...",
+    localSpecialty: "dummy",
+    localSpecialtyImageUrl: "dummy",
+    enhancementMaterial: "dummy",
+    enhancementMaterialImageUrl: "dummy",
+    ascensionBossMaterial: "dummy",
+    ascensionBossMaterialImageUrl: "dummy",
+    talentBossMaterial: "dummy",
+    talentBossMaterialImageUrl: "dummy",
+    talentBook: ["dummy"],
+    talentBookImageUrl: ["dummy"],
   },
 ];
 
-const weaponData: WeaponAPIData[] = [
+const weaponData: WeaponData[] = [
   {
-    weapon_id: 1,
-    weapon_name: "Cubes",
+    weaponId: "1",
+    weaponName: "Cubes",
     rarity: 5,
-    weapon_type: "Catalyst",
-    sub_stat: "ATK",
-    weapon_image_url: "dummy",
-    weapon_domain_material: "dummy",
-    weapon_domain_material_image_url: "dummy",
-    elite_enemy_material: "dummy",
-    elite_enemy_material_image_url: "dummy",
-    common_enemy_material: "dummy",
-    common_enemy_material_image_url: "dummy",
+    weaponType: WeaponType.Catalyst,
+    subStat: Stat.Atk,
+    weaponImageUrl: "dummy",
+    weaponDomainMaterial: "dummy",
+    weaponDomainMaterialImageUrl: "dummy",
+    eliteEnemyMaterial: "dummy",
+    eliteEnemyMaterialImageUrl: "dummy",
+    commonEnemyMaterial: "dummy",
+    commonEnemyMaterialImageUrl: "dummy",
     gacha: true,
   },
   {
-    weapon_id: 2,
-    weapon_name: "Debate Club",
+    weaponId: "2",
+    weaponName: "Debate CLub",
     rarity: 3,
-    weapon_type: "Claymore",
-    sub_stat: "ATK",
-    weapon_image_url: "dummy",
-    weapon_domain_material: "dummy",
-    weapon_domain_material_image_url: "dummy",
-    elite_enemy_material: "dummy",
-    elite_enemy_material_image_url: "dummy",
-    common_enemy_material: "dummy",
-    common_enemy_material_image_url: "dummy",
+    weaponType: WeaponType.Claymore,
+    subStat: Stat.Atk,
+    weaponImageUrl: "dummy",
+    weaponDomainMaterial: "dummy",
+    weaponDomainMaterialImageUrl: "dummy",
+    eliteEnemyMaterial: "dummy",
+    eliteEnemyMaterialImageUrl: "dummy",
+    commonEnemyMaterial: "dummy",
+    commonEnemyMaterialImageUrl: "dummy",
     gacha: true,
   },
 ];
 
-const foodData: FoodAPIData[] = [
+const foodData: FoodData[] = [
   {
-    food_id: 1,
-    food_name: "Paimon (Emergency Food)",
+    foodId: "1",
+    foodName: "Paimon (Emergency Food)",
     rarity: 5,
-    food_type: "Adventurer's Dishes",
-    special_dish: false,
+    foodType: FoodType.AdventurersDishes,
+    specialDish: false,
     purchasable: false,
     recipe: false,
     event: true,
-    food_image_url: "dummy",
+    foodImageUrl: "dummy",
   },
   {
-    food_id: 1,
-    food_name: "One of Diona's Drinks",
+    foodId: "2",
+    foodName: "One of Diona's Drinks",
     rarity: 5,
-    food_type: "Adventurer's Dishes",
-    special_dish: false,
+    foodType: FoodType.AdventurersDishes,
+    specialDish: false,
     purchasable: false,
     recipe: false,
     event: true,
-    food_image_url: "dummy",
+    foodImageUrl: "dummy",
   },
 ];
 
 test("GuessesSummary renders", () => {
   render(
     <GuessSummary
-      gameType="character"
-      selectType="character"
+      gameType={GameDataType.Character}
+      selectType={GameDataType.Character}
       guesses={[]}
       answer={characterData[0]}
     />
@@ -158,8 +171,8 @@ describe("The corresponding header emojis are rendered based on selectType", () 
   test("character", () => {
     render(
       <GuessSummary
-        gameType="character"
-        selectType="character"
+        gameType={GameDataType.Character}
+        selectType={GameDataType.Character}
         guesses={[]}
         answer={characterData[0]}
       />
@@ -172,8 +185,8 @@ describe("The corresponding header emojis are rendered based on selectType", () 
   test("weapon", () => {
     render(
       <GuessSummary
-        gameType="weapon"
-        selectType="weapon"
+        gameType={GameDataType.Weapon}
+        selectType={GameDataType.Weapon}
         guesses={[]}
         answer={weaponData[0]}
       />
@@ -186,8 +199,8 @@ describe("The corresponding header emojis are rendered based on selectType", () 
   test("food", () => {
     render(
       <GuessSummary
-        gameType="food"
-        selectType="food"
+        gameType={GameDataType.Food}
+        selectType={GameDataType.Food}
         guesses={[]}
         answer={foodData[0]}
       />
@@ -203,8 +216,8 @@ describe("The number of squares is based on the gameType", () => {
   test("character", () => {
     render(
       <GuessSummary
-        gameType="character"
-        selectType="character"
+        gameType={GameDataType.Character}
+        selectType={GameDataType.Character}
         guesses={characterData}
         answer={characterData[0]}
       />
@@ -219,8 +232,8 @@ describe("The number of squares is based on the gameType", () => {
   test("weapon", () => {
     render(
       <GuessSummary
-        gameType="weapon"
-        selectType="weapon"
+        gameType={GameDataType.Weapon}
+        selectType={GameDataType.Weapon}
         guesses={weaponData}
         answer={weaponData[0]}
       />
@@ -233,8 +246,8 @@ describe("The number of squares is based on the gameType", () => {
   test("food", () => {
     render(
       <GuessSummary
-        gameType="food"
-        selectType="food"
+        gameType={GameDataType.Food}
+        selectType={GameDataType.Food}
         guesses={foodData}
         answer={foodData[0]}
       />
@@ -250,8 +263,8 @@ describe("The summary is different for talent and constellation", () => {
   test("talent", () => {
     render(
       <GuessSummary
-        gameType="talent"
-        selectType="character"
+        gameType={GameDataType.Talent}
+        selectType={GameDataType.Character}
         guesses={characterData}
         answer={characterData[0]}
       />
@@ -262,8 +275,8 @@ describe("The summary is different for talent and constellation", () => {
   test("constellation", () => {
     render(
       <GuessSummary
-        gameType="constellation"
-        selectType="character"
+        gameType={GameDataType.Constellation}
+        selectType={GameDataType.Character}
         guesses={characterData}
         answer={characterData[0]}
       />
@@ -277,8 +290,8 @@ describe("The total guesses...", () => {
   test("...is rendered correctly", () => {
     render(
       <GuessSummary
-        gameType="character"
-        selectType="character"
+        gameType={GameDataType.Character}
+        selectType={GameDataType.Character}
         guesses={characterData}
         answer={characterData[0]}
       />
@@ -291,8 +304,8 @@ describe("The total guesses...", () => {
   test("...is grammatically correct with just 1 guess", () => {
     render(
       <GuessSummary
-        gameType="character"
-        selectType="character"
+        gameType={GameDataType.Character}
+        selectType={GameDataType.Character}
         guesses={[characterData[0]]}
         answer={characterData[0]}
       />
