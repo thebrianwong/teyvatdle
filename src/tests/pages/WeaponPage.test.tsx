@@ -9,7 +9,7 @@ window.scrollTo = jest.fn();
 test("WeaponPage renders", async () => {
   renderWithProviders(
     <WeaponPage
-      dailyRecordID={0}
+      dailyRecordID="0"
       guessesCounter={0}
       complete={false}
       guesses={[]}
@@ -35,7 +35,7 @@ test("WeaponPage renders", async () => {
 test("Some PageHeader text and GameArea is only rendered if dailyWeaponData is loaded", async () => {
   renderWithProviders(
     <WeaponPage
-      dailyRecordID={0}
+      dailyRecordID="0"
       guessesCounter={0}
       complete={false}
       guesses={[]}

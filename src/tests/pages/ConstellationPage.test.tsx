@@ -9,7 +9,7 @@ window.scrollTo = jest.fn();
 test("HomePage renders", async () => {
   renderWithProviders(
     <ConstellationPage
-      dailyRecordID={0}
+      dailyRecordID="0"
       guessesCounter={0}
       complete={false}
       guesses={[]}
@@ -35,7 +35,7 @@ test("HomePage renders", async () => {
 test("Some PageHeader text and GameArea is only rendered if dailyConstellationData is loaded", async () => {
   renderWithProviders(
     <ConstellationPage
-      dailyRecordID={0}
+      dailyRecordID="0"
       guessesCounter={0}
       complete={false}
       guesses={[]}
