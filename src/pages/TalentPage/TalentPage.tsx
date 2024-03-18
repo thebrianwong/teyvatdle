@@ -38,7 +38,7 @@ const TalentPage = ({
     <>
       <PageHeader
         title={GameDataType.Talent}
-        dataLoaded={dailyTalentData ? true : false}
+        dataLoaded={Object.keys(dailyTalentData).length ? true : false}
         solvedValue={dailyTalentSolved}
       />
       {Object.keys(dailyTalentData).length ? (

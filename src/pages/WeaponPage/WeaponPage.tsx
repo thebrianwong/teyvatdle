@@ -38,7 +38,7 @@ const WeaponPage = ({
     <>
       <PageHeader
         title={GameDataType.Weapon}
-        dataLoaded={dailyWeaponData ? true : false}
+        dataLoaded={Object.keys(dailyWeaponData).length ? true : false}
         solvedValue={dailyWeaponSolved}
       />
       {Object.keys(dailyWeaponData).length ? (

@@ -40,7 +40,7 @@ const ConstellationPage = ({
     <>
       <PageHeader
         title={GameDataType.Constellation}
-        dataLoaded={dailyConstellationData ? true : false}
+        dataLoaded={Object.keys(dailyConstellationData).length ? true : false}
         solvedValue={dailyConstellationSolved}
       />
       {Object.keys(dailyConstellationData).length ? (
