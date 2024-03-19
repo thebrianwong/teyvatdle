@@ -10,6 +10,21 @@ import type { AppStore, RootState } from "../redux/store";
 // import userReducer from '../features/users/userSlice'
 import apiDataReducer from "../redux/apiDataSlice";
 import dailyRecordReducer from "../redux/dailyRecordSlice";
+import { ApolloProvider } from "@apollo/client";
+import { apolloClient } from "../graphql/apollo/apolloClient";
+import {
+  FoodType,
+  GameDataType,
+  Gender,
+  GenshinElement,
+  Height,
+  Region,
+  Stat,
+  TalentType,
+  WeaponType,
+} from "../__generated__/graphql";
+import { MockedProvider } from "@apollo/client/testing";
+import { UPDATE_DAILY_RECORD } from "../graphql/mutations/updateDailyRecord";
 
 // This type interface extends the default options for render from RTL, as well
 // as allows the user to specify other things such as initialState, store.
@@ -25,94 +40,156 @@ export function renderWithProviders(
       apiData: {
         characters: [
           {
-            character_id: 1,
-            character_name: "Paimon",
-            gender: "Female",
-            height: "Short",
+            characterId: "1",
+            characterName: "Paimon",
+            gender: Gender.Female,
+            height: Height.Short,
             rarity: 5,
-            region: "Mondstadt",
-            element: "Anemo",
-            weapon_type: "Catalyst",
-            ascension_stat: "ATK",
+            region: Region.Mondstadt,
+            element: GenshinElement.Anemo,
+            weaponType: WeaponType.Catalyst,
+            ascensionStat: Stat.Atk,
             birthday: null,
-            character_image_url: "dummy",
-            character_correct_image_url: "Correct!",
-            character_wrong_image_url: "Wrong...",
-            local_specialty: "dummy",
-            local_specialty_image_url: "dummy",
-            enhancement_material: "dummy",
-            enhancement_material_image_url: "dummy",
-            ascension_boss_material: "dummy",
-            ascension_boss_material_image_url: "dummy",
-            talent_boss_material: "dummy",
-            talent_boss_material_image_url: "dummy",
-            talent_book: ["dummy"],
-            talent_book_image_url: ["dummy"],
+            characterImageUrl: "dummy",
+            characterCorrectImageUrl: "Correct!",
+            characterWrongImageUrl: "Wrong...",
+            localSpecialty: "dummy",
+            localSpecialtyImageUrl: "dummy",
+            enhancementMaterial: "dummy",
+            enhancementMaterialImageUrl: "dummy",
+            ascensionBossMaterial: "dummy",
+            ascensionBossMaterialImageUrl: "dummy",
+            talentBossMaterial: "dummy",
+            talentBossMaterialImageUrl: "dummy",
+            talentBook: ["dummy"],
+            talentBookImageUrl: ["dummy"],
           },
         ],
         weapons: [
           {
-            weapon_id: 1,
-            weapon_name: "Cubes",
+            weaponId: "1",
+            weaponName: "Cubes",
             rarity: 5,
-            weapon_type: "Catalyst",
-            sub_stat: "ATK",
-            weapon_image_url: "dummy",
-            weapon_domain_material: "dummy",
-            weapon_domain_material_image_url: "dummy",
-            elite_enemy_material: "dummy",
-            elite_enemy_material_image_url: "dummy",
-            common_enemy_material: "dummy",
-            common_enemy_material_image_url: "dummy",
+            weaponType: WeaponType.Catalyst,
+            subStat: Stat.Atk,
+            weaponImageUrl: "dummy",
+            weaponDomainMaterial: "dummy",
+            weaponDomainMaterialImageUrl: "dummy",
+            eliteEnemyMaterial: "dummy",
+            eliteEnemyMaterialImageUrl: "dummy",
+            commonEnemyMaterial: "dummy",
+            commonEnemyMaterialImageUrl: "dummy",
             gacha: true,
           },
         ],
         foods: [
           {
-            food_id: 1,
-            food_name: "Paimon (Emergency Food)",
+            foodId: "1",
+            foodName: "Paimon (Emergency Food)",
             rarity: 5,
-            food_type: "Adventurer's Dishes",
-            special_dish: false,
+            foodType: FoodType.AdventurersDishes,
+            specialDish: false,
             purchasable: false,
             recipe: false,
             event: true,
-            food_image_url: "dummy",
+            foodImageUrl: "dummy",
           },
         ],
         talents: [
           {
-            talent_id: 1,
-            talent_name: "Eat",
-            talent_type: "Normal Attack",
-            talent_image_url: "dummy talent",
-            character_name: "Paimon",
-            character_image_url: "dummy",
+            talentId: "1",
+            talentName: "Eat",
+            talentType: TalentType.NormalAttack,
+            talentImageUrl: "dummy talent",
+            characterName: "Paimon",
+            characterImageUrl: "dummy",
           },
         ],
         constellations: [
           {
-            constellation_id: 1,
-            constellation_name: "Sleep",
-            constellation_level: 1,
-            constellation_image_url: "dummy constellation",
-            character_name: "Paimon",
-            character_image_url: "dummy",
+            constellationId: "1",
+            constellationName: "Sleep",
+            constellationLevel: 1,
+            constellationImageUrl: "dummy constellation",
+            characterName: "Paimon",
+            characterImageUrl: "dummy",
           },
         ],
       },
       dailyRecord: {
-        daily_record_id: 0,
-        character_id: 1,
-        character_solved: 0,
-        weapon_id: 1,
-        weapon_solved: 0,
-        talent_id: 1,
-        talent_solved: 0,
-        constellation_id: 1,
-        constellation_solved: 0,
-        food_id: 1,
-        food_solved: 0,
+        dailyRecordId: "1",
+        character: {
+          characterId: "1",
+          characterName: "Paimon",
+          gender: Gender.Female,
+          height: Height.Short,
+          rarity: 5,
+          region: Region.Mondstadt,
+          element: GenshinElement.Anemo,
+          weaponType: WeaponType.Catalyst,
+          ascensionStat: Stat.Atk,
+          birthday: null,
+          characterImageUrl: "dummy",
+          characterCorrectImageUrl: "Correct!",
+          characterWrongImageUrl: "Wrong...",
+          localSpecialty: "dummy",
+          localSpecialtyImageUrl: "dummy",
+          enhancementMaterial: "dummy",
+          enhancementMaterialImageUrl: "dummy",
+          ascensionBossMaterial: "dummy",
+          ascensionBossMaterialImageUrl: "dummy",
+          talentBossMaterial: "dummy",
+          talentBossMaterialImageUrl: "dummy",
+          talentBook: ["dummy"],
+          talentBookImageUrl: ["dummy"],
+        },
+        characterSolved: 0,
+        weapon: {
+          weaponId: "1",
+          weaponName: "Cubes",
+          rarity: 5,
+          weaponType: WeaponType.Catalyst,
+          subStat: Stat.Atk,
+          weaponImageUrl: "dummy",
+          weaponDomainMaterial: "dummy",
+          weaponDomainMaterialImageUrl: "dummy",
+          eliteEnemyMaterial: "dummy",
+          eliteEnemyMaterialImageUrl: "dummy",
+          commonEnemyMaterial: "dummy",
+          commonEnemyMaterialImageUrl: "dummy",
+          gacha: true,
+        },
+        weaponSolved: 0,
+        talent: {
+          talentId: "1",
+          talentName: "Eat",
+          talentType: TalentType.NormalAttack,
+          talentImageUrl: "dummy talent",
+          characterName: "Paimon",
+          characterImageUrl: "dummy",
+        },
+        talentSolved: 0,
+        constellation: {
+          constellationId: "1",
+          constellationName: "Sleep",
+          constellationLevel: 1,
+          constellationImageUrl: "dummy constellation",
+          characterName: "Paimon",
+          characterImageUrl: "dummy",
+        },
+        constellationSolved: 0,
+        food: {
+          foodId: "1",
+          foodName: "Paimon (Emergency Food)",
+          rarity: 5,
+          foodType: FoodType.AdventurersDishes,
+          specialDish: false,
+          purchasable: false,
+          recipe: false,
+          event: true,
+          foodImageUrl: "dummy",
+        },
+        foodSolved: 0,
       },
     },
     // Automatically create a store instance if no store was passed in
@@ -127,7 +204,28 @@ export function renderWithProviders(
   }: ExtendedRenderOptions = {}
 ) {
   function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
-    return <Provider store={store}>{children}</Provider>;
+    const mocks = [
+      {
+        request: {
+          query: UPDATE_DAILY_RECORD,
+          variables: {
+            id: "0",
+            type: GameDataType.Character,
+          },
+        },
+        result: {
+          data: {
+            updateDailyRecord: { updateDailyRecord: "mock" },
+          },
+        },
+      },
+    ];
+
+    return (
+      <Provider store={store}>
+        <MockedProvider mocks={mocks}>{children}</MockedProvider>
+      </Provider>
+    );
   }
 
   // Return an object with the store and all of RTL's query functions

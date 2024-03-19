@@ -1,5 +1,5 @@
 import React from "react";
-import { act, render, screen, waitFor } from "@testing-library/react";
+import { act, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import GameArea from "../../components/GameArea/GameArea";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
@@ -23,29 +23,11 @@ import {
   WeaponData,
   WeaponType,
 } from "../../__generated__/graphql";
-import { MockedProvider } from "@apollo/client/testing";
-import { UPDATE_DAILY_RECORD } from "../../graphql/mutations/updateDailyRecord";
+import { renderWithProviders } from "../test-utils";
 
 beforeAll(() => {
   jest.setTimeout(6000);
 });
-
-const mocks = [
-  {
-    request: {
-      query: UPDATE_DAILY_RECORD,
-      variables: {
-        id: "0",
-        type: GameDataType.Character,
-      },
-    },
-    result: {
-      data: {
-        updateDailyRecord: { updateDailyRecord: "mock" },
-      },
-    },
-  },
-];
 
 const characterData: CharacterData[] = [
   {
@@ -179,22 +161,20 @@ const constellationData: ConstellationData[] = [
 ];
 
 test("GameArea renders", () => {
-  render(
-    <MockedProvider>
-      <GameArea
-        gameType={GameDataType.Character}
-        selectType={GameDataType.Character}
-        gameData={characterData}
-        dailyEntity={characterData[0]}
-        dailyRecordID="0"
-        guessesCounter={0}
-        complete={false}
-        guesses={[]}
-        setGuessCounter={jest.fn()}
-        setCompletedState={jest.fn()}
-        updateGuesses={jest.fn()}
-      />
-    </MockedProvider>
+  renderWithProviders(
+    <GameArea
+      gameType={GameDataType.Character}
+      selectType={GameDataType.Character}
+      gameData={characterData}
+      dailyEntity={characterData[0]}
+      dailyRecordID="0"
+      guessesCounter={0}
+      complete={false}
+      guesses={[]}
+      setGuessCounter={jest.fn()}
+      setCompletedState={jest.fn()}
+      updateGuesses={jest.fn()}
+    />
   );
   const component = screen.getByText(/Total Guesses:/);
   expect(component).toBeInTheDocument();
@@ -203,22 +183,20 @@ test("GameArea renders", () => {
 test("Choosing a select option calls setGuessCounter and updateGuesses", () => {
   const setGuessCounterMock = jest.fn();
   const updateGuessesMock = jest.fn();
-  render(
-    <MockedProvider>
-      <GameArea
-        gameType={GameDataType.Character}
-        selectType={GameDataType.Character}
-        gameData={characterData}
-        dailyEntity={characterData[0]}
-        dailyRecordID="0"
-        guessesCounter={0}
-        complete={false}
-        guesses={[]}
-        setGuessCounter={setGuessCounterMock}
-        setCompletedState={jest.fn()}
-        updateGuesses={updateGuessesMock}
-      />
-    </MockedProvider>
+  renderWithProviders(
+    <GameArea
+      gameType={GameDataType.Character}
+      selectType={GameDataType.Character}
+      gameData={characterData}
+      dailyEntity={characterData[0]}
+      dailyRecordID="0"
+      guessesCounter={0}
+      complete={false}
+      guesses={[]}
+      setGuessCounter={setGuessCounterMock}
+      setCompletedState={jest.fn()}
+      updateGuesses={updateGuessesMock}
+    />
   );
   const search = screen.getByRole("searchbox");
   act(() => {
@@ -234,22 +212,20 @@ test("Choosing a select option calls setGuessCounter and updateGuesses", () => {
 
 test("Choosing the answer select option calls setCompletedState", async () => {
   const setCompletedStateMock = jest.fn();
-  render(
-    <MockedProvider mocks={mocks}>
-      <GameArea
-        gameType={GameDataType.Character}
-        selectType={GameDataType.Character}
-        gameData={characterData}
-        dailyEntity={characterData[0]}
-        dailyRecordID="0"
-        guessesCounter={0}
-        complete={false}
-        guesses={[]}
-        setGuessCounter={jest.fn()}
-        setCompletedState={setCompletedStateMock}
-        updateGuesses={jest.fn()}
-      />
-    </MockedProvider>
+  renderWithProviders(
+    <GameArea
+      gameType={GameDataType.Character}
+      selectType={GameDataType.Character}
+      gameData={characterData}
+      dailyEntity={characterData[0]}
+      dailyRecordID="0"
+      guessesCounter={0}
+      complete={false}
+      guesses={[]}
+      setGuessCounter={jest.fn()}
+      setCompletedState={setCompletedStateMock}
+      updateGuesses={jest.fn()}
+    />
   );
   const search = screen.getByRole("searchbox");
   act(() => {
@@ -268,22 +244,20 @@ test("Choosing the answer select option calls setCompletedState", async () => {
 }, 6000);
 
 test("The number of total guesses is determined by guessCounter", () => {
-  render(
-    <MockedProvider>
-      <GameArea
-        gameType={GameDataType.Character}
-        selectType={GameDataType.Character}
-        gameData={characterData}
-        dailyEntity={characterData[0]}
-        dailyRecordID="0"
-        guessesCounter={3}
-        complete={false}
-        guesses={[]}
-        setGuessCounter={jest.fn()}
-        setCompletedState={jest.fn()}
-        updateGuesses={jest.fn()}
-      />
-    </MockedProvider>
+  renderWithProviders(
+    <GameArea
+      gameType={GameDataType.Character}
+      selectType={GameDataType.Character}
+      gameData={characterData}
+      dailyEntity={characterData[0]}
+      dailyRecordID="0"
+      guessesCounter={3}
+      complete={false}
+      guesses={[]}
+      setGuessCounter={jest.fn()}
+      setCompletedState={jest.fn()}
+      updateGuesses={jest.fn()}
+    />
   );
   const guessesText = screen.getByText(/Total Guesses/);
   expect(guessesText).toHaveTextContent("Total Guesses: 3");
@@ -291,85 +265,77 @@ test("The number of total guesses is determined by guessCounter", () => {
 
 describe("The layout varies by gameType", () => {
   test("character", () => {
-    render(
-      <MockedProvider>
-        <GameArea
-          gameType={GameDataType.Character}
-          selectType={GameDataType.Character}
-          gameData={characterData}
-          dailyEntity={characterData[0]}
-          dailyRecordID="0"
-          guessesCounter={0}
-          complete={false}
-          guesses={[]}
-          setGuessCounter={jest.fn()}
-          setCompletedState={jest.fn()}
-          updateGuesses={jest.fn()}
-        />
-      </MockedProvider>
+    renderWithProviders(
+      <GameArea
+        gameType={GameDataType.Character}
+        selectType={GameDataType.Character}
+        gameData={characterData}
+        dailyEntity={characterData[0]}
+        dailyRecordID="0"
+        guessesCounter={0}
+        complete={false}
+        guesses={[]}
+        setGuessCounter={jest.fn()}
+        setCompletedState={jest.fn()}
+        updateGuesses={jest.fn()}
+      />
     );
     const table = screen.getByRole("table");
     expect(table).toBeInTheDocument();
   });
   test("weapon", () => {
-    render(
-      <MockedProvider>
-        <GameArea
-          gameType={GameDataType.Weapon}
-          selectType={GameDataType.Weapon}
-          gameData={weaponData}
-          dailyEntity={weaponData[0]}
-          dailyRecordID="0"
-          guessesCounter={0}
-          complete={false}
-          guesses={[]}
-          setGuessCounter={jest.fn()}
-          setCompletedState={jest.fn()}
-          updateGuesses={jest.fn()}
-        />
-      </MockedProvider>
+    renderWithProviders(
+      <GameArea
+        gameType={GameDataType.Weapon}
+        selectType={GameDataType.Weapon}
+        gameData={weaponData}
+        dailyEntity={weaponData[0]}
+        dailyRecordID="0"
+        guessesCounter={0}
+        complete={false}
+        guesses={[]}
+        setGuessCounter={jest.fn()}
+        setCompletedState={jest.fn()}
+        updateGuesses={jest.fn()}
+      />
     );
     const table = screen.getByRole("table");
     expect(table).toBeInTheDocument();
   });
   test("food", () => {
-    render(
-      <MockedProvider>
-        <GameArea
-          gameType={GameDataType.Food}
-          selectType={GameDataType.Food}
-          gameData={foodData}
-          dailyEntity={foodData[0]}
-          dailyRecordID="9"
-          guessesCounter={0}
-          complete={false}
-          guesses={[]}
-          setGuessCounter={jest.fn()}
-          setCompletedState={jest.fn()}
-          updateGuesses={jest.fn()}
-        />
-      </MockedProvider>
+    renderWithProviders(
+      <GameArea
+        gameType={GameDataType.Food}
+        selectType={GameDataType.Food}
+        gameData={foodData}
+        dailyEntity={foodData[0]}
+        dailyRecordID="9"
+        guessesCounter={0}
+        complete={false}
+        guesses={[]}
+        setGuessCounter={jest.fn()}
+        setCompletedState={jest.fn()}
+        updateGuesses={jest.fn()}
+      />
     );
     const table = screen.getByRole("table");
     expect(table).toBeInTheDocument();
   });
   test("talent", () => {
-    render(
-      <MockedProvider>
-        <GameArea
-          gameType={GameDataType.Talent}
-          selectType={GameDataType.Character}
-          gameData={characterData}
-          dailyEntity={talentData[0]}
-          dailyRecordID="0"
-          guessesCounter={0}
-          complete={false}
-          guesses={[]}
-          setGuessCounter={jest.fn()}
-          setCompletedState={jest.fn()}
-          updateGuesses={jest.fn()}
-        />
-      </MockedProvider>
+    renderWithProviders(
+      <GameArea
+        gameType={GameDataType.Talent}
+        selectType={GameDataType.Character}
+        gameData={characterData}
+        dailyEntity={talentData[0]}
+        dailyRecordID="0"
+        guessesCounter={0}
+        complete={false}
+        guesses={[]}
+        setGuessCounter={jest.fn()}
+        setCompletedState={jest.fn()}
+        updateGuesses={jest.fn()}
+      />
     );
     const talentImage = screen.getByAltText("Daily talent.");
     const guessList = screen.getByRole("list");
@@ -377,22 +343,20 @@ describe("The layout varies by gameType", () => {
     expect(guessList).toBeInTheDocument();
   });
   test("constellation", () => {
-    render(
-      <MockedProvider>
-        <GameArea
-          gameType={GameDataType.Constellation}
-          selectType={GameDataType.Character}
-          gameData={characterData}
-          dailyEntity={constellationData[0]}
-          dailyRecordID="0"
-          guessesCounter={0}
-          complete={false}
-          guesses={[]}
-          setGuessCounter={jest.fn()}
-          setCompletedState={jest.fn()}
-          updateGuesses={jest.fn()}
-        />
-      </MockedProvider>
+    renderWithProviders(
+      <GameArea
+        gameType={GameDataType.Constellation}
+        selectType={GameDataType.Character}
+        gameData={characterData}
+        dailyEntity={constellationData[0]}
+        dailyRecordID="0"
+        guessesCounter={0}
+        complete={false}
+        guesses={[]}
+        setGuessCounter={jest.fn()}
+        setCompletedState={jest.fn()}
+        updateGuesses={jest.fn()}
+      />
     );
     const constellationImage = screen.getByAltText("Daily constellation.");
     const guessList = screen.getByRole("list");
@@ -402,22 +366,20 @@ describe("The layout varies by gameType", () => {
 });
 
 test("GameComplete is rendered when complete is true", () => {
-  render(
-    <MockedProvider>
-      <GameArea
-        gameType={GameDataType.Character}
-        selectType={GameDataType.Character}
-        gameData={characterData}
-        dailyEntity={characterData[0]}
-        dailyRecordID="0"
-        guessesCounter={0}
-        complete={true}
-        guesses={[]}
-        setGuessCounter={jest.fn()}
-        setCompletedState={jest.fn()}
-        updateGuesses={jest.fn()}
-      />
-    </MockedProvider>
+  renderWithProviders(
+    <GameArea
+      gameType={GameDataType.Character}
+      selectType={GameDataType.Character}
+      gameData={characterData}
+      dailyEntity={characterData[0]}
+      dailyRecordID="0"
+      guessesCounter={0}
+      complete={true}
+      guesses={[]}
+      setGuessCounter={jest.fn()}
+      setCompletedState={jest.fn()}
+      updateGuesses={jest.fn()}
+    />
   );
   const completeHeader = screen.getByRole("heading", {
     name: "Nice Job, Traveler!",
@@ -427,22 +389,20 @@ test("GameComplete is rendered when complete is true", () => {
 
 describe("If complete is true and gameType is talent or constellation...", () => {
   test("...talent info is displayed", () => {
-    render(
-      <MockedProvider>
-        <GameArea
-          gameType={GameDataType.Talent}
-          selectType={GameDataType.Character}
-          gameData={characterData}
-          dailyEntity={talentData[0]}
-          dailyRecordID="0"
-          guessesCounter={0}
-          complete={true}
-          guesses={[]}
-          setGuessCounter={jest.fn()}
-          setCompletedState={jest.fn()}
-          updateGuesses={jest.fn()}
-        />
-      </MockedProvider>
+    renderWithProviders(
+      <GameArea
+        gameType={GameDataType.Talent}
+        selectType={GameDataType.Character}
+        gameData={characterData}
+        dailyEntity={talentData[0]}
+        dailyRecordID="0"
+        guessesCounter={0}
+        complete={true}
+        guesses={[]}
+        setGuessCounter={jest.fn()}
+        setCompletedState={jest.fn()}
+        updateGuesses={jest.fn()}
+      />
     );
     const talentInfo = screen.getByRole("heading", {
       name: "Paimon's Normal Attack Talent: Eat",
@@ -450,22 +410,20 @@ describe("If complete is true and gameType is talent or constellation...", () =>
     expect(talentInfo).toBeInTheDocument();
   });
   test("...constellation is displayed", () => {
-    render(
-      <MockedProvider>
-        <GameArea
-          gameType={GameDataType.Constellation}
-          selectType={GameDataType.Character}
-          gameData={characterData}
-          dailyEntity={constellationData[0]}
-          dailyRecordID="0"
-          guessesCounter={0}
-          complete={true}
-          guesses={[]}
-          setGuessCounter={jest.fn()}
-          setCompletedState={jest.fn()}
-          updateGuesses={jest.fn()}
-        />
-      </MockedProvider>
+    renderWithProviders(
+      <GameArea
+        gameType={GameDataType.Constellation}
+        selectType={GameDataType.Character}
+        gameData={characterData}
+        dailyEntity={constellationData[0]}
+        dailyRecordID="0"
+        guessesCounter={0}
+        complete={true}
+        guesses={[]}
+        setGuessCounter={jest.fn()}
+        setCompletedState={jest.fn()}
+        updateGuesses={jest.fn()}
+      />
     );
     const constellationInfo = screen.getByRole("heading", {
       name: "Paimon's Level 1 Constellation: Sleep",
