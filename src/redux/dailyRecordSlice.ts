@@ -20,10 +20,7 @@ export const dailyRecordSlice = createSlice({
   name: "dailyRecord",
   initialState,
   reducers: {
-    insertDailyRecordFromAPI: (
-      state,
-      action: PayloadAction<DailyRecordData>
-    ) => {
+    setDailyRecordData: (state, action: PayloadAction<DailyRecordData>) => {
       return action.payload;
     },
     updateCharacterSolvedValue: (state, action: PayloadAction<number>) => {
@@ -45,7 +42,7 @@ export const dailyRecordSlice = createSlice({
 });
 
 export const {
-  insertDailyRecordFromAPI,
+  setDailyRecordData,
   updateCharacterSolvedValue,
   updateWeaponSolvedValue,
   updateFoodSolvedValue,

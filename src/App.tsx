@@ -15,7 +15,7 @@ import {
   setWeaponData,
 } from "./redux/gameDataSlice";
 import {
-  insertDailyRecordFromAPI,
+  setDailyRecordData,
   selectDailyRecordID,
   updateCharacterSolvedValue,
   updateConstellationSolvedValue,
@@ -166,7 +166,7 @@ function App() {
         constellationData,
       } = teyvatdleApiDataQuery.data;
 
-      dispatch(insertDailyRecordFromAPI(dailyRecordData));
+      dispatch(setDailyRecordData(dailyRecordData));
       dispatch(setCharacterData(characterData));
       dispatch(setWeaponData(weaponData));
       dispatch(setFoodData(foodData));
