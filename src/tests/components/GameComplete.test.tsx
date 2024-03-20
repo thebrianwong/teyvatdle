@@ -2,38 +2,48 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import GameComplete from "../../components/GameComplete/GameComplete";
 import CharacterAPIData from "../../types/data/characterAPIData.type";
+import {
+  CharacterData,
+  GameDataType,
+  Gender,
+  GenshinElement,
+  Height,
+  Region,
+  Stat,
+  WeaponType,
+} from "../../__generated__/graphql";
 
-const characterData: CharacterAPIData = {
-  character_id: 1,
-  character_name: "Paimon",
-  gender: "Female",
-  height: "Short",
+const characterData: CharacterData = {
+  characterId: "1",
+  characterName: "Paimon",
+  gender: Gender.Female,
+  height: Height.Short,
   rarity: 5,
-  region: "Mondstadt",
-  element: "Anemo",
-  weapon_type: "Catalyst",
-  ascension_stat: "ATK",
+  region: Region.Mondstadt,
+  element: GenshinElement.Anemo,
+  weaponType: WeaponType.Catalyst,
+  ascensionStat: Stat.Atk,
   birthday: null,
-  character_image_url: "dummy",
-  character_correct_image_url: "Correct!",
-  character_wrong_image_url: "Wrong...",
-  local_specialty: "dummy",
-  local_specialty_image_url: "dummy",
-  enhancement_material: "dummy",
-  enhancement_material_image_url: "dummy",
-  ascension_boss_material: "dummy",
-  ascension_boss_material_image_url: "dummy",
-  talent_boss_material: "dummy",
-  talent_boss_material_image_url: "dummy",
-  talent_book: ["dummy"],
-  talent_book_image_url: ["dummy"],
+  characterImageUrl: "dummy",
+  characterCorrectImageUrl: "Correct!",
+  characterWrongImageUrl: "Wrong...",
+  localSpecialty: "dummy",
+  localSpecialtyImageUrl: "dummy",
+  enhancementMaterial: "dummy",
+  enhancementMaterialImageUrl: "dummy",
+  ascensionBossMaterial: "dummy",
+  ascensionBossMaterialImageUrl: "dummy",
+  talentBossMaterial: "dummy",
+  talentBossMaterialImageUrl: "dummy",
+  talentBook: ["dummy"],
+  talentBookImageUrl: ["dummy"],
 };
 
 test("GameComplete renders", () => {
   render(
     <GameComplete
-      gameType="character"
-      selectType="character"
+      gameType={GameDataType.Character}
+      selectType={GameDataType.Character}
       guesses={[]}
       answer={characterData}
     />
@@ -48,8 +58,8 @@ describe("GameComplete's subtext changes based on gameType", () => {
   test("With gameType as character", () => {
     render(
       <GameComplete
-        gameType="character"
-        selectType="character"
+        gameType={GameDataType.Character}
+        selectType={GameDataType.Character}
         guesses={[]}
         answer={characterData}
       />
@@ -63,8 +73,8 @@ describe("GameComplete's subtext changes based on gameType", () => {
   test("With gameType as talent", () => {
     render(
       <GameComplete
-        gameType="talent"
-        selectType="character"
+        gameType={GameDataType.Talent}
+        selectType={GameDataType.Character}
         guesses={[]}
         answer={characterData}
       />
