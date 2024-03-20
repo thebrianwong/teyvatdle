@@ -24,7 +24,6 @@ import {
   updateWeaponSolvedValue,
 } from "./redux/dailyRecordSlice";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import GameMode from "./types/gameMode.type";
 import getNormalizeDate from "./utils/normalizeDates";
 import TableAPIData from "./types/data/tableAPIData.type";
 import "./styles/styles.scss";
