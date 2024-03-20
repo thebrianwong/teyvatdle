@@ -57,11 +57,11 @@ export const {
   setConstellationData,
 } = apiDataSlice.actions;
 
-export const getCharacters = (state: RootState) => state.apiData.characters;
-export const getWeapons = (state: RootState) => state.apiData.weapons;
-export const getFoods = (state: RootState) => state.apiData.foods;
-export const getTalents = (state: RootState) => state.apiData.talents;
-export const getConstellations = (state: RootState) =>
+export const selectCharacters = (state: RootState) => state.apiData.characters;
+export const selectWeapons = (state: RootState) => state.apiData.weapons;
+export const selectFoods = (state: RootState) => state.apiData.foods;
+export const selectTalents = (state: RootState) => state.apiData.talents;
+export const selectConstellations = (state: RootState) =>
   state.apiData.constellations;
 
 export default apiDataSlice.reducer;

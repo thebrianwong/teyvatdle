@@ -1,6 +1,6 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
-import { getFoods } from "../../redux/gameDataSlice";
+import { selectFoods } from "../../redux/gameDataSlice";
 import {
   selectDailyFood,
   selectDailyFoodSolved,
@@ -22,7 +22,7 @@ const FoodPage = ({
   setCompletedState,
   updateGuesses,
 }: FoodPageProps) => {
-  const foodData = useAppSelector(getFoods);
+  const foodData = useAppSelector(selectFoods);
   const dailyFoodData = useAppSelector(selectDailyFood);
   const dailyFoodSolved = useAppSelector(selectDailyFoodSolved);
 
