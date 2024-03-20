@@ -6,7 +6,7 @@ import {
 } from "../../__generated__/graphql";
 import CharacterAnswerAccuracy from "../../types/data/characterAnswerAccuracy.type";
 import FoodAnswerAccuracy from "../../types/data/foodAnswerAccuracy.type";
-import TableAPIData from "../../types/data/tableAPIData.type";
+import TableAPIData from "../../types/tableAPIData.type";
 import WeaponAnswerAccuracy from "../../types/data/weaponAnswerAccuracy.type";
 import SelectType from "../../types/selectType.type";
 import compareArrays from "../../utils/compareArrays";

@@ -4,7 +4,7 @@ import GuessTableRowProps from "./type";
 import CharacterTransformedData from "../../types/data/characterTransformedData.type";
 import WeaponTransformedData from "../../types/data/weaponTransformedData.type";
 import FoodTransformedData from "../../types/data/foodTransformedData.type";
-import TableAPIData from "../../types/data/tableAPIData.type";
+import TableAPIData from "../../types/tableAPIData.type";
 import formatBirthday from "../../utils/formatBirthday";
 import checkForQuotes from "../../utils/checkForQuotes";
 import determineCorrectness from "./determineCorrectness";

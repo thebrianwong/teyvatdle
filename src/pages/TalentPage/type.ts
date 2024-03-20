@@ -1,5 +1,5 @@
 import { CharacterData, GameDataType } from "../../__generated__/graphql";
-import TableAPIData from "../../types/data/tableAPIData.type";
+import TableAPIData from "../../types/tableAPIData.type";
 
 type TalentPageProps = {
   dailyRecordID: string;

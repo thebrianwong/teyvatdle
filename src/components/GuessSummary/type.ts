@@ -1,5 +1,5 @@
 import { GameDataType } from "../../__generated__/graphql";
-import TableAPIData from "../../types/data/tableAPIData.type";
+import TableAPIData from "../../types/tableAPIData.type";
 import SelectType from "../../types/selectType.type";
 
 type GuessesSummaryProp = {

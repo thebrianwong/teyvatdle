@@ -25,7 +25,7 @@ import {
 } from "./redux/dailyRecordSlice";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import getNormalizeDate from "./utils/normalizeDates";
-import TableAPIData from "./types/data/tableAPIData.type";
+import TableAPIData from "./types/tableAPIData.type";
 import "./styles/styles.scss";
 import { useQuery, useSubscription } from "@apollo/client";
 import { GET_TEYVATDLE_API_DATA } from "./graphql/queries/getTeyvatdleApiData";

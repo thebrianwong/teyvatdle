@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import SelectMenuProps from "./type";
 import SelectSearchBar from "../SelectSearchBar/SelectSearchBar";
 import SelectOptions from "../SelectOptions/SelectOptions";
-import TableAPIData from "../../types/data/tableAPIData.type";
+import TableAPIData from "../../types/tableAPIData.type";
 
 const SelectMenu = ({
   selectType,

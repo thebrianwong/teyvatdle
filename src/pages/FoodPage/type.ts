@@ -1,5 +1,5 @@
 import { FoodData, GameDataType } from "../../__generated__/graphql";
-import TableAPIData from "../../types/data/tableAPIData.type";
+import TableAPIData from "../../types/tableAPIData.type";
 
 type FoodPageProps = {
   dailyRecordID: string;

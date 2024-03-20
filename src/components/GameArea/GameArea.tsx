@@ -1,10 +1,10 @@
 import GuessTable from "../GuessTable/GuessTable";
 import SelectMenu from "../SelectMenu/SelectMenu";
-import TableAPIData from "../../types/data/tableAPIData.type";
+import TableAPIData from "../../types/tableAPIData.type";
 import { useEffect, useRef, useState } from "react";
 import GameAreaProps from "./type";
 import GuessList from "../GuessList/GuessList";
-import ListAPIData from "../../types/data/listAPIData.type";
+import ListAPIData from "../../types/listAPIData.type";
 import TalentConstellationImage from "../TalentConstellationImage/TalentConstellationImage";
 import GameComplete from "../GameComplete/GameComplete";
 import "./styles.scss";

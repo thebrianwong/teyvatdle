@@ -1,5 +1,5 @@
 import { GameDataType } from "../../__generated__/graphql";
-import ListAPIData from "../../types/data/listAPIData.type";
+import ListAPIData from "../../types/listAPIData.type";
 
 type TalentConstellationImageProps = {
   type: GameDataType.Talent | GameDataType.Constellation;
