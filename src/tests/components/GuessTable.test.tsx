@@ -1,7 +1,6 @@
 import React from "react";
 import { render, screen, within } from "@testing-library/react";
 import GuessTable from "../../components/GuessTable/GuessTable";
-import CharacterAPIData from "../../types/data/characterAPIData.type";
 import {
   CharacterData,
   GameDataType,

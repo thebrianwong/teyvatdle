@@ -1,9 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import GuessSummary from "../../components/GuessSummary/GuessSummary";
-import CharacterAPIData from "../../types/data/characterAPIData.type";
-import WeaponAPIData from "../../types/data/weaponAPIData.type";
-import FoodAPIData from "../../types/data/foodAPIData.type";
 import {
   CharacterData,
   FoodData,

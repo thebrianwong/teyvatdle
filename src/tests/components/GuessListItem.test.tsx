@@ -1,9 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
 import GuessListItem from "../../components/GuessListItem/GuessListItem";
-import CharacterAPIData from "../../types/data/characterAPIData.type";
-import TalentAPIData from "../../types/data/talentAPIData.type";
-import ConstellationAPIData from "../../types/data/constellationAPIData.type";
 import {
   CharacterData,
   ConstellationData,

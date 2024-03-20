@@ -1,8 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import GuessList from "../../components/GuessList/GuessList";
-import TalentAPIData from "../../types/data/talentAPIData.type";
-import CharacterAPIData from "../../types/data/characterAPIData.type";
 import {
   CharacterData,
   Gender,

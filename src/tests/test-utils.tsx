@@ -10,8 +10,6 @@ import type { AppStore, RootState } from "../redux/store";
 // import userReducer from '../features/users/userSlice'
 import apiDataReducer from "../redux/apiDataSlice";
 import dailyRecordReducer from "../redux/dailyRecordSlice";
-import { ApolloProvider } from "@apollo/client";
-import { apolloClient } from "../graphql/apollo/apolloClient";
 import {
   FoodType,
   GameDataType,

@@ -1,7 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import TalentConstellationImage from "../../components/TalentConstellationImage/TalentConstellationImage";
-import ConstellationAPIData from "../../types/data/constellationAPIData.type";
 import {
   ConstellationData,
   GameDataType,
