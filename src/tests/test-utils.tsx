@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import type { AppStore, RootState } from "../redux/store";
 // As a basic setup, import your same slice reducers
 // import userReducer from '../features/users/userSlice'
-import apiDataReducer from "../redux/apiDataSlice";
+import apiDataReducer from "../redux/gameDataSlice";
 import dailyRecordReducer from "../redux/dailyRecordSlice";
 import {
   FoodType,

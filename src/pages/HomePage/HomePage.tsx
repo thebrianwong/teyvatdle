@@ -1,6 +1,6 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
-import { loadCharacters } from "../../redux/apiDataSlice";
+import { getCharacters } from "../../redux/gameDataSlice";
 import {
   selectDailyCharacter,
   selectDailyCharacterSolved,
@@ -22,7 +22,7 @@ const HomePage = ({
   setCompletedState,
   updateGuesses,
 }: HomePageProps) => {
-  const characterData = useAppSelector(loadCharacters);
+  const characterData = useAppSelector(getCharacters);
   const dailyCharacterData = useAppSelector(selectDailyCharacter);
   const dailyCharacterSolved = useAppSelector(selectDailyCharacterSolved);
 

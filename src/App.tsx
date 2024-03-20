@@ -8,12 +8,12 @@ import ConstellationPage from "./pages/ConstellationPage/ConstellationPage";
 import NavBar from "./components/NavBar/NavBar";
 import { useAppSelector, useAppDispatch } from "./redux/hooks";
 import {
-  insertCharacterAPIData,
-  insertConstellationAPIData,
-  insertFoodAPIData,
-  insertTalentAPIData,
-  insertWeaponAPIData,
-} from "./redux/apiDataSlice";
+  setCharacterData,
+  setConstellationData,
+  setFoodData,
+  setTalentData,
+  setWeaponData,
+} from "./redux/gameDataSlice";
 import {
   insertDailyRecordFromAPI,
   selectDailyRecordID,
@@ -167,11 +167,11 @@ function App() {
       } = teyvatdleApiDataQuery.data;
 
       dispatch(insertDailyRecordFromAPI(dailyRecordData));
-      dispatch(insertCharacterAPIData(characterData));
-      dispatch(insertWeaponAPIData(weaponData));
-      dispatch(insertFoodAPIData(foodData));
-      dispatch(insertTalentAPIData(talentData));
-      dispatch(insertConstellationAPIData(constellationData));
+      dispatch(setCharacterData(characterData));
+      dispatch(setWeaponData(weaponData));
+      dispatch(setFoodData(foodData));
+      dispatch(setTalentData(talentData));
+      dispatch(setConstellationData(constellationData));
     }
   }, [teyvatdleApiDataQuery]);
 

@@ -1,6 +1,6 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
-import { loadCharacters } from "../../redux/apiDataSlice";
+import { getCharacters } from "../../redux/gameDataSlice";
 import {
   selectDailyConstellation,
   selectDailyConstellationSolved,
@@ -22,7 +22,7 @@ const ConstellationPage = ({
   setCompletedState,
   updateGuesses,
 }: ConstellationPageProps) => {
-  const characterData = useAppSelector(loadCharacters);
+  const characterData = useAppSelector(getCharacters);
   const dailyConstellationData = useAppSelector(selectDailyConstellation);
   const dailyConstellationSolved = useAppSelector(
     selectDailyConstellationSolved

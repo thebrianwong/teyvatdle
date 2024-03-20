@@ -8,7 +8,7 @@ import {
   WeaponData,
 } from "../__generated__/graphql";
 
-type APIData = {
+type GameData = {
   characters: CharacterData[];
   weapons: WeaponData[];
   foods: FoodData[];
@@ -16,7 +16,7 @@ type APIData = {
   constellations: ConstellationData[];
 };
 
-const initialState: APIData = {
+const initialState: GameData = {
   characters: [],
   weapons: [],
   foods: [],
@@ -28,19 +28,19 @@ export const apiDataSlice = createSlice({
   name: "apiData",
   initialState,
   reducers: {
-    insertCharacterAPIData: (state, action: PayloadAction<CharacterData[]>) => {
+    setCharacterData: (state, action: PayloadAction<CharacterData[]>) => {
       state.characters = action.payload;
     },
-    insertWeaponAPIData: (state, action: PayloadAction<WeaponData[]>) => {
+    setWeaponData: (state, action: PayloadAction<WeaponData[]>) => {
       state.weapons = action.payload;
     },
-    insertFoodAPIData: (state, action: PayloadAction<FoodData[]>) => {
+    setFoodData: (state, action: PayloadAction<FoodData[]>) => {
       state.foods = action.payload;
     },
-    insertTalentAPIData: (state, action: PayloadAction<TalentData[]>) => {
+    setTalentData: (state, action: PayloadAction<TalentData[]>) => {
       state.talents = action.payload;
     },
-    insertConstellationAPIData: (
+    setConstellationData: (
       state,
       action: PayloadAction<ConstellationData[]>
     ) => {
@@ -50,18 +50,18 @@ export const apiDataSlice = createSlice({
 });
 
 export const {
-  insertCharacterAPIData,
-  insertWeaponAPIData,
-  insertFoodAPIData,
-  insertTalentAPIData,
-  insertConstellationAPIData,
+  setCharacterData,
+  setWeaponData,
+  setFoodData,
+  setTalentData,
+  setConstellationData,
 } = apiDataSlice.actions;
 
-export const loadCharacters = (state: RootState) => state.apiData.characters;
-export const loadWeapons = (state: RootState) => state.apiData.weapons;
-export const loadFoods = (state: RootState) => state.apiData.foods;
-export const loadTalents = (state: RootState) => state.apiData.talents;
-export const loadConstellations = (state: RootState) =>
+export const getCharacters = (state: RootState) => state.apiData.characters;
+export const getWeapons = (state: RootState) => state.apiData.weapons;
+export const getFoods = (state: RootState) => state.apiData.foods;
+export const getTalents = (state: RootState) => state.apiData.talents;
+export const getConstellations = (state: RootState) =>
   state.apiData.constellations;
 
 export default apiDataSlice.reducer;

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import apiDataReducer from "./apiDataSlice";
+import apiDataReducer from "./gameDataSlice";
 import dailyRecordReducer from "./dailyRecordSlice";
 
 export const store = configureStore({
