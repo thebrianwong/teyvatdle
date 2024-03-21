@@ -1,12 +1,12 @@
-import TableAPIData from "../../types/tableAPIData.type";
+import TableData from "../../types/tableData.type";
 import SelectType from "../../types/selectType.type";
 
 type SelectOptionsProps = {
-  dataList: TableAPIData[];
+  dataList: TableData[];
   dataType: SelectType;
   filterValue: string;
-  guesses: TableAPIData[];
-  handleGuess: (guess: TableAPIData) => void;
+  guesses: TableData[];
+  handleGuess: (guess: TableData) => void;
 };
 
 export default SelectOptionsProps;

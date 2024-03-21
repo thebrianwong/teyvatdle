@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import SelectMenuProps from "./type";
 import SelectSearchBar from "../SelectSearchBar/SelectSearchBar";
 import SelectOptions from "../SelectOptions/SelectOptions";
-import TableAPIData from "../../types/tableAPIData.type";
+import TableData from "../../types/tableData.type";
 
 const SelectMenu = ({
   selectType,
@@ -67,7 +67,7 @@ const SelectMenu = ({
           dataType={selectType}
           filterValue={searchValue}
           guesses={guesses}
-          handleGuess={(guess: TableAPIData) => {
+          handleGuess={(guess: TableData) => {
             handleGuess(guess);
             setShowResults(false);
             setSearchValue("");

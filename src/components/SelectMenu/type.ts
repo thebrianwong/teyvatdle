@@ -1,13 +1,13 @@
-import TableAPIData from "../../types/tableAPIData.type";
+import TableData from "../../types/tableData.type";
 import SelectType from "../../types/selectType.type";
 
 type SelectMenuProps = {
   selectType: SelectType;
-  data: TableAPIData[];
-  guesses: TableAPIData[];
+  data: TableData[];
+  guesses: TableData[];
   gameCompleted: boolean;
   allowInteraction: boolean;
-  handleGuess: (guess: TableAPIData) => void;
+  handleGuess: (guess: TableData) => void;
 };
 
 export default SelectMenuProps;

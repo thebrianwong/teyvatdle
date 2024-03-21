@@ -4,7 +4,7 @@ import GuessTableRowProps from "./type";
 import CharacterTransformedData from "../../types/tableCorrectness/characterTransformedData.type";
 import WeaponTransformedData from "../../types/tableCorrectness/weaponTransformedData.type";
 import FoodTransformedData from "../../types/tableCorrectness/foodTransformedData.type";
-import TableAPIData from "../../types/tableAPIData.type";
+import TableData from "../../types/tableData.type";
 import formatBirthday from "../../utils/formatBirthday";
 import checkForQuotes from "../../utils/checkForQuotes";
 import determineCorrectness from "./determineCorrectness";
@@ -60,7 +60,7 @@ const GuessTableRow = memo(
       [Stat.PyroDmgBonus]: "Pyro DMG Bonus",
     };
 
-    const transformData = (rawData: TableAPIData) => {
+    const transformData = (rawData: TableData) => {
       switch (rowType) {
         case GameDataType.Character:
           const rawCharacterData = { ...rawData } as CharacterData;

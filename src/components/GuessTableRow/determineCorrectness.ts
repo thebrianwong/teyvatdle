@@ -6,15 +6,15 @@ import {
 } from "../../__generated__/graphql";
 import CharacterAnswerAccuracy from "../../types/tableCorrectness/characterAnswerAccuracy.type";
 import FoodAnswerAccuracy from "../../types/tableCorrectness/foodAnswerAccuracy.type";
-import TableAPIData from "../../types/tableAPIData.type";
+import TableData from "../../types/tableData.type";
 import WeaponAnswerAccuracy from "../../types/tableCorrectness/weaponAnswerAccuracy.type";
 import SelectType from "../../types/selectType.type";
 import compareArrays from "../../utils/compareArrays";
 
 const determineCorrectness = (
   rowType: SelectType,
-  guessData: TableAPIData,
-  answer: TableAPIData
+  guessData: TableData,
+  answer: TableData
 ) => {
   switch (rowType) {
     case GameDataType.Character:

@@ -1,10 +1,10 @@
 import GuessTable from "../GuessTable/GuessTable";
 import SelectMenu from "../SelectMenu/SelectMenu";
-import TableAPIData from "../../types/tableAPIData.type";
+import TableData from "../../types/tableData.type";
 import { useEffect, useRef, useState } from "react";
 import GameAreaProps from "./type";
 import GuessList from "../GuessList/GuessList";
-import ListAPIData from "../../types/listAPIData.type";
+import ListData from "../../types/listData.type";
 import TalentConstellationImage from "../TalentConstellationImage/TalentConstellationImage";
 import GameComplete from "../GameComplete/GameComplete";
 import "./styles.scss";
@@ -86,7 +86,7 @@ const GameArea = ({
     }, 500);
   };
 
-  const handleGuess = (guess: TableAPIData) => {
+  const handleGuess = (guess: TableData) => {
     const newGuesses = [guess, ...guesses];
     updateGuesses(newGuesses, gameType);
     setGuessCounter(gameType, guessesCounter + 1);
@@ -168,18 +168,18 @@ const GameArea = ({
           )}
           <TalentConstellationImage
             type={gameType}
-            data={dailyEntity as ListAPIData}
+            data={dailyEntity as ListData}
           />
           <GuessList
             guesses={guesses as CharacterData[]}
-            answer={dailyEntity as ListAPIData}
+            answer={dailyEntity as ListData}
           />
           {complete && (
             <GameComplete
               gameType={gameType}
               selectType={selectType}
               guesses={guesses}
-              answer={dailyEntity as TableAPIData}
+              answer={dailyEntity as TableData}
               ref={completeRef}
             />
           )}
@@ -189,7 +189,7 @@ const GameArea = ({
           <GuessTable
             tableType={selectType}
             guessesProp={guesses}
-            answer={dailyEntity as TableAPIData}
+            answer={dailyEntity as TableData}
             complete={complete}
           />
           {complete && (
@@ -197,7 +197,7 @@ const GameArea = ({
               gameType={gameType}
               selectType={selectType}
               guesses={guesses}
-              answer={dailyEntity as TableAPIData}
+              answer={dailyEntity as TableData}
               ref={completeRef}
             />
           )}

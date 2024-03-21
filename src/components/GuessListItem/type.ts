@@ -1,9 +1,9 @@
 import { CharacterData } from "../../__generated__/graphql";
-import ListAPIData from "../../types/listAPIData.type";
+import ListData from "../../types/listData.type";
 
 type GuessListItemProps = {
   itemData: CharacterData;
-  answer: ListAPIData;
+  answer: ListData;
 };
 
 export default GuessListItemProps;

@@ -25,7 +25,7 @@ import {
 } from "./redux/dailyRecordSlice";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import getNormalizeDate from "./utils/normalizeDates";
-import TableAPIData from "./types/tableAPIData.type";
+import TableData from "./types/tableData.type";
 import "./styles/styles.scss";
 import { useQuery, useSubscription } from "@apollo/client";
 import { GET_TEYVATDLE_API_DATA } from "./graphql/queries/getTeyvatdleApiData";
@@ -206,10 +206,7 @@ function App() {
     }
   }, [dailyRecordSubscription]);
 
-  const updateGuesses = (
-    newGuesses: TableAPIData[],
-    gameType: GameDataType
-  ) => {
+  const updateGuesses = (newGuesses: TableData[], gameType: GameDataType) => {
     setGuesses({ ...guesses, [lowerCaseFirstLetter(gameType)]: newGuesses });
   };
 
