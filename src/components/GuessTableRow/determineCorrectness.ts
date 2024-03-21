@@ -4,10 +4,10 @@ import {
   GameDataType,
   WeaponData,
 } from "../../__generated__/graphql";
-import CharacterAnswerAccuracy from "../../types/data/characterAnswerAccuracy.type";
-import FoodAnswerAccuracy from "../../types/data/foodAnswerAccuracy.type";
+import CharacterAnswerAccuracy from "../../types/tableCorrectness/characterAnswerAccuracy.type";
+import FoodAnswerAccuracy from "../../types/tableCorrectness/foodAnswerAccuracy.type";
 import TableAPIData from "../../types/tableAPIData.type";
-import WeaponAnswerAccuracy from "../../types/data/weaponAnswerAccuracy.type";
+import WeaponAnswerAccuracy from "../../types/tableCorrectness/weaponAnswerAccuracy.type";
 import SelectType from "../../types/selectType.type";
 import compareArrays from "../../utils/compareArrays";
 

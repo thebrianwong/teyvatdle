@@ -1,16 +1,16 @@
 import { memo, useEffect, useState } from "react";
 import GuessTableCell from "../GuessTableCell/GuessTableCell";
 import GuessTableRowProps from "./type";
-import CharacterTransformedData from "../../types/data/characterTransformedData.type";
-import WeaponTransformedData from "../../types/data/weaponTransformedData.type";
-import FoodTransformedData from "../../types/data/foodTransformedData.type";
+import CharacterTransformedData from "../../types/tableCorrectness/characterTransformedData.type";
+import WeaponTransformedData from "../../types/tableCorrectness/weaponTransformedData.type";
+import FoodTransformedData from "../../types/tableCorrectness/foodTransformedData.type";
 import TableAPIData from "../../types/tableAPIData.type";
 import formatBirthday from "../../utils/formatBirthday";
 import checkForQuotes from "../../utils/checkForQuotes";
 import determineCorrectness from "./determineCorrectness";
-import CharacterAnswerAccuracy from "../../types/data/characterAnswerAccuracy.type";
-import WeaponAnswerAccuracy from "../../types/data/weaponAnswerAccuracy.type";
-import FoodAnswerAccuracy from "../../types/data/foodAnswerAccuracy.type";
+import CharacterAnswerAccuracy from "../../types/tableCorrectness/characterAnswerAccuracy.type";
+import WeaponAnswerAccuracy from "../../types/tableCorrectness/weaponAnswerAccuracy.type";
+import FoodAnswerAccuracy from "../../types/tableCorrectness/foodAnswerAccuracy.type";
 import {
   CharacterData,
   FoodData,

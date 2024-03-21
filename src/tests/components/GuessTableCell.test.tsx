@@ -8,7 +8,7 @@ import {
   TextDouble,
   TextImageCombo,
   TextSingle,
-} from "../../types/data/cellVariations.type";
+} from "../../types/tableCorrectness/cellVariations.type";
 
 const mainImageData: MainImage = {
   answerAccuracy: "correct",
