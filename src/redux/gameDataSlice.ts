@@ -37,15 +37,15 @@ export const apiDataSlice = createSlice({
     setFoodData: (state, action: PayloadAction<FoodData[]>) => {
       state.foods = action.payload;
     },
-    setTalentData: (state, action: PayloadAction<TalentData[]>) => {
-      state.talents = action.payload;
-    },
-    setConstellationData: (
-      state,
-      action: PayloadAction<ConstellationData[]>
-    ) => {
-      state.constellations = action.payload;
-    },
+    // setTalentData: (state, action: PayloadAction<TalentData[]>) => {
+    //   state.talents = action.payload;
+    // },
+    // setConstellationData: (
+    //   state,
+    //   action: PayloadAction<ConstellationData[]>
+    // ) => {
+    //   state.constellations = action.payload;
+    // },
   },
 });
 
@@ -53,15 +53,15 @@ export const {
   setCharacterData,
   setWeaponData,
   setFoodData,
-  setTalentData,
-  setConstellationData,
+  // setTalentData,
+  // setConstellationData,
 } = apiDataSlice.actions;
 
 export const selectCharacters = (state: RootState) => state.apiData.characters;
 export const selectWeapons = (state: RootState) => state.apiData.weapons;
 export const selectFoods = (state: RootState) => state.apiData.foods;
-export const selectTalents = (state: RootState) => state.apiData.talents;
-export const selectConstellations = (state: RootState) =>
-  state.apiData.constellations;
+// export const selectTalents = (state: RootState) => state.apiData.talents;
+// export const selectConstellations = (state: RootState) =>
+//   state.apiData.constellations;
 
 export default apiDataSlice.reducer;

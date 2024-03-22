@@ -9,9 +9,9 @@ import NavBar from "./components/NavBar/NavBar";
 import { useAppSelector, useAppDispatch } from "./redux/hooks";
 import {
   setCharacterData,
-  setConstellationData,
+  // setConstellationData,
   setFoodData,
-  setTalentData,
+  // setTalentData,
   setWeaponData,
 } from "./redux/gameDataSlice";
 import {
@@ -161,16 +161,16 @@ function App() {
         characterData,
         weaponData,
         foodData,
-        talentData,
-        constellationData,
+        // talentData,
+        // constellationData,
       } = teyvatdleApiDataQuery.data;
 
       dispatch(setDailyRecordData(dailyRecordData));
       dispatch(setCharacterData(characterData));
       dispatch(setWeaponData(weaponData));
       dispatch(setFoodData(foodData));
-      dispatch(setTalentData(talentData));
-      dispatch(setConstellationData(constellationData));
+      // dispatch(setTalentData(talentData));
+      // dispatch(setConstellationData(constellationData));
     }
   }, [teyvatdleApiDataQuery]);
 
