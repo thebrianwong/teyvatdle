@@ -55,7 +55,7 @@ export const GET_TEYVATDLE_API_DATA = gql(`
         talentType
         talentImageUrl
         characterName
-        characterImageUrl
+        # characterImageUrl
       }
       constellation {
         constellationId
@@ -63,7 +63,7 @@ export const GET_TEYVATDLE_API_DATA = gql(`
         constellationLevel
         constellationImageUrl
         characterName
-        characterImageUrl
+        # characterImageUrl
       }
       food {
         foodId
@@ -102,14 +102,14 @@ export const GET_TEYVATDLE_API_DATA = gql(`
       talentBook
       talentBookImageUrl
     }
-    constellationData {
-      constellationId
-      constellationName
-      constellationLevel
-      constellationImageUrl
-      characterName
-      characterImageUrl
-    }
+    # constellationData {
+    #   constellationId
+    #   constellationName
+    #   constellationLevel
+    #   constellationImageUrl
+    #   characterName
+    #   characterImageUrl
+    # }
     foodData {
       foodId
       foodName
@@ -121,14 +121,14 @@ export const GET_TEYVATDLE_API_DATA = gql(`
       event
       foodImageUrl
     }
-    talentData {
-      talentId
-      talentName
-      talentType
-      talentImageUrl
-      characterName
-      characterImageUrl
-    }
+    # talentData {
+    #   talentId
+    #   talentName
+    #   talentType
+    #   talentImageUrl
+    #   characterName
+    #   characterImageUrl
+    # }
     weaponData {
       weaponId
       weaponName
