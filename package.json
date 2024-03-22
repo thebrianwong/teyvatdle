@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm install --only=dev && npm run compile && react-scripts build",
     "test": "react-scripts test --detectOpenHandles",
     "coverage": "npm run test -- --coverage .",
     "compile": "graphql-codegen --require dotenv/config",
