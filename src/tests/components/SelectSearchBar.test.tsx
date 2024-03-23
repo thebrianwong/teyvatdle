@@ -2,13 +2,14 @@ import React from "react";
 import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import SelectSearchBar from "../../components/SelectSearchBar/SelectSearchBar";
+import { GameDataType } from "../../__generated__/graphql";
 
 test("SelectSearchBar renders", () => {
   render(
     <SelectSearchBar
       value=""
       gameCompleted={false}
-      selectType="character"
+      selectType={GameDataType.Character}
       allowInteraction={true}
       handleClick={jest.fn()}
       handleInput={jest.fn()}
@@ -24,7 +25,7 @@ test("Clicks are handled", () => {
     <SelectSearchBar
       value=""
       gameCompleted={false}
-      selectType="character"
+      selectType={GameDataType.Character}
       allowInteraction={true}
       handleClick={clickMock}
       handleInput={jest.fn()}
@@ -45,7 +46,7 @@ test("Keyboard input is handled", () => {
     <SelectSearchBar
       value=""
       gameCompleted={false}
-      selectType="character"
+      selectType={GameDataType.Character}
       allowInteraction={true}
       handleClick={jest.fn()}
       handleInput={keyboardMock}
@@ -64,7 +65,7 @@ test("The input's value is passed to it from its parent", () => {
     <SelectSearchBar
       value="Lumine"
       gameCompleted={false}
-      selectType="character"
+      selectType={GameDataType.Character}
       allowInteraction={true}
       handleClick={jest.fn()}
       handleInput={jest.fn()}
@@ -80,7 +81,7 @@ describe("Placeholder text varies based on selectType", () => {
       <SelectSearchBar
         value=""
         gameCompleted={false}
-        selectType="character"
+        selectType={GameDataType.Character}
         allowInteraction={true}
         handleClick={jest.fn()}
         handleInput={jest.fn()}
@@ -94,7 +95,7 @@ describe("Placeholder text varies based on selectType", () => {
       <SelectSearchBar
         value=""
         gameCompleted={false}
-        selectType="weapon"
+        selectType={GameDataType.Weapon}
         allowInteraction={true}
         handleClick={jest.fn()}
         handleInput={jest.fn()}
@@ -108,7 +109,7 @@ describe("Placeholder text varies based on selectType", () => {
       <SelectSearchBar
         value=""
         gameCompleted={false}
-        selectType="food"
+        selectType={GameDataType.Food}
         allowInteraction={true}
         handleClick={jest.fn()}
         handleInput={jest.fn()}
@@ -124,7 +125,7 @@ test("The input is disabled when the game is completed", () => {
     <SelectSearchBar
       value=""
       gameCompleted={true}
-      selectType="character"
+      selectType={GameDataType.Character}
       allowInteraction={true}
       handleClick={jest.fn()}
       handleInput={jest.fn()}
@@ -141,7 +142,7 @@ test("The input's click and keyboard handlers won't be called if the game is com
     <SelectSearchBar
       value=""
       gameCompleted={true}
-      selectType="character"
+      selectType={GameDataType.Character}
       allowInteraction={true}
       handleClick={clickMock}
       handleInput={keyboardMock}

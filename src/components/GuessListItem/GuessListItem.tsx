@@ -12,7 +12,7 @@ const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
   }, []);
 
   const chooseAppropriateClassName = () => {
-    if (itemData.character_name === answer.character_name) {
+    if (itemData.characterName === answer.characterName) {
       return "correct";
     } else {
       return "wrong";
@@ -20,15 +20,15 @@ const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
   };
 
   const chooseAppropriateImageURL = () => {
-    if (itemData.character_name === answer.character_name) {
-      return itemData.character_correct_image_url;
+    if (itemData.characterName === answer.characterName) {
+      return itemData.characterCorrectImageUrl!;
     } else {
-      return itemData.character_wrong_image_url;
+      return itemData.characterWrongImageUrl!;
     }
   };
 
   const chooseAppropriateAltText = () => {
-    if (itemData.character_name === answer.character_name) {
+    if (itemData.characterName === answer.characterName) {
       return "One of Paimon's Paintings indicating the correct answer.";
     } else {
       return "One of Paimon's Paintings indicating a wrong answer.";
@@ -46,7 +46,7 @@ const GuessListItem = memo(({ itemData, answer }: GuessListItemProps) => {
           alt={chooseAppropriateAltText()}
         />
       </div>
-      <p>{itemData.character_name}</p>
+      <p>{itemData.characterName}</p>
     </li>
   );
 });

@@ -8,7 +8,7 @@ import {
   TextDouble,
   TextImageCombo,
   TextSingle,
-} from "../../types/data/cellVariations.type";
+} from "../../types/tableCorrectness/cellVariations.type";
 
 const mainImageData: MainImage = {
   answerAccuracy: "correct",
@@ -36,6 +36,7 @@ const textImageComboData: TextImageCombo = {
   content1: "text image content 1",
   content2: "text image content 2",
   altText2: "content 2 alt text",
+  numOfImgs2: 1,
 };
 
 const imageDoubleStringData: ImageDouble = {
@@ -45,6 +46,8 @@ const imageDoubleStringData: ImageDouble = {
   altText1: "content 1 alt text",
   content2: "image double content 2 string",
   altText2: "content 2 alt text",
+  numOfImgs1: 1,
+  numOfImgs2: 1,
 };
 
 const imageDoubleArrayData: ImageDouble = {
@@ -54,6 +57,8 @@ const imageDoubleArrayData: ImageDouble = {
   altText1: ["alt text 1", "alt text 2"],
   content2: "image double content 2 string",
   altText2: "content 2 alt text",
+  numOfImgs1: 2,
+  numOfImgs2: 1,
 };
 
 const booleanSingleTrueData: BooleanSingle = {

@@ -1,10 +1,10 @@
-import TableAPIData from "../../types/data/tableAPIData.type";
+import TableData from "../../types/tableData.type";
 import SelectType from "../../types/selectType.type";
 
 type GuessTableRowProps = {
   rowType: SelectType;
-  rowDataProp: TableAPIData;
-  answer: TableAPIData;
+  rowDataProp: TableData;
+  answer: TableData;
   complete: boolean;
   playAnimations: boolean;
 };

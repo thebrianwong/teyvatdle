@@ -4,11 +4,10 @@ import PageHeaderProps from "./type";
 import "./styles.scss";
 import AnimatedValue from "../AnimatedValue/AnimatedValue";
 import { KeyboardEvent, memo, useRef } from "react";
+import lowerCaseFirstLetter from "../../utils/lowerCaseFirstLetter";
 
 const PageHeader = memo(
   ({ title, dataLoaded, solvedValue }: PageHeaderProps) => {
-    const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
-
     const paimonRef = useRef<HTMLImageElement>(null);
 
     return (
@@ -35,24 +34,28 @@ const PageHeader = memo(
           }}
         />
         <div className="header-content-container">
-          <h1>Which {capitalizedTitle} is Paimon Thinking of...?</h1>
+          <h1>Which {title} is Paimon Thinking of...?</h1>
           {dataLoaded ? (
             solvedValue === 1 ? (
               <p>
                 <AnimatedValue value={solvedValue} direction="up" />
-                {` Traveler has guessed Paimon's ${title} today!`}
+                {` Traveler has guessed Paimon's ${lowerCaseFirstLetter(
+                  title
+                )} today!`}
               </p>
             ) : (
               <p>
                 <AnimatedValue value={solvedValue} direction="up" />
                 {`
-              Travelers have guessed Paimon's ${title} today!`}
+              Travelers have guessed Paimon's ${lowerCaseFirstLetter(
+                title
+              )} today!`}
               </p>
             )
           ) : (
             <LoadingSkeleton
               quantity={1}
-              width={"50%"}
+              width="50%"
               alignment="right"
               hasContainer={false}
             />

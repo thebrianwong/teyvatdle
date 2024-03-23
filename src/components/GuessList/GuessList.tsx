@@ -8,7 +8,7 @@ const GuessList = ({ guesses, answer }: GuessListProps) => {
       {guesses.map((guess) => {
         return (
           <GuessListItem
-            key={guess.character_name}
+            key={guess.characterName}
             itemData={guess}
             answer={answer}
           />

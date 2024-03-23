@@ -1,20 +1,20 @@
-import ListAPIData from "../../types/data/listAPIData.type";
-import TableAPIData from "../../types/data/tableAPIData.type";
-import GameMode from "../../types/gameMode.type";
+import { GameDataType } from "../../__generated__/graphql";
+import ListData from "../../types/listData.type";
+import TableData from "../../types/tableData.type";
 import SelectType from "../../types/selectType.type";
 
 type GameAreaProps = {
-  gameType: GameMode;
+  gameType: GameDataType;
   selectType: SelectType;
-  data: TableAPIData[];
-  dailyEntity: TableAPIData | ListAPIData;
-  dailyRecordID: number;
+  gameData: TableData[];
+  dailyEntity: TableData | ListData;
+  dailyRecordID: string;
   guessesCounter: number;
   complete: boolean;
-  guesses: TableAPIData[];
-  setGuessCounter: (type: GameMode, newValue: number) => void;
-  setCompletedState: (type: GameMode) => void;
-  updateGuesses: (newGuesses: TableAPIData[], gameType: GameMode) => void;
+  guesses: TableData[];
+  setGuessCounter: (type: GameDataType, newValue: number) => void;
+  setCompletedState: (type: GameDataType) => void;
+  updateGuesses: (newGuesses: TableData[], gameType: GameDataType) => void;
 };
 
 export default GameAreaProps;

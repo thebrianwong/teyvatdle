@@ -1,11 +1,8 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
+import { selectCharacters } from "../../redux/gameDataSlice";
 import {
-  loadCharacters,
-  loadDailyConstellation,
-} from "../../redux/apiDataSlice";
-import {
-  selectDailyConstellationID,
+  selectDailyConstellation,
   selectDailyConstellationSolved,
 } from "../../redux/dailyRecordSlice";
 import ConstellationPageProps from "./type";
@@ -14,6 +11,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import Credits from "../../components/Credits/Credits";
 import { useEffect } from "react";
+import { GameDataType } from "../../__generated__/graphql";
 
 const ConstellationPage = ({
   dailyRecordID,
@@ -24,11 +22,8 @@ const ConstellationPage = ({
   setCompletedState,
   updateGuesses,
 }: ConstellationPageProps) => {
-  const characterData = useAppSelector(loadCharacters);
-  const dailyConstellationID = useAppSelector(selectDailyConstellationID);
-  const dailyConstellationData = useAppSelector((state) =>
-    loadDailyConstellation(state, dailyConstellationID)
-  );
+  const characterData = useAppSelector(selectCharacters);
+  const dailyConstellationData = useAppSelector(selectDailyConstellation);
   const dailyConstellationSolved = useAppSelector(
     selectDailyConstellationSolved
   );
@@ -44,15 +39,15 @@ const ConstellationPage = ({
   return (
     <>
       <PageHeader
-        title="constellation"
-        dataLoaded={dailyConstellationData ? true : false}
+        title={GameDataType.Constellation}
+        dataLoaded={Object.keys(dailyConstellationData).length ? true : false}
         solvedValue={dailyConstellationSolved}
       />
-      {dailyConstellationData ? (
+      {Object.keys(dailyConstellationData).length ? (
         <GameArea
-          gameType="constellation"
-          selectType="character"
-          data={characterData}
+          gameType={GameDataType.Constellation}
+          selectType={GameDataType.Character}
+          gameData={characterData}
           dailyEntity={dailyConstellationData!}
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}
@@ -66,7 +61,7 @@ const ConstellationPage = ({
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
       <Credits />
-      <Tooltip type="constellation" />
+      <Tooltip type={GameDataType.Constellation} />
     </>
   );
 };

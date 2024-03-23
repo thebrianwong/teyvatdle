@@ -1,111 +1,121 @@
-import CharacterAPIData from "../../types/data/characterAPIData.type";
-import WeaponAPIData from "../../types/data/weaponAPIData.type";
-import FoodAPIData from "../../types/data/foodAPIData.type";
-import TalentAPIData from "../../types/data/talentAPIData.type";
-import ConstellationAPIData from "../../types/data/constellationAPIData.type";
-import DailyRecordAPIData from "../../types/data/dailyRecordAPIData.type";
+import {
+  CharacterData,
+  ConstellationData,
+  DailyRecordData,
+  FoodData,
+  FoodType,
+  Gender,
+  GenshinElement,
+  Height,
+  Region,
+  Stat,
+  TalentData,
+  TalentType,
+  WeaponData,
+  WeaponType,
+} from "../../__generated__/graphql";
 
 const invalidDailyIdState: {
   apiData: {
-    characters: CharacterAPIData[];
-    weapons: WeaponAPIData[];
-    foods: FoodAPIData[];
-    talents: TalentAPIData[];
-    constellations: ConstellationAPIData[];
+    characters: CharacterData[];
+    weapons: WeaponData[];
+    foods: FoodData[];
+    talents: TalentData[];
+    constellations: ConstellationData[];
   };
-  dailyRecord: DailyRecordAPIData;
+  dailyRecord: DailyRecordData;
 } = {
   apiData: {
     characters: [
       {
-        character_id: 1,
-        character_name: "Paimon",
-        gender: "Female",
-        height: "Short",
+        characterId: "1",
+        characterName: "Paimon",
+        gender: Gender.Female,
+        height: Height.Short,
         rarity: 5,
-        region: "Mondstadt",
-        element: "Anemo",
-        weapon_type: "Catalyst",
-        ascension_stat: "ATK",
+        region: Region.Mondstadt,
+        element: GenshinElement.Anemo,
+        weaponType: WeaponType.Catalyst,
+        ascensionStat: Stat.Atk,
         birthday: null,
-        character_image_url: "dummy",
-        character_correct_image_url: "Correct!",
-        character_wrong_image_url: "Wrong...",
-        local_specialty: "dummy",
-        local_specialty_image_url: "dummy",
-        enhancement_material: "dummy",
-        enhancement_material_image_url: "dummy",
-        ascension_boss_material: "dummy",
-        ascension_boss_material_image_url: "dummy",
-        talent_boss_material: "dummy",
-        talent_boss_material_image_url: "dummy",
-        talent_book: ["dummy"],
-        talent_book_image_url: ["dummy"],
+        characterImageUrl: "dummy",
+        characterCorrectImageUrl: "Correct!",
+        characterWrongImageUrl: "Wrong...",
+        localSpecialty: "dummy",
+        localSpecialtyImageUrl: "dummy",
+        enhancementMaterial: "dummy",
+        enhancementMaterialImageUrl: "dummy",
+        ascensionBossMaterial: "dummy",
+        ascensionBossMaterialImageUrl: "dummy",
+        talentBossMaterial: "dummy",
+        talentBossMaterialImageUrl: "dummy",
+        talentBook: ["dummy"],
+        talentBookImageUrl: ["dummy"],
       },
     ],
     weapons: [
       {
-        weapon_id: 1,
-        weapon_name: "Cubes",
+        weaponId: "1",
+        weaponName: "Cubes",
         rarity: 5,
-        weapon_type: "Catalyst",
-        sub_stat: "ATK",
-        weapon_image_url: "dummy",
-        weapon_domain_material: "dummy",
-        weapon_domain_material_image_url: "dummy",
-        elite_enemy_material: "dummy",
-        elite_enemy_material_image_url: "dummy",
-        common_enemy_material: "dummy",
-        common_enemy_material_image_url: "dummy",
+        weaponType: WeaponType.Catalyst,
+        subStat: Stat.Atk,
+        weaponImageUrl: "dummy",
+        weaponDomainMaterial: "dummy",
+        weaponDomainMaterialImageUrl: "dummy",
+        eliteEnemyMaterial: "dummy",
+        eliteEnemyMaterialImageUrl: "dummy",
+        commonEnemyMaterial: "dummy",
+        commonEnemyMaterialImageUrl: "dummy",
         gacha: true,
       },
     ],
     foods: [
       {
-        food_id: 1,
-        food_name: "Paimon (Emergency Food)",
+        foodId: "1",
+        foodName: "Paimon (Emergency Food)",
         rarity: 5,
-        food_type: "Adventurer's Dishes",
-        special_dish: false,
+        foodType: FoodType.AdventurersDishes,
+        specialDish: false,
         purchasable: false,
         recipe: false,
         event: true,
-        food_image_url: "dummy",
+        foodImageUrl: "dummy",
       },
     ],
     talents: [
       {
-        talent_id: 1,
-        talent_name: "Eat",
-        talent_type: "Normal Attack",
-        talent_image_url: "dummy talent",
-        character_name: "Paimon",
-        character_image_url: "dummy",
+        talentId: "1",
+        talentName: "Eat",
+        talentType: TalentType.NormalAttack,
+        talentImageUrl: "dummy talent",
+        characterName: "Paimon",
+        characterImageUrl: "dummy",
       },
     ],
     constellations: [
       {
-        constellation_id: 1,
-        constellation_name: "Sleep",
-        constellation_level: 1,
-        constellation_image_url: "dummy constellation",
-        character_name: "Paimon",
-        character_image_url: "dummy",
+        constellationId: "1",
+        constellationName: "Sleep",
+        constellationLevel: 1,
+        constellationImageUrl: "dummy constellation",
+        characterName: "Paimon",
+        characterImageUrl: "dummy",
       },
     ],
   },
   dailyRecord: {
-    daily_record_id: 0,
-    character_id: 10,
-    character_solved: 0,
-    weapon_id: 10,
-    weapon_solved: 0,
-    talent_id: 10,
-    talent_solved: 0,
-    constellation_id: 10,
-    constellation_solved: 0,
-    food_id: 10,
-    food_solved: 0,
+    dailyRecordId: "1",
+    character: {},
+    characterSolved: 0,
+    weapon: {},
+    weaponSolved: 0,
+    talent: {},
+    talentSolved: 0,
+    constellation: {},
+    constellationSolved: 0,
+    food: {},
+    foodSolved: 0,
   },
 };
 

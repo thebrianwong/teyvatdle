@@ -1,7 +1,7 @@
-import GameMode from "../../types/gameMode.type";
+import { GameDataType } from "../../__generated__/graphql";
 
 type PageHeaderProps = {
-  title: GameMode;
+  title: GameDataType;
   dataLoaded: boolean;
   solvedValue: number;
 };

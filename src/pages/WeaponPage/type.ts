@@ -1,15 +1,14 @@
-import TableAPIData from "../../types/data/tableAPIData.type";
-import WeaponAPIData from "../../types/data/weaponAPIData.type";
-import GameMode from "../../types/gameMode.type";
+import { GameDataType, WeaponData } from "../../__generated__/graphql";
+import TableData from "../../types/tableData.type";
 
 type WeaponPageProps = {
-  dailyRecordID: number;
+  dailyRecordID: string;
   guessesCounter: number;
   complete: boolean;
-  guesses: WeaponAPIData[];
-  setGuessCounter: (type: GameMode, newValue: number) => void;
-  setCompletedState: (type: GameMode) => void;
-  updateGuesses: (newGuesses: TableAPIData[], gameType: GameMode) => void;
+  guesses: WeaponData[];
+  setGuessCounter: (type: GameDataType, newValue: number) => void;
+  setCompletedState: (type: GameDataType) => void;
+  updateGuesses: (newGuesses: TableData[], gameType: GameDataType) => void;
 };
 
 export default WeaponPageProps;

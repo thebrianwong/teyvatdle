@@ -1,9 +1,19 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import GuessTableRow from "../../components/GuessTableRow/GuessTableRow";
-import CharacterAPIData from "../../types/data/characterAPIData.type";
-import WeaponAPIData from "../../types/data/weaponAPIData.type";
-import FoodAPIData from "../../types/data/foodAPIData.type";
+import {
+  CharacterData,
+  FoodData,
+  FoodType,
+  GameDataType,
+  Gender,
+  GenshinElement,
+  Height,
+  Region,
+  Stat,
+  WeaponData,
+  WeaponType,
+} from "../../__generated__/graphql";
 
 const TableContainer = ({ child }) => {
   return (
@@ -13,58 +23,58 @@ const TableContainer = ({ child }) => {
   );
 };
 
-const characterData: CharacterAPIData = {
-  character_id: 1,
-  character_name: "Paimon",
-  gender: "Female",
-  height: "Short",
+const characterData: CharacterData = {
+  characterId: "1",
+  characterName: "Paimon",
+  gender: Gender.Female,
+  height: Height.Short,
   rarity: 5,
-  region: "Mondstadt",
-  element: "Anemo",
-  weapon_type: "Catalyst",
-  ascension_stat: "ATK",
+  region: Region.Mondstadt,
+  element: GenshinElement.Anemo,
+  weaponType: WeaponType.Catalyst,
+  ascensionStat: Stat.Atk,
   birthday: null,
-  character_image_url: "dummy",
-  character_correct_image_url: "Correct!",
-  character_wrong_image_url: "Wrong...",
-  local_specialty: "dummy",
-  local_specialty_image_url: "dummy",
-  enhancement_material: "dummy",
-  enhancement_material_image_url: "dummy",
-  ascension_boss_material: "dummy",
-  ascension_boss_material_image_url: "dummy",
-  talent_boss_material: "dummy",
-  talent_boss_material_image_url: "dummy",
-  talent_book: ["dummy"],
-  talent_book_image_url: ["dummy"],
+  characterImageUrl: "dummy",
+  characterCorrectImageUrl: "Correct!",
+  characterWrongImageUrl: "Wrong...",
+  localSpecialty: "dummy",
+  localSpecialtyImageUrl: "dummy",
+  enhancementMaterial: "dummy",
+  enhancementMaterialImageUrl: "dummy",
+  ascensionBossMaterial: "dummy",
+  ascensionBossMaterialImageUrl: "dummy",
+  talentBossMaterial: "dummy",
+  talentBossMaterialImageUrl: "dummy",
+  talentBook: ["dummy"],
+  talentBookImageUrl: ["dummy"],
 };
 
-const weaponData: WeaponAPIData = {
-  weapon_id: 1,
-  weapon_name: "Cubes",
+const weaponData: WeaponData = {
+  weaponId: "1",
+  weaponName: "Cubes",
   rarity: 5,
-  weapon_type: "Catalyst",
-  sub_stat: "ATK",
-  weapon_image_url: "dummy",
-  weapon_domain_material: "dummy",
-  weapon_domain_material_image_url: "dummy",
-  elite_enemy_material: "dummy",
-  elite_enemy_material_image_url: "dummy",
-  common_enemy_material: "dummy",
-  common_enemy_material_image_url: "dummy",
+  weaponType: WeaponType.Catalyst,
+  subStat: Stat.Atk,
+  weaponImageUrl: "dummy",
+  weaponDomainMaterial: "dummy",
+  weaponDomainMaterialImageUrl: "dummy",
+  eliteEnemyMaterial: "dummy",
+  eliteEnemyMaterialImageUrl: "dummy",
+  commonEnemyMaterial: "dummy",
+  commonEnemyMaterialImageUrl: "dummy",
   gacha: true,
 };
 
-const foodData: FoodAPIData = {
-  food_id: 1,
-  food_name: "Paimon (Emergency Food)",
+const foodData: FoodData = {
+  foodId: "1",
+  foodName: "Paimon (Emergency Food)",
   rarity: 5,
-  food_type: "Adventurer's Dishes",
-  special_dish: false,
+  foodType: FoodType.AdventurersDishes,
+  specialDish: false,
   purchasable: false,
   recipe: false,
   event: true,
-  food_image_url: "dummy",
+  foodImageUrl: "dummy",
 };
 
 test("GuessTableRow renders", () => {
@@ -72,7 +82,7 @@ test("GuessTableRow renders", () => {
     <TableContainer
       child={
         <GuessTableRow
-          rowType="character"
+          rowType={GameDataType.Character}
           rowDataProp={characterData}
           answer={characterData}
           complete={false}
@@ -91,7 +101,7 @@ describe("The number of cells in the row varies by rowType", () => {
       <TableContainer
         child={
           <GuessTableRow
-            rowType="character"
+            rowType={GameDataType.Character}
             rowDataProp={characterData}
             answer={characterData}
             complete={false}
@@ -109,7 +119,7 @@ describe("The number of cells in the row varies by rowType", () => {
       <TableContainer
         child={
           <GuessTableRow
-            rowType="weapon"
+            rowType={GameDataType.Weapon}
             rowDataProp={weaponData}
             answer={weaponData}
             complete={false}
@@ -127,7 +137,7 @@ describe("The number of cells in the row varies by rowType", () => {
       <TableContainer
         child={
           <GuessTableRow
-            rowType="food"
+            rowType={GameDataType.Food}
             rowDataProp={foodData}
             answer={foodData}
             complete={false}

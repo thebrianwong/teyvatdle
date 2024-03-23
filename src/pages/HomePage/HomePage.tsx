@@ -1,8 +1,8 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
-import { loadCharacters, loadDailyCharacter } from "../../redux/apiDataSlice";
+import { selectCharacters } from "../../redux/gameDataSlice";
 import {
-  selectDailyCharacterID,
+  selectDailyCharacter,
   selectDailyCharacterSolved,
 } from "../../redux/dailyRecordSlice";
 import HomePageProps from "./type";
@@ -11,6 +11,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import Credits from "../../components/Credits/Credits";
 import { useEffect } from "react";
+import { GameDataType } from "../../__generated__/graphql";
 
 const HomePage = ({
   dailyRecordID,
@@ -21,11 +22,8 @@ const HomePage = ({
   setCompletedState,
   updateGuesses,
 }: HomePageProps) => {
-  const characterData = useAppSelector(loadCharacters);
-  const dailyCharacterID = useAppSelector(selectDailyCharacterID);
-  const dailyCharacterData = useAppSelector((state) =>
-    loadDailyCharacter(state, dailyCharacterID)
-  );
+  const characterData = useAppSelector(selectCharacters);
+  const dailyCharacterData = useAppSelector(selectDailyCharacter);
   const dailyCharacterSolved = useAppSelector(selectDailyCharacterSolved);
 
   useEffect(() => {
@@ -39,15 +37,15 @@ const HomePage = ({
   return (
     <>
       <PageHeader
-        title="character"
-        dataLoaded={dailyCharacterData ? true : false}
+        title={GameDataType.Character}
+        dataLoaded={Object.keys(dailyCharacterData).length ? true : false}
         solvedValue={dailyCharacterSolved}
       />
-      {dailyCharacterData ? (
+      {Object.keys(dailyCharacterData).length ? (
         <GameArea
-          gameType="character"
-          selectType="character"
-          data={characterData}
+          gameType={GameDataType.Character}
+          selectType={GameDataType.Character}
+          gameData={characterData}
           dailyEntity={dailyCharacterData!}
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}
@@ -61,7 +59,7 @@ const HomePage = ({
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
       <Credits />
-      <Tooltip type={"character"} />
+      <Tooltip type={GameDataType.Character} />
     </>
   );
 };

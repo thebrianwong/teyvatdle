@@ -1,23 +1,29 @@
-import CharacterAPIData from "../../types/data/characterAPIData.type";
 import GuessTable from "../GuessTable/GuessTable";
 import SelectMenu from "../SelectMenu/SelectMenu";
-import TableAPIData from "../../types/data/tableAPIData.type";
+import TableData from "../../types/tableData.type";
 import { useEffect, useRef, useState } from "react";
 import GameAreaProps from "./type";
 import GuessList from "../GuessList/GuessList";
-import ListAPIData from "../../types/data/listAPIData.type";
+import ListData from "../../types/listData.type";
 import TalentConstellationImage from "../TalentConstellationImage/TalentConstellationImage";
-import { updateDailyRecordSolved } from "../../services/DailyRecordService";
 import GameComplete from "../GameComplete/GameComplete";
 import "./styles.scss";
 import AnimatedValue from "../AnimatedValue/AnimatedValue";
-import TalentAPIData from "../../types/data/talentAPIData.type";
-import ConstellationAPIData from "../../types/data/constellationAPIData.type";
+import {
+  CharacterData,
+  ConstellationData,
+  GameDataType,
+  TalentData,
+  TalentType,
+} from "../../__generated__/graphql";
+import { useMutation } from "@apollo/client";
+import { UPDATE_DAILY_RECORD } from "../../graphql/mutations/updateDailyRecord";
+import lowerCaseFirstLetter from "../../utils/lowerCaseFirstLetter";
 
 const GameArea = ({
   gameType,
   selectType,
-  data,
+  gameData,
   dailyEntity,
   dailyRecordID,
   guessesCounter,
@@ -29,6 +35,30 @@ const GameArea = ({
 }: GameAreaProps) => {
   const [isMidAnimation, setIsMidAnimation] = useState(false);
   const completeRef = useRef<HTMLDivElement>(null);
+  const [updateDailyRecord, { error, data }] = useMutation(
+    UPDATE_DAILY_RECORD,
+    { variables: { id: dailyRecordID, type: gameType } }
+  );
+
+  const talentTypeEnumMap = {
+    [TalentType.NormalAttack]: "Normal Attack",
+    [TalentType.ElementalSkill]: "Elemental Skill",
+    [TalentType.AlternateSprint]: "Alternate Sprint",
+    [TalentType.ElementalBurst]: "Elemental Burst",
+    [TalentType.FirstAscensionPassive]: "1st Ascension Passive",
+    [TalentType.FourthAscensionPassive]: "4th Ascension Passive",
+    [TalentType.UtilityPassive]: "Utility Passive",
+    [TalentType.Passive]: "Passive",
+  };
+
+  useEffect(() => {
+    if (data !== undefined) {
+      console.log(data?.updateDailyRecord);
+    }
+    if (error !== undefined) {
+      console.log(error);
+    }
+  }, [data, error]);
 
   useEffect(() => {
     if (complete) {
@@ -45,12 +75,7 @@ const GameArea = ({
 
   const handleGameCompletion = async () => {
     setCompletedState(gameType);
-    const results = await updateDailyRecordSolved(dailyRecordID, gameType);
-    console.log(results);
-    let delay = 0;
-    if (gameType === "talent" || gameType === "constellation") {
-      delay = 750;
-    }
+    updateDailyRecord();
     setTimeout(() => {
       if (completeRef.current) {
         completeRef.current.scrollIntoView({
@@ -58,10 +83,10 @@ const GameArea = ({
           inline: "start",
         });
       }
-    }, delay);
+    }, 500);
   };
 
-  const handleGuess = (guess: TableAPIData) => {
+  const handleGuess = (guess: TableData) => {
     const newGuesses = [guess, ...guesses];
     updateGuesses(newGuesses, gameType);
     setGuessCounter(gameType, guessesCounter + 1);
@@ -74,22 +99,27 @@ const GameArea = ({
     const NUM_OF_FOOD_CELLS = 6;
 
     let delay: number;
-    if (gameType === "talent" || gameType === "constellation") {
+    if (
+      gameType === GameDataType.Talent ||
+      gameType === GameDataType.Constellation
+    ) {
       delay = LEEWAY_TIME + ANIMATION_TIME;
-    } else if (gameType === "character") {
+    } else if (gameType === GameDataType.Character) {
       delay =
         LEEWAY_TIME + INITIAL_DELAY + (NUM_OF_CHAR_CELLS - 1) * ANIMATION_TIME;
-    } else if (gameType === "weapon") {
+    } else if (gameType === GameDataType.Weapon) {
       delay =
         LEEWAY_TIME + INITIAL_DELAY + (NUM_OF_WEAP_CELLS - 1) * ANIMATION_TIME;
-    } else if (gameType === "food") {
+    } else if (gameType === GameDataType.Food) {
       delay =
         LEEWAY_TIME + INITIAL_DELAY + (NUM_OF_FOOD_CELLS - 1) * ANIMATION_TIME;
     }
 
     if (
-      guess[`${selectType}_name` as keyof typeof guess] ===
-      dailyEntity![`${selectType}_name` as keyof typeof dailyEntity]
+      guess[`${lowerCaseFirstLetter(selectType)}Name` as keyof typeof guess] ===
+      dailyEntity![
+        `${lowerCaseFirstLetter(selectType)}Name` as keyof typeof dailyEntity
+      ]
     ) {
       setTimeout(() => {
         handleGameCompletion();
@@ -107,7 +137,7 @@ const GameArea = ({
       <div className="game-area-top-container">
         <SelectMenu
           selectType={selectType}
-          data={data}
+          data={gameData}
           guesses={guesses}
           gameCompleted={complete}
           allowInteraction={!isMidAnimation}
@@ -117,38 +147,39 @@ const GameArea = ({
           Total Guesses: <AnimatedValue value={guessesCounter} direction="up" />
         </p>
       </div>
-      {gameType === "talent" || gameType === "constellation" ? (
+      {gameType === GameDataType.Talent ||
+      gameType === GameDataType.Constellation ? (
         <>
-          {complete && gameType === "talent" && (
+          {complete && gameType === GameDataType.Talent && (
             <h1 className="talent-constellation-answer">{`${
-              (dailyEntity as TalentAPIData).character_name
-            }'s ${(dailyEntity as TalentAPIData).talent_type} Talent: ${
-              (dailyEntity as TalentAPIData).talent_name
-            }`}</h1>
+              (dailyEntity as TalentData).characterName
+            }'s ${
+              talentTypeEnumMap[(dailyEntity as TalentData).talentType!]
+            } Talent: ${(dailyEntity as TalentData).talentName}`}</h1>
           )}
-          {complete && gameType === "constellation" && (
+          {complete && gameType === GameDataType.Constellation && (
             <h1 className="talent-constellation-answer">{`${
-              (dailyEntity as ConstellationAPIData).character_name
+              (dailyEntity as ConstellationData).characterName
             }'s Level ${
-              (dailyEntity as ConstellationAPIData).constellation_level
+              (dailyEntity as ConstellationData).constellationLevel
             } Constellation: ${
-              (dailyEntity as ConstellationAPIData).constellation_name
+              (dailyEntity as ConstellationData).constellationName
             }`}</h1>
           )}
           <TalentConstellationImage
             type={gameType}
-            data={dailyEntity as ListAPIData}
+            data={dailyEntity as ListData}
           />
           <GuessList
-            guesses={guesses as CharacterAPIData[]}
-            answer={dailyEntity as ListAPIData}
+            guesses={guesses as CharacterData[]}
+            answer={dailyEntity as ListData}
           />
           {complete && (
             <GameComplete
               gameType={gameType}
               selectType={selectType}
               guesses={guesses}
-              answer={dailyEntity as TableAPIData}
+              answer={dailyEntity as TableData}
               ref={completeRef}
             />
           )}
@@ -158,7 +189,7 @@ const GameArea = ({
           <GuessTable
             tableType={selectType}
             guessesProp={guesses}
-            answer={dailyEntity as TableAPIData}
+            answer={dailyEntity as TableData}
             complete={complete}
           />
           {complete && (
@@ -166,7 +197,7 @@ const GameArea = ({
               gameType={gameType}
               selectType={selectType}
               guesses={guesses}
-              answer={dailyEntity as TableAPIData}
+              answer={dailyEntity as TableData}
               ref={completeRef}
             />
           )}

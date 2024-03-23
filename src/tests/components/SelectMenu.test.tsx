@@ -2,90 +2,99 @@ import React from "react";
 import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import SelectMenu from "../../components/SelectMenu/SelectMenu";
-import CharacterAPIData from "../../types/data/characterAPIData.type";
+import {
+  CharacterData,
+  GameDataType,
+  Gender,
+  GenshinElement,
+  Height,
+  Region,
+  Stat,
+  WeaponType,
+} from "../../__generated__/graphql";
 
-const characterData: CharacterAPIData[] = [
+const characterData: CharacterData[] = [
   {
-    character_id: 1,
-    character_name: "Paimon",
-    gender: "Female",
-    height: "Short",
+    characterId: "1",
+    characterName: "Paimon",
+    gender: Gender.Female,
+    height: Height.Short,
     rarity: 5,
-    region: "Mondstadt",
-    element: "Anemo",
-    weapon_type: "Catalyst",
-    ascension_stat: "ATK",
+    region: Region.Mondstadt,
+    element: GenshinElement.Anemo,
+    weaponType: WeaponType.Catalyst,
+    ascensionStat: Stat.Atk,
     birthday: null,
-    character_image_url: "dummy",
-    character_correct_image_url: "Correct!",
-    character_wrong_image_url: "Wrong...",
-    local_specialty: "dummy",
-    local_specialty_image_url: "dummy",
-    enhancement_material: "dummy",
-    enhancement_material_image_url: "dummy",
-    ascension_boss_material: "dummy",
-    ascension_boss_material_image_url: "dummy",
-    talent_boss_material: "dummy",
-    talent_boss_material_image_url: "dummy",
-    talent_book: ["dummy"],
-    talent_book_image_url: ["dummy"],
+    characterImageUrl: "dummy",
+    characterCorrectImageUrl: "Correct!",
+    characterWrongImageUrl: "Wrong...",
+    localSpecialty: "dummy",
+    localSpecialtyImageUrl: "dummy",
+    enhancementMaterial: "dummy",
+    enhancementMaterialImageUrl: "dummy",
+    ascensionBossMaterial: "dummy",
+    ascensionBossMaterialImageUrl: "dummy",
+    talentBossMaterial: "dummy",
+    talentBossMaterialImageUrl: "dummy",
+    talentBook: ["dummy"],
+    talentBookImageUrl: ["dummy"],
   },
   {
-    character_id: 2,
-    character_name: "Lumine",
-    gender: "Female",
-    height: "Medium",
+    characterId: "2",
+    characterName: "Lumine",
+    gender: Gender.Female,
+    height: Height.Medium,
     rarity: 5,
-    region: "Mondstadt",
-    element: "Anemo",
-    weapon_type: "Catalyst",
-    ascension_stat: "ATK",
+    region: Region.Mondstadt,
+    element: GenshinElement.Anemo,
+    weaponType: WeaponType.Catalyst,
+    ascensionStat: Stat.Atk,
     birthday: null,
-    character_image_url: "dummy",
-    character_correct_image_url: "Correct!",
-    character_wrong_image_url: "Wrong...",
-    local_specialty: "dummy",
-    local_specialty_image_url: "dummy",
-    enhancement_material: "dummy",
-    enhancement_material_image_url: "dummy",
-    ascension_boss_material: "dummy",
-    ascension_boss_material_image_url: "dummy",
-    talent_boss_material: "dummy",
-    talent_boss_material_image_url: "dummy",
-    talent_book: ["dummy"],
-    talent_book_image_url: ["dummy"],
+    characterImageUrl: "dummy",
+    characterCorrectImageUrl: "Correct!",
+    characterWrongImageUrl: "Wrong...",
+    localSpecialty: "dummy",
+    localSpecialtyImageUrl: "dummy",
+    enhancementMaterial: "dummy",
+    enhancementMaterialImageUrl: "dummy",
+    ascensionBossMaterial: "dummy",
+    ascensionBossMaterialImageUrl: "dummy",
+    talentBossMaterial: "dummy",
+    talentBossMaterialImageUrl: "dummy",
+    talentBook: ["dummy"],
+    talentBookImageUrl: ["dummy"],
   },
   {
-    character_id: 3,
-    character_name: "Aether",
-    gender: "Male",
-    height: "Medium",
+    characterId: "3",
+    characterName: "Aether",
+    gender: Gender.Male,
+    height: Height.Medium,
     rarity: 5,
-    region: "Mondstadt",
-    element: "Anemo",
-    weapon_type: "Catalyst",
-    ascension_stat: "ATK",
+    region: Region.Mondstadt,
+    element: GenshinElement.Anemo,
+    weaponType: WeaponType.Catalyst,
+    ascensionStat: Stat.Atk,
     birthday: null,
-    character_image_url: "dummy",
-    character_correct_image_url: "Correct!",
-    character_wrong_image_url: "Wrong...",
-    local_specialty: "dummy",
-    local_specialty_image_url: "dummy",
-    enhancement_material: "dummy",
-    enhancement_material_image_url: "dummy",
-    ascension_boss_material: "dummy",
-    ascension_boss_material_image_url: "dummy",
-    talent_boss_material: "dummy",
-    talent_boss_material_image_url: "dummy",
-    talent_book: ["dummy"],
-    talent_book_image_url: ["dummy"],
+    characterImageUrl: "dummy",
+    characterCorrectImageUrl: "Correct!",
+    characterWrongImageUrl: "Wrong...",
+    localSpecialty: "dummy",
+    localSpecialtyImageUrl: "dummy",
+    enhancementMaterial: "dummy",
+    enhancementMaterialImageUrl: "dummy",
+    ascensionBossMaterial: "dummy",
+    ascensionBossMaterialImageUrl: "dummy",
+    talentBossMaterial: "dummy",
+    talentBossMaterialImageUrl: "dummy",
+    talentBook: ["dummy"],
+    talentBookImageUrl: ["dummy"],
   },
 ];
 
 test("SelectMenu renders", () => {
   render(
     <SelectMenu
-      selectType="character"
+      selectType={GameDataType.Character}
       data={characterData}
       guesses={[]}
       gameCompleted={false}
@@ -100,7 +109,7 @@ test("SelectMenu renders", () => {
 test("Clicking on the search bar shows the select options", () => {
   render(
     <SelectMenu
-      selectType="character"
+      selectType={GameDataType.Character}
       data={characterData}
       guesses={[]}
       gameCompleted={false}
@@ -124,7 +133,7 @@ describe("Selecting a select option...", () => {
   test("...calls handleGuess", () => {
     render(
       <SelectMenu
-        selectType="character"
+        selectType={GameDataType.Character}
         data={characterData}
         guesses={[]}
         gameCompleted={false}
@@ -145,7 +154,7 @@ describe("Selecting a select option...", () => {
   test("...hides the select options", () => {
     render(
       <SelectMenu
-        selectType="character"
+        selectType={GameDataType.Character}
         data={characterData}
         guesses={[]}
         gameCompleted={false}
@@ -167,7 +176,7 @@ describe("Selecting a select option...", () => {
   test("...resets the search value", () => {
     render(
       <SelectMenu
-        selectType="character"
+        selectType={GameDataType.Character}
         data={characterData}
         guesses={[]}
         gameCompleted={false}

@@ -1,7 +1,7 @@
-import GameMode from "../../types/gameMode.type";
+import { GameDataType } from "../../__generated__/graphql";
 
 type TooltipProps = {
-  type: GameMode | "troll";
+  type: GameDataType | "troll";
 };
 
 export default TooltipProps;

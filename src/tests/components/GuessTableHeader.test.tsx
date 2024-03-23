@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import GuessTableHeader from "../../components/GuessTableHeader/GuessTableHeader";
+import { GameDataType } from "../../__generated__/graphql";
 
 const TableContainer = ({ child }) => {
   return <table>{child}</table>;
@@ -8,7 +9,9 @@ const TableContainer = ({ child }) => {
 
 test("GuessTableHeader renders", () => {
   render(
-    <TableContainer child={<GuessTableHeader selectType="character" />} />
+    <TableContainer
+      child={<GuessTableHeader selectType={GameDataType.Character} />}
+    />
   );
   const component = screen.getByRole("rowgroup");
   expect(component).toBeInTheDocument();
@@ -17,7 +20,9 @@ test("GuessTableHeader renders", () => {
 describe("Header values depend on selectType", () => {
   test("character", () => {
     render(
-      <TableContainer child={<GuessTableHeader selectType="character" />} />
+      <TableContainer
+        child={<GuessTableHeader selectType={GameDataType.Character} />}
+      />
     );
     const characterHeader = screen.getByRole("columnheader", {
       name: "Character",
@@ -25,14 +30,22 @@ describe("Header values depend on selectType", () => {
     expect(characterHeader).toBeInTheDocument();
   });
   test("weapon", () => {
-    render(<TableContainer child={<GuessTableHeader selectType="weapon" />} />);
+    render(
+      <TableContainer
+        child={<GuessTableHeader selectType={GameDataType.Weapon} />}
+      />
+    );
     const weaponHeader = screen.getByRole("columnheader", {
       name: "Weapon",
     });
     expect(weaponHeader).toBeInTheDocument();
   });
   test("food", () => {
-    render(<TableContainer child={<GuessTableHeader selectType="food" />} />);
+    render(
+      <TableContainer
+        child={<GuessTableHeader selectType={GameDataType.Food} />}
+      />
+    );
     const foodHeader = screen.getByRole("columnheader", {
       name: "Food",
     });

@@ -2,15 +2,16 @@ import React from "react";
 import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Tooltip from "../../components/Tooltip/Tooltip";
+import { GameDataType } from "../../__generated__/graphql";
 
 test("Tooltip renders", () => {
-  render(<Tooltip type="character" />);
+  render(<Tooltip type={GameDataType.Character} />);
   const component = screen.getByRole("button", { name: "?" });
   expect(component).toBeInTheDocument();
 });
 
 test("Clicking the button displays the modal", () => {
-  render(<Tooltip type="character" />);
+  render(<Tooltip type={GameDataType.Character} />);
   const button = screen.getByRole("button", { name: "?" });
   const beforeModalText = screen.queryByText(/Both answers are correct/);
   expect(beforeModalText).not.toBeInTheDocument();
@@ -23,7 +24,7 @@ test("Clicking the button displays the modal", () => {
 
 describe("The modal content varies by type", () => {
   test("character", () => {
-    render(<Tooltip type="character" />);
+    render(<Tooltip type={GameDataType.Character} />);
     const button = screen.getByRole("button", { name: "?" });
     act(() => {
       userEvent.click(button);
@@ -44,7 +45,7 @@ describe("The modal content varies by type", () => {
     expect(correct).toHaveTextContent("Green: Both answers are correct.");
   });
   test("weapon", () => {
-    render(<Tooltip type="weapon" />);
+    render(<Tooltip type={GameDataType.Weapon} />);
     const button = screen.getByRole("button", { name: "?" });
     act(() => {
       userEvent.click(button);
@@ -57,7 +58,7 @@ describe("The modal content varies by type", () => {
     expect(correct).toHaveTextContent("Green: Both answers are correct.");
   });
   test("food", () => {
-    render(<Tooltip type="food" />);
+    render(<Tooltip type={GameDataType.Food} />);
     const button = screen.getByRole("button", { name: "?" });
     act(() => {
       userEvent.click(button);
@@ -70,7 +71,7 @@ describe("The modal content varies by type", () => {
     expect(correct).toHaveTextContent("Green: Both answers are correct.");
   });
   test("talent", () => {
-    render(<Tooltip type="talent" />);
+    render(<Tooltip type={GameDataType.Talent} />);
     const button = screen.getByRole("button", { name: "?" });
     act(() => {
       userEvent.click(button);
@@ -81,7 +82,7 @@ describe("The modal content varies by type", () => {
     expect(correct).toHaveTextContent("Green: Correct character.");
   });
   test("constellation", () => {
-    render(<Tooltip type="constellation" />);
+    render(<Tooltip type={GameDataType.Constellation} />);
     const button = screen.getByRole("button", { name: "?" });
     act(() => {
       userEvent.click(button);

@@ -1,8 +1,8 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
-import { loadDailyFood, loadFoods } from "../../redux/apiDataSlice";
+import { selectFoods } from "../../redux/gameDataSlice";
 import {
-  selectDailyFoodID,
+  selectDailyFood,
   selectDailyFoodSolved,
 } from "../../redux/dailyRecordSlice";
 import FoodPageProps from "./type";
@@ -11,6 +11,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import Credits from "../../components/Credits/Credits";
 import { useEffect } from "react";
+import { GameDataType } from "../../__generated__/graphql";
 
 const FoodPage = ({
   dailyRecordID,
@@ -21,11 +22,8 @@ const FoodPage = ({
   setCompletedState,
   updateGuesses,
 }: FoodPageProps) => {
-  const foodData = useAppSelector(loadFoods);
-  const dailyFoodID = useAppSelector(selectDailyFoodID);
-  const dailyFoodData = useAppSelector((state) =>
-    loadDailyFood(state, dailyFoodID)
-  );
+  const foodData = useAppSelector(selectFoods);
+  const dailyFoodData = useAppSelector(selectDailyFood);
   const dailyFoodSolved = useAppSelector(selectDailyFoodSolved);
 
   useEffect(() => {
@@ -39,15 +37,15 @@ const FoodPage = ({
   return (
     <>
       <PageHeader
-        title="food"
-        dataLoaded={dailyFoodData ? true : false}
+        title={GameDataType.Food}
+        dataLoaded={Object.keys(dailyFoodData).length ? true : false}
         solvedValue={dailyFoodSolved}
       />
-      {dailyFoodData ? (
+      {Object.keys(dailyFoodData).length ? (
         <GameArea
-          gameType="food"
-          selectType="food"
-          data={foodData}
+          gameType={GameDataType.Food}
+          selectType={GameDataType.Food}
+          gameData={foodData}
           dailyEntity={dailyFoodData!}
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}
@@ -61,7 +59,7 @@ const FoodPage = ({
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
       <Credits />
-      <Tooltip type={"food"} />
+      <Tooltip type={GameDataType.Food} />
     </>
   );
 };

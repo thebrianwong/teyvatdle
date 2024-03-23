@@ -8,11 +8,11 @@ import {
 } from "./cellVariations.type";
 
 type WeaponTransformedData = {
-  weapon_image: MainImage;
+  weaponImage: MainImage;
   name: TextSingle;
-  rarity_type: TextDouble;
-  stat_material: TextImageCombo;
-  elite_common: ImageDouble;
+  rarityType: TextDouble;
+  statMaterial: TextImageCombo;
+  eliteCommon: ImageDouble;
   gacha: BooleanSingle;
 };
 

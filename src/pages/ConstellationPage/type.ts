@@ -1,15 +1,14 @@
-import CharacterAPIData from "../../types/data/characterAPIData.type";
-import TableAPIData from "../../types/data/tableAPIData.type";
-import GameMode from "../../types/gameMode.type";
+import { CharacterData, GameDataType } from "../../__generated__/graphql";
+import TableData from "../../types/tableData.type";
 
 type ConstellationPageProps = {
-  dailyRecordID: number;
+  dailyRecordID: string;
   guessesCounter: number;
   complete: boolean;
-  guesses: CharacterAPIData[];
-  setGuessCounter: (type: GameMode, newValue: number) => void;
-  setCompletedState: (type: GameMode) => void;
-  updateGuesses: (newGuesses: TableAPIData[], gameType: GameMode) => void;
+  guesses: CharacterData[];
+  setGuessCounter: (type: GameDataType, newValue: number) => void;
+  setCompletedState: (type: GameDataType) => void;
+  updateGuesses: (newGuesses: TableData[], gameType: GameDataType) => void;
 };
 
 export default ConstellationPageProps;

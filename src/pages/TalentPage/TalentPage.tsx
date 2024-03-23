@@ -1,8 +1,8 @@
 import GameArea from "../../components/GameArea/GameArea";
 import { useAppSelector } from "../../redux/hooks";
-import { loadCharacters, loadDailyTalent } from "../../redux/apiDataSlice";
+import { selectCharacters } from "../../redux/gameDataSlice";
 import {
-  selectDailyTalentID,
+  selectDailyTalent,
   selectDailyTalentSolved,
 } from "../../redux/dailyRecordSlice";
 import TalentPageProps from "./type";
@@ -11,6 +11,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import Credits from "../../components/Credits/Credits";
 import { useEffect } from "react";
+import { GameDataType } from "../../__generated__/graphql";
 
 const TalentPage = ({
   dailyRecordID,
@@ -21,11 +22,8 @@ const TalentPage = ({
   setCompletedState,
   updateGuesses,
 }: TalentPageProps) => {
-  const characterData = useAppSelector(loadCharacters);
-  const dailyTalentID = useAppSelector(selectDailyTalentID);
-  const dailyTalentData = useAppSelector((state) =>
-    loadDailyTalent(state, dailyTalentID)
-  );
+  const characterData = useAppSelector(selectCharacters);
+  const dailyTalentData = useAppSelector(selectDailyTalent);
   const dailyTalentSolved = useAppSelector(selectDailyTalentSolved);
 
   useEffect(() => {
@@ -39,15 +37,15 @@ const TalentPage = ({
   return (
     <>
       <PageHeader
-        title="talent"
-        dataLoaded={dailyTalentData ? true : false}
+        title={GameDataType.Talent}
+        dataLoaded={Object.keys(dailyTalentData).length ? true : false}
         solvedValue={dailyTalentSolved}
       />
-      {dailyTalentData ? (
+      {Object.keys(dailyTalentData).length ? (
         <GameArea
-          gameType="talent"
-          selectType="character"
-          data={characterData}
+          gameType={GameDataType.Talent}
+          selectType={GameDataType.Character}
+          gameData={characterData}
           dailyEntity={dailyTalentData!}
           dailyRecordID={dailyRecordID}
           guessesCounter={guessesCounter}
@@ -61,7 +59,7 @@ const TalentPage = ({
         <LoadingSkeleton quantity={5} width="100%" hasContainer={true} />
       )}
       <Credits />
-      <Tooltip type="talent" />
+      <Tooltip type={GameDataType.Talent} />
     </>
   );
 };

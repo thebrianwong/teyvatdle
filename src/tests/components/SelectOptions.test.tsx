@@ -2,111 +2,120 @@ import React from "react";
 import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import SelectOptions from "../../components/SelectOptions/SelectOptions";
-import CharacterAPIData from "../../types/data/characterAPIData.type";
+import {
+  CharacterData,
+  GameDataType,
+  Gender,
+  GenshinElement,
+  Height,
+  Region,
+  Stat,
+  WeaponType,
+} from "../../__generated__/graphql";
 
-const characterDataList: CharacterAPIData[] = [
+const characterDataList: CharacterData[] = [
   {
-    character_id: 1,
-    character_name: "Paimon",
-    gender: "Female",
-    height: "Short",
+    characterId: "1",
+    characterName: "Paimon",
+    gender: Gender.Female,
+    height: Height.Short,
     rarity: 5,
-    region: "Mondstadt",
-    element: "Anemo",
-    weapon_type: "Catalyst",
-    ascension_stat: "ATK",
+    region: Region.Mondstadt,
+    element: GenshinElement.Anemo,
+    weaponType: WeaponType.Catalyst,
+    ascensionStat: Stat.Atk,
     birthday: null,
-    character_image_url: "dummy",
-    character_correct_image_url: "Correct!",
-    character_wrong_image_url: "Wrong...",
-    local_specialty: "dummy",
-    local_specialty_image_url: "dummy",
-    enhancement_material: "dummy",
-    enhancement_material_image_url: "dummy",
-    ascension_boss_material: "dummy",
-    ascension_boss_material_image_url: "dummy",
-    talent_boss_material: "dummy",
-    talent_boss_material_image_url: "dummy",
-    talent_book: ["dummy"],
-    talent_book_image_url: ["dummy"],
+    characterImageUrl: "dummy",
+    characterCorrectImageUrl: "Correct!",
+    characterWrongImageUrl: "Wrong...",
+    localSpecialty: "dummy",
+    localSpecialtyImageUrl: "dummy",
+    enhancementMaterial: "dummy",
+    enhancementMaterialImageUrl: "dummy",
+    ascensionBossMaterial: "dummy",
+    ascensionBossMaterialImageUrl: "dummy",
+    talentBossMaterial: "dummy",
+    talentBossMaterialImageUrl: "dummy",
+    talentBook: ["dummy"],
+    talentBookImageUrl: ["dummy"],
   },
   {
-    character_id: 2,
-    character_name: "Lumine",
-    gender: "Female",
-    height: "Medium",
+    characterId: "2",
+    characterName: "Lumine",
+    gender: Gender.Female,
+    height: Height.Medium,
     rarity: 5,
-    region: "Mondstadt",
-    element: "Anemo",
-    weapon_type: "Catalyst",
-    ascension_stat: "ATK",
+    region: Region.Mondstadt,
+    element: GenshinElement.Anemo,
+    weaponType: WeaponType.Catalyst,
+    ascensionStat: Stat.Atk,
     birthday: null,
-    character_image_url: "dummy",
-    character_correct_image_url: "Correct!",
-    character_wrong_image_url: "Wrong...",
-    local_specialty: "dummy",
-    local_specialty_image_url: "dummy",
-    enhancement_material: "dummy",
-    enhancement_material_image_url: "dummy",
-    ascension_boss_material: "dummy",
-    ascension_boss_material_image_url: "dummy",
-    talent_boss_material: "dummy",
-    talent_boss_material_image_url: "dummy",
-    talent_book: ["dummy"],
-    talent_book_image_url: ["dummy"],
+    characterImageUrl: "dummy",
+    characterCorrectImageUrl: "Correct!",
+    characterWrongImageUrl: "Wrong...",
+    localSpecialty: "dummy",
+    localSpecialtyImageUrl: "dummy",
+    enhancementMaterial: "dummy",
+    enhancementMaterialImageUrl: "dummy",
+    ascensionBossMaterial: "dummy",
+    ascensionBossMaterialImageUrl: "dummy",
+    talentBossMaterial: "dummy",
+    talentBossMaterialImageUrl: "dummy",
+    talentBook: ["dummy"],
+    talentBookImageUrl: ["dummy"],
   },
   {
-    character_id: 3,
-    character_name: "Aether",
-    gender: "Male",
-    height: "Medium",
+    characterId: "3",
+    characterName: "Aether",
+    gender: Gender.Male,
+    height: Height.Medium,
     rarity: 5,
-    region: "Mondstadt",
-    element: "Anemo",
-    weapon_type: "Catalyst",
-    ascension_stat: "ATK",
+    region: Region.Mondstadt,
+    element: GenshinElement.Anemo,
+    weaponType: WeaponType.Catalyst,
+    ascensionStat: Stat.Atk,
     birthday: null,
-    character_image_url: "dummy",
-    character_correct_image_url: "Correct!",
-    character_wrong_image_url: "Wrong...",
-    local_specialty: "dummy",
-    local_specialty_image_url: "dummy",
-    enhancement_material: "dummy",
-    enhancement_material_image_url: "dummy",
-    ascension_boss_material: "dummy",
-    ascension_boss_material_image_url: "dummy",
-    talent_boss_material: "dummy",
-    talent_boss_material_image_url: "dummy",
-    talent_book: ["dummy"],
-    talent_book_image_url: ["dummy"],
+    characterImageUrl: "dummy",
+    characterCorrectImageUrl: "Correct!",
+    characterWrongImageUrl: "Wrong...",
+    localSpecialty: "dummy",
+    localSpecialtyImageUrl: "dummy",
+    enhancementMaterial: "dummy",
+    enhancementMaterialImageUrl: "dummy",
+    ascensionBossMaterial: "dummy",
+    ascensionBossMaterialImageUrl: "dummy",
+    talentBossMaterial: "dummy",
+    talentBossMaterialImageUrl: "dummy",
+    talentBook: ["dummy"],
+    talentBookImageUrl: ["dummy"],
   },
 ];
 
-const characterGuess: CharacterAPIData[] = [
+const characterGuess: CharacterData[] = [
   {
-    character_id: 2,
-    character_name: "Lumine",
-    gender: "Female",
-    height: "Medium",
+    characterId: "2",
+    characterName: "Lumine",
+    gender: Gender.Female,
+    height: Height.Medium,
     rarity: 5,
-    region: "Mondstadt",
-    element: "Anemo",
-    weapon_type: "Catalyst",
-    ascension_stat: "ATK",
+    region: Region.Mondstadt,
+    element: GenshinElement.Anemo,
+    weaponType: WeaponType.Catalyst,
+    ascensionStat: Stat.Atk,
     birthday: null,
-    character_image_url: "dummy",
-    character_correct_image_url: "Correct!",
-    character_wrong_image_url: "Wrong...",
-    local_specialty: "dummy",
-    local_specialty_image_url: "dummy",
-    enhancement_material: "dummy",
-    enhancement_material_image_url: "dummy",
-    ascension_boss_material: "dummy",
-    ascension_boss_material_image_url: "dummy",
-    talent_boss_material: "dummy",
-    talent_boss_material_image_url: "dummy",
-    talent_book: ["dummy"],
-    talent_book_image_url: ["dummy"],
+    characterImageUrl: "dummy",
+    characterCorrectImageUrl: "Correct!",
+    characterWrongImageUrl: "Wrong...",
+    localSpecialty: "dummy",
+    localSpecialtyImageUrl: "dummy",
+    enhancementMaterial: "dummy",
+    enhancementMaterialImageUrl: "dummy",
+    ascensionBossMaterial: "dummy",
+    ascensionBossMaterialImageUrl: "dummy",
+    talentBossMaterial: "dummy",
+    talentBossMaterialImageUrl: "dummy",
+    talentBook: ["dummy"],
+    talentBookImageUrl: ["dummy"],
   },
 ];
 
@@ -114,7 +123,7 @@ test("SelectOptions renders", () => {
   render(
     <SelectOptions
       dataList={characterDataList}
-      dataType="character"
+      dataType={GameDataType.Character}
       filterValue=""
       guesses={[]}
       handleGuess={jest.fn()}
@@ -128,7 +137,7 @@ test("SelectOptions contains items with li, img, and p elements", () => {
   render(
     <SelectOptions
       dataList={characterDataList}
-      dataType="character"
+      dataType={GameDataType.Character}
       filterValue=""
       guesses={[]}
       handleGuess={jest.fn()}
@@ -146,7 +155,7 @@ test("If there is no filterValue or guesses, everything from dataList is rendere
   render(
     <SelectOptions
       dataList={characterDataList}
-      dataType="character"
+      dataType={GameDataType.Character}
       filterValue=""
       guesses={[]}
       handleGuess={jest.fn()}
@@ -160,7 +169,7 @@ test("Only items that contain the filterValue are rendered", () => {
   render(
     <SelectOptions
       dataList={characterDataList}
-      dataType="character"
+      dataType={GameDataType.Character}
       filterValue="e"
       guesses={[]}
       handleGuess={jest.fn()}
@@ -174,7 +183,7 @@ test("filterValue is case insensitive", () => {
   render(
     <SelectOptions
       dataList={characterDataList}
-      dataType="character"
+      dataType={GameDataType.Character}
       filterValue="E"
       guesses={[]}
       handleGuess={jest.fn()}
@@ -188,7 +197,7 @@ test("filterValue ignores spaces in the beginning and end", () => {
   render(
     <SelectOptions
       dataList={characterDataList}
-      dataType="character"
+      dataType={GameDataType.Character}
       filterValue=" e "
       guesses={[]}
       handleGuess={jest.fn()}
@@ -202,7 +211,7 @@ test("Guesses aren't rendered", () => {
   render(
     <SelectOptions
       dataList={characterDataList}
-      dataType="character"
+      dataType={GameDataType.Character}
       filterValue=""
       guesses={characterGuess}
       handleGuess={jest.fn()}
@@ -218,7 +227,7 @@ test("filterValue and guesses can be combined together to filter further down", 
   render(
     <SelectOptions
       dataList={characterDataList}
-      dataType="character"
+      dataType={GameDataType.Character}
       filterValue="e"
       guesses={characterGuess}
       handleGuess={jest.fn()}
@@ -238,7 +247,7 @@ test("A special item is rendered if there are no valid items", () => {
   render(
     <SelectOptions
       dataList={characterDataList}
-      dataType="character"
+      dataType={GameDataType.Character}
       filterValue="Dainsleif"
       guesses={characterGuess}
       handleGuess={jest.fn()}
@@ -255,7 +264,7 @@ test("Clicking on an item calls handleGuess", () => {
   render(
     <SelectOptions
       dataList={characterDataList}
-      dataType="character"
+      dataType={GameDataType.Character}
       filterValue=""
       guesses={[]}
       handleGuess={handleClick}
@@ -274,7 +283,7 @@ test("Clicking on the special item doesn't call handleGuess", () => {
   render(
     <SelectOptions
       dataList={characterDataList}
-      dataType="character"
+      dataType={GameDataType.Character}
       filterValue="Dainsleif"
       guesses={[]}
       handleGuess={handleClick}
