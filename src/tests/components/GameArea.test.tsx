@@ -124,7 +124,7 @@ const foodData: FoodData[] = [
     foodId: "1",
     foodName: "Paimon (Emergency Food)",
     rarity: 5,
-    foodType: FoodType.AdventurersDishes,
+    foodType: FoodType.OtherDishes,
     specialDish: false,
     purchasable: false,
     recipe: false,
@@ -137,7 +137,7 @@ const talentData: TalentData[] = [
   {
     talentId: "1",
     talentName: "Eat",
-    talentType: TalentType.NormalAttack,
+    talentType: TalentType.NightRealmsGiftPassive,
     talentImageUrl: "dummy talent",
     characterName: "Paimon",
     characterImageUrl: "dummy",
@@ -400,7 +400,7 @@ describe("If complete is true and gameType is talent or constellation...", () =>
       />
     );
     const talentInfo = screen.getByRole("heading", {
-      name: "Paimon's Normal Attack Talent: Eat",
+      name: "Paimon's Night Realm's Gift Passive Talent: Eat",
     });
     expect(talentInfo).toBeInTheDocument();
   });
