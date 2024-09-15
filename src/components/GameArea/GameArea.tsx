@@ -47,6 +47,7 @@ const GameArea = ({
     [TalentType.ElementalBurst]: "Elemental Burst",
     [TalentType.FirstAscensionPassive]: "1st Ascension Passive",
     [TalentType.FourthAscensionPassive]: "4th Ascension Passive",
+    [TalentType.NightRealmsGiftPassive]: "Night Realm's Gift Passive",
     [TalentType.UtilityPassive]: "Utility Passive",
     [TalentType.Passive]: "Passive",
   };

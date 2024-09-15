@@ -39,6 +39,7 @@ const GuessTableRow = memo(
       [FoodType.AtkBoostingDishes]: "ATK-Boosting Dishes",
       [FoodType.Potions]: "Potions",
       [FoodType.EssentialOils]: "Essential Oils",
+      [FoodType.OtherDishes]: "Other Dishes",
     };
 
     const statEnumMap = {
